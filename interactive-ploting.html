@@ -245,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3.3" data-path="usage.html"><a href="usage.html#usage-website"><i class="fa fa-check"></i><b>6.3.3</b> 上传到网站</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="7" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>7</b> 参考书籍</a></li>
 </ul>
 
       </nav>
@@ -278,45 +278,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figure/24.png" /></p>
 <div id="leaflet包" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> leaflet包</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="interactive-ploting.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
-<span id="cb1-2"><a href="interactive-ploting.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="interactive-ploting.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()<span class="sc">%&gt;%</span></span>
-<span id="cb1-4"><a href="interactive-ploting.html#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="fl">174.768</span>,<span class="at">lat=</span><span class="sc">-</span><span class="fl">36.852</span>,<span class="at">popup=</span><span class="st">&quot;ThebirthplaceofR&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="interactive-ploting.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb100-2"><a href="interactive-ploting.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb100-3"><a href="interactive-ploting.html#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addTiles</span>()<span class="sc">%&gt;%</span></span>
+<span id="cb100-4"><a href="interactive-ploting.html#cb100-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addMarkers</span>(<span class="at">lng=</span><span class="fl">174.768</span>,<span class="at">lat=</span><span class="sc">-</span><span class="fl">36.852</span>,<span class="at">popup=</span><span class="st">&quot;ThebirthplaceofR&quot;</span>)</span></code></pre></div>
 </div>
 <div id="dygraphs包" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> dygraphs包</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="interactive-ploting.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dygraphs)</span>
-<span id="cb2-2"><a href="interactive-ploting.html#cb2-2" aria-hidden="true" tabindex="-1"></a>lungDeaths <span class="ot">&lt;-</span> <span class="fu">cbind</span>(mdeaths, fdeaths)</span>
-<span id="cb2-3"><a href="interactive-ploting.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(lungDeaths)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="interactive-ploting.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dygraphs)</span>
+<span id="cb101-2"><a href="interactive-ploting.html#cb101-2" aria-hidden="true" tabindex="-1"></a>lungDeaths <span class="ot">&lt;-</span> <span class="fu">cbind</span>(mdeaths, fdeaths)</span>
+<span id="cb101-3"><a href="interactive-ploting.html#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dygraph</span>(lungDeaths)</span></code></pre></div>
 </div>
 <div id="plotly包" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> plotly包</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="interactive-ploting.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb3-2"><a href="interactive-ploting.html#cb3-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="fu">nlevels</span>(iris<span class="sc">$</span>Species), <span class="st">&quot;Set1&quot;</span>)</span>
-<span id="cb3-3"><a href="interactive-ploting.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(<span class="at">data =</span> iris, <span class="at">x =</span> <span class="sc">~</span>Sepal.Length, <span class="at">y =</span> <span class="sc">~</span>Petal.Length, <span class="at">color =</span> <span class="sc">~</span>Species,</span>
-<span id="cb3-4"><a href="interactive-ploting.html#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">colors =</span> pal, <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="interactive-ploting.html#cb4-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">colour =</span> Species))<span class="sc">+</span></span>
-<span id="cb4-2"><a href="interactive-ploting.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)<span class="sc">+</span></span>
-<span id="cb4-3"><a href="interactive-ploting.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb4-4"><a href="interactive-ploting.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="interactive-ploting.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb102-2"><a href="interactive-ploting.html#cb102-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> RColorBrewer<span class="sc">::</span><span class="fu">brewer.pal</span>(<span class="fu">nlevels</span>(iris<span class="sc">$</span>Species), <span class="st">&quot;Set1&quot;</span>)</span>
+<span id="cb102-3"><a href="interactive-ploting.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_ly</span>(<span class="at">data =</span> iris, <span class="at">x =</span> <span class="sc">~</span>Sepal.Length, <span class="at">y =</span> <span class="sc">~</span>Petal.Length, <span class="at">color =</span> <span class="sc">~</span>Species,</span>
+<span id="cb102-4"><a href="interactive-ploting.html#cb102-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">colors =</span> pal, <span class="at">mode =</span> <span class="st">&quot;markers&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="interactive-ploting.html#cb103-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Petal.Length, <span class="at">colour =</span> Species))<span class="sc">+</span></span>
+<span id="cb103-2"><a href="interactive-ploting.html#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set1&quot;</span>)<span class="sc">+</span></span>
+<span id="cb103-3"><a href="interactive-ploting.html#cb103-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb103-4"><a href="interactive-ploting.html#cb103-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div>
 </div>
 <div id="dt包" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> DT包</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="interactive-ploting.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb5-2"><a href="interactive-ploting.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="interactive-ploting.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb104-2"><a href="interactive-ploting.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datatable</span>(iris)</span></code></pre></div>
 </div>
 <div id="networkd3包" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> networkD3包</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="interactive-ploting.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(networkD3)</span>
-<span id="cb6-2"><a href="interactive-ploting.html#cb6-2" aria-hidden="true" tabindex="-1"></a>src <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>)</span>
-<span id="cb6-3"><a href="interactive-ploting.html#cb6-3" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>,<span class="st">&quot;J&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;G&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>)</span>
-<span id="cb6-4"><a href="interactive-ploting.html#cb6-4" aria-hidden="true" tabindex="-1"></a>networkData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(src, target)</span>
-<span id="cb6-5"><a href="interactive-ploting.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">simpleNetwork</span>(networkData, <span class="at">zoom =</span> T)</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="interactive-ploting.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(MisLinks)</span>
-<span id="cb7-2"><a href="interactive-ploting.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(MisNodes)</span>
-<span id="cb7-3"><a href="interactive-ploting.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">forceNetwork</span>(<span class="at">Links =</span> MisLinks, <span class="at">Nodes =</span> MisNodes, <span class="at">Source =</span> <span class="st">&quot;source&quot;</span>,</span>
-<span id="cb7-4"><a href="interactive-ploting.html#cb7-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">Target =</span> <span class="st">&quot;target&quot;</span>, <span class="at">Value =</span> <span class="st">&quot;value&quot;</span>, <span class="at">NodeID =</span> <span class="st">&quot;name&quot;</span>,</span>
-<span id="cb7-5"><a href="interactive-ploting.html#cb7-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">Group =</span> <span class="st">&quot;group&quot;</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="interactive-ploting.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(networkD3)</span>
+<span id="cb105-2"><a href="interactive-ploting.html#cb105-2" aria-hidden="true" tabindex="-1"></a>src <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;A&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>)</span>
+<span id="cb105-3"><a href="interactive-ploting.html#cb105-3" aria-hidden="true" tabindex="-1"></a>target <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;B&quot;</span>,<span class="st">&quot;C&quot;</span>,<span class="st">&quot;D&quot;</span>,<span class="st">&quot;J&quot;</span>,<span class="st">&quot;E&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;G&quot;</span>,<span class="st">&quot;H&quot;</span>,<span class="st">&quot;I&quot;</span>)</span>
+<span id="cb105-4"><a href="interactive-ploting.html#cb105-4" aria-hidden="true" tabindex="-1"></a>networkData <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(src, target)</span>
+<span id="cb105-5"><a href="interactive-ploting.html#cb105-5" aria-hidden="true" tabindex="-1"></a><span class="fu">simpleNetwork</span>(networkData, <span class="at">zoom =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="interactive-ploting.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(MisLinks)</span>
+<span id="cb106-2"><a href="interactive-ploting.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(MisNodes)</span>
+<span id="cb106-3"><a href="interactive-ploting.html#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">forceNetwork</span>(<span class="at">Links =</span> MisLinks, <span class="at">Nodes =</span> MisNodes, <span class="at">Source =</span> <span class="st">&quot;source&quot;</span>,</span>
+<span id="cb106-4"><a href="interactive-ploting.html#cb106-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">Target =</span> <span class="st">&quot;target&quot;</span>, <span class="at">Value =</span> <span class="st">&quot;value&quot;</span>, <span class="at">NodeID =</span> <span class="st">&quot;name&quot;</span>,</span>
+<span id="cb106-5"><a href="interactive-ploting.html#cb106-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">Group =</span> <span class="st">&quot;group&quot;</span>, <span class="at">opacity =</span> <span class="fl">0.8</span>)</span></code></pre></div>
 </div>
 <div id="利用shiny包实现可交互的web应用待补充-更新可见公众号" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> 利用Shiny包实现可交互的Web应用（待补充-更新可见公众号）</h2>
@@ -381,6 +381,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

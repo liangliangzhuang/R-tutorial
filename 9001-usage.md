@@ -62,7 +62,10 @@
 plot(1:10, main="程序生成的测试图形")
 ```
 
-![(\#fig:u-w-f-ex01)图形说明文字](9001-usage_files/figure-latex/u-w-f-ex01-1.pdf) 
+<div class="figure">
+<img src="9001-usage_files/figure-html/u-w-f-ex01-1.png" alt="图形说明文字" width="672" />
+<p class="caption">(\#fig:u-w-f-ex01)图形说明文字</p>
+</div>
 
 引用如：参见图\@ref(fig:u-w-f-ex01)。
 引用中的`fig:`是必须的。
@@ -86,36 +89,22 @@ d <- data.frame("自变量"=1:10, "因变量"=(1:10)^2)
 knitr::kable(d, caption="表格说明文字")
 ```
 
-\begin{table}
 
-\caption{(\#tab:u-w-tab-ex01)表格说明文字}
-\centering
-\begin{tabular}[t]{r|r}
-\hline
-自变量 & 因变量\\
-\hline
-1 & 1\\
-\hline
-2 & 4\\
-\hline
-3 & 9\\
-\hline
-4 & 16\\
-\hline
-5 & 25\\
-\hline
-6 & 36\\
-\hline
-7 & 49\\
-\hline
-8 & 64\\
-\hline
-9 & 81\\
-\hline
-10 & 100\\
-\hline
-\end{tabular}
-\end{table}
+
+Table: (\#tab:u-w-tab-ex01)表格说明文字
+
+| 自变量| 因变量|
+|------:|------:|
+|      1|      1|
+|      2|      4|
+|      3|      9|
+|      4|     16|
+|      5|     25|
+|      6|     36|
+|      7|     49|
+|      8|     64|
+|      9|     81|
+|     10|    100|
 
 引用如：参见表\@ref(tab:u-w-tab-ex01)。
 引用中的`tab:`是必须的。

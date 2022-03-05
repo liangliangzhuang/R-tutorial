@@ -1,3 +1,7 @@
+fig:u-w-f-ex01
+tab:u-w-tab-ex01
+eq:var-mat-def
+fig:unnamed-chunk-1
 causal
 绘制基本图形
 绘制分布关系

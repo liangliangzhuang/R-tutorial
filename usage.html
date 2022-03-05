@@ -312,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 就可以对图形自动编号，
 并且可以用如<code>\@ref(fig:label)</code>的格式引用图形。
 如：</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="usage.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;程序生成的测试图形&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="usage.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;程序生成的测试图形&quot;</span>)</span></code></pre></div>
 <div class="figure"><span id="fig:u-w-f-ex01"></span>
 <img src="9001-usage_files/figure-html/u-w-f-ex01-1.png" alt="图形说明文字" width="672" />
 <p class="caption">
@@ -332,8 +332,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 就可以对表格自动编号，
 并且可以用如<code>\@ref(tab:label)</code>的格式引用表格。
 如：</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="usage.html#cb2-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;自变量&quot;</span><span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&quot;因变量&quot;</span><span class="ot">=</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb2-2"><a href="usage.html#cb2-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">caption=</span><span class="st">&quot;表格说明文字&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="usage.html#cb113-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;自变量&quot;</span><span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&quot;因变量&quot;</span><span class="ot">=</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb113-2"><a href="usage.html#cb113-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(d, <span class="at">caption=</span><span class="st">&quot;表格说明文字&quot;</span>)</span></code></pre></div>
 <table>
 <caption><span id="tab:u-w-tab-ex01">表6.1: </span>表格说明文字</caption>
 <thead>
@@ -424,8 +424,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.3.1</span> 转换为网页</h3>
 <p>用如下命令将整本书转换成一个每章为一个页面的网站，
 称为gitbook格式：</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="usage.html#cb3-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
-<span id="cb3-2"><a href="usage.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="usage.html#cb114-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
+<span id="cb114-2"><a href="usage.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>为查看结果，
 在<code>_book</code>子目录中双击其中的<code>index.html</code>文件，
 就可以在网络浏览器中查看转换的结果。
@@ -436,8 +436,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 可以节省时间，
 缺点是导航目录会变得不准确。
 命令如：</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="usage.html#cb4-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>,</span>
-<span id="cb4-2"><a href="usage.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="usage.html#cb115-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>,</span>
+<span id="cb115-2"><a href="usage.html#cb115-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>单章的网页可以通过网络浏览器中的“打印”功能，
 选择一个打印到PDF的打印机，
 可以将单章转换成PDF格式。</p>
@@ -454,8 +454,8 @@ TinyTeX优点是直接用R命令就可以安装，
 但是，安装时需要从国外网站下载许多文件，
 有因为网络不畅通而安装失败的危险。</p>
 <p>为了安装R的tinytex扩展包和单独的TinyTeX编译软件，应运行：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="usage.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
-<span id="cb5-2"><a href="usage.html#cb5-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="usage.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tinytex&#39;</span>)</span>
+<span id="cb116-2"><a href="usage.html#cb116-2" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>安装过程需要从国外的服务器下载许多文件，
 在国内的网络环境下有可能因为网络超时而失败。
 如果安装成功，
@@ -463,7 +463,7 @@ TinyTeX软件包在MS Windows系统中一般会安装在 <code>C:\Users\用户�
 其中“用户名”应替换成系统当前用户名。
 如果需要删除TinyTeX软件包， 只要直接删除那个子目录就可以。</p>
 <p>为了判断TinyTeX是否安装成功， 在RStudio中运行</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="usage.html#cb6-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">is_tinytex</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="usage.html#cb117-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">is_tinytex</span>()</span></code></pre></div>
 <p>结果应为TRUE, 出错或者结果为FALSE都说明安装不成功。
 在编译<code>pdf_book</code>时，可能会需要联网下载LaTeX所需的格式文件。</p>
 <p>Bookdown借助操作系统中安装的LaTeX编译软件TinyTeX将整本书转换成一个PDF文件，
@@ -473,8 +473,8 @@ TinyTeX软件包在MS Windows系统中一般会安装在 <code>C:\Users\用户�
 用户如果需要进行LaTeX定制，
 可修改模板中的<code>preamble.tex</code>文件。</p>
 <p>转换为PDF的命令如下：</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="usage.html#cb7-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
-<span id="cb7-2"><a href="usage.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::pdf_book&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="usage.html#cb118-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, </span>
+<span id="cb118-2"><a href="usage.html#cb118-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::pdf_book&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>在<code>_book</code>子目录中找到<code>CBook.pdf</code>文件，
 这是转换的结果。
 CBook.tex是作为中间结果的LaTeX文件，
@@ -486,8 +486,8 @@ CBook.tex是作为中间结果的LaTeX文件，
 定期地进行转换PDF的测试。
 每增加一章后都应该试着转换成PDF看有没有错误。
 命令如：</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="usage.html#cb8-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>, </span>
-<span id="cb8-2"><a href="usage.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="usage.html#cb119-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">preview_chapter</span>(<span class="st">&quot;1001-chapter01.Rmd&quot;</span>, </span>
+<span id="cb119-2"><a href="usage.html#cb119-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_format=</span><span class="st">&quot;bookdown::gitbook&quot;</span>, <span class="at">encoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 </div>
 <div id="usage-website" class="section level3" number="6.3.3">
 <h3><span class="header-section-number">6.3.3</span> 上传到网站</h3>
@@ -507,6 +507,7 @@ CBook.tex是作为中间结果的LaTeX文件，
 因为<code>MathJax</code>有三万多个文件，
 所以上传<code>MathJax</code>会花费很长时间。</p>
 
+<!-- # References {-} -->
 </div>
 </div>
 </div>

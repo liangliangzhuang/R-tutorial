@@ -1,6 +1,3 @@
-fig:u-w-f-ex01
-tab:u-w-tab-ex01
-eq:var-mat-def
 fig:unnamed-chunk-1
 causal
 绘制基本图形
@@ -70,16 +67,4 @@ dt包
 networkd3包
 利用shiny包实现可交互的web应用待补充-更新可见公众号
 appendix
-usage
-usage-ins
-usage-writing
-usage-writing-struct
-usage-writing-fig
-usage-writing-tab
-usage-writing-math
-文献引用与文献列表
-usage-output
-usage-gitbook
-usage-pdfbook
-usage-website
 reference

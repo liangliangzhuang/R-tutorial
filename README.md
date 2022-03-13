@@ -1,6 +1,6 @@
 #  庄闪闪的可视化笔记
 
-使用 bookdown 制作了一本可视化笔记，地址为：
+使用 [bookdown](https://bookdown.org/) 制作了一本私人的可视化笔记，地址为：
 https://liangliangzhuang.github.io/plot-tutorial-bookdown/
 
 
@@ -12,6 +12,8 @@ https://liangliangzhuang.github.io/plot-tutorial-bookdown/
 4. 认识交互式绘图工具
 5. 常用案例（持续更新）
 6. 附录
+
+## 笔记截图
 
 <img width="1427" alt="image" src="https://user-images.githubusercontent.com/62544020/158049898-07d78993-f06c-4584-8b56-81b119780f6d.png">
 
@@ -27,9 +29,9 @@ https://liangliangzhuang.github.io/plot-tutorial-bookdown/
 
 ## 小编有话说
 
-小编会将[公众号](https://zll-blog.netlify.app/images/wechat.png)中关于可视化系列的推文慢慢整理到这本《庄闪闪的可视化笔记》中来
+小编会将 [公众号](https://zll-blog.netlify.app/images/wechat.png) 中关于可视化系列的推文慢慢整理到这本《庄闪闪的可视化笔记》中来
 
-这是我的[博客](https://zll-blog.netlify.app/)，其他平台如下：
+这是我的 [博客](https://zll-blog.netlify.app/)，其他平台如下：
 - [B 站](https://space.bilibili.com/226576305)
 - [知乎](https://www.zhihu.com/people/zhuangshanshan)
 - [CSDN](https://blog.csdn.net/qq_37379316?spm=1011.2124.3001.5343)

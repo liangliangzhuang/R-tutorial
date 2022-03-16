@@ -180,4 +180,31 @@ plot_grid(p1, p2, ncol = 1, nrow = 2)
 ```
 
 
+## 绘制不同参数的密度函数
+
+### Beta 密度函数
+
+绘制不同参数下的 Beta 密度函数。
+
+```r
+## Beta Distribution
+library(ggplot2)
+library(reshape2)
+library(ggsci)
+item = 1000
+x <- seq(0, 1, length = item)
+beta_dist <- data.frame(cbind(x, dbeta(x, 0.5, 0.5), dbeta(x, 2, 2), dbeta(x, 0.5, 
+    2), dbeta(x, 2, 0.5), dbeta(x, 1, 5), dbeta(x, 5, 1), dbeta(x, 1, 1)))
+colnames(beta_dist) <- c("x", "a=0.5,b=0.5", "a=2,b=2", "a=0.5,b=2", "a=2,b=0.5", 
+    "a=1,b=5", "a=5,b=1", "a=1,b=1")
+beta_dist <- melt(beta_dist, x)
+beta_dist$class = c(rep(1:3, each = 2 * item), rep(4, item))
+g <- ggplot(beta_dist, aes(x, value, color = variable))
+g + geom_line() + facet_wrap(vars(class), scales = "free_y") + labs(title = "Beta Distribution", 
+    x = "x", y = "Probability") + scale_color_aaas() + theme_bw() + theme(panel.grid = element_blank(), 
+    legend.position = "none")
+```
+
+<img src="5001-chapter05_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
 

@@ -184,7 +184,26 @@ plot_grid(p1, p2, ncol = 1, nrow = 2)
 
 ### Beta 密度函数
 
-绘制不同参数下的 Beta 密度函数。
+绘制不同参数下的 Beta 密度函数。具体该分布的介绍可见：https://en.wikipedia.org/wiki/Beta_distribution
+
+Beta函数如下：
+$$
+B(a,b) = \int_{0}^{1} x^{a-1} {(1-x)}^{b-1} dx,\quad a,b>0
+$$
+
+Beta 分布：
+
+随机变量 X 的密度函数为：
+
+$$
+
+p(x) = \frac{1}{\mathrm{~B}(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1}
+
+$$
+其中，贝塔函数和伽马函数的关系
+
+
+> **存在问题**：还未把各个密度函数的参数加入。
 
 ```r
 ## Beta Distribution

@@ -195,12 +195,7 @@ Beta 分布：
 
 随机变量 X 的密度函数为：
 
-$$
-
-p(x) = \frac{1}{\mathrm{~B}(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1}
-
-$$
-其中，贝塔函数和伽马函数的关系
+$$p(x) = \frac{1}{\mathrm{~B}(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1}$$
 
 
 > **存在问题**：还未把各个密度函数的参数加入。

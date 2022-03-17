@@ -204,8 +204,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>3</b> 其他相关拓展包</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="other-packages.html"><a href="other-packages.html#ggplot官网-108-种拓展包"><i class="fa fa-check"></i><b>3.1</b> ggplot官网 108 种拓展包</a></li>
-<li class="chapter" data-level="3.2" data-path="other-packages.html"><a href="other-packages.html#我整理的-11-个扩展包"><i class="fa fa-check"></i><b>3.2</b> 我整理的 11 个扩展包</a></li>
+<li class="chapter" data-level="3.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>3.1</b> ggplot2 官网 109 种拓展包</a></li>
+<li class="chapter" data-level="3.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>3.2</b> 整理的相关扩展包</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>4</b> 认识交互式绘图工具</a>
 <ul>
@@ -281,9 +281,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="causal.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据模拟产生</span></span>
 <span id="cb1-2"><a href="causal.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb1-3"><a href="causal.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(x, <span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 10.03  9.29 11.51  9.78  8.50 10.07 10.05  9.89  9.36 10.97  9.09  8.93
-## [13]  9.29  9.78  9.77  8.95 10.36  8.75 10.53  9.63  9.91  8.89  9.71  7.31
-## [25]  9.70 11.05  9.25  9.23 10.45  9.73</code></pre>
+<pre><code>##  [1] 10.38  9.39  8.99  9.64 10.48  8.34  9.19 10.24 10.67 10.22  9.26  9.47
+## [13]  8.43 11.38 10.45 10.28 10.60 11.53 11.57  9.08  9.20 11.87  7.63 10.99
+## [25]  9.19  9.86 11.32  9.47 10.62  7.72</code></pre>
 <p><code>hist()</code>中的<code>breaks()</code>可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="causal.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">breaks =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1001-chapter01_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>

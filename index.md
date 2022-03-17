@@ -26,7 +26,7 @@ link-citations: yes
 我是庄闪闪，这是我的[个人博客](https://zll-blog.netlify.app/),
 如果有什么问题，可以通过以下方式联系我：
 
-[公众号](https://zll-blog.netlify.app/images/wechat.png)、[B 站](https://space.bilibili.com/226576305)、[知乎](https://www.zhihu.com/people/zhuangshanshan)、[CSDN](https://blog.csdn.net/qq_37379316?spm=1011.2124.3001.5343)、[小红书](https://www.xiaohongshu.com/user/profile/597fbfc15e87e755ab15dc26?xhsshare=WeixinSession&appuid=597fbfc15e87e755ab15dc26&apptime=1627016124)、[掘金](https://juejin.cn/user/1689330843128008)
+[GitHub](https://github.com/liangliangzhuang)、[B 站](https://space.bilibili.com/226576305)、[知乎](https://www.zhihu.com/people/zhuangshanshan)、[CSDN](https://blog.csdn.net/qq_37379316?spm=1011.2124.3001.5343)、[小红书](https://www.xiaohongshu.com/user/profile/597fbfc15e87e755ab15dc26?xhsshare=WeixinSession&appuid=597fbfc15e87e755ab15dc26&apptime=1627016124)、[掘金](https://juejin.cn/user/1689330843128008)
 
 
 

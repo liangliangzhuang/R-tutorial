@@ -2,8 +2,6 @@
 
 
 
-介绍一些 ggplot2 扩展可视化包以及其他实用的包。全部在这：[其他相关拓展包](https://mp.weixin.qq.com/mp/homepage?__biz=MzI1NjUwMjQxMQ==&hid=8&sn=b6495a051d1dc5c81280c41d5236b100&scene=1&devicetype=android-29&version=2700143f&lang=zh_CN&nettype=cmnet&ascene=7&session_us=gh_b289177c65aa&wx_header=1)
-
 ## ggplot2 官网 109 种拓展包
 
 该网站一共汇总了 109 种与ggplot2 包相关的[拓展包](https://exts.ggplot2.tidyverse.org/gallery/)，并且在不断更新中。拓展包与 ggplot2 包可以无缝连接，网站截图如下：
@@ -44,12 +42,8 @@
 
 14. [igraph包------绘制网络图](https://mp.weixin.qq.com/s/cq7xnbUG01k_v6WzU9Us6A)
 
-1.[explore包------化繁为简，交互式数据探索分析](https://mp.weixin.qq.com/s/qJ7iqCt3VgCTI9erd5XzsQ)
+15. [explore包------化繁为简，交互式数据探索分析](https://mp.weixin.qq.com/s/qJ7iqCt3VgCTI9erd5XzsQ)
 
-1.  [grafify包｜快速绘制19个 ggplot2 图形](https://mp.weixin.qq.com/s/KZ1Zy4EYC3Ex5M38zypc3g)
+16. [grafify包｜快速绘制19个 ggplot2 图形](https://mp.weixin.qq.com/s/KZ1Zy4EYC3Ex5M38zypc3g)
 
-2.  [ggThemeAssist包：交互式修改图形主题](https://mp.weixin.qq.com/s/NvqznH9kA4E9c9qus0K-8g)
-
-3.  [ggthemes](https://github.com/jrnold/ggthemes)待补充
-
-4.  [gganimate](https://gganimate.com/)待补充
+17. [ggThemeAssist包：交互式修改图形主题](https://mp.weixin.qq.com/s/NvqznH9kA4E9c9qus0K-8g)

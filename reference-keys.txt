@@ -57,8 +57,8 @@ ggplot2包图形语法
 有正值和负值的柱形图
 合并两图
 other-packages
-ggplot官网-108-种拓展包
-我整理的-11-个扩展包
+ggplot2-官网-109-种拓展包
+整理的相关扩展包
 interactive-ploting
 leaflet包
 dygraphs包
@@ -82,6 +82,3 @@ some-tips
 beta-密度函数
 appendix
 reference
-ggplot2-官网-109-种拓展包
-整理的-11-个扩展包
-整理的相关扩展包

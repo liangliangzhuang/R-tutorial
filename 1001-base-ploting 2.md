@@ -32,9 +32,9 @@ print(round(x, 2))
 ```
 
 ```
-##  [1]  8.84 10.83  9.64  8.99  9.97  9.37 10.58 10.53 10.80 12.03  8.94 11.13
-## [13]  9.93 10.31 11.03 10.66  9.50  8.41  9.89  9.93  8.84  9.33  8.86  8.61
-## [25] 11.17 10.04  9.60 11.82  9.24 10.73
+##  [1]  9.53 10.22 11.04  9.75 10.94 10.65 10.16  9.07 10.20 10.13  9.62 10.81
+## [13]  9.53 10.32 11.13  8.84 10.73  9.67 10.40  8.34  9.69  8.94 10.13  9.59
+## [25] 10.29  7.82  7.72 11.74  9.61 12.22
 ```
 
 `hist()`中的`breaks()`可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子
@@ -44,17 +44,13 @@ print(round(x, 2))
 hist(x, breaks = 3)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-3-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 hist(x, col = rainbow(15), breaks = 3, main = "正态随机数", xlab = "", ylab = "频数")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-3-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" />
 
 `breaks = 3`表示x轴分为3个节点。其他设置可参考帮助文档，即`?hist`。这里加入其他参数`col，main，xlab，ylab`，分别表示颜色，主题名称，x轴名称，y轴名称设置。细节将会在下面一章进行详细解释。
 
@@ -68,9 +64,7 @@ hist(x, freq = FALSE, ylim = c(0, max(tmp.dens$y) + 0.1), col = rainbow(15), mai
 lines(tmp.dens, lwd = 2, col = "blue")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-4-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
 #### 条形图
 
@@ -85,30 +79,20 @@ gender = table(c(rep("F", 12), rep("M", 20)))
 barplot(gender, col = c("red", "green"), main = "性别分布", horiz = T)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-5-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 
 **数据介绍**：`VADeaths`数据集记录的是1940年Viginia(弗吉尼亚洲)不同人群（`Rural Male、Rural Female 、Urban Male、Urban Female`）中每一千人的死亡情况。
 
 **例子**：数据前6行展示如下：
 
 
-\begin{tabular}{l|r|r|r|r}
-\hline
-  & Rural Male & Rural Female & Urban Male & Urban Female\\
-\hline
-50-54 & 11.7 & 8.7 & 15.4 & 8.4\\
-\hline
-55-59 & 18.1 & 11.7 & 24.3 & 13.6\\
-\hline
-60-64 & 26.9 & 20.3 & 37.0 & 19.3\\
-\hline
-65-69 & 41.0 & 30.9 & 54.6 & 35.1\\
-\hline
-70-74 & 66.0 & 54.3 & 71.1 & 50.0\\
-\hline
-\end{tabular}
+|      | Rural Male| Rural Female| Urban Male| Urban Female|
+|:-----|----------:|------------:|----------:|------------:|
+|50-54 |       11.7|          8.7|       15.4|          8.4|
+|55-59 |       18.1|         11.7|       24.3|         13.6|
+|60-64 |       26.9|         20.3|       37.0|         19.3|
+|65-69 |       41.0|         30.9|       54.6|         35.1|
+|70-74 |       66.0|         54.3|       71.1|         50.0|
 
 这里绘制该数据的条形图。`beside`默认值为FALSE，每一列都将给出堆砌的“子条”高度，若 `beside=TRUE`，则每一列都表示一个分组并列
 
@@ -117,17 +101,13 @@ barplot(gender, col = c("red", "green"), main = "性别分布", horiz = T)
 barplot(VADeaths)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-7-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 barplot(VADeaths, beside = TRUE)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-7-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-7-2.png" width="672" style="display: block; margin: auto;" />
 
 **结论：**随着年龄的增长，`Viginia`人群的死亡率逐渐增加，并且在4类人群中， `Urban Male`的死亡率比同年龄段的其他群体的死亡率高。同时，在同一环境下，相同年龄段的男性的死亡率要比女性高。
 
@@ -142,17 +122,13 @@ percent <- colSums(VADeaths) * 100/sum(VADeaths)
 pie(percent, labels = paste0(colnames(VADeaths), "\n", round(percent, 2), "%"))
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-8-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 pie(percent, radius = 0.8)  #init.angle
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-8-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # ?pie
@@ -170,23 +146,14 @@ pie(percent, radius = 0.8)  #init.angle
 前6行数据如下：
 
 
-\begin{tabular}{r|r|r|r|l}
-\hline
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\hline
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-\hline
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-\hline
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-\hline
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-\hline
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\hline
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-\hline
-\end{tabular}
+| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
+|------------:|-----------:|------------:|-----------:|:-------|
+|          5.1|         3.5|          1.4|         0.2|setosa  |
+|          4.9|         3.0|          1.4|         0.2|setosa  |
+|          4.7|         3.2|          1.3|         0.2|setosa  |
+|          4.6|         3.1|          1.5|         0.2|setosa  |
+|          5.0|         3.6|          1.4|         0.2|setosa  |
+|          5.4|         3.9|          1.7|         0.4|setosa  |
 
 **例子**：
 使用箱线图进行分析，使用两种方法：单独分析四个变量内部的数据分布情况；组间比较（Sepal.Length ~ Species）注意这里的x应该是因子型。这里没有对其他参数进行添加，大家根据自己需求添加即可。
@@ -196,17 +163,13 @@ attach(iris)
 boxplot(iris[1:4], main = "单独的箱线图")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-10-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 boxplot(Sepal.Length ~ Species, data = iris, main = "组间比较的箱线图")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-10-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" />
 
 **结论：**第一个图：Sepal.Width列含有四个异常值。
 
@@ -231,9 +194,7 @@ boxplot(Sepal.Length ~ Species, data = iris, main = "组间比较的箱线图")
 plot(cars[, 1], cars[, 2], xlab = "speed", ylab = "dist")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-11-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # plot(cars) # 效果同上
@@ -255,9 +216,7 @@ plot(cars[, 1], cars[, 2], xlab = "speed", ylab = "dist")
 plot(iris[, 1:4])
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-12-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
 
 **结论：**花瓣长度（Petal.length）与花瓣宽度（Petal.Width）有明显的线性关系，其余属性之间的关系不是很明显。
 
@@ -272,9 +231,7 @@ pairs(iris[, 1:4])
 pairs(~Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)  # 效果同上
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-13-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 
 #### 多变量相关矩阵图
 
@@ -290,17 +247,13 @@ library(corrgram)
 corrgram(mtcars)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-14-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 corrgram(mtcars, order = TRUE, upper.panel = panel.ellipse, main = "Correlogram of mtcars intercorrelations")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-14-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-14-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # 相关图，主对角线上方绘制置信椭圆和平滑拟合曲线，主对角线下方绘制阴影
@@ -317,9 +270,7 @@ corrgram(mtcars, order = TRUE, upper.panel = panel.pts, lower.panel = panel.pie,
     main = "Correlogram of mtcars intercorrelations")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-15-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -328,9 +279,7 @@ corrgram(mtcars, order = TRUE, upper.panel = panel.conf, lower.panel = panel.cor
     main = "Correlogram of mtcars intercorrelations")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-16-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ### 绘制其他图形
@@ -350,9 +299,7 @@ library(sm)  # 加载sm包
 sm.density.compare(mtcars$wt, factor(mtcars$cyl))  # 绘制核密度图
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-17-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
 
 #### 小提琴图
 
@@ -372,18 +319,14 @@ vioplot(wt[cyl == 4], wt[cyl == 6], wt[cyl == 8], border = "black", col = "gray6
     rectCol = "blue", horizontal = TRUE, main = "小提琴图")  # 绘制小提琴图
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-18-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 boxplot(wt ~ cyl, main = "箱线图", horizontal = TRUE, pars = list(boxwex = 0.1), 
     border = "blue")  # 绘制箱线图
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-18-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-18-2.png" width="672" style="display: block; margin: auto;" />
 
 #### QQ图
 
@@ -401,9 +344,7 @@ qqnorm(wt)  #正态分布QQ图
 qqline(wt)  #QQ线
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-19-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
 
 #### 等高图
 
@@ -422,9 +363,7 @@ contour(est$x1, est$x2, est$fhat, nlevels = 15, col = "darkgreen", xlab = "wt", 
 points(mtcars1)  # 添加散点
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-20-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
 
 ## 修改图形参数
 
@@ -457,9 +396,7 @@ colors()[1:20]
 plot(1:10, col = cm.colors(1))
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-21-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
 
 通过palette函数固定调色板，只要设定好了调色板，它的取值就不会再改变（直到下一次重新设定调色板）。
 
@@ -482,9 +419,7 @@ palette("default")  #恢复默认的调色板设置
 plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-23-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # Species为因子型数据,setosa versicolor virginica分别对应数字1，2，3，
@@ -502,8 +437,7 @@ rgb函数把RGB颜色转化为十六进制数值，使用格式前四个参数�
 
 `rainbow`函数、`heat.coclor`函数、`terrain.colors`函数、`topo.colors`函数、`cm.colors`函数是主题配色函数，使用格式中n设定产生颜色的数目，start和end设定彩虹颜色的一个子集，生成的颜色将从这个子集中选取。
 
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-24-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" />
 
 
 #### RColorBrewer包
@@ -526,9 +460,7 @@ display.brewer.all(type = "div")
 display.brewer.all(type = "qual")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-25-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -538,17 +470,13 @@ my_col <- brewer.pal(3, "RdYlGn")
 plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(my_col, each = 50))
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-26-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(rainbow(3), each = 50))
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-26-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-26-2.png" width="672" style="display: block; margin: auto;" />
 
 ### 修改点符号与线条
 
@@ -556,8 +484,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(rainbow(3), each = 50))
 
 ![](figure/5.jpg)
 
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-27-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -565,9 +492,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(rainbow(3), each = 50))
 plot(iris$Sepal.Length, iris$Sepal.Width, pch = rep(1:3, each = 50))
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-28-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # plot(1:10,pch=21,cex=1.5,col='red',bg = 'blue',lwd=5)
@@ -611,9 +536,7 @@ text(3.3, 0.8, "line segments", cex = 0.6)
 grid(nx = 4, ny = 5, lty = 2, col = "grey")
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-29-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" />
 
 #### 修改文本参数
 
@@ -652,9 +575,7 @@ text(5, 2, labels = "cex=1.2:放大1.2倍", cex = 1.2)
 text(6, 1, labels = "cex=1.5:放大1.5倍", cex = 1.5)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-30-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" />
 
 **例子**：
 
@@ -667,9 +588,7 @@ text(4.5, 34, labels = "extracted from the 1974", cex = 1.5)  # 说明数据来�
 text(4.5, 32, labels = "Motor Trend US", font = 3)  # 杂志名称
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-31-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" />
 
 
 #### 设置坐标轴
@@ -689,9 +608,7 @@ axis(4, at = seq(1, 12, length = 11), col.axis = "blue", cex.axis = 0.7, tck = -
     labels = seq(0, 1, 0.1), las = 2)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-32-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" />
 
 
 #### 添加图例
@@ -709,9 +626,7 @@ for (i in 1:9) {
 }
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-33-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" />
 
 **综合测试**：
 
@@ -725,9 +640,7 @@ arrows(6, 4, 6.5, 4, angle = 10, cex = 0.5)  # 添加箭头
 text(6.9, 4, "左上角全是setosa", cex = 0.8)  # 添加文字说明
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-34-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" />
 
 ## 绘制组合图形
 
@@ -742,9 +655,7 @@ for (i in 1:6) {
 }
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-35-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-35-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 par(mfrow1)
@@ -756,9 +667,7 @@ boxplot(1:10)
 pie(1:10)
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-35-2} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-35-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 par(op)
@@ -776,9 +685,7 @@ for (i in 1:6) {
 }
 ```
 
-
-
-\begin{center}\includegraphics{1001-base-ploting_files/figure-latex/unnamed-chunk-36-1} \end{center}
+<img src="1001-base-ploting_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" />
 
 ## 保存图形 
 
@@ -793,8 +700,8 @@ dev.off()
 ```
 
 ```
-## pdf 
-##   2
+## quartz_off_screen 
+##                 2
 ```
 
 ### 在 Rstudio 窗口点击按钮保存

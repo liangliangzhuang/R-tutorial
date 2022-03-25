@@ -237,8 +237,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="some-tips.html"><a href="some-tips.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="some-tips.html"><a href="some-tips.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数</a></li>
-<li class="chapter" data-level="7.3.2" data-path="some-tips.html"><a href="some-tips.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.3.2</b> 散点图中加入第三变量的密度函数</a></li>
 </ul></li>
+<li class="chapter" data-level="7.4" data-path="some-tips.html"><a href="some-tips.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数</a></li>
 </ul></li>
 <li class="part"><span><b>III R 语言文档沟通</b></span></li>
 <li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程</a>
@@ -332,9 +332,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="causal.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据模拟产生</span></span>
 <span id="cb1-2"><a href="causal.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb1-3"><a href="causal.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(x, <span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 11.65 10.82  9.04 10.05  9.39  9.00  8.73  8.97 10.43  8.81  8.87 11.51
-## [13]  9.74 10.40  9.20  9.77 10.68 11.72 12.55  8.61 11.76  8.64 10.36  9.19
-## [25] 11.29  9.42 10.21  8.81  9.54 10.70</code></pre>
+<pre><code>##  [1]  9.66  9.07  9.28 11.14  9.53 10.29  8.91 10.70 10.55 12.66 11.11 11.01
+## [13] 10.14  9.76 10.29  8.88 11.22 10.15 10.26  9.99 11.63  9.05 10.73 11.07
+## [25]  9.89 11.03 10.00 11.86 10.54 10.61</code></pre>
 <p><code>hist()</code>中的<code>breaks()</code>可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="causal.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">breaks =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>

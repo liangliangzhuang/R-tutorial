@@ -332,9 +332,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="causal.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 数据模拟产生</span></span>
 <span id="cb1-2"><a href="causal.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb1-3"><a href="causal.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(x, <span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1]  9.66  9.07  9.28 11.14  9.53 10.29  8.91 10.70 10.55 12.66 11.11 11.01
-## [13] 10.14  9.76 10.29  8.88 11.22 10.15 10.26  9.99 11.63  9.05 10.73 11.07
-## [25]  9.89 11.03 10.00 11.86 10.54 10.61</code></pre>
+<pre><code>##  [1]  9.65  9.46  7.58  9.72  9.37  8.35  8.99  7.85 12.23 10.76  9.90  9.80
+## [13] 11.41  9.56 11.19  9.74 10.79  9.11 10.23 12.13  9.87  7.85  9.67  7.88
+## [25]  9.62 11.29 11.30 10.14 11.37  9.59</code></pre>
 <p><code>hist()</code>中的<code>breaks()</code>可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="causal.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">breaks =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>

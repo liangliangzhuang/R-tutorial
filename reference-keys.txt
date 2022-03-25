@@ -131,6 +131,7 @@ bookdown
 小编有话说
 appendix
 reference
+some-tips-j
 新建rmarkdown项目
 rmarkdown的导出
 第三章图表和代码输出

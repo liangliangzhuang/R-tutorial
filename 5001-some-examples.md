@@ -25,9 +25,7 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) + stat_qq_band() + stat_q
 gg
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-1-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" />
 
 
 使用三种不同的置信带构造置信区间，其可以用参数 `bandType` 调整。
@@ -44,9 +42,7 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) + geom_qq_band(bandType =
 gg
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-2-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ### 进阶版本
@@ -86,9 +82,7 @@ p1 = ggplot(data = data, mapping = aes(sample = y)) + stat_qq_band(distribution 
 p1
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-4-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
 
 #### 绘制威布尔分布的 QQ 图
@@ -107,9 +101,7 @@ p2 = ggplot(data = data, mapping = aes(sample = y)) + stat_qq_band(distribution 
 p2
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-5-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 
 可以看到该数据集，更适合使用 weibull分布进行拟合。
 
@@ -119,9 +111,7 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 2, nrow = 1)
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-6-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ## 绘制混合密度函数图以及添加分位数线
@@ -159,9 +149,7 @@ p1 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) + s
 p1
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-9-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -174,9 +162,7 @@ p2 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) + s
 p2
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-10-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ### 合并两图（使用cowplot包）
@@ -187,9 +173,7 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 1, nrow = 2)
 ```
 
-
-
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-11-1} \end{center}
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # dev.off()
@@ -235,8 +219,34 @@ g + geom_line() + facet_wrap(vars(class), scales = "free_y") + labs(title = "Bet
     legend.position = "none")
 ```
 
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
 
 
-\begin{center}\includegraphics{5001-some-examples_files/figure-latex/unnamed-chunk-12-1} \end{center}
+### 散点图中加入第三变量的密度函数
 
+
+```r
+### Accept-reject algorithm
+### beta(2.7,6.3)
+library(ggplot2)
+num <- 1000
+ys <- runif(num)
+us <- runif(num, 0, 2.67)
+xs <- dbeta(ys, 2.7, 6.3)
+data <- data.frame("x_rand" = ys, "Density" = us, "true_x" = xs)
+ggplot(data) +
+  geom_point(aes(x_rand, Density), col = "#95E1D3") +
+  geom_area(aes(x_rand, xs),
+    fill = 4, alpha = 0.5,
+    color = 1, # Line color
+    lwd = 0.5, # Line width
+    linetype = 1
+  ) +
+  annotate("text", x = 0.3, y = 0.5, label = "sum(xs>us)", size = 5) +
+  labs(x = "x") +
+  theme_bw() +
+  theme(panel.grid = element_blank())
+```
+
+<img src="5001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 

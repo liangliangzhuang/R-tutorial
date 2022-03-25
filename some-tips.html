@@ -237,6 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3" data-path="some-tips.html"><a href="some-tips.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数</a>
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="some-tips.html"><a href="some-tips.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数</a></li>
+<li class="chapter" data-level="7.3.2" data-path="some-tips.html"><a href="some-tips.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.3.2</b> 散点图中加入第三变量的密度函数</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III R 语言文档沟通</b></span></li>
@@ -469,6 +470,30 @@ B(a,b) = \int_{0}^{1} x^{a-1} {(1-x)}^{b-1} dx,\quad a,b&gt;0
 <span id="cb119-15"><a href="some-tips.html#cb119-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Probability&quot;</span>) <span class="sc">+</span> <span class="fu">scale_color_aaas</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), </span>
 <span id="cb119-16"><a href="some-tips.html#cb119-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="散点图中加入第三变量的密度函数" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> 散点图中加入第三变量的密度函数</h3>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="some-tips.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Accept-reject algorithm</span></span>
+<span id="cb120-2"><a href="some-tips.html#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="do">### beta(2.7,6.3)</span></span>
+<span id="cb120-3"><a href="some-tips.html#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb120-4"><a href="some-tips.html#cb120-4" aria-hidden="true" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb120-5"><a href="some-tips.html#cb120-5" aria-hidden="true" tabindex="-1"></a>ys <span class="ot">&lt;-</span> <span class="fu">runif</span>(num)</span>
+<span id="cb120-6"><a href="some-tips.html#cb120-6" aria-hidden="true" tabindex="-1"></a>us <span class="ot">&lt;-</span> <span class="fu">runif</span>(num, <span class="dv">0</span>, <span class="fl">2.67</span>)</span>
+<span id="cb120-7"><a href="some-tips.html#cb120-7" aria-hidden="true" tabindex="-1"></a>xs <span class="ot">&lt;-</span> <span class="fu">dbeta</span>(ys, <span class="fl">2.7</span>, <span class="fl">6.3</span>)</span>
+<span id="cb120-8"><a href="some-tips.html#cb120-8" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;x_rand&quot;</span> <span class="ot">=</span> ys, <span class="st">&quot;Density&quot;</span> <span class="ot">=</span> us, <span class="st">&quot;true_x&quot;</span> <span class="ot">=</span> xs)</span>
+<span id="cb120-9"><a href="some-tips.html#cb120-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data) <span class="sc">+</span></span>
+<span id="cb120-10"><a href="some-tips.html#cb120-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(x_rand, Density), <span class="at">col =</span> <span class="st">&quot;#95E1D3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb120-11"><a href="some-tips.html#cb120-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="fu">aes</span>(x_rand, xs),</span>
+<span id="cb120-12"><a href="some-tips.html#cb120-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb120-13"><a href="some-tips.html#cb120-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="dv">1</span>, <span class="co"># Line color</span></span>
+<span id="cb120-14"><a href="some-tips.html#cb120-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lwd =</span> <span class="fl">0.5</span>, <span class="co"># Line width</span></span>
+<span id="cb120-15"><a href="some-tips.html#cb120-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="dv">1</span></span>
+<span id="cb120-16"><a href="some-tips.html#cb120-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb120-17"><a href="some-tips.html#cb120-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="fl">0.5</span>, <span class="at">label =</span> <span class="st">&quot;sum(xs&gt;us)&quot;</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb120-18"><a href="some-tips.html#cb120-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>) <span class="sc">+</span></span>
+<span id="cb120-19"><a href="some-tips.html#cb120-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb120-20"><a href="some-tips.html#cb120-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

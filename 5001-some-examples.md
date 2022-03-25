@@ -250,3 +250,12 @@ ggplot(data) +
 
 <img src="5001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 
+
+
+
+
+
+
+
+
+

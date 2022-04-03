@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 使用 ggplot2 包绘图 | 庄闪闪的可视化手册</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 使用 ggplot2 包绘图 | 庄闪闪的可视化手册" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="causal.html"/>
 <link rel="next" href="other-packages.html"/>
-<script src="libs/header-attrs-2.7.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +48,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -129,6 +130,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -141,163 +143,163 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
-<li class="part"><span><b>I R 语言基础</b></span></li>
-<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列</a></li>
-<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列</a></li>
-<li class="part"><span><b>II R 语言可视化</b></span></li>
-<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图</a>
+<li><a href="index.html#简介">简介<span></span></a></li>
+<li class="part"><span><b>I R 语言基础<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列<span></span></a></li>
+<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列<span></span></a></li>
+<li class="part"><span><b>II R 语言可视化<span></span></b></span></li>
+<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形</a>
+<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系</a></li>
-<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系</a></li>
-<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形</a></li>
+<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数</a>
+<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数<span></span></a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色</a></li>
-<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条</a></li>
+<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形</a>
+<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()</a></li>
-<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout</a></li>
+<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形</a>
+<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码</a></li>
-<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介</a></li>
-<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法</a></li>
-<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍</a></li>
-<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换</a></li>
-<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系</a></li>
-</ul></li>
-<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系</a></li>
-<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面</a></li>
-<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接</a>
-<ul>
-<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题</a></li>
-<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能</a></li>
-<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南</a></li>
-<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片</a></li>
-<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子</a>
-<ul>
-<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项</a></li>
-<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图</a></li>
-<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图</a></li>
+<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>5</b> 其他相关拓展包</a>
+<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图<span></span></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>5.1</b> ggplot2 官网 109 种拓展包</a></li>
-<li class="chapter" data-level="5.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>5.2</b> 整理的相关扩展包</a></li>
+<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍<span></span></a></li>
+<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>6</b> 认识交互式绘图工具</a>
+<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>6.1</b> leaflet包</a></li>
-<li class="chapter" data-level="6.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>6.2</b> dygraphs包</a></li>
-<li class="chapter" data-level="6.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>6.3</b> plotly包</a></li>
-<li class="chapter" data-level="6.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>6.4</b> DT包</a></li>
-<li class="chapter" data-level="6.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>6.5</b> networkD3包</a></li>
-<li class="chapter" data-level="6.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>6.6</b> 利用Shiny包实现可交互的Web应用</a></li>
+<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="some-tips.html"><a href="some-tips.html"><i class="fa fa-check"></i><b>7</b> 常用案例</a>
+<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale<span></span></a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="some-tips.html"><a href="some-tips.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>7.1</b> 绘制不同分布的 QQ 图</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="some-tips.html"><a href="some-tips.html#简单版本"><i class="fa fa-check"></i><b>7.1.1</b> 简单版本</a></li>
-<li class="chapter" data-level="7.1.2" data-path="some-tips.html"><a href="some-tips.html#进阶版本"><i class="fa fa-check"></i><b>7.1.2</b> 进阶版本</a></li>
+<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="some-tips.html"><a href="some-tips.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>7.2</b> 绘制混合密度函数图以及添加分位数线</a>
+<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系<span></span></a></li>
+<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面<span></span></a></li>
+<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接<span></span></a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="some-tips.html"><a href="some-tips.html#加载包"><i class="fa fa-check"></i><b>7.2.1</b> 加载包</a></li>
-<li class="chapter" data-level="7.2.2" data-path="some-tips.html"><a href="some-tips.html#产生数据集"><i class="fa fa-check"></i><b>7.2.2</b> 产生数据集</a></li>
-<li class="chapter" data-level="7.2.3" data-path="some-tips.html"><a href="some-tips.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>7.2.3</b> 绘制密度函数图并添加分位数线</a></li>
-<li class="chapter" data-level="7.2.4" data-path="some-tips.html"><a href="some-tips.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>7.2.4</b> 合并两图（使用cowplot包）</a></li>
+<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题<span></span></a></li>
+<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能<span></span></a></li>
+<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南<span></span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="some-tips.html"><a href="some-tips.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数</a>
+<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片<span></span></a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子<span></span></a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="some-tips.html"><a href="some-tips.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="some-tips.html"><a href="some-tips.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数</a></li>
-</ul></li>
-<li class="part"><span><b>III R 语言文档沟通</b></span></li>
-<li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>8.1</b> Rmarkdown 简介</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>8.1.1</b> 官网视频介绍</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>8.2</b> Rmarkdown 流程演示</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
-<li class="chapter" data-level="8.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>8.2.2</b> Rstudio界面介绍</a></li>
-<li class="chapter" data-level="8.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>8.2.3</b> 代码输出</a></li>
-<li class="chapter" data-level="8.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>8.2.4</b> 表格输出</a></li>
-<li class="chapter" data-level="8.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>8.2.5</b> 表格渲染</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>8.3</b> Rmarkdown 的主题格式</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>8.3.1</b> rmdformats 包</a></li>
-<li class="chapter" data-level="8.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>8.3.2</b> tufte 包</a></li>
-<li class="chapter" data-level="8.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>8.3.3</b> cerulean 包</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>8.4</b> 总结一些常用技巧</a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>8.4.1</b> 修改某些字体颜色</a></li>
-<li class="chapter" data-level="8.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>8.4.2</b> 更改全文页边距等</a></li>
-<li class="chapter" data-level="8.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>8.4.3</b> 缩进文本</a></li>
-<li class="chapter" data-level="8.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>8.4.4</b> 分页</a></li>
-<li class="chapter" data-level="8.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>8.4.5</b> 控制文本输出的宽度</a></li>
-<li class="chapter" data-level="8.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>8.4.6</b> 控制图片输出大小</a></li>
-<li class="chapter" data-level="8.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>8.4.7</b> 图片对齐</a></li>
-<li class="chapter" data-level="8.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>8.4.8</b> 多列输出</a></li>
+<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项<span></span></a></li>
+<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图<span></span></a></li>
+<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>9</b> 其他方式的文档沟通</a>
+<li class="chapter" data-level="5" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>5</b> 其他相关拓展包<span></span></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>9.1</b> Typora</a></li>
-<li class="chapter" data-level="9.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>9.2</b> xaringan 幻灯片</a></li>
-<li class="chapter" data-level="9.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>9.3</b> 制作幻灯片</a></li>
-<li class="chapter" data-level="9.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>9.4</b> Rbeamer</a></li>
-<li class="chapter" data-level="9.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>9.5</b> Dashboards</a></li>
-<li class="chapter" data-level="9.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>9.6</b> shiny</a></li>
-<li class="chapter" data-level="9.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>9.7</b> blogdown</a></li>
-<li class="chapter" data-level="9.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>9.8</b> 制作简历</a></li>
-<li class="chapter" data-level="9.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>9.9</b> bookdown</a></li>
-<li class="chapter" data-level="9.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>9.10</b> 小编有话说</a></li>
+<li class="chapter" data-level="5.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>5.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>5.2</b> 整理的相关扩展包<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> 附录</a>
+<li class="chapter" data-level="6" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>6</b> 认识交互式绘图工具<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装r和rstudio"><i class="fa fa-check"></i>安装R和Rstudio</a>
+<li class="chapter" data-level="6.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>6.1</b> leaflet包<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>6.2</b> dygraphs包<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>6.3</b> plotly包<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>6.4</b> DT包<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>6.5</b> networkD3包<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>6.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="some-tips-j.html"><a href="some-tips-j.html"><i class="fa fa-check"></i><b>7</b> 常用案例<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装-r"><i class="fa fa-check"></i>安装 R</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装rstudio"><i class="fa fa-check"></i>安装RStudio</a></li>
+<li class="chapter" data-level="7.1" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>7.1</b> 绘制不同分布的 QQ 图<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="some-tips-j.html"><a href="some-tips-j.html#简单版本"><i class="fa fa-check"></i><b>7.1.1</b> 简单版本<span></span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="some-tips-j.html"><a href="some-tips-j.html#进阶版本"><i class="fa fa-check"></i><b>7.1.2</b> 进阶版本<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#可能的问题"><i class="fa fa-check"></i>可能的问题</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#如何获取帮助"><i class="fa fa-check"></i>如何获取帮助</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#r-语言社区"><i class="fa fa-check"></i>R 语言社区</a></li>
+<li class="chapter" data-level="7.2" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>7.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="some-tips-j.html"><a href="some-tips-j.html#加载包"><i class="fa fa-check"></i><b>7.2.1</b> 加载包<span></span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="some-tips-j.html"><a href="some-tips-j.html#产生数据集"><i class="fa fa-check"></i><b>7.2.2</b> 产生数据集<span></span></a></li>
+<li class="chapter" data-level="7.2.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>7.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
+<li class="chapter" data-level="7.2.4" data-path="some-tips-j.html"><a href="some-tips-j.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>7.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>11</b> 参考书籍</a></li>
+<li class="chapter" data-level="7.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数<span></span></a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="some-tips-j.html"><a href="some-tips-j.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="some-tips-j.html"><a href="some-tips-j.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
+<li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>8.1</b> Rmarkdown 简介<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>8.1.1</b> 官网视频介绍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>8.2</b> Rmarkdown 流程演示<span></span></a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装<span></span></a></li>
+<li class="chapter" data-level="8.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>8.2.2</b> Rstudio界面介绍<span></span></a></li>
+<li class="chapter" data-level="8.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>8.2.3</b> 代码输出<span></span></a></li>
+<li class="chapter" data-level="8.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>8.2.4</b> 表格输出<span></span></a></li>
+<li class="chapter" data-level="8.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>8.2.5</b> 表格渲染<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>8.3</b> Rmarkdown 的主题格式<span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>8.3.1</b> rmdformats 包<span></span></a></li>
+<li class="chapter" data-level="8.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>8.3.2</b> tufte 包<span></span></a></li>
+<li class="chapter" data-level="8.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>8.3.3</b> cerulean 包<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>8.4</b> 总结一些常用技巧<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>8.4.1</b> 修改某些字体颜色<span></span></a></li>
+<li class="chapter" data-level="8.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>8.4.2</b> 更改全文页边距等<span></span></a></li>
+<li class="chapter" data-level="8.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>8.4.3</b> 缩进文本<span></span></a></li>
+<li class="chapter" data-level="8.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>8.4.4</b> 分页<span></span></a></li>
+<li class="chapter" data-level="8.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>8.4.5</b> 控制文本输出的宽度<span></span></a></li>
+<li class="chapter" data-level="8.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>8.4.6</b> 控制图片输出大小<span></span></a></li>
+<li class="chapter" data-level="8.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>8.4.7</b> 图片对齐<span></span></a></li>
+<li class="chapter" data-level="8.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>8.4.8</b> 多列输出<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>9</b> 其他方式的文档沟通<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>9.1</b> Typora<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>9.2</b> xaringan 幻灯片<span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>9.3</b> 制作幻灯片<span></span></a></li>
+<li class="chapter" data-level="9.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>9.4</b> Rbeamer<span></span></a></li>
+<li class="chapter" data-level="9.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>9.5</b> Dashboards<span></span></a></li>
+<li class="chapter" data-level="9.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>9.6</b> shiny<span></span></a></li>
+<li class="chapter" data-level="9.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>9.7</b> blogdown<span></span></a></li>
+<li class="chapter" data-level="9.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>9.8</b> 制作简历<span></span></a></li>
+<li class="chapter" data-level="9.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>9.9</b> bookdown<span></span></a></li>
+<li class="chapter" data-level="9.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>9.10</b> 小编有话说<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> 附录<span></span></a>
+<ul>
+<li><a href="appendix.html#安装r和rstudio">安装R和Rstudio<span></span></a>
+<ul>
+<li><a href="appendix.html#安装-r">安装 R<span></span></a></li>
+<li><a href="appendix.html#安装rstudio">安装RStudio<span></span></a></li>
+</ul></li>
+<li><a href="appendix.html#可能的问题">可能的问题<span></span></a></li>
+<li><a href="appendix.html#如何获取帮助">如何获取帮助<span></span></a></li>
+<li><a href="appendix.html#r-语言社区">R 语言社区<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>11</b> 参考书籍<span></span></a></li>
 </ul>
 
       </nav>
@@ -315,10 +317,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ggplot2-plot" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> 使用 ggplot2 包绘图</h1>
-<div id="简介-1" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> 简介</h2>
+<div id="ggplot2-plot" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> 使用 ggplot2 包绘图<a href="ggplot2-plot.html#ggplot2-plot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="简介-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 简介<a href="ggplot2-plot.html#简介-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ggplot2 包是 Harley
 Wickham 在 2005 年创建的，是包含了一套全面而连贯的语法的绘图系统。</p>
 <div class="figure">
@@ -328,13 +330,13 @@ Wickham 在 2005 年创建的，是包含了一套全面而连贯的语法的绘
 <p>弥补了R中创建图形缺乏一致性的缺点，且不会局限于一些已经定义好的统计图形，可以根据需要创造出任何有助于解决所遇到问题的图形。</p>
 <p><strong>核心理念</strong>：将绘图与数据分离，数据相关的绘图与数据无关的绘图分离，<strong>按图层作图</strong>。</p>
 </div>
-<div id="qplot" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> qplot</h2>
+<div id="qplot" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> qplot<a href="ggplot2-plot.html#qplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>ggplot2</code>包的绘图语言与常用的绘图函数的使用方法不同，为了让读者快速使用<code>ggplot2</code>包，包的作者Harley
 Wickham提供了<code>qplot</code>函数（quick
 plot），让人在了解<code>ggplot2</code>的语言逻辑之前，就能迅速实现数据的可视化。</p>
 <p>鸢尾花数据集<code>iris</code></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ggplot2-plot.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris, <span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="ggplot2-plot.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1           5.1         3.5          1.4         0.2  setosa
 ## 2           4.9         3.0          1.4         0.2  setosa
@@ -358,39 +360,40 @@ plot），让人在了解<code>ggplot2</code>的语言逻辑之前，就能迅�
 </ul>
 <p>创建一个以物种种类为分组的花萼长度的箱线图，箱线图的颜色依据不同的物种种类而变化。</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="ggplot2-plot.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb55-2"><a href="ggplot2-plot.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Species, Sepal.Length, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="st">&quot;boxplot&quot;</span>, <span class="at">fill =</span> Species, <span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度箱线图&quot;</span>)</span></code></pre></div>
+<span id="cb55-2"><a href="ggplot2-plot.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Species, Sepal.Length, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="st">&quot;boxplot&quot;</span>,</span>
+<span id="cb55-3"><a href="ggplot2-plot.html#cb55-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> Species,<span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度箱线图&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ggplot2-plot.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Sepal.Length <span class="sc">~</span> Species, <span class="at">data =</span> iris, <span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度箱线图&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="ggplot2-plot.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Sepal.Length<span class="sc">~</span>Species,<span class="at">data =</span>iris,<span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度箱线图&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>例子二：</strong></li>
 </ul>
 <p>利用<code>qplot</code>函数画出小提琴图，只需要将<code>geom</code>设置为<code>“violon”</code>即可，并添加扰动以减少数据重叠。</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ggplot2-plot.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Species, Sepal.Length, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">&quot;violin&quot;</span>, <span class="st">&quot;jitter&quot;</span>), <span class="at">fill =</span> Species, </span>
-<span id="cb57-2"><a href="ggplot2-plot.html#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度小提琴图&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="ggplot2-plot.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Species, Sepal.Length, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">&quot;violin&quot;</span>, <span class="st">&quot;jitter&quot;</span>), </span>
+<span id="cb57-2"><a href="ggplot2-plot.html#cb57-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> Species,<span class="at">main =</span> <span class="st">&quot;依据种类分组的花萼长度小提琴图&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>例子三：</strong></li>
 </ul>
 <p>建一个以花萼长度和花萼宽度的散点图，并利用颜色和符号形状区分物种种类。</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ggplot2-plot.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Sepal.Length, Sepal.Width, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">data =</span> iris, <span class="at">colour =</span> Species, <span class="at">shape =</span> Species, </span>
-<span id="cb58-2"><a href="ggplot2-plot.html#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;绘制花萼长度和花萼宽度的散点图&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="ggplot2-plot.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Sepal.Length, Sepal.Width, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>,<span class="at">data =</span> iris, <span class="at">colour =</span> Species, </span>
+<span id="cb58-2"><a href="ggplot2-plot.html#cb58-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">shape =</span> Species,<span class="at">main =</span> <span class="st">&quot;绘制花萼长度和花萼宽度的散点图&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ul>
 <li><strong>例子四：</strong></li>
 </ul>
 <p>利用facets参数绘制分面板散点图,并增加光滑曲线。</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ggplot2-plot.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Sepal.Length, Sepal.Width, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>), <span class="at">facets =</span> <span class="sc">~</span>Species, </span>
-<span id="cb59-2"><a href="ggplot2-plot.html#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;绘制分面板的散点图&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="ggplot2-plot.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(Sepal.Length, Sepal.Width, <span class="at">data =</span> iris, <span class="at">geom =</span> <span class="fu">c</span>(<span class="st">&quot;point&quot;</span>, <span class="st">&quot;smooth&quot;</span>),</span>
+<span id="cb59-2"><a href="ggplot2-plot.html#cb59-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">facets =</span> <span class="sc">~</span>Species,<span class="at">main =</span> <span class="st">&quot;绘制分面板的散点图&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="ggplot2包图形语法" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> ggplot2包图形语法</h2>
+<div id="ggplot2包图形语法" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> ggplot2包图形语法<a href="ggplot2-plot.html#ggplot2包图形语法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>推荐书籍</strong>：</p>
 <p>ggplot2: Elegant Graphics for Data Analysis <a href="https://ggplot2-book.org/" class="uri">https://ggplot2-book.org/</a></p>
 <p>Fundamentals of Data Visualization <a href="https://clauswilke.com/dataviz/" class="uri">https://clauswilke.com/dataviz/</a></p>
-<div id="对比不同画图语法" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> 对比不同画图语法</h3>
+<div id="对比不同画图语法" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> 对比不同画图语法<a href="ggplot2-plot.html#对比不同画图语法" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>以绘制iris数据集中Sepal.Length与Sepal.Width的散点图为例，分别采用内置的plot函数与ggplot2包的ggplot函数绘制散点图，对比理解ggplot2包的语言逻辑。</p>
 <p>代码（三种类型）：</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="ggplot2-plot.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 基础包</span></span>
@@ -404,8 +407,8 @@ plot），让人在了解<code>ggplot2</code>的语言逻辑之前，就能迅�
 <span id="cb62-3"><a href="ggplot2-plot.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>()  <span class="co">#在画布上添加点</span></span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-8-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="思想介绍" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> 思想介绍</h3>
+<div id="思想介绍" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> 思想介绍<a href="ggplot2-plot.html#思想介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>注：</strong>该部分主要参考<a href="https://bookdown.org/wangminjie/R4DS/intro-R.html#%E5%AE%89%E8%A3%85-rstudio">数据科学中的R语言——王敏杰</a>。</p>
 <p>ggplot的绘图有以下几个特点。</p>
 <ol style="list-style-type: decimal">
@@ -442,32 +445,35 @@ system，缩写coord)中，而<strong>分面</strong>(facet)则可以用来生�
 <p class="caption">把这看懂其实差不多了</p>
 </div>
 <p><strong>例子（带你入门）</strong></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ggplot2-plot.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(Petal.Length, Petal.Width)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, </span>
-<span id="cb63-2"><a href="ggplot2-plot.html#cb63-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> F)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="ggplot2-plot.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(Petal.Length,Petal.Width)) <span class="sc">+</span></span>
+<span id="cb63-2"><a href="ggplot2-plot.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>,<span class="at">alpha =</span> <span class="fl">0.5</span>,<span class="at">col =</span><span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-3"><a href="ggplot2-plot.html#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>,<span class="at">se =</span> F)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="全局变量-vs.-局部变量" class="section level3" number="4.3.3">
-<h3><span class="header-section-number">4.3.3</span> 全局变量 vs. 局部变量</h3>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ggplot2-plot.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb64-2"><a href="ggplot2-plot.html#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>()</span></code></pre></div>
+<div id="全局变量-vs.-局部变量" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> 全局变量 vs. 局部变量<a href="ggplot2-plot.html#全局变量-vs.-局部变量" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="ggplot2-plot.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,<span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span></span>
+<span id="cb64-2"><a href="ggplot2-plot.html#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ggplot2-plot.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, </span>
-<span id="cb65-2"><a href="ggplot2-plot.html#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> Species))</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="ggplot2-plot.html#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris) <span class="sc">+</span></span>
+<span id="cb65-2"><a href="ggplot2-plot.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,<span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species))</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>大家可以看到，以上两段代码出来的图是一样。但背后的含义却不同。</p>
 <p><strong>例子(观察两者之间的区别)</strong></p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ggplot2-plot.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 版本一</span></span>
-<span id="cb66-2"><a href="ggplot2-plot.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb66-3"><a href="ggplot2-plot.html#cb66-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="ggplot2-plot.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">#版本一</span></span>
+<span id="cb66-2"><a href="ggplot2-plot.html#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,<span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span></span>
+<span id="cb66-3"><a href="ggplot2-plot.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb66-4"><a href="ggplot2-plot.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="ggplot2-plot.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 版本二</span></span>
-<span id="cb67-2"><a href="ggplot2-plot.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">col =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb67-3"><a href="ggplot2-plot.html#cb67-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<span id="cb67-2"><a href="ggplot2-plot.html#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,<span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb67-3"><a href="ggplot2-plot.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">col =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb67-4"><a href="ggplot2-plot.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="几何对象" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> 几何对象</h2>
+<div id="几何对象" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> 几何对象<a href="ggplot2-plot.html#几何对象" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>geom_xxx()</code>提供了各种基本图形。 列表如下：</p>
 <ul>
 <li><p>基础图形：</p>
@@ -549,8 +555,8 @@ height大小和指定的fill维画长方形色块填充图。</p></li>
 <li><p><code>geom_raster()</code>是<code>geom_tile()</code>的长方形大小相同时的快速版本。</p></li>
 </ul></li>
 </ul>
-<div id="参考书籍" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> 参考书籍</h3>
+<div id="参考书籍" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> 参考书籍<a href="ggplot2-plot.html#参考书籍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>由于这部分内容非常的多，短短两小时不可能讲完，这里给了一些参考资料，各个都是满满的干货。</p>
 <ul>
 <li><p><a href="https://bookdown.org/wangminjie/R4DS/ggplot2-geom.html#%E5%9F%BA%E6%9C%AC%E7%BB%98%E5%9B%BE">数据科学中的R-第14章ggplot之集合对象</a></p></li>
@@ -567,19 +573,21 @@ of <em>R for Data Science</em></p></li>
 </ul>
 </div>
 </div>
-<div id="统计变换" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> 统计变换</h2>
+<div id="统计变换" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> 统计变换<a href="ggplot2-plot.html#统计变换" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>概念</strong>：对数据所应用的统计类型/方法。</p>
 <p>ggplot2为每一种几何类型指定了一种默认的统计类型，如果仅指定geom或stat中的一个，另外一个会自动获取。其中，stat_identity则表示不做任何的统计变换。</p>
 <p><strong>示例</strong>：只需指定geom或stat中的一个，具体细小细节可以参考这
 <a href="https://bookdown.org/wangminjie/R4DS/ggplot2-stat-layer.html" class="uri">https://bookdown.org/wangminjie/R4DS/ggplot2-stat-layer.html</a></p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="ggplot2-plot.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length), <span class="at">stat =</span> <span class="st">&quot;bin&quot;</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="ggplot2-plot.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris) <span class="sc">+</span> </span>
+<span id="cb68-2"><a href="ggplot2-plot.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length), <span class="at">stat=</span><span class="st">&quot;bin&quot;</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ggplot2-plot.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris) <span class="sc">+</span> <span class="fu">stat_bin</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length), <span class="at">geom =</span> <span class="st">&quot;bar&quot;</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="ggplot2-plot.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris) <span class="sc">+</span> </span>
+<span id="cb69-2"><a href="ggplot2-plot.html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_bin</span>(<span class="fu">aes</span>(<span class="at">x=</span>Sepal.Length), <span class="at">geom=</span><span class="st">&quot;bar&quot;</span>, <span class="at">binwidth =</span> <span class="fl">0.5</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="刻度scale" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> 刻度scale</h2>
+<div id="刻度scale" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> 刻度scale<a href="ggplot2-plot.html#刻度scale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>这一节我们一起学习ggplot2中的scales语法，推荐大家阅读Hadley
 Wickham最新版的<a href="https://ggplot2-book.org/">《ggplot2: Elegant Graphics for Data
 Analysis》</a>，但如果需要详细了解<strong>标度</strong>参数体系，还是要看<a href="https://cran.r-project.org/web/packages/ggplot2/index.html">ggplot2官方文档</a></p>
@@ -588,12 +596,13 @@ Analysis》</a>，但如果需要详细了解<strong>标度</strong>参数体系
 <p><strong>画图都没用到scale啊！</strong></p>
 <p>能画个很漂亮的图，那是因为ggplot2默认缺省条件下，已经很美观了。（据说Hadley
 Wickham很后悔使用了这么漂亮的缺省值，因为很漂亮了大家都不认真学画图了。马云好像也说后悔创立了阿里巴巴？）</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ggplot2-plot.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 解释</span></span>
-<span id="cb70-2"><a href="ggplot2-plot.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span> </span>
-<span id="cb70-3"><a href="ggplot2-plot.html#cb70-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="ggplot2-plot.html#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">#解释</span></span>
+<span id="cb70-2"><a href="ggplot2-plot.html#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length,<span class="at">y =</span> Petal.Width, <span class="at">col =</span> Species)) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="ggplot2-plot.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb70-4"><a href="ggplot2-plot.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div id="丰富的刻度体系" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> 丰富的刻度体系</h3>
+<div id="丰富的刻度体系" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> 丰富的刻度体系<a href="ggplot2-plot.html#丰富的刻度体系" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>注意：</strong>标度函数是由”_“分割的三个部分构成的 - scale - 视觉属性名
 (e.g., colour, shape or x) - 标度名 (e.g., continuous, discrete,
 brewer).</p>
@@ -653,36 +662,43 @@ brewer).</p>
 <span id="cb73-8"><a href="ggplot2-plot.html#cb73-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-14-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p>使用<code>scale_color_manual</code>或<code>scale_color_brewer</code>函数修改图形的颜色。在对iris数据集中的Sepal.Length与Sepal.Width的散点图分别使用以上两种方法修改散点颜色</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ggplot2-plot.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 图一：使用scale_color_manual函数</span></span>
-<span id="cb74-2"><a href="ggplot2-plot.html#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span> </span>
-<span id="cb74-3"><a href="ggplot2-plot.html#cb74-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;olivedrab&quot;</span>, <span class="st">&quot;navy&quot;</span>), <span class="at">name =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="ggplot2-plot.html#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co">#图一：使用scale_color_manual函数</span></span>
+<span id="cb74-2"><a href="ggplot2-plot.html#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species))<span class="sc">+</span></span>
+<span id="cb74-3"><a href="ggplot2-plot.html#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb74-4"><a href="ggplot2-plot.html#cb74-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;orange&quot;</span>, <span class="st">&quot;olivedrab&quot;</span>, <span class="st">&quot;navy&quot;</span>),</span>
+<span id="cb74-5"><a href="ggplot2-plot.html#cb74-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">name =</span> <span class="cn">NULL</span>) </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ggplot2-plot.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 图二:使用scale_color_brewer函数</span></span>
-<span id="cb75-2"><a href="ggplot2-plot.html#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="fu">scale_color_grey</span>() <span class="sc">+</span> </span>
-<span id="cb75-3"><a href="ggplot2-plot.html#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="ggplot2-plot.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">#图二:使用scale_color_brewer函数</span></span>
+<span id="cb75-2"><a href="ggplot2-plot.html#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris,<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species))<span class="sc">+</span></span>
+<span id="cb75-3"><a href="ggplot2-plot.html#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_grey</span>()<span class="sc">+</span></span>
+<span id="cb75-4"><a href="ggplot2-plot.html#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">2</span>) </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ggplot2-plot.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(RColorBrewer) brewer.pal(3, &#39;Set1&#39;) display.brewer.all()</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="ggplot2-plot.html#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># library(RColorBrewer)</span></span>
+<span id="cb76-2"><a href="ggplot2-plot.html#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># brewer.pal(3, &quot;Set1&quot;)</span></span>
+<span id="cb76-3"><a href="ggplot2-plot.html#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co"># display.brewer.all()</span></span></code></pre></div>
 </div>
 </div>
-<div id="坐标系" class="section level2" number="4.7">
-<h2><span class="header-section-number">4.7</span> 坐标系</h2>
+<div id="坐标系" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> 坐标系<a href="ggplot2-plot.html#坐标系" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ggplot2默认的坐标系是笛卡尔坐标系，可以用如下方法指定取值范围：<code>coord_cartesian(xlim = c(0,5), ylim = c(0, 3))</code>。</p>
 <p><code>coord_flip</code>：x轴和y轴换位置。</p>
 <p><code>coord_polar(theta = "x",direction=1)</code>是角度坐标系,theta指定角度对应的变量，start指定起点离12点钟方向的偏离值，direction若为1表示顺时针方向，若为-1表示逆时针方向。</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="ggplot2-plot.html#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 饼图 = 堆叠长条图 + polar_coordinates</span></span>
-<span id="cb77-2"><a href="ggplot2-plot.html#cb77-2" aria-hidden="true" tabindex="-1"></a>pie <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_iris, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="dv">1</span>), <span class="at">fill =</span> Species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>)</span>
-<span id="cb77-3"><a href="ggplot2-plot.html#cb77-3" aria-hidden="true" tabindex="-1"></a>pie <span class="sc">+</span> <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">&quot;y&quot;</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">start =</span> <span class="dv">30</span>)</span></code></pre></div>
+<span id="cb77-2"><a href="ggplot2-plot.html#cb77-2" aria-hidden="true" tabindex="-1"></a>pie <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_iris, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(<span class="dv">1</span>), <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb77-3"><a href="ggplot2-plot.html#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>)</span>
+<span id="cb77-4"><a href="ggplot2-plot.html#cb77-4" aria-hidden="true" tabindex="-1"></a>pie <span class="sc">+</span> <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">&quot;y&quot;</span>,<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>,<span class="at">start =</span> <span class="dv">30</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="ggplot2-plot.html#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 靶心图 = 饼图 + polar_coordinates</span></span>
 <span id="cb78-2"><a href="ggplot2-plot.html#cb78-2" aria-hidden="true" tabindex="-1"></a>pie <span class="sc">+</span> <span class="fu">coord_polar</span>()</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-2.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ggplot2-plot.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 锯齿图 = 柱状图 + polar_coordinates</span></span>
-<span id="cb79-2"><a href="ggplot2-plot.html#cb79-2" aria-hidden="true" tabindex="-1"></a>cxc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_iris, <span class="fu">aes</span>(<span class="at">x =</span> Species)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
-<span id="cb79-3"><a href="ggplot2-plot.html#cb79-3" aria-hidden="true" tabindex="-1"></a>cxc <span class="sc">+</span> <span class="fu">coord_polar</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="ggplot2-plot.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co">#锯齿图 = 柱状图 + polar_coordinates</span></span>
+<span id="cb79-2"><a href="ggplot2-plot.html#cb79-2" aria-hidden="true" tabindex="-1"></a>cxc <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(my_iris, <span class="fu">aes</span>(<span class="at">x =</span> Species)) <span class="sc">+</span></span>
+<span id="cb79-3"><a href="ggplot2-plot.html#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="dv">1</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb79-4"><a href="ggplot2-plot.html#cb79-4" aria-hidden="true" tabindex="-1"></a>cxc <span class="sc">+</span> <span class="fu">coord_polar</span>()</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-3.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="分面" class="section level2" number="4.8">
-<h2><span class="header-section-number">4.8</span> 分面</h2>
+<div id="分面" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> 分面<a href="ggplot2-plot.html#分面" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>分面，就是分组绘图，根据定义的规则，将数据分为多个子集，每个子集按照统一的规则单独制图，排布在一个页面上。</p>
 <p>ggplot2提供两种分面方法：<code>facet_grid</code>函数和<code>facet_wrap</code>函数。</p>
 <p><strong>1. facet_grid函数</strong></p>
@@ -703,8 +719,10 @@ brewer).</p>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>2. facet_wrap函数</strong></p>
 <p>facet_wrap函数生成一个动态调整的一维布局，根据”~位置变量1+位置变量2+…“来确定每个子集的位置，先逐行排列，放不下了移动到下一行。</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ggplot2-plot.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(my_iris1) <span class="sc">+</span> <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> feature_value)) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>feature_name <span class="sc">+</span> </span>
-<span id="cb82-2"><a href="ggplot2-plot.html#cb82-2" aria-hidden="true" tabindex="-1"></a>    Species, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">strip.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="ggplot2-plot.html#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(my_iris1) <span class="sc">+</span></span>
+<span id="cb82-2"><a href="ggplot2-plot.html#cb82-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> feature_value)) <span class="sc">+</span></span>
+<span id="cb82-3"><a href="ggplot2-plot.html#cb82-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> feature_name <span class="sc">+</span> Species, <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>,<span class="at">nrow =</span> <span class="dv">3</span>,</span>
+<span id="cb82-4"><a href="ggplot2-plot.html#cb82-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">strip.position =</span> <span class="st">&quot;bottom&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="ggplot2-plot.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iris例子</span></span>
 <span id="cb83-2"><a href="ggplot2-plot.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span>  <span class="co"># 底层画布</span></span>
@@ -713,8 +731,8 @@ brewer).</p>
 <span id="cb83-5"><a href="ggplot2-plot.html#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Species)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="标题标注指南拼接" class="section level2" number="4.9">
-<h2><span class="header-section-number">4.9</span> 标题、标注、指南、拼接</h2>
+<div id="标题标注指南拼接" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> 标题、标注、指南、拼接<a href="ggplot2-plot.html#标题标注指南拼接" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>除了<code>ggplot()</code>指定数据与映射，<code>geom_xxx()</code>作图，还可以用许多辅助函数增强图形。</p>
 <ul>
 <li><code>labs()</code>可以设置适当的标题和标签。</li>
@@ -722,15 +740,24 @@ brewer).</p>
 <li><code>guides()</code>函数可以控制图例的取舍以及做法。</li>
 <li><code>theme()</code>函数可以控制一些整体的选项如背景色、字体类型、图例的摆放位置等。</li>
 </ul>
-<div id="标题" class="section level3" number="4.9.1">
-<h3><span class="header-section-number">4.9.1</span> 标题</h3>
+<div id="标题" class="section level3 hasAnchor" number="4.9.1">
+<h3><span class="header-section-number">4.9.1</span> 标题<a href="ggplot2-plot.html#标题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>函数<code>labs()</code>可以用来指定图形上方的<code>标题(title)</code>、<code>副标题(subtitle)</code>、右下方的<code>标注(caption)</code>、<code>左上方的标签</code>以及<code>坐标轴标题</code>和其它维的名称。
 例如：</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="ggplot2-plot.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb84-2"><a href="ggplot2-plot.html#cb84-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp))</span>
-<span id="cb84-3"><a href="ggplot2-plot.html#cb84-3" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;各国各年度人均GDP与期望寿命的关系&quot;</span>, </span>
-<span id="cb84-4"><a href="ggplot2-plot.html#cb84-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;1952-2007&quot;</span>, <span class="at">tag =</span> <span class="st">&quot;散点图&quot;</span>, <span class="at">caption =</span> <span class="st">&quot;数据来源：gapminder&quot;</span>, </span>
-<span id="cb84-5"><a href="ggplot2-plot.html#cb84-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;人均GDP(单位：美元)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;期望寿命&quot;</span>)</span></code></pre></div>
+<span id="cb84-2"><a href="ggplot2-plot.html#cb84-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder,</span>
+<span id="cb84-3"><a href="ggplot2-plot.html#cb84-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb84-4"><a href="ggplot2-plot.html#cb84-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb84-5"><a href="ggplot2-plot.html#cb84-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> lifeExp))</span>
+<span id="cb84-6"><a href="ggplot2-plot.html#cb84-6" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span> </span>
+<span id="cb84-7"><a href="ggplot2-plot.html#cb84-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb84-8"><a href="ggplot2-plot.html#cb84-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;各国各年度人均GDP与期望寿命的关系&quot;</span>,</span>
+<span id="cb84-9"><a href="ggplot2-plot.html#cb84-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;1952-2007&quot;</span>,</span>
+<span id="cb84-10"><a href="ggplot2-plot.html#cb84-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">tag =</span> <span class="st">&quot;散点图&quot;</span>,</span>
+<span id="cb84-11"><a href="ggplot2-plot.html#cb84-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;数据来源：gapminder&quot;</span>,</span>
+<span id="cb84-12"><a href="ggplot2-plot.html#cb84-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;人均GDP(单位：美元)&quot;</span>,</span>
+<span id="cb84-13"><a href="ggplot2-plot.html#cb84-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;期望寿命&quot;</span></span>
+<span id="cb84-14"><a href="ggplot2-plot.html#cb84-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="ggplot2-plot.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">#iris案例</span></span>
 <span id="cb85-2"><a href="ggplot2-plot.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span>  <span class="co"># 底层画布</span></span>
@@ -745,18 +772,27 @@ brewer).</p>
 <p><code>labs()</code>只是提供了这些标题功能，一般并不会同时使用这些功能。
 在出版图书内，图形下方一般伴随有图形说明，这时一般就不再使用标题、副标题、标签、标注，而只需写在图的伴随说明文字中，当然，坐标轴标签一般还是需要的。</p>
 </div>
-<div id="标注功能" class="section level3" number="4.9.2">
-<h3><span class="header-section-number">4.9.2</span> 标注功能</h3>
+<div id="标注功能" class="section level3 hasAnchor" number="4.9.2">
+<h3><span class="header-section-number">4.9.2</span> 标注功能<a href="ggplot2-plot.html#标注功能" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>通过<code>annotate(geom = "text")</code>调用<code>geom_text()</code>的功能，
 可以在一个散点图中标注多行文字，多行之间用<code>"\n"</code>分开：</p>
 <p>在<code>annotate()</code>中选<code>geom="rect"</code>，给出长方形的左右和上限界限，
 可以将上面图形中最右侧偏低的点用长方形填充标出。
 可以在<code>annotate()</code>中选<code>geom="line"</code>画线，需要给出线的起点和终点坐标，可以<code>arrow</code>选项要求画箭头，用<code>arrow()</code>函数给出箭头的大小、角度等设置，
 如：</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ggplot2-plot.html#cb86-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;gam&quot;</span>) <span class="sc">+</span> <span class="fu">scale_x_log10</span>() <span class="sc">+</span> <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;rect&quot;</span>, </span>
-<span id="cb86-2"><a href="ggplot2-plot.html#cb86-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="dv">55000</span>, <span class="at">xmax =</span> <span class="dv">120000</span>, <span class="at">ymin =</span> <span class="dv">54</span>, <span class="at">ymax =</span> <span class="dv">71</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
-<span id="cb86-3"><a href="ggplot2-plot.html#cb86-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">59000</span>, <span class="dv">31600</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">53</span>, <span class="dv">40</span>), <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle =</span> <span class="dv">20</span>, </span>
-<span id="cb86-4"><a href="ggplot2-plot.html#cb86-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&quot;mm&quot;</span>))) <span class="sc">+</span> <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="dv">31600</span>, <span class="at">y =</span> <span class="dv">38</span>, <span class="at">label =</span> <span class="st">&quot;这些国家的期望寿命低于预期&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="ggplot2-plot.html#cb86-1" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb86-2"><a href="ggplot2-plot.html#cb86-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">&quot;gam&quot;</span>) <span class="sc">+</span></span>
+<span id="cb86-3"><a href="ggplot2-plot.html#cb86-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb86-4"><a href="ggplot2-plot.html#cb86-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;rect&quot;</span>, </span>
+<span id="cb86-5"><a href="ggplot2-plot.html#cb86-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">xmin =</span> <span class="fl">5.5E4</span>, <span class="at">xmax =</span> <span class="fl">1.2E5</span>,</span>
+<span id="cb86-6"><a href="ggplot2-plot.html#cb86-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="dv">54</span>, <span class="at">ymax =</span> <span class="dv">71</span>,<span class="at">col =</span> <span class="st">&#39;red&#39;</span>,<span class="at">fill =</span> <span class="st">&#39;red&#39;</span>,<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb86-7"><a href="ggplot2-plot.html#cb86-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;line&quot;</span>,</span>
+<span id="cb86-8"><a href="ggplot2-plot.html#cb86-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">5.9E4</span>, <span class="fl">3.16E4</span>),</span>
+<span id="cb86-9"><a href="ggplot2-plot.html#cb86-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">53</span>,  <span class="dv">40</span>),</span>
+<span id="cb86-10"><a href="ggplot2-plot.html#cb86-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">angle =</span> <span class="dv">20</span>, <span class="at">length =</span> <span class="fu">unit</span>(<span class="dv">4</span>, <span class="st">&quot;mm&quot;</span>))) <span class="sc">+</span></span>
+<span id="cb86-11"><a href="ggplot2-plot.html#cb86-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;text&quot;</span>,</span>
+<span id="cb86-12"><a href="ggplot2-plot.html#cb86-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> <span class="fl">3.16E4</span>, <span class="at">y =</span> <span class="dv">38</span>,</span>
+<span id="cb86-13"><a href="ggplot2-plot.html#cb86-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">&quot;这些国家的期望寿命低于预期&quot;</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="ggplot2-plot.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co">#iris例子 + annotate，hline，abline</span></span>
 <span id="cb87-2"><a href="ggplot2-plot.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span>  <span class="co"># 底层画布</span></span>
@@ -766,8 +802,8 @@ brewer).</p>
 <p>可以用<code>geom_hline()</code>、<code>geom_vline()</code>和<code>geom_abline()</code>画横线、竖线、斜线。
 ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函数指定参考线画法。</p>
 </div>
-<div id="指南" class="section level3" number="4.9.3">
-<h3><span class="header-section-number">4.9.3</span> 指南</h3>
+<div id="指南" class="section level3 hasAnchor" number="4.9.3">
+<h3><span class="header-section-number">4.9.3</span> 指南<a href="ggplot2-plot.html#指南" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>对于颜色、填充色等维度，
 会自动生成图例。用<code>guides(color = FALSE)</code>这样的方法可以取消指定维度的图例。</p>
 <p><code>theme()</code>可以调整一些整体的设置，如背景色、字体、图例的摆放位置。</p>
@@ -781,33 +817,34 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
 <span id="cb88-5"><a href="ggplot2-plot.html#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&#39;left&#39;</span>,<span class="at">panel.background =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span><span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="主题" class="section level3" number="4.9.4">
-<h3><span class="header-section-number">4.9.4</span> 主题</h3>
+<div id="主题" class="section level3 hasAnchor" number="4.9.4">
+<h3><span class="header-section-number">4.9.4</span> 主题<a href="ggplot2-plot.html#主题" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>ggplot2包作图可以实现内容与设计的分离，这里内容就是指数据、映射、统计、图形类型等方面，而设计就是指背景色、颜色表、字体、坐标轴做法、图例位置等的安排。将作图任务分解为内容与设计两个方面，可以让数据科学家不必关心设计有关的元素，而设计可以让专门的艺术设计人才来处理。这种工作分配已经在图书出版、网站、游戏开发等行业发挥了重要作用。</p>
 <p>theme()函数用来指定设计元素，称为主题(theme)，而且可以单独开发R扩展包来提供适当的主题。<strong>ggthemes扩展包</strong>是一个这样的包。</p>
 <p><code>theme_set()</code>可以改变后续ggplot2作图的主题（配色、字体等）。如<code>theme_set(theme_bw()),theme_set(theme_dark())</code>等。
 对单次绘图，可以直接用加号连接<code>theme_gray()</code>等这些主题函数。
 主题包括<code>theme_gray()（默认主题）、theme_minimal()、theme_classic()</code>等。</p>
 <p><code>theme()</code>函数还可以直接指定颜色、字体、大小等设置。</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="ggplot2-plot.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iris 例子</span></span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="ggplot2-plot.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co">#iris 例子</span></span></code></pre></div>
 </div>
 </div>
-<div id="保存图片" class="section level2" number="4.10">
-<h2><span class="header-section-number">4.10</span> 保存图片</h2>
+<div id="保存图片" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> 保存图片<a href="ggplot2-plot.html#保存图片" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>ggplot2包中提供ggsave函数进行图形保存。ggsave函数的使用格式如下所示。</p>
 <p><code>ggsave(filename,width,height,...)</code></p>
 <p>其中，filename为保存的文件名与路径，width指图像宽度，height指图像高度。</p>
 <p><strong>示例：</strong>运行下列代码将会在当前工作目录下生成一个名为mygraph的pdf图形。</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="ggplot2-plot.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="ggplot2-plot.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">colour =</span> Species))<span class="sc">+</span></span>
+<span id="cb90-2"><a href="ggplot2-plot.html#cb90-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="ggplot2-plot.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">file =</span> <span class="st">&quot;mygraph1.png&quot;</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">8</span>)</span></code></pre></div>
 <p>或者可以使用Rstudio界面进行保存图片，具体教程课件（R语言可视化基础教程）</p>
 </div>
-<div id="例子" class="section level2" number="4.11">
-<h2><span class="header-section-number">4.11</span> 例子</h2>
+<div id="例子" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> 例子<a href="ggplot2-plot.html#例子" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>该部分来源于：公众号[小明的数据分析笔记本]。大家可以通过以下例子对今天所学的知识进行回顾。</p>
-<div id="柱状图误差项" class="section level3" number="4.11.1">
-<h3><span class="header-section-number">4.11.1</span> 柱状图+误差项</h3>
+<div id="柱状图误差项" class="section level3 hasAnchor" number="4.11.1">
+<h3><span class="header-section-number">4.11.1</span> 柱状图+误差项<a href="ggplot2-plot.html#柱状图误差项" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ggplot2-plot.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 小明推送笔记《小明的数据分析笔记本》</span></span>
 <span id="cb92-2"><a href="ggplot2-plot.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 跟着Nature microbiology学画图~R语言ggplot2画柱形图 </span></span>
 <span id="cb92-3"><a href="ggplot2-plot.html#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="co"># https://mp.weixin.qq.com/s/E-1X_VSq03AhvC_0cNEgyQ</span></span>
@@ -842,8 +879,8 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
 <span id="cb94-20"><a href="ggplot2-plot.html#cb94-20" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="有正值和负值的柱形图" class="section level3" number="4.11.2">
-<h3><span class="header-section-number">4.11.2</span> 有正值和负值的柱形图</h3>
+<div id="有正值和负值的柱形图" class="section level3 hasAnchor" number="4.11.2">
+<h3><span class="header-section-number">4.11.2</span> 有正值和负值的柱形图<a href="ggplot2-plot.html#有正值和负值的柱形图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="ggplot2-plot.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 有正值和负值的柱形图</span></span>
 <span id="cb95-2"><a href="ggplot2-plot.html#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-3"><a href="ggplot2-plot.html#cb95-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">28</span></span>
@@ -884,8 +921,8 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
 <span id="cb97-20"><a href="ggplot2-plot.html#cb97-20" aria-hidden="true" tabindex="-1"></a>p2  </span></code></pre></div>
 <p><img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="合并两图" class="section level3" number="4.11.3">
-<h3><span class="header-section-number">4.11.3</span> 合并两图</h3>
+<div id="合并两图" class="section level3 hasAnchor" number="4.11.3">
+<h3><span class="header-section-number">4.11.3</span> 合并两图<a href="ggplot2-plot.html#合并两图" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>合并两图或者多图可以使用以下包：</p>
 <ul>
 <li><code>cowplot</code>包的<code>plot_grid()</code></li>
@@ -896,8 +933,8 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
 <p>这里使用了cowplot包</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="ggplot2-plot.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 合并两图（使用cowplot包）</span></span>
 <span id="cb98-2"><a href="ggplot2-plot.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
-<span id="cb98-3"><a href="ggplot2-plot.html#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;test/plot_cow.pdf&quot;</span>, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
-<span id="cb98-4"><a href="ggplot2-plot.html#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>))</span>
+<span id="cb98-3"><a href="ggplot2-plot.html#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="st">&quot;test/plot_cow.pdf&quot;</span>,<span class="at">width =</span> <span class="dv">8</span>,<span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb98-4"><a href="ggplot2-plot.html#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1,p2,<span class="at">ncol =</span> <span class="dv">2</span>,<span class="at">nrow =</span> <span class="dv">1</span>,<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;d&quot;</span>,<span class="st">&quot;e&quot;</span>))</span>
 <span id="cb98-5"><a href="ggplot2-plot.html#cb98-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <pre><code>## quartz_off_screen 
 ##                 2</code></pre>
@@ -915,7 +952,6 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -934,6 +970,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -954,6 +991,10 @@ gitbook.start({
 "text": null
 },
 "download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

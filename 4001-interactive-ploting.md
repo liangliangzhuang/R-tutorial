@@ -22,7 +22,9 @@ htmlwidgets包，这是一个专为R语言打造的可视化JS库，只需要编
 
 ```r
 library(leaflet)
-leaflet() %>% addTiles() %>% addMarkers(lng = 174.768, lat = -36.852, popup = "ThebirthplaceofR")
+leaflet()%>%
+  addTiles()%>%
+  addMarkers(lng=174.768,lat=-36.852,popup="ThebirthplaceofR")
 ```
 
 ## dygraphs包
@@ -40,14 +42,15 @@ dygraph(lungDeaths)
 ```r
 library(plotly)
 pal <- RColorBrewer::brewer.pal(nlevels(iris$Species), "Set1")
-plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species, colors = pal, 
-    mode = "markers")
+plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, color = ~Species,
+        colors = pal, mode = "markers")
 ```
 
 
 ```r
-p <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, colour = Species)) + scale_color_brewer(palette = "Set1") + 
-    geom_point()
+p <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, colour = Species))+
+  scale_color_brewer(palette = "Set1")+
+  geom_point()
 ggplotly(p)
 ```
 
@@ -64,8 +67,8 @@ datatable(iris)
 
 ```r
 library(networkD3)
-src <- c("A", "A", "A", "A", "B", "B", "C", "C", "D")
-target <- c("B", "C", "D", "J", "E", "F", "G", "H", "I")
+src <- c("A","A","A","A","B","B","C","C","D")
+target <- c("B","C","D","J","E","F","G","H","I")
 networkData <- data.frame(src, target)
 simpleNetwork(networkData, zoom = T)
 ```
@@ -74,8 +77,9 @@ simpleNetwork(networkData, zoom = T)
 ```r
 data(MisLinks)
 data(MisNodes)
-forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source", Target = "target", 
-    Value = "value", NodeID = "name", Group = "group", opacity = 0.8)
+forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             Group = "group", opacity = 0.8)
 ```
 
 ## 利用Shiny包实现可交互的Web应用

@@ -26,28 +26,29 @@
 **例子**：我们使用模拟数据进行讲解，通过正态分布产生30个数据。
 
 ```r
-# 数据模拟产生
-x <- rnorm(30, mean = 10, sd = 1)
-print(round(x, 2))
+#数据模拟产生
+x <- rnorm(30, mean=10, sd=1)
+print(round(x,2))
 ```
 
 ```
-##  [1]  9.65  9.46  7.58  9.72  9.37  8.35  8.99  7.85 12.23 10.76  9.90  9.80
-## [13] 11.41  9.56 11.19  9.74 10.79  9.11 10.23 12.13  9.87  7.85  9.67  7.88
-## [25]  9.62 11.29 11.30 10.14 11.37  9.59
+##  [1] 10.50 10.64 11.25  9.90 10.75  9.39  9.34  9.26  8.93 11.27 12.51 10.36
+## [13]  7.89  9.95  9.66  9.59 10.73 10.51  9.56 10.46 10.58  9.21 10.07  9.74
+## [25]  9.11 10.57 10.81  9.28 10.23  9.34
 ```
 
 `hist()`中的`breaks()`可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子
 
 
 ```r
-hist(x, breaks = 3)
+hist(x,breaks = 3)
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-hist(x, col = rainbow(15), breaks = 3, main = "正态随机数", xlab = "", ylab = "频数")
+hist(x, col=rainbow(15),breaks = 3,
+     main='正态随机数', xlab='', ylab='频数')
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" />
@@ -59,9 +60,12 @@ hist(x, col = rainbow(15), breaks = 3, main = "正态随机数", xlab = "", ylab
 
 ```r
 tmp.dens <- density(x)
-hist(x, freq = FALSE, ylim = c(0, max(tmp.dens$y) + 0.1), col = rainbow(15), main = "正态随机数", 
-    xlab = "", ylab = "频率")
-lines(tmp.dens, lwd = 2, col = "blue")
+hist(x, freq=FALSE,
+     ylim=c(0,max(tmp.dens$y)+0.1),
+     col=rainbow(15),
+     main='正态随机数',
+     xlab='', ylab='频率')
+lines(tmp.dens, lwd=2, col='blue')
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
@@ -75,8 +79,8 @@ lines(tmp.dens, lwd = 2, col = "blue")
 
 ```r
 # 复现课件中的条形图
-gender = table(c(rep("F", 12), rep("M", 20)))
-barplot(gender, col = c("red", "green"), main = "性别分布", horiz = T)
+gender = table(c(rep("F",12),rep("M",20)))
+barplot(gender,col = c("red","green"),main = "性别分布",horiz = T)
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
@@ -98,7 +102,7 @@ barplot(gender, col = c("red", "green"), main = "性别分布", horiz = T)
 
 
 ```r
-barplot(VADeaths)
+barplot(VADeaths)  
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
@@ -118,14 +122,14 @@ barplot(VADeaths, beside = TRUE)
 **例子**：
 
 ```r
-percent <- colSums(VADeaths) * 100/sum(VADeaths)
-pie(percent, labels = paste0(colnames(VADeaths), "\n", round(percent, 2), "%"))
+percent <- colSums(VADeaths)*100/sum(VADeaths)
+pie(percent,labels=paste0(colnames(VADeaths),'\n',round(percent,2),'%'))
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-pie(percent, radius = 0.8)  #init.angle
+pie(percent,radius=0.8) #init.angle
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" />
@@ -160,13 +164,13 @@ pie(percent, radius = 0.8)  #init.angle
 
 ```r
 attach(iris)
-boxplot(iris[1:4], main = "单独的箱线图")
+boxplot(iris[1:4], main = '单独的箱线图')
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-boxplot(Sepal.Length ~ Species, data = iris, main = "组间比较的箱线图")
+boxplot(Sepal.Length ~ Species, data = iris, main = '组间比较的箱线图')
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" />
@@ -191,13 +195,13 @@ boxplot(Sepal.Length ~ Species, data = iris, main = "组间比较的箱线图")
 **例子**：使用cars数据进行分析速度（speed）和刹车距离（dist）之间的关系
 
 ```r
-plot(cars[, 1], cars[, 2], xlab = "speed", ylab = "dist")
+plot(cars[, 1], cars[, 2],xlab = "speed",ylab = "dist")
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-# plot(cars) # 效果同上
+# plot(cars)  # 效果同上
 ```
 
 **结论：**随着汽车行驶速度的增加，刹车距离也在不断增加。
@@ -213,7 +217,7 @@ plot(cars[, 1], cars[, 2], xlab = "speed", ylab = "dist")
 
 
 ```r
-plot(iris[, 1:4])
+plot(iris[,1:4]) 
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
@@ -227,7 +231,7 @@ plot(iris[, 1:4])
 
 
 ```r
-pairs(iris[, 1:4])
+pairs(iris[,1:4])
 pairs(~Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)  # 效果同上
 ```
 
@@ -243,14 +247,15 @@ pairs(~Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data = iris)  # 
 
 
 ```r
-library(corrgram)
+library(corrgram) 
 corrgram(mtcars)
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-corrgram(mtcars, order = TRUE, upper.panel = panel.ellipse, main = "Correlogram of mtcars intercorrelations")
+corrgram(mtcars, order=TRUE, upper.panel=panel.ellipse, 
+         main="Correlogram of mtcars intercorrelations") 
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-14-2.png" width="672" style="display: block; margin: auto;" />
@@ -266,8 +271,8 @@ corrgram(mtcars, order = TRUE, upper.panel = panel.ellipse, main = "Correlogram 
 
 ```r
 # 相关图，主对角线上方绘制散点图，主对角线下方绘制饼图
-corrgram(mtcars, order = TRUE, upper.panel = panel.pts, lower.panel = panel.pie, 
-    main = "Correlogram of mtcars intercorrelations")
+corrgram(mtcars, order=TRUE, upper.panel=panel.pts, lower.panel=panel.pie, 
+         main="Correlogram of mtcars intercorrelations") 
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
@@ -275,8 +280,8 @@ corrgram(mtcars, order = TRUE, upper.panel = panel.pts, lower.panel = panel.pie,
 
 ```r
 # 相关图，主对角线上方绘制置信区间，主对角线下方绘制相关系数
-corrgram(mtcars, order = TRUE, upper.panel = panel.conf, lower.panel = panel.cor, 
-    main = "Correlogram of mtcars intercorrelations")
+corrgram(mtcars, order=TRUE, upper.panel=panel.conf, lower.panel=panel.cor,
+         main="Correlogram of mtcars intercorrelations") 
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
@@ -295,8 +300,8 @@ corrgram(mtcars, order = TRUE, upper.panel = panel.conf, lower.panel = panel.cor
 其中x是数值向量，group是分组向量，是因子型数据。
 
 ```r
-library(sm)  # 加载sm包
-sm.density.compare(mtcars$wt, factor(mtcars$cyl))  # 绘制核密度图
+library(sm)      # 加载sm包
+sm.density.compare(mtcars$wt, factor(mtcars$cyl))     # 绘制核密度图
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
@@ -313,17 +318,18 @@ sm.density.compare(mtcars$wt, factor(mtcars$cyl))  # 绘制核密度图
 
 
 ```r
-library(vioplot)  # 加载vioplot包
+library(vioplot)      # 加载vioplot包
 attach(mtcars)
-vioplot(wt[cyl == 4], wt[cyl == 6], wt[cyl == 8], border = "black", col = "gray60", 
-    rectCol = "blue", horizontal = TRUE, main = "小提琴图")  # 绘制小提琴图
+vioplot(wt[cyl==4], wt[cyl==6], wt[cyl==8],  border="black", 
+        col = "gray60", rectCol = "blue", horizontal = TRUE,
+        main = '小提琴图')  # 绘制小提琴图
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-boxplot(wt ~ cyl, main = "箱线图", horizontal = TRUE, pars = list(boxwex = 0.1), 
-    border = "blue")  # 绘制箱线图
+boxplot(wt~cyl, main = '箱线图', horizontal=TRUE,
+        pars=list(boxwex=0.1), border="blue")  # 绘制箱线图
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-18-2.png" width="672" style="display: block; margin: auto;" />
@@ -340,8 +346,8 @@ boxplot(wt ~ cyl, main = "箱线图", horizontal = TRUE, pars = list(boxwex = 0.
 
 
 ```r
-qqnorm(wt)  #正态分布QQ图
-qqline(wt)  #QQ线
+qqnorm(wt)     #正态分布QQ图
+qqline(wt)      #QQ线
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
@@ -358,8 +364,9 @@ qqline(wt)  #QQ线
 ```r
 library(KernSmooth)  # 计算二维核密度的包
 mtcars1 = data.frame(wt, mpg)
-est = bkde2D(mtcars1, apply(mtcars1, 2, dpik))  # 计算二维核密度
-contour(est$x1, est$x2, est$fhat, nlevels = 15, col = "darkgreen", xlab = "wt", ylab = "mpg")  # 画等高图
+est = bkde2D(mtcars1, apply(mtcars1, 2, dpik))     # 计算二维核密度
+contour(est$x1, est$x2, est$fhat, nlevels = 15, 
+        col = "darkgreen", xlab = "wt", ylab = "mpg")  # 画等高图
 points(mtcars1)  # 添加散点
 ```
 
@@ -380,7 +387,7 @@ R语言提供了自带的固定种类的颜色，主要涉及的是colors函数�
 
 
 ```r
-colors()[1:20]
+colors()[1:20] 
 ```
 
 ```
@@ -393,7 +400,7 @@ colors()[1:20]
 
 ```r
 # colors()
-plot(1:10, col = cm.colors(1))
+plot(1:10,col = cm.colors(1))
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
@@ -402,21 +409,21 @@ plot(1:10, col = cm.colors(1))
 
 
 ```r
-palette()  #返回当前的调色板设置，此时为默认值
+palette() #返回当前的调色板设置，此时为默认值
 ## [1] "black"   "#DF536B" "#61D04F" "#2297E6" "#28E2E5" "#CD0BBC" "#F5C710"
 ## [8] "gray62"
-palette(colors()[1:10])  #重新设置调色板为colors的前10种颜色
-palette()  #返回当前的调色板设置，此时为colors()的前10种颜色
+palette(colors()[1:10]) #重新设置调色板为colors的前10种颜色
+palette()               #返回当前的调色板设置，此时为colors()的前10种颜色
 ##  [1] "white"         "aliceblue"     "antiquewhite"  "antiquewhite1"
 ##  [5] "antiquewhite2" "antiquewhite3" "antiquewhite4" "aquamarine"   
 ##  [9] "aquamarine"    "aquamarine2"
-palette("default")  #恢复默认的调色板设置
+palette('default') #恢复默认的调色板设置
 ```
 
 **例子**：
 
 ```r
-plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species)
+plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species)  
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
@@ -452,12 +459,12 @@ RColorBrewer包提供了3套配色方案，分别为**连续型，极端型以�
 
 
 ```r
-par(mfrow = c(1, 3))
+par(mfrow = c(1,3))
 library(RColorBrewer)
-par(mar = c(0.1, 3, 0.1, 0.1))
-display.brewer.all(type = "seq")
-display.brewer.all(type = "div")
-display.brewer.all(type = "qual")
+par(mar=c(0.1,3,0.1,0.1))
+display.brewer.all(type="seq")
+display.brewer.all(type="div")
+display.brewer.all(type="qual")
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" />
@@ -465,9 +472,9 @@ display.brewer.all(type = "qual")
 
 ```r
 library(RColorBrewer)
-my_col <- brewer.pal(3, "RdYlGn")
+my_col <- brewer.pal(3, 'RdYlGn') 
 # brewer.pal(n,name),其中n为颜色的数量，name表示颜色组的名称
-plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(my_col, each = 50))
+plot(iris$Sepal.Length, iris$Sepal.Width, col = rep(my_col, each =50))
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
@@ -495,7 +502,7 @@ plot(iris$Sepal.Length, iris$Sepal.Width, pch = rep(1:3, each = 50))
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-# plot(1:10,pch=21,cex=1.5,col='red',bg = 'blue',lwd=5)
+# plot(1:10,pch=21,cex=1.5,col='red',bg = "blue",lwd=5)
 ```
 
 #### 线条样式
@@ -515,25 +522,25 @@ R语言提供了绘制不同类别的线条的多种函数，主要有
 
 ```r
 attach(mtcars)
-smpg = (mpg - min(mpg))/(max(mpg) - min(mpg))
-plot(wt, smpg, ylab = "standardized mpg")
-# 添加核密度曲线图
-lines(density(wt), col = "red")
-# 指向密度曲线的箭头
-arrows(1.8, 0.05, 1.5, 0.1)
-text(2, 0.05, "density curve", cex = 0.6)
-# 添加回归线
-abline(lm(smpg ~ wt), lty = 2, col = "green")
-# 指向回归直线的箭头
-arrows(2, 0.5, 2, 0.7, angle = 10, cex = 0.5)
-text(2, 0.45, "regression line", cex = 0.6)
-# wt与mpg反向线性相关，添加最大最小值线段表现这种关系
-segments(min(wt), max(smpg), max(wt), min(smpg), lty = 3, col = "blue")
-# 指向最大最小值线段的箭头
-arrows(3, 0.8, 2.5, 0.76, angle = 10, cex = 0.5)
-text(3.3, 0.8, "line segments", cex = 0.6)
-# 添加网格线作为背景
-grid(nx = 4, ny = 5, lty = 2, col = "grey")
+smpg=(mpg-min(mpg))/(max(mpg)-min(mpg))
+plot(wt,smpg,ylab="standardized mpg")
+#添加核密度曲线图
+lines(density(wt),col="red")
+#指向密度曲线的箭头
+arrows(1.8,0.05,1.5,0.1)
+text(2,0.05,"density curve",cex=0.6)
+#添加回归线
+abline(lm(smpg~wt),lty=2,col="green")
+#指向回归直线的箭头
+arrows(2,0.5,2,0.7,angle=10,cex=0.5)
+text(2,0.45,"regression line",cex=0.6)
+#wt与mpg反向线性相关，添加最大最小值线段表现这种关系
+segments(min(wt),max(smpg),max(wt),min(smpg),lty=3,col="blue")
+#指向最大最小值线段的箭头
+arrows(3,0.8,2.5,0.76,angle=10,cex=0.5)
+text(3.3,0.8,"line segments",cex=0.6)
+#添加网格线作为背景
+grid(nx=4,ny=5,lty=2,col="grey")
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" />
@@ -551,28 +558,28 @@ title、text和mtext函数可以在打开的画布上添加文字元素。
 ```r
 par(mfrow = c(2, 2))
 # 图一：图形添加标题
-plot(c(0:5), col = "red", xlab = "", ylab = "")
-title(main = list("主标题", cex = 1.5), sub = list("副标题", cex = 1.2), xlab = "x轴标题", 
-    ylab = "y轴标题")
+plot(c(0:5),col="red",xlab="",ylab="")
+title(main=list("主标题",cex=1.5),sub=list("副标题",cex=1.2), 
+      xlab="x轴标题",ylab="y轴标题")
 # 图二：图形周边添加文本
-plot(c(0:5), col = "white")
-mtext("side=1:下边", side = 1, line = 2)
-mtext("side=2:左边", side = 2, line = 2)
-mtext("side=3:上边", side = 3)
-mtext("side=4:右边", side = 4)
+plot(c(0:5),col="white")
+mtext('side=1:下边',side=1,line=2)
+mtext('side=2:左边' ,side=2,line=2)
+mtext('side=3:上边' ,side=3)
+mtext('side=4:右边' ,side=4)
 # 图三：字体展示
-plot(c(0:5), col = "white")
-text(2, 4, labels = "font=1:正常字体（默认）", font = 1)
-text(3, 3, labels = "font=2:粗体字体", font = 2)
-text(4, 2, labels = "font=3:斜体字体", font = 3)
-text(5, 1, labels = "font=4:粗斜体字体", font = 4)
+plot(c(0:5),col="white")
+text(2,4,labels="font=1:正常字体（默认）",font=1)
+text(3,3,labels="font=2:粗体字体",font=2)
+text(4,2,labels="font=3:斜体字体",font=3)
+text(5,1,labels="font=4:粗斜体字体",font=4)
 # 图四：字体大小展示
-plot(c(0:6), col = "white", xlim = c(1, 8))
-text(2, 5, labels = "cex=0.5:放大0.5倍", cex = 0.5)
-text(3, 4, labels = "cex=0.8:放大0.8倍", cex = 0.8)
-text(4, 3, labels = "cex=1(默认):正常大小", cex = 1)
-text(5, 2, labels = "cex=1.2:放大1.2倍", cex = 1.2)
-text(6, 1, labels = "cex=1.5:放大1.5倍", cex = 1.5)
+plot(c(0:6),col="white",xlim=c(1,8))
+text(2,5,labels="cex=0.5:放大0.5倍",cex=0.5)
+text(3,4,labels="cex=0.8:放大0.8倍",cex=0.8)
+text(4,3,labels="cex=1(默认):正常大小",cex=1)
+text(5,2,labels="cex=1.2:放大1.2倍",cex=1.2)
+text(6,1,labels="cex=1.5:放大1.5倍",cex=1.5)
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" />
@@ -582,10 +589,11 @@ text(6, 1, labels = "cex=1.5:放大1.5倍", cex = 1.5)
 
 ```r
 attach(mtcars)
-plot(wt, mpg, xlab = "Weight (1000 lbs)", ylab = "Miles/(US) gallon")  #绘图，并修改x，y轴的标题
-title(main = list("mtcars wt V.S. mpg", cex = 1.5))  # 添加标题
-text(4.5, 34, labels = "extracted from the 1974", cex = 1.5)  # 说明数据来源
-text(4.5, 32, labels = "Motor Trend US", font = 3)  # 杂志名称
+plot(wt, mpg, xlab = "Weight (1000 lbs)", 
+     ylab = "Miles/(US) gallon") #绘图，并修改x，y轴的标题
+title(main=list("mtcars wt V.S. mpg", cex=1.5))  # 添加标题
+text(4.5, 34, labels = 'extracted from the 1974', cex = 1.5)  # 说明数据来源
+text(4.5, 32, labels = 'Motor Trend US', font = 3)  # 杂志名称
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" />
@@ -599,13 +607,13 @@ text(4.5, 32, labels = "Motor Trend US", font = 3)  # 杂志名称
 
 
 ```r
-plot(c(1:12), col = "white", xaxt = "n", yaxt = "n", ann = FALSE)
-axis(1, at = 1:12, col.axis = "red", labels = month.abb)
-axis(2, at = seq(1, 12, length = 10), col.axis = "red", labels = 1:10, las = 2)
-axis(3, at = seq(1, 12, length = 7), col.axis = "blue", cex.axis = 0.7, tck = -0.01, 
-    labels = c("Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"))
-axis(4, at = seq(1, 12, length = 11), col.axis = "blue", cex.axis = 0.7, tck = -0.01, 
-    labels = seq(0, 1, 0.1), las = 2)
+plot(c(1:12), col="white", xaxt="n", yaxt="n", ann = FALSE)
+axis(1, at=1:12, col.axis="red", labels=month.abb)
+axis(2, at=seq(1,12,length=10), col.axis="red", labels=1:10, las=2)
+axis(3, at=seq(1,12,length=7), col.axis="blue", cex.axis=0.7, 
+     tck=-0.01, labels = c("Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun")) 
+axis(4, at=seq(1,12,length=11), col.axis="blue", cex.axis=0.7, 
+     tck=-0.01, labels=seq(0, 1, 0.1), las=2)
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" />
@@ -616,13 +624,13 @@ axis(4, at = seq(1, 12, length = 11), col.axis = "blue", cex.axis = 0.7, tck = -
 legend函数的绘制图例的位置效果
 
 ```r
-local = c("bottomright", "bottom", "bottomleft", "left", "topleft", "top", "topright", 
-    "right", "center")
-par(mar = c(4, 2, 4, 2), pty = "m")
+local=c("bottomright", "bottom", "bottomleft", "left", "topleft",
+        "top", "topright", "right", "center")
+par(mar = c(4,2,4,2), pty='m')
 plot(c(0:10), col = "white")
 legend(3, 8, "图例在(3,8)")
-for (i in 1:9) {
-    legend(local[i], paste("图例在", local[i]))
+for(i in 1:9){
+  legend(local[i], paste("图例在", local[i]))
 }
 ```
 
@@ -631,13 +639,15 @@ for (i in 1:9) {
 **综合测试**：
 
 ```r
-plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species, main = list("鸢尾花的花萼长与宽的散点图", 
-    cex = 1.5), xlab = "花萼长度", ylab = "花萼宽度", pch = 19)
-grid(nx = 5, ny = 5, lty = 2, col = "grey")  # 添加网格线
-legend(7, 4.5, c("setosa", "versicolor", "virginica"), pch = 19, col = 1:3)  # 添加图例
-lines(c(4.3, 6.5), c(2, 4.5), col = "blue")  # 添加直线
-arrows(6, 4, 6.5, 4, angle = 10, cex = 0.5)  # 添加箭头
-text(6.9, 4, "左上角全是setosa", cex = 0.8)  # 添加文字说明
+plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species, 
+     main = list('鸢尾花的花萼长与宽的散点图', cex = 1.5), 
+     xlab="花萼长度", ylab="花萼宽度",pch=19)
+grid(nx=5, ny=5, lty=2, col="grey")  # 添加网格线
+legend(7,4.5, c('setosa', 'versicolor', 'virginica'),
+       pch=19, col = 1:3)  # 添加图例
+lines(c(4.3, 6.5), c(2, 4.5), col ='blue')  # 添加直线
+arrows(6, 4 , 6.5 ,4, angle=10, cex=0.5)  # 添加箭头
+text(6.9, 4, "左上角全是setosa", cex=0.8)  # 添加文字说明
 ```
 
 <img src="1001-base-ploting_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" />
@@ -649,9 +659,9 @@ text(6.9, 4, "左上角全是setosa", cex = 0.8)  # 添加文字说明
 一页多图用mfrow参数或mfcol参数规定。  
 
 ```r
-mfrow1 = par(mfrow = c(2, 3))  #mar=c(2,2,2,2)
-for (i in 1:6) {
-    plot(c(1:i), main = paste("I'm image:", i))
+mfrow1=par(mfrow=c(2,3)) #mar=c(2,2,2,2)
+for(i in 1:6){
+  plot(c(1:i),main=paste("I'm image:",i))
 }
 ```
 
@@ -660,8 +670,8 @@ for (i in 1:6) {
 ```r
 par(mfrow1)
 
-op = par(mfrow = c(2, 2))
-plot(1:10, pch = 12)
+op = par(mfrow=c(2,2))
+plot(1:10,pch=12)
 hist(1:10)
 boxplot(1:10)
 pie(1:10)
@@ -678,10 +688,10 @@ par(op)
 与par函数均分画布不同，layout函数可以不均等的分隔页面
 
 ```r
-mat <- matrix(c(1, 1, 1, 2, 3, 3, 4, 4, 5, 5, 5, 6), nrow = 2, byrow = TRUE)
+mat<-matrix(c(1,1,1,2,3,3,4,4,5,5,5,6), nrow = 2, byrow = TRUE)
 layout(mat)
-for (i in 1:6) {
-    plot(c(1:i), main = paste("I'm image:", i))
+for(i in 1:6){
+  plot(c(1:i),main=paste("I'm image:",i))
 }
 ```
 

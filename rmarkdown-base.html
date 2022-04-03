@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 R Markdown 入门教程 | 庄闪闪的可视化手册</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 R Markdown 入门教程 | 庄闪闪的可视化手册" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -30,10 +29,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="some-tips.html"/>
+<link rel="prev" href="some-tips-j.html"/>
 <link rel="next" href="rmarkdown-extended.html"/>
-<script src="libs/header-attrs-2.7.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +48,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -129,6 +130,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -141,163 +143,163 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
-<li class="part"><span><b>I R 语言基础</b></span></li>
-<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列</a></li>
-<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列</a></li>
-<li class="part"><span><b>II R 语言可视化</b></span></li>
-<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图</a>
+<li><a href="index.html#简介">简介<span></span></a></li>
+<li class="part"><span><b>I R 语言基础<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列<span></span></a></li>
+<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列<span></span></a></li>
+<li class="part"><span><b>II R 语言可视化<span></span></b></span></li>
+<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形</a>
+<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系</a></li>
-<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系</a></li>
-<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形</a></li>
+<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数</a>
+<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数<span></span></a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色</a></li>
-<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条</a></li>
+<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形</a>
+<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()</a></li>
-<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout</a></li>
+<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形</a>
+<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形<span></span></a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码</a></li>
-<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介</a></li>
-<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot</a></li>
-<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法</a></li>
-<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍</a></li>
-<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换</a></li>
-<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale</a>
-<ul>
-<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系</a></li>
-</ul></li>
-<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系</a></li>
-<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面</a></li>
-<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接</a>
-<ul>
-<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题</a></li>
-<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能</a></li>
-<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南</a></li>
-<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题</a></li>
-</ul></li>
-<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片</a></li>
-<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子</a>
-<ul>
-<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项</a></li>
-<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图</a></li>
-<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图</a></li>
+<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>5</b> 其他相关拓展包</a>
+<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图<span></span></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>5.1</b> ggplot2 官网 109 种拓展包</a></li>
-<li class="chapter" data-level="5.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>5.2</b> 整理的相关扩展包</a></li>
+<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍<span></span></a></li>
+<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>6</b> 认识交互式绘图工具</a>
+<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>6.1</b> leaflet包</a></li>
-<li class="chapter" data-level="6.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>6.2</b> dygraphs包</a></li>
-<li class="chapter" data-level="6.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>6.3</b> plotly包</a></li>
-<li class="chapter" data-level="6.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>6.4</b> DT包</a></li>
-<li class="chapter" data-level="6.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>6.5</b> networkD3包</a></li>
-<li class="chapter" data-level="6.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>6.6</b> 利用Shiny包实现可交互的Web应用</a></li>
+<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="some-tips.html"><a href="some-tips.html"><i class="fa fa-check"></i><b>7</b> 常用案例</a>
+<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale<span></span></a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="some-tips.html"><a href="some-tips.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>7.1</b> 绘制不同分布的 QQ 图</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="some-tips.html"><a href="some-tips.html#简单版本"><i class="fa fa-check"></i><b>7.1.1</b> 简单版本</a></li>
-<li class="chapter" data-level="7.1.2" data-path="some-tips.html"><a href="some-tips.html#进阶版本"><i class="fa fa-check"></i><b>7.1.2</b> 进阶版本</a></li>
+<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="some-tips.html"><a href="some-tips.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>7.2</b> 绘制混合密度函数图以及添加分位数线</a>
+<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系<span></span></a></li>
+<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面<span></span></a></li>
+<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接<span></span></a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="some-tips.html"><a href="some-tips.html#加载包"><i class="fa fa-check"></i><b>7.2.1</b> 加载包</a></li>
-<li class="chapter" data-level="7.2.2" data-path="some-tips.html"><a href="some-tips.html#产生数据集"><i class="fa fa-check"></i><b>7.2.2</b> 产生数据集</a></li>
-<li class="chapter" data-level="7.2.3" data-path="some-tips.html"><a href="some-tips.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>7.2.3</b> 绘制密度函数图并添加分位数线</a></li>
-<li class="chapter" data-level="7.2.4" data-path="some-tips.html"><a href="some-tips.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>7.2.4</b> 合并两图（使用cowplot包）</a></li>
+<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题<span></span></a></li>
+<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能<span></span></a></li>
+<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南<span></span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="some-tips.html"><a href="some-tips.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数</a>
+<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片<span></span></a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子<span></span></a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="some-tips.html"><a href="some-tips.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="some-tips.html"><a href="some-tips.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数</a></li>
-</ul></li>
-<li class="part"><span><b>III R 语言文档沟通</b></span></li>
-<li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>8.1</b> Rmarkdown 简介</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>8.1.1</b> 官网视频介绍</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>8.2</b> Rmarkdown 流程演示</a>
-<ul>
-<li class="chapter" data-level="8.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装</a></li>
-<li class="chapter" data-level="8.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>8.2.2</b> Rstudio界面介绍</a></li>
-<li class="chapter" data-level="8.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>8.2.3</b> 代码输出</a></li>
-<li class="chapter" data-level="8.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>8.2.4</b> 表格输出</a></li>
-<li class="chapter" data-level="8.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>8.2.5</b> 表格渲染</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>8.3</b> Rmarkdown 的主题格式</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>8.3.1</b> rmdformats 包</a></li>
-<li class="chapter" data-level="8.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>8.3.2</b> tufte 包</a></li>
-<li class="chapter" data-level="8.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>8.3.3</b> cerulean 包</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>8.4</b> 总结一些常用技巧</a>
-<ul>
-<li class="chapter" data-level="8.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>8.4.1</b> 修改某些字体颜色</a></li>
-<li class="chapter" data-level="8.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>8.4.2</b> 更改全文页边距等</a></li>
-<li class="chapter" data-level="8.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>8.4.3</b> 缩进文本</a></li>
-<li class="chapter" data-level="8.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>8.4.4</b> 分页</a></li>
-<li class="chapter" data-level="8.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>8.4.5</b> 控制文本输出的宽度</a></li>
-<li class="chapter" data-level="8.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>8.4.6</b> 控制图片输出大小</a></li>
-<li class="chapter" data-level="8.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>8.4.7</b> 图片对齐</a></li>
-<li class="chapter" data-level="8.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>8.4.8</b> 多列输出</a></li>
+<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项<span></span></a></li>
+<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图<span></span></a></li>
+<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>9</b> 其他方式的文档沟通</a>
+<li class="chapter" data-level="5" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>5</b> 其他相关拓展包<span></span></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>9.1</b> Typora</a></li>
-<li class="chapter" data-level="9.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>9.2</b> xaringan 幻灯片</a></li>
-<li class="chapter" data-level="9.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>9.3</b> 制作幻灯片</a></li>
-<li class="chapter" data-level="9.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>9.4</b> Rbeamer</a></li>
-<li class="chapter" data-level="9.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>9.5</b> Dashboards</a></li>
-<li class="chapter" data-level="9.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>9.6</b> shiny</a></li>
-<li class="chapter" data-level="9.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>9.7</b> blogdown</a></li>
-<li class="chapter" data-level="9.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>9.8</b> 制作简历</a></li>
-<li class="chapter" data-level="9.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>9.9</b> bookdown</a></li>
-<li class="chapter" data-level="9.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>9.10</b> 小编有话说</a></li>
+<li class="chapter" data-level="5.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>5.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>5.2</b> 整理的相关扩展包<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> 附录</a>
+<li class="chapter" data-level="6" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>6</b> 认识交互式绘图工具<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装r和rstudio"><i class="fa fa-check"></i>安装R和Rstudio</a>
+<li class="chapter" data-level="6.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>6.1</b> leaflet包<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>6.2</b> dygraphs包<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>6.3</b> plotly包<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>6.4</b> DT包<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>6.5</b> networkD3包<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>6.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="some-tips-j.html"><a href="some-tips-j.html"><i class="fa fa-check"></i><b>7</b> 常用案例<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装-r"><i class="fa fa-check"></i>安装 R</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装rstudio"><i class="fa fa-check"></i>安装RStudio</a></li>
+<li class="chapter" data-level="7.1" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>7.1</b> 绘制不同分布的 QQ 图<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="some-tips-j.html"><a href="some-tips-j.html#简单版本"><i class="fa fa-check"></i><b>7.1.1</b> 简单版本<span></span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="some-tips-j.html"><a href="some-tips-j.html#进阶版本"><i class="fa fa-check"></i><b>7.1.2</b> 进阶版本<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#可能的问题"><i class="fa fa-check"></i>可能的问题</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#如何获取帮助"><i class="fa fa-check"></i>如何获取帮助</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#r-语言社区"><i class="fa fa-check"></i>R 语言社区</a></li>
+<li class="chapter" data-level="7.2" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>7.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="some-tips-j.html"><a href="some-tips-j.html#加载包"><i class="fa fa-check"></i><b>7.2.1</b> 加载包<span></span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="some-tips-j.html"><a href="some-tips-j.html#产生数据集"><i class="fa fa-check"></i><b>7.2.2</b> 产生数据集<span></span></a></li>
+<li class="chapter" data-level="7.2.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>7.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
+<li class="chapter" data-level="7.2.4" data-path="some-tips-j.html"><a href="some-tips-j.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>7.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>11</b> 参考书籍</a></li>
+<li class="chapter" data-level="7.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数<span></span></a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="some-tips-j.html"><a href="some-tips-j.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="some-tips-j.html"><a href="some-tips-j.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
+</ul></li>
+<li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
+<li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>8.1</b> Rmarkdown 简介<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>8.1.1</b> 官网视频介绍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>8.2</b> Rmarkdown 流程演示<span></span></a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装<span></span></a></li>
+<li class="chapter" data-level="8.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>8.2.2</b> Rstudio界面介绍<span></span></a></li>
+<li class="chapter" data-level="8.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>8.2.3</b> 代码输出<span></span></a></li>
+<li class="chapter" data-level="8.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>8.2.4</b> 表格输出<span></span></a></li>
+<li class="chapter" data-level="8.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>8.2.5</b> 表格渲染<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>8.3</b> Rmarkdown 的主题格式<span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>8.3.1</b> rmdformats 包<span></span></a></li>
+<li class="chapter" data-level="8.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>8.3.2</b> tufte 包<span></span></a></li>
+<li class="chapter" data-level="8.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>8.3.3</b> cerulean 包<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>8.4</b> 总结一些常用技巧<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>8.4.1</b> 修改某些字体颜色<span></span></a></li>
+<li class="chapter" data-level="8.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>8.4.2</b> 更改全文页边距等<span></span></a></li>
+<li class="chapter" data-level="8.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>8.4.3</b> 缩进文本<span></span></a></li>
+<li class="chapter" data-level="8.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>8.4.4</b> 分页<span></span></a></li>
+<li class="chapter" data-level="8.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>8.4.5</b> 控制文本输出的宽度<span></span></a></li>
+<li class="chapter" data-level="8.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>8.4.6</b> 控制图片输出大小<span></span></a></li>
+<li class="chapter" data-level="8.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>8.4.7</b> 图片对齐<span></span></a></li>
+<li class="chapter" data-level="8.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>8.4.8</b> 多列输出<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>9</b> 其他方式的文档沟通<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>9.1</b> Typora<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>9.2</b> xaringan 幻灯片<span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>9.3</b> 制作幻灯片<span></span></a></li>
+<li class="chapter" data-level="9.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>9.4</b> Rbeamer<span></span></a></li>
+<li class="chapter" data-level="9.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>9.5</b> Dashboards<span></span></a></li>
+<li class="chapter" data-level="9.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>9.6</b> shiny<span></span></a></li>
+<li class="chapter" data-level="9.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>9.7</b> blogdown<span></span></a></li>
+<li class="chapter" data-level="9.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>9.8</b> 制作简历<span></span></a></li>
+<li class="chapter" data-level="9.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>9.9</b> bookdown<span></span></a></li>
+<li class="chapter" data-level="9.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>9.10</b> 小编有话说<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> 附录<span></span></a>
+<ul>
+<li><a href="appendix.html#安装r和rstudio">安装R和Rstudio<span></span></a>
+<ul>
+<li><a href="appendix.html#安装-r">安装 R<span></span></a></li>
+<li><a href="appendix.html#安装rstudio">安装RStudio<span></span></a></li>
+</ul></li>
+<li><a href="appendix.html#可能的问题">可能的问题<span></span></a></li>
+<li><a href="appendix.html#如何获取帮助">如何获取帮助<span></span></a></li>
+<li><a href="appendix.html#r-语言社区">R 语言社区<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>11</b> 参考书籍<span></span></a></li>
 </ul>
 
       </nav>
@@ -315,17 +317,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="rmarkdown-base" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> R Markdown 入门教程</h1>
-<div id="rmarkdown-简介" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Rmarkdown 简介</h2>
+<div id="rmarkdown-base" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> R Markdown 入门教程<a href="rmarkdown-base.html#rmarkdown-base" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rmarkdown-简介" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Rmarkdown 简介<a href="rmarkdown-base.html#rmarkdown-简介" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Rmarkdown 是 R 语言环境中提供的 markdown 编辑工具，运用 rmarkdown 撰写文章，既可以像一般的 markdown 编辑器一样编辑文本，也可以在 rmarkdown 中插入代码块，并将代码运行结果输出在 markdown 里。R Markdown 格式，简称为 Rmd 格式， 相应的源文件扩展名为 .Rmd。输出格式可以是 HTML、docx、pdf、beamer 等。</p>
 <blockquote>
 <p>介绍参考：李东风老师的<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html" title="《R 语言教程》">《R 语言教程》</a>。
 对于专注于用 R 语言写报告的数据分析师来说，rmarkdown 既提高了数据分析工作的便捷性，也提高了数据分析报告的复用性。 markdown 的教程以及对应的编辑器介绍可见：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491318&amp;idx=1&amp;sn=47128737582a34677926a9f64f03e4ed&amp;chksm=ea24e112dd53680478ac90151554ebdde72ab122fcc84bae4da6e87e9c97b020275ecabc846c&amp;scene=21#wechat_redirect">R沟通｜markdown编辑器—Typora</a>。</p>
 </blockquote>
-<div id="官网视频介绍" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> 官网视频介绍</h3>
+<div id="官网视频介绍" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> 官网视频介绍<a href="rmarkdown-base.html#官网视频介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>先通过<a href="https://rmarkdown.rstudio.com/lesson-1.html" title="官方视频">官方视频</a>来看看 Rmarkdown 的介绍。</p>
 <blockquote>
 <p><strong>注</strong>：该视频来自官网，一般不一定打得开，所以小编为大家着想就下载下来了，以便大家更好地学习，可见这篇<a href="https://mp.weixin.qq.com/s/aPqjLILQvnRaM6S7j7zsLQ">推送</a>。
@@ -335,10 +337,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>其他参考资料可见这一期推文：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247490959&amp;idx=1&amp;sn=2374d35aa12a64bd00caea0bf424bbd0&amp;chksm=ea24e26bdd536b7d2263b6e779a00f072f2e42f29346ab13a9ed4252144dc6d7e964c7ef7d52&amp;scene=21#wechat_redirect">R分享｜Rmarkdown参考资料分享和自制视频教程预告</a>。关于 RMarkdown 可参考专著(<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html#ref-Xie2019:rmarkdown" title="Xie, Allaire, and Grolemund">Xie, Allaire, and Grolemund 2019</a>)和(<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html#ref-Xie2020:rmd-cook" title="Xie, Dervieux, and Riederer">Xie, Dervieux, and Riederer 2020</a>)。 RStudio 网站提供了一个 R Markdown 使用小抄的下载链接：( rmarkdown-2.0.pdf )[rmarkdown-2.0.pdf]。 Pandoc 的文档见<a href="https://www.pandoc.org/" title="pandoc 网站">pandoc 网站</a>，knitr 的详细文档参见网站<a href="http://yihui.name/knitr/" title="knitr 文档">knitr 文档</a>。</p>
 </div>
 </div>
-<div id="rmarkdown-流程演示" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Rmarkdown 流程演示</h2>
-<div id="安装" class="section level3" number="8.2.1">
-<h3><span class="header-section-number">8.2.1</span> 安装</h3>
+<div id="rmarkdown-流程演示" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Rmarkdown 流程演示<a href="rmarkdown-base.html#rmarkdown-流程演示" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> 安装<a href="rmarkdown-base.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>假设你已经安装了 <a href="https://www.r-project.org" title="R">R</a>（R Core Team 2020）和 <a href="https://www.rstudio.com" title="RStudio IDE">RStudio IDE</a>。</p>
 <blockquote>
 <p>不需要 RStudio，但建议使用 RStudio，因为它可使普通用户更轻松地使用 R Markdown。如果未安装 RStudio IDE，则必须安装 <a href="http://pandoc.org">Pandoc</a>， 否则不需要单独安装 Pandoc，因为 RStudio 已将其捆绑在一起。
@@ -380,13 +382,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ### 2.3. Rmarkdown的导出</p>
 </blockquote>
 <p>rmarkdown的导出方法有两种，一种是依靠 Rstudio 手动导出，另一种是基于命令行的导出方式。</p>
-<div id="手动导出" class="section level4" number="8.2.1.1">
-<h4><span class="header-section-number">8.2.1.1</span> 手动导出</h4>
+<div id="手动导出" class="section level4 hasAnchor" number="8.2.1.1">
+<h4><span class="header-section-number">8.2.1.1</span> 手动导出<a href="rmarkdown-base.html#手动导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172937025.png" /></p>
 <p>手动导出方法很简单，在完成 markdown 编辑后，手动点击上图红圈内 knit 按钮，选择导出格式类型即可， Rstudio 支持导出 PDF、html、word 三种类型。</p>
 </div>
-<div id="命令行导出" class="section level4" number="8.2.1.2">
-<h4><span class="header-section-number">8.2.1.2</span> 命令行导出</h4>
+<div id="命令行导出" class="section level4 hasAnchor" number="8.2.1.2">
+<h4><span class="header-section-number">8.2.1.2</span> 命令行导出<a href="rmarkdown-base.html#命令行导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>命令行导出主要依靠 <code>rmarkdown::render</code> 实现， render 函数主要包含如下几个参数：</p>
 <ul>
 <li>**input*： 指定需要导出的rmarkdwon文件地址</li>
@@ -398,8 +400,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424173011826.png" /></p>
 </div>
 </div>
-<div id="rstudio界面介绍" class="section level3" number="8.2.2">
-<h3><span class="header-section-number">8.2.2</span> Rstudio界面介绍</h3>
+<div id="rstudio界面介绍" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Rstudio界面介绍<a href="rmarkdown-base.html#rstudio界面介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>若界面打开了 rmd 格式的文件时， RStudio 的界面发生了一些变化（多了一些按钮），如下图所示。</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210414130134283.png" /></p>
 <p>这里我们对界面做一些介绍，视频介绍在<a href="https://mp.weixin.qq.com/s/Dl1a36omEVI1QGP0HgbuyA">这</a>。</p>
@@ -408,16 +410,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 第三章：图、表和代码输出</p>
 </blockquote>
 </div>
-<div id="代码输出" class="section level3" number="8.2.3">
-<h3><span class="header-section-number">8.2.3</span> 代码输出</h3>
-<div id="行内代码" class="section level4" number="8.2.3.1">
-<h4><span class="header-section-number">8.2.3.1</span> 行内代码</h4>
+<div id="代码输出" class="section level3 hasAnchor" number="8.2.3">
+<h3><span class="header-section-number">8.2.3</span> 代码输出<a href="rmarkdown-base.html#代码输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="行内代码" class="section level4 hasAnchor" number="8.2.3.1">
+<h4><span class="header-section-number">8.2.3.1</span> 行内代码<a href="rmarkdown-base.html#行内代码" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb124"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb124-1"><a href="rmarkdown-base.html#cb124-1" aria-hidden="true" tabindex="-1"></a>1 </span></code></pre></div>
 <p>有趣的案例：</p>
 <p>1）自动更新日期</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb125-1"><a href="rmarkdown-base.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2022-03-25&quot;</span></span>
-<span id="cb125-2"><a href="rmarkdown-base.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;25 March, 2022&quot;</span></span>
-<span id="cb125-3"><a href="rmarkdown-base.html#cb125-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;Last compiled on 25 March, 2022&quot;</span></span>
+<div class="sourceCode" id="cb125"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb125-1"><a href="rmarkdown-base.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2022-04-03&quot;</span></span>
+<span id="cb125-2"><a href="rmarkdown-base.html#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;03 April, 2022&quot;</span></span>
+<span id="cb125-3"><a href="rmarkdown-base.html#cb125-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;Last compiled on 03 April, 2022&quot;</span></span>
 <span id="cb125-4"><a href="rmarkdown-base.html#cb125-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb125-5"><a href="rmarkdown-base.html#cb125-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb125-6"><a href="rmarkdown-base.html#cb125-6" aria-hidden="true" tabindex="-1"></a><span class="in">具体细节可参考：https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html</span></span>
@@ -555,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>out.width</code> 和 <code>out.height</code> 选项指定在输出中实际显示的宽和高，如果使用如 “90%” 这样的百分数单位则可以自动适应输出的大小。</li>
 </ol>
 </div>
-<div id="插入外部图形文件" class="section level4" number="8.2.3.2">
-<h4><span class="header-section-number">8.2.3.2</span> 插入外部图形文件</h4>
+<div id="插入外部图形文件" class="section level4 hasAnchor" number="8.2.3.2">
+<h4><span class="header-section-number">8.2.3.2</span> 插入外部图形文件<a href="rmarkdown-base.html#插入外部图形文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>如果一个图不是由一个 R 代码块生成的，你可以用两种方式包含它:</p>
 <ul>
 <li><strong>方法一</strong></li>
@@ -581,10 +583,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb137-3"><a href="rmarkdown-base.html#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
 </div>
 </div>
-<div id="表格输出" class="section level3" number="8.2.4">
-<h3><span class="header-section-number">8.2.4</span> 表格输出</h3>
-<div id="外部表格输入" class="section level4" number="8.2.4.1">
-<h4><span class="header-section-number">8.2.4.1</span> 外部表格输入</h4>
+<div id="表格输出" class="section level3 hasAnchor" number="8.2.4">
+<h3><span class="header-section-number">8.2.4</span> 表格输出<a href="rmarkdown-base.html#表格输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="外部表格输入" class="section level4 hasAnchor" number="8.2.4.1">
+<h4><span class="header-section-number">8.2.4.1</span> 外部表格输入<a href="rmarkdown-base.html#外部表格输入" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>markdown格式</li>
 </ul>
@@ -594,8 +596,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211149020.png" /></p>
 </div>
-<div id="内部代码输出的表格" class="section level4" number="8.2.4.2">
-<h4><span class="header-section-number">8.2.4.2</span> 内部代码输出的表格</h4>
+<div id="内部代码输出的表格" class="section level4 hasAnchor" number="8.2.4.2">
+<h4><span class="header-section-number">8.2.4.2</span> 内部代码输出的表格<a href="rmarkdown-base.html#内部代码输出的表格" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>例子：计算线性回归后， <code>summary()</code> 函数的输出中有 coefficients 一项，是一个矩阵， 如果直接文本显示比较难看：</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb138-1"><a href="rmarkdown-base.html#cb138-1" aria-hidden="true" tabindex="-1"></a>x &lt;- 1:10; y &lt;- x^2; lmr &lt;- lm(y ~ x)</span>
 <span id="cb138-2"><a href="rmarkdown-base.html#cb138-2" aria-hidden="true" tabindex="-1"></a>co &lt;- summary(lmr)$coefficients</span>
@@ -621,8 +623,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>tables</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-tables" title="Murdoch 2020">Murdoch 2020</a>), <strong>pander</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-pander" title="Daróczi and Tsegelskyi 2018">Daróczi and Tsegelskyi 2018</a>), <strong>tangram</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-tangram" title="Garbett 2020">Garbett 2020</a>), <strong>ztable</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-ztable" title="Moon 2020">Moon 2020</a>), 和 <strong>condformat</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-condformat" title="Oller Moreno 2020">Oller Moreno 2020</a>)等。</p>
 </div>
 </div>
-<div id="表格渲染" class="section level3" number="8.2.5">
-<h3><span class="header-section-number">8.2.5</span> 表格渲染</h3>
+<div id="表格渲染" class="section level3 hasAnchor" number="8.2.5">
+<h3><span class="header-section-number">8.2.5</span> 表格渲染<a href="rmarkdown-base.html#表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>通过前面可以看到：用 <code>knitr::kable()</code> 输出表格结果其实不是非常美观，并且很多功能都不能实现。这时我们可以用 kableExtra(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html#ref-R-kableExtra" title="Zhu 2020">Zhu 2020</a>)、huxtable (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-huxtable" title="Hugh-Jones 2020">Hugh-Jones 2020</a>) 等扩展包来美化表格。</p>
 <blockquote>
 <p>其他拓展包可以参考：<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html</a>
@@ -634,21 +636,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb141-2"><a href="rmarkdown-base.html#cb141-2" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
 <span id="cb141-3"><a href="rmarkdown-base.html#cb141-3" aria-hidden="true" tabindex="-1"></a>kable(iris) %&gt;%</span>
 <span id="cb141-4"><a href="rmarkdown-base.html#cb141-4" aria-hidden="true" tabindex="-1"></a>  kable_styling(latex_options = &quot;striped&quot;)</span></code></pre></div>
-<div id="安装-1" class="section level4" number="8.2.5.1">
-<h4><span class="header-section-number">8.2.5.1</span> 安装</h4>
+<div id="安装-1" class="section level4 hasAnchor" number="8.2.5.1">
+<h4><span class="header-section-number">8.2.5.1</span> 安装<a href="rmarkdown-base.html#安装-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb142"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb142-1"><a href="rmarkdown-base.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># install from CRAN</span></span>
 <span id="cb142-2"><a href="rmarkdown-base.html#cb142-2" aria-hidden="true" tabindex="-1"></a>install.packages(&quot;kableExtra&quot;)</span>
 <span id="cb142-3"><a href="rmarkdown-base.html#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># install the development version</span></span>
 <span id="cb142-4"><a href="rmarkdown-base.html#cb142-4" aria-hidden="true" tabindex="-1"></a>remotes::install_github(&quot;haozhu233/kableExtra&quot;)</span></code></pre></div>
 </div>
-<div id="表格外框设置" class="section level4" number="8.2.5.2">
-<h4><span class="header-section-number">8.2.5.2</span> 表格外框设置</h4>
+<div id="表格外框设置" class="section level4 hasAnchor" number="8.2.5.2">
+<h4><span class="header-section-number">8.2.5.2</span> 表格外框设置<a href="rmarkdown-base.html#表格外框设置" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><code>bootstrap_options = "bordered"</code> 构建有边框的表格，其他可调节的名称可通过帮助文档获取。</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb143-1"><a href="rmarkdown-base.html#cb143-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
 <span id="cb143-2"><a href="rmarkdown-base.html#cb143-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;bordered&quot;)</span></code></pre></div>
 </div>
-<div id="设置表格的宽度" class="section level4" number="8.2.5.3">
-<h4><span class="header-section-number">8.2.5.3</span> 设置表格的宽度</h4>
+<div id="设置表格的宽度" class="section level4 hasAnchor" number="8.2.5.3">
+<h4><span class="header-section-number">8.2.5.3</span> 设置表格的宽度<a href="rmarkdown-base.html#设置表格的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>使用 <code>full_width = F</code> 使得表格横向不会填满整个页面，默认情况下 <code>full_width = T</code>。</p>
 <div class="sourceCode" id="cb144"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb144-1"><a href="rmarkdown-base.html#cb144-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
 <span id="cb144-2"><a href="rmarkdown-base.html#cb144-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
@@ -665,8 +667,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb145-5"><a href="rmarkdown-base.html#cb145-5" aria-hidden="true" tabindex="-1"></a>                          full_width = F)</span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211413207.png" /></p>
 </div>
-<div id="设置表格的对齐方式" class="section level4" number="8.2.5.4">
-<h4><span class="header-section-number">8.2.5.4</span> 设置表格的对齐方式</h4>
+<div id="设置表格的对齐方式" class="section level4 hasAnchor" number="8.2.5.4">
+<h4><span class="header-section-number">8.2.5.4</span> 设置表格的对齐方式<a href="rmarkdown-base.html#设置表格的对齐方式" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>使用 <code>position = "left"</code> 使得整个表格像左对齐，当然也可以中心对齐和右对齐，视情况而定。</p>
 <div class="sourceCode" id="cb146"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb146-1"><a href="rmarkdown-base.html#cb146-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
 <span id="cb146-2"><a href="rmarkdown-base.html#cb146-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
@@ -674,8 +676,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb146-4"><a href="rmarkdown-base.html#cb146-4" aria-hidden="true" tabindex="-1"></a>                          position = &quot;left&quot;)</span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424173324184.png" /></p>
 </div>
-<div id="设置表格的字体大小" class="section level4" number="8.2.5.5">
-<h4><span class="header-section-number">8.2.5.5</span> 设置表格的字体大小</h4>
+<div id="设置表格的字体大小" class="section level4 hasAnchor" number="8.2.5.5">
+<h4><span class="header-section-number">8.2.5.5</span> 设置表格的字体大小<a href="rmarkdown-base.html#设置表格的字体大小" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>使用 <code>font_size = 20</code> 可以将字体大小改为20。</p>
 <div class="sourceCode" id="cb147"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb147-1"><a href="rmarkdown-base.html#cb147-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
 <span id="cb147-2"><a href="rmarkdown-base.html#cb147-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
@@ -683,8 +685,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb147-4"><a href="rmarkdown-base.html#cb147-4" aria-hidden="true" tabindex="-1"></a>                          font_size = 20</span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211439668.png" /></p>
 </div>
-<div id="设置表格的行与列" class="section level4" number="8.2.5.6">
-<h4><span class="header-section-number">8.2.5.6</span> 设置表格的行与列</h4>
+<div id="设置表格的行与列" class="section level4 hasAnchor" number="8.2.5.6">
+<h4><span class="header-section-number">8.2.5.6</span> 设置表格的行与列<a href="rmarkdown-base.html#设置表格的行与列" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>这里使用的函数是 <code>column_spec()</code>， 其中以下代码含义为：制定前两列数据，字体加粗、颜色为白色，表格填充为 <code>"#D7261E"</code>。 而行的设置与列类似，使用函数名为 <code>row_spec()</code>。</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb148-1"><a href="rmarkdown-base.html#cb148-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
 <span id="cb148-2"><a href="rmarkdown-base.html#cb148-2" aria-hidden="true" tabindex="-1"></a>x_html &lt;- kableExtra::kable_styling(x_html,</span>
@@ -705,8 +707,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb149-8"><a href="rmarkdown-base.html#cb149-8" aria-hidden="true" tabindex="-1"></a>                        background = &quot;#D7261E&quot;)</span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211527153.png" /></p>
 </div>
-<div id="其它表格渲染" class="section level4" number="8.2.5.7">
-<h4><span class="header-section-number">8.2.5.7</span> 其它表格渲染</h4>
+<div id="其它表格渲染" class="section level4 hasAnchor" number="8.2.5.7">
+<h4><span class="header-section-number">8.2.5.7</span> 其它表格渲染<a href="rmarkdown-base.html#其它表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>这里给出一个有趣的例子，具体内部不做过多解释， b 站视频给出解释。文字真的很难说明。</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb150-1"><a href="rmarkdown-base.html#cb150-1" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
 <span id="cb150-2"><a href="rmarkdown-base.html#cb150-2" aria-hidden="true" tabindex="-1"></a>data =  plyr::mutate(rock<span class="co">[</span><span class="ot">1:10, </span><span class="co">]</span>,</span>
@@ -733,8 +735,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="rmarkdown-的主题格式" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Rmarkdown 的主题格式</h2>
+<div id="rmarkdown-的主题格式" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> Rmarkdown 的主题格式<a href="rmarkdown-base.html#rmarkdown-的主题格式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Rmarkdowm 作为可复用报告的优秀工具，除了提供文档编辑、图表输出外，还有许多主题格式供使用者选择。除了默认的主题外，还可以通过加载 rticles、prettydoc、rmdformats、tufte 等包获取更多主题格式。下面我们看看几类扩展包里的主题样式。</p>
 <blockquote>
 <p><strong>注：</strong> 接下来的教程我是已经安装这些包了，没安装的记得提前安装好！不然运行会出错。
@@ -768,8 +770,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195440875.png" /></p>
 <p>编译后得到的结果，这是他模板原始的样子，如果想调整页面行间距，字体颜色等，请见下面一章。</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195456780.png" /></p>
-<div id="rmdformats-包" class="section level3" number="8.3.1">
-<h3><span class="header-section-number">8.3.1</span> rmdformats 包</h3>
+<div id="rmdformats-包" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> rmdformats 包<a href="rmarkdown-base.html#rmdformats-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>之后的这几个包，内部都包含了挺多模板的，下面 yaml 文件只是其中一个，如果想尝试该包内部其他模板，请根据上述操作进行，选择好模板，编译之后看看是不是你想要的模板。</p>
 <blockquote>
 <p>接下来我对部分相对不错的模板进行展示，你可以直接复制我的头部文件到 .rmd 格式中，或者打开模板窗口进行选择（操作在下面）。
@@ -806,8 +808,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb152-9"><a href="rmarkdown-base.html#cb152-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195521796.png" /></p>
 </div>
-<div id="tufte-包" class="section level3" number="8.3.2">
-<h3><span class="header-section-number">8.3.2</span> tufte 包</h3>
+<div id="tufte-包" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> tufte 包<a href="rmarkdown-base.html#tufte-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb153"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb153-1"><a href="rmarkdown-base.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb153-2"><a href="rmarkdown-base.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
 <span id="cb153-3"><a href="rmarkdown-base.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
@@ -817,8 +819,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb153-7"><a href="rmarkdown-base.html#cb153-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195528253.png" /></p>
 </div>
-<div id="cerulean-包" class="section level3" number="8.3.3">
-<h3><span class="header-section-number">8.3.3</span> cerulean 包</h3>
+<div id="cerulean-包" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> cerulean 包<a href="rmarkdown-base.html#cerulean-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb154"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb154-1"><a href="rmarkdown-base.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb154-2"><a href="rmarkdown-base.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
 <span id="cb154-3"><a href="rmarkdown-base.html#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
@@ -831,11 +833,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195535713.png" /></p>
 </div>
 </div>
-<div id="总结一些常用技巧" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> 总结一些常用技巧</h2>
+<div id="总结一些常用技巧" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> 总结一些常用技巧<a href="rmarkdown-base.html#总结一些常用技巧" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>关于 RMarkdown 使用时，小编日常会使用的一些有用技巧，当然我也是通过学习谢大大的<a href="https://bookdown.org/yihui/rmarkdown-cookbook/" title="Rmarkdown-cookbook">Rmarkdown-cookbook</a>以及日常使用需求上网搜的解决方案，在此分享给大家。如果大家还有其他什么需求，可以在留言板留言。或者有其他实用技巧也欢迎分享！</p>
-<div id="修改某些字体颜色" class="section level3" number="8.4.1">
-<h3><span class="header-section-number">8.4.1</span> 修改某些字体颜色</h3>
+<div id="修改某些字体颜色" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> 修改某些字体颜色<a href="rmarkdown-base.html#修改某些字体颜色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Markdown 语法没有用于更改文本颜色的内置方法。我们可以使用 HTML 和 LaTeX 语法来更改单词的格式</p>
 <ul>
 <li>对于 HTML， 我们可以将文本包装在 <span> 标记中，并使用 CSS 设置颜色，例如<code>&lt;span style =“ color：red;”&gt; text &lt;/ span&gt;</code>。</li>
@@ -846,8 +848,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318124743606.png" /></p>
 <p>在上面的示例中，第一组花括号包含所需的文本颜色，第二组花括号包含应将此颜色应用到的文本。</p>
 </div>
-<div id="更改全文页边距等" class="section level3" number="8.4.2">
-<h3><span class="header-section-number">8.4.2</span> 更改全文页边距等</h3>
+<div id="更改全文页边距等" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> 更改全文页边距等<a href="rmarkdown-base.html#更改全文页边距等" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>在 top-level 中加入<code>geometry</code>命令，例如</p>
 <div class="sourceCode" id="cb156"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb156-1"><a href="rmarkdown-base.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb156-2"><a href="rmarkdown-base.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;RMarkdown常用技巧&quot;</span></span>
@@ -869,8 +871,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>当然全文字体大小等操作也是这样操作的，在 geometry 操作即可：</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318123645722.png" /></p>
 </div>
-<div id="缩进文本" class="section level3" number="8.4.3">
-<h3><span class="header-section-number">8.4.3</span> 缩进文本</h3>
+<div id="缩进文本" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> 缩进文本<a href="rmarkdown-base.html#缩进文本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>默认情况下， Markdown 还将忽略用于缩进的空格。 但是在某些情况下，例如在经文和地址中，我们可能希望保留缩进。 在这些情况下，我们可以通过以竖线 （|） 开头的线来使用线块。 换行符和所有前导空格将保留在输出中。 例如：</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb157-1"><a href="rmarkdown-base.html#cb157-1" aria-hidden="true" tabindex="-1"></a>| When dollars appear it&#39;s a sign</span>
 <span id="cb157-2"><a href="rmarkdown-base.html#cb157-2" aria-hidden="true" tabindex="-1"></a>|   that your code does not quite align  </span>
@@ -880,15 +882,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>输出为：</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318125239921.png" /></p>
 </div>
-<div id="分页" class="section level3" number="8.4.4">
-<h3><span class="header-section-number">8.4.4</span> 分页</h3>
+<div id="分页" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> 分页<a href="rmarkdown-base.html#分页" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>如果想要分页，可以使用 <code>\newpage</code>。 例如：如果想把目录和正文内容分开，可以在在正文前面加入这个代码</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319193017798.png" /></p>
 <p>这时输出的结果，目录一个界面，正文另起一页。</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319193045376.png" /></p>
 </div>
-<div id="控制文本输出的宽度" class="section level3" number="8.4.5">
-<h3><span class="header-section-number">8.4.5</span> 控制文本输出的宽度</h3>
+<div id="控制文本输出的宽度" class="section level3 hasAnchor" number="8.4.5">
+<h3><span class="header-section-number">8.4.5</span> 控制文本输出的宽度<a href="rmarkdown-base.html#控制文本输出的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>有时从R代码输出的文本可能太宽。如果输出文档具有固定的页面宽度(例如， PDF 文档)，则文本输出可能会超过页面的页边距。</p>
 <p>R 全局选项宽度可用于控制R函数输出的文本宽度，如果默认值太大，则可以尝试使用较小的值。此选项通常表示每行字符的粗略数目。例如：</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb158-1"><a href="rmarkdown-base.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r} </span></span>
@@ -917,8 +919,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>这是输出的结果，但是其实不是很美观</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318130218480.png" /></p>
 </div>
-<div id="控制图片输出大小" class="section level3" number="8.4.6">
-<h3><span class="header-section-number">8.4.6</span> 控制图片输出大小</h3>
+<div id="控制图片输出大小" class="section level3 hasAnchor" number="8.4.6">
+<h3><span class="header-section-number">8.4.6</span> 控制图片输出大小<a href="rmarkdown-base.html#控制图片输出大小" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>这个我在文稿和教程中说的挺清楚了。一共有两种方式：</p>
 <p><strong>方法一：</strong></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb162-1"><a href="rmarkdown-base.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, out.width=&quot;50%&quot;, fig.cap=&quot;A nice image.&quot;}</span></span>
@@ -927,8 +929,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>方法二：</strong></p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb163-1"><a href="rmarkdown-base.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A nice image.](foo/bar.png)</span>{width=50%}</span></code></pre></div>
 </div>
-<div id="图片对齐" class="section level3" number="8.4.7">
-<h3><span class="header-section-number">8.4.7</span> 图片对齐</h3>
+<div id="图片对齐" class="section level3 hasAnchor" number="8.4.7">
+<h3><span class="header-section-number">8.4.7</span> 图片对齐<a href="rmarkdown-base.html#图片对齐" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>这个我也说过啦！可见：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491844&amp;idx=1&amp;sn=36decacb06ca6ce1fc689141174bb98f&amp;chksm=ea271ee0dd5097f615b87c27151200635a9e5ff3c3072864bcf8fe6e8fbc41c0cffc6c95148f&amp;scene=21#wechat_redirect">R沟通｜Rmarkdown教程（3）</a>，<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491546&amp;idx=1&amp;sn=00f8dea8903dbf4ec6e683ab5061a7a5&amp;chksm=ea24e03edd536928ff6c5a3600c8fbbd87cafbf9286ad47bfe4c084032cada9bf6ee7dfddcd9&amp;scene=21#wechat_redirect">R沟通｜Rmarkdown教程（2）</a>。如果使用R代码导入图片的话，使用 <code>knitr::include_graphics()</code> 并结合 R chunk 中 <code>fig.align = 'center'</code> 参数进行居中。如果结果不想显示代码块，可在chunck中加入： <code>echo=FALSE</code>。</p>
 <blockquote>
 <p>任何输出形式都适用，推荐使用</p>
@@ -954,8 +956,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>输出结果为：</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318131400399.png" /></p>
 </div>
-<div id="多列输出" class="section level3" number="8.4.8">
-<h3><span class="header-section-number">8.4.8</span> 多列输出</h3>
+<div id="多列输出" class="section level3 hasAnchor" number="8.4.8">
+<h3><span class="header-section-number">8.4.8</span> 多列输出<a href="rmarkdown-base.html#多列输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>这个特别好用！虽然学起来有那么一点困难，具体我再出一期推文，把这个讲清楚。具体可以见这里的<a href="https://bookdown.org/yihui/rmarkdown-cookbook/multi-column.html" title="教程">教程</a>。类似于排版成这种形式：</p>
 <p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319195033178.png" /></p>
 
@@ -967,12 +969,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="some-tips.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="some-tips-j.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="rmarkdown-extended.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -991,6 +992,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -1011,6 +1013,10 @@ gitbook.start({
 "text": null
 },
 "download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

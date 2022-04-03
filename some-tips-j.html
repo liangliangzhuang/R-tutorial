@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 常用案例 | 庄闪闪的可视化手册</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 常用案例 | 庄闪闪的可视化手册" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="interactive-ploting.html"/>
 <link rel="next" href="rmarkdown-extended.html"/>
-<script src="libs/header-attrs-2.7.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,7 +48,9 @@
 
 
 
-
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -129,6 +130,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 </head>
 
 <body>
@@ -141,177 +143,183 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
-<li class="part"><span><b>I R 语言基础</b></span></li>
-<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列</a></li>
-<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#part-r-语言可视化"><i class="fa fa-check"></i>(PART) R 语言可视化</a>
+<li><a href="index.html#简介">简介<span></span></a></li>
+<li class="part"><span><b>I R 语言基础<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列<span></span></a></li>
+<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列<span></span></a></li>
+<li><a href="#part-r-语言可视化">(PART) R 语言可视化<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制基本图形"><i class="fa fa-check"></i><b>2.1</b> 绘制基本图形</a>
+<li class="chapter" data-level="2.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制基本图形"><i class="fa fa-check"></i><b>2.1</b> 绘制基本图形<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制分布关系"><i class="fa fa-check"></i><b>2.1.1</b> 绘制分布关系</a></li>
-<li class="chapter" data-level="2.1.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制数据间关系"><i class="fa fa-check"></i><b>2.1.2</b> 绘制数据间关系</a></li>
-<li class="chapter" data-level="2.1.3" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制其他图形"><i class="fa fa-check"></i><b>2.1.3</b> 绘制其他图形</a></li>
+<li class="chapter" data-level="2.1.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制分布关系"><i class="fa fa-check"></i><b>2.1.1</b> 绘制分布关系<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制数据间关系"><i class="fa fa-check"></i><b>2.1.2</b> 绘制数据间关系<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制其他图形"><i class="fa fa-check"></i><b>2.1.3</b> 绘制其他图形<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改图形参数"><i class="fa fa-check"></i><b>2.2</b> 修改图形参数</a>
+<li class="chapter" data-level="2.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改图形参数"><i class="fa fa-check"></i><b>2.2</b> 修改图形参数<span></span></a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改颜色"><i class="fa fa-check"></i><b>2.2.1</b> 修改颜色</a></li>
-<li class="chapter" data-level="2.2.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改点符号与线条"><i class="fa fa-check"></i><b>2.2.2</b> 修改点符号与线条</a></li>
+<li class="chapter" data-level="2.2.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改颜色"><i class="fa fa-check"></i><b>2.2.1</b> 修改颜色<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#修改点符号与线条"><i class="fa fa-check"></i><b>2.2.2</b> 修改点符号与线条<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制组合图形"><i class="fa fa-check"></i><b>2.3</b> 绘制组合图形</a>
+<li class="chapter" data-level="2.3" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#绘制组合图形"><i class="fa fa-check"></i><b>2.3</b> 绘制组合图形<span></span></a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#par"><i class="fa fa-check"></i><b>2.3.1</b> par()</a></li>
-<li class="chapter" data-level="2.3.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#layout"><i class="fa fa-check"></i><b>2.3.2</b> layout</a></li>
+<li class="chapter" data-level="2.3.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#par"><i class="fa fa-check"></i><b>2.3.1</b> par()<span></span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#layout"><i class="fa fa-check"></i><b>2.3.2</b> layout<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#保存图形"><i class="fa fa-check"></i><b>2.4</b> 保存图形</a>
+<li class="chapter" data-level="2.4" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#保存图形"><i class="fa fa-check"></i><b>2.4</b> 保存图形<span></span></a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#使用代码"><i class="fa fa-check"></i><b>2.4.1</b> 使用代码</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>2.4.2</b> 在 Rstudio 窗口点击按钮保存</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>3</b> 使用 ggplot2 包绘图</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>3.1</b> 简介</a></li>
-<li class="chapter" data-level="3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot</a></li>
-<li class="chapter" data-level="3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>3.3</b> ggplot2包图形语法</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>3.3.1</b> 对比不同画图语法</a></li>
-<li class="chapter" data-level="3.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>3.3.2</b> 思想介绍</a></li>
-<li class="chapter" data-level="3.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>3.3.3</b> 全局变量 vs. 局部变量</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>3.4</b> 几何对象</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>3.4.1</b> 参考书籍</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>3.5</b> 统计变换</a></li>
-<li class="chapter" data-level="3.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>3.6</b> 刻度scale</a>
-<ul>
-<li class="chapter" data-level="3.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>3.6.1</b> 丰富的刻度体系</a></li>
-</ul></li>
-<li class="chapter" data-level="3.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>3.7</b> 坐标系</a></li>
-<li class="chapter" data-level="3.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>3.8</b> 分面</a></li>
-<li class="chapter" data-level="3.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>3.9</b> 标题、标注、指南、拼接</a>
-<ul>
-<li class="chapter" data-level="3.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>3.9.1</b> 标题</a></li>
-<li class="chapter" data-level="3.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>3.9.2</b> 标注功能</a></li>
-<li class="chapter" data-level="3.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>3.9.3</b> 指南</a></li>
-<li class="chapter" data-level="3.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>3.9.4</b> 主题</a></li>
-</ul></li>
-<li class="chapter" data-level="3.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>3.10</b> 保存图片</a></li>
-<li class="chapter" data-level="3.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>3.11</b> 例子</a>
-<ul>
-<li class="chapter" data-level="3.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>3.11.1</b> 柱状图+误差项</a></li>
-<li class="chapter" data-level="3.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>3.11.2</b> 有正值和负值的柱形图</a></li>
-<li class="chapter" data-level="3.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>3.11.3</b> 合并两图</a></li>
+<li class="chapter" data-level="2.4.1" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#使用代码"><i class="fa fa-check"></i><b>2.4.1</b> 使用代码<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>2.4.2</b> 在 Rstudio 窗口点击按钮保存<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>4</b> 其他相关拓展包</a>
+<li class="chapter" data-level="3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>3</b> 使用 ggplot2 包绘图<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>4.1</b> ggplot2 官网 109 种拓展包</a></li>
-<li class="chapter" data-level="4.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>4.2</b> 整理的相关扩展包</a></li>
+<li class="chapter" data-level="3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>3.1</b> 简介<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>3.2</b> qplot<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>3.3</b> ggplot2包图形语法<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>3.3.1</b> 对比不同画图语法<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>3.3.2</b> 思想介绍<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>3.3.3</b> 全局变量 vs. 局部变量<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>5</b> 认识交互式绘图工具</a>
+<li class="chapter" data-level="3.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>3.4</b> 几何对象<span></span></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>5.1</b> leaflet包</a></li>
-<li class="chapter" data-level="5.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>5.2</b> dygraphs包</a></li>
-<li class="chapter" data-level="5.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>5.3</b> plotly包</a></li>
-<li class="chapter" data-level="5.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>5.4</b> DT包</a></li>
-<li class="chapter" data-level="5.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>5.5</b> networkD3包</a></li>
-<li class="chapter" data-level="5.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>5.6</b> 利用Shiny包实现可交互的Web应用</a></li>
+<li class="chapter" data-level="3.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>3.4.1</b> 参考书籍<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="some-tips-j.html"><a href="some-tips-j.html"><i class="fa fa-check"></i><b>6</b> 常用案例</a>
+<li class="chapter" data-level="3.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>3.5</b> 统计变换<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>3.6</b> 刻度scale<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>6.1</b> 绘制不同分布的 QQ 图</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="some-tips-j.html"><a href="some-tips-j.html#简单版本"><i class="fa fa-check"></i><b>6.1.1</b> 简单版本</a></li>
-<li class="chapter" data-level="6.1.2" data-path="some-tips-j.html"><a href="some-tips-j.html#进阶版本"><i class="fa fa-check"></i><b>6.1.2</b> 进阶版本</a></li>
+<li class="chapter" data-level="3.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>3.6.1</b> 丰富的刻度体系<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>6.2</b> 绘制混合密度函数图以及添加分位数线</a>
+<li class="chapter" data-level="3.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>3.7</b> 坐标系<span></span></a></li>
+<li class="chapter" data-level="3.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>3.8</b> 分面<span></span></a></li>
+<li class="chapter" data-level="3.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>3.9</b> 标题、标注、指南、拼接<span></span></a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="some-tips-j.html"><a href="some-tips-j.html#加载包"><i class="fa fa-check"></i><b>6.2.1</b> 加载包</a></li>
-<li class="chapter" data-level="6.2.2" data-path="some-tips-j.html"><a href="some-tips-j.html#产生数据集"><i class="fa fa-check"></i><b>6.2.2</b> 产生数据集</a></li>
-<li class="chapter" data-level="6.2.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>6.2.3</b> 绘制密度函数图并添加分位数线</a></li>
-<li class="chapter" data-level="6.2.4" data-path="some-tips-j.html"><a href="some-tips-j.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>6.2.4</b> 合并两图（使用cowplot包）</a></li>
+<li class="chapter" data-level="3.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>3.9.1</b> 标题<span></span></a></li>
+<li class="chapter" data-level="3.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>3.9.2</b> 标注功能<span></span></a></li>
+<li class="chapter" data-level="3.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>3.9.3</b> 指南<span></span></a></li>
+<li class="chapter" data-level="3.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>3.9.4</b> 主题<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>6.3</b> 绘制不同参数的密度函数</a>
+<li class="chapter" data-level="3.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>3.10</b> 保存图片<span></span></a></li>
+<li class="chapter" data-level="3.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>3.11</b> 例子<span></span></a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="some-tips-j.html"><a href="some-tips-j.html#beta-密度函数"><i class="fa fa-check"></i><b>6.3.1</b> Beta 密度函数</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="some-tips-j.html"><a href="some-tips-j.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>6.4</b> 散点图中加入第三变量的密度函数</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#part-r-语言文档沟通"><i class="fa fa-check"></i>(PART) R 语言文档沟通</a>
-<ul>
-<li class="chapter" data-level="6.5" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-简介"><i class="fa fa-check"></i><b>6.5</b> Rmarkdown 简介</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="some-tips-j.html"><a href="some-tips-j.html#官网视频介绍"><i class="fa fa-check"></i><b>6.5.1</b> 官网视频介绍</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>6.6</b> Rmarkdown 流程演示</a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="some-tips-j.html"><a href="some-tips-j.html#安装"><i class="fa fa-check"></i><b>6.6.1</b> 安装</a></li>
-<li class="chapter" data-level="6.6.2" data-path="some-tips-j.html"><a href="some-tips-j.html#新建rmarkdown项目"><i class="fa fa-check"></i><b>6.6.2</b> 2.2. 新建Rmarkdown项目</a></li>
-<li class="chapter" data-level="6.6.3" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown的导出"><i class="fa fa-check"></i><b>6.6.3</b> 2.3. Rmarkdown的导出</a></li>
-<li class="chapter" data-level="6.6.4" data-path="some-tips-j.html"><a href="some-tips-j.html#rstudio界面介绍"><i class="fa fa-check"></i><b>6.6.4</b> Rstudio界面介绍</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="some-tips-j.html"><a href="some-tips-j.html#第三章图表和代码输出"><i class="fa fa-check"></i><b>6.7</b> 第三章：图、表和代码输出</a>
-<ul>
-<li class="chapter" data-level="6.7.1" data-path="some-tips-j.html"><a href="some-tips-j.html#代码输出"><i class="fa fa-check"></i><b>6.7.1</b> 代码输出</a></li>
-</ul></li>
-<li class="chapter" data-level="6.8" data-path="some-tips-j.html"><a href="some-tips-j.html#section"><i class="fa fa-check"></i><b>6.8</b> [1] 1 2 3 4 5</a></li>
-<li class="chapter" data-level="6.9" data-path="some-tips-j.html"><a href="some-tips-j.html#section-1"><i class="fa fa-check"></i><b>6.9</b> [1] 1</a></li>
-<li class="chapter" data-level="6.10" data-path="some-tips-j.html"><a href="some-tips-j.html#e-17"><i class="fa fa-check"></i><b>6.10</b> [1] 6.123032e-17</a></li>
-<li class="chapter" data-level="6.11" data-path="some-tips-j.html"><a href="some-tips-j.html#section-2"><i class="fa fa-check"></i><b>6.11</b> [1] 1</a></li>
-<li class="chapter" data-level="6.12" data-path="some-tips-j.html"><a href="some-tips-j.html#e-17-1"><i class="fa fa-check"></i><b>6.12</b> [1] 6.123032e-17</a>
-<ul>
-<li class="chapter" data-level="6.12.1" data-path="some-tips-j.html"><a href="some-tips-j.html#图片输出"><i class="fa fa-check"></i><b>6.12.1</b> 图片输出</a></li>
-<li class="chapter" data-level="6.12.2" data-path="some-tips-j.html"><a href="some-tips-j.html#表格输出"><i class="fa fa-check"></i><b>6.12.2</b> 表格输出</a></li>
-<li class="chapter" data-level="6.12.3" data-path="some-tips-j.html"><a href="some-tips-j.html#表格渲染"><i class="fa fa-check"></i><b>6.12.3</b> 表格渲染</a></li>
-</ul></li>
-<li class="chapter" data-level="6.13" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>6.13</b> Rmarkdown 的主题格式</a>
-<ul>
-<li class="chapter" data-level="6.13.1" data-path="some-tips-j.html"><a href="some-tips-j.html#rticles-包"><i class="fa fa-check"></i><b>6.13.1</b> 4.1. rticles 包</a></li>
-<li class="chapter" data-level="6.13.2" data-path="some-tips-j.html"><a href="some-tips-j.html#rmdformats-包"><i class="fa fa-check"></i><b>6.13.2</b> rmdformats 包</a></li>
-<li class="chapter" data-level="6.13.3" data-path="some-tips-j.html"><a href="some-tips-j.html#prettydoc-包"><i class="fa fa-check"></i><b>6.13.3</b> 4.3. prettydoc 包</a></li>
-<li class="chapter" data-level="6.13.4" data-path="some-tips-j.html"><a href="some-tips-j.html#tufte-包"><i class="fa fa-check"></i><b>6.13.4</b> tufte 包</a></li>
-<li class="chapter" data-level="6.13.5" data-path="some-tips-j.html"><a href="some-tips-j.html#cerulean-包"><i class="fa fa-check"></i><b>6.13.5</b> cerulean 包</a></li>
-</ul></li>
-<li class="chapter" data-level="6.14" data-path="some-tips-j.html"><a href="some-tips-j.html#总结一些常用技巧"><i class="fa fa-check"></i><b>6.14</b> 总结一些常用技巧</a>
-<ul>
-<li class="chapter" data-level="6.14.1" data-path="some-tips-j.html"><a href="some-tips-j.html#修改某些字体颜色"><i class="fa fa-check"></i><b>6.14.1</b> 修改某些字体颜色</a></li>
-<li class="chapter" data-level="6.14.2" data-path="some-tips-j.html"><a href="some-tips-j.html#更改全文页边距等"><i class="fa fa-check"></i><b>6.14.2</b> 更改全文页边距等</a></li>
-<li class="chapter" data-level="6.14.3" data-path="some-tips-j.html"><a href="some-tips-j.html#缩进文本"><i class="fa fa-check"></i><b>6.14.3</b> 缩进文本</a></li>
-<li class="chapter" data-level="6.14.4" data-path="some-tips-j.html"><a href="some-tips-j.html#分页"><i class="fa fa-check"></i><b>6.14.4</b> 分页</a></li>
-<li class="chapter" data-level="6.14.5" data-path="some-tips-j.html"><a href="some-tips-j.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>6.14.5</b> 控制文本输出的宽度</a></li>
-<li class="chapter" data-level="6.14.6" data-path="some-tips-j.html"><a href="some-tips-j.html#控制图片输出大小"><i class="fa fa-check"></i><b>6.14.6</b> 控制图片输出大小</a></li>
-<li class="chapter" data-level="6.14.7" data-path="some-tips-j.html"><a href="some-tips-j.html#图片对齐"><i class="fa fa-check"></i><b>6.14.7</b> 图片对齐</a></li>
-<li class="chapter" data-level="6.14.8" data-path="some-tips-j.html"><a href="some-tips-j.html#代码块的行号"><i class="fa fa-check"></i><b>6.14.8</b> 5.8.代码块的行号</a></li>
-<li class="chapter" data-level="6.14.9" data-path="some-tips-j.html"><a href="some-tips-j.html#多列输出"><i class="fa fa-check"></i><b>6.14.9</b> 多列输出</a></li>
+<li class="chapter" data-level="3.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>3.11.1</b> 柱状图+误差项<span></span></a></li>
+<li class="chapter" data-level="3.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>3.11.2</b> 有正值和负值的柱形图<span></span></a></li>
+<li class="chapter" data-level="3.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>3.11.3</b> 合并两图<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>7</b> 其他方式的文档沟通</a>
+<li class="chapter" data-level="4" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>4</b> 其他相关拓展包<span></span></a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>7.1</b> Typora</a></li>
-<li class="chapter" data-level="7.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>7.2</b> xaringan 幻灯片</a></li>
-<li class="chapter" data-level="7.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>7.3</b> 制作幻灯片</a></li>
-<li class="chapter" data-level="7.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>7.4</b> Rbeamer</a></li>
-<li class="chapter" data-level="7.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>7.5</b> Dashboards</a></li>
-<li class="chapter" data-level="7.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>7.6</b> shiny</a></li>
-<li class="chapter" data-level="7.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>7.7</b> blogdown</a></li>
-<li class="chapter" data-level="7.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>7.8</b> 制作简历</a></li>
-<li class="chapter" data-level="7.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>7.9</b> bookdown</a></li>
-<li class="chapter" data-level="7.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>7.10</b> 小编有话说</a></li>
+<li class="chapter" data-level="4.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>4.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>4.2</b> 整理的相关扩展包<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>8</b> 附录</a>
+<li class="chapter" data-level="5" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>5</b> 认识交互式绘图工具<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装r和rstudio"><i class="fa fa-check"></i>安装R和Rstudio</a>
+<li class="chapter" data-level="5.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>5.1</b> leaflet包<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>5.2</b> dygraphs包<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>5.3</b> plotly包<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>5.4</b> DT包<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>5.5</b> networkD3包<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>5.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="some-tips-j.html"><a href="some-tips-j.html"><i class="fa fa-check"></i><b>6</b> 常用案例<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装-r"><i class="fa fa-check"></i>安装 R</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装rstudio"><i class="fa fa-check"></i>安装RStudio</a></li>
+<li class="chapter" data-level="6.1" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>6.1</b> 绘制不同分布的 QQ 图<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="some-tips-j.html"><a href="some-tips-j.html#简单版本"><i class="fa fa-check"></i><b>6.1.1</b> 简单版本<span></span></a></li>
+<li class="chapter" data-level="6.1.2" data-path="some-tips-j.html"><a href="some-tips-j.html#进阶版本"><i class="fa fa-check"></i><b>6.1.2</b> 进阶版本<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#可能的问题"><i class="fa fa-check"></i>可能的问题</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#如何获取帮助"><i class="fa fa-check"></i>如何获取帮助</a></li>
-<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#r-语言社区"><i class="fa fa-check"></i>R 语言社区</a></li>
+<li class="chapter" data-level="6.2" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>6.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="some-tips-j.html"><a href="some-tips-j.html#加载包"><i class="fa fa-check"></i><b>6.2.1</b> 加载包<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="some-tips-j.html"><a href="some-tips-j.html#产生数据集"><i class="fa fa-check"></i><b>6.2.2</b> 产生数据集<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>6.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="some-tips-j.html"><a href="some-tips-j.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>6.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>9</b> 参考书籍</a></li>
+<li class="chapter" data-level="6.3" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>6.3</b> 绘制不同参数的密度函数<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="some-tips-j.html"><a href="some-tips-j.html#beta-密度函数"><i class="fa fa-check"></i><b>6.3.1</b> Beta 密度函数<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="some-tips-j.html"><a href="some-tips-j.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>6.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="some-tips-j.html"><a href="some-tips-j.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>6.5</b> 绘制贝叶斯分析相关图形<span></span></a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="some-tips-j.html"><a href="some-tips-j.html#模型建模"><i class="fa fa-check"></i><b>6.5.1</b> 模型建模<span></span></a></li>
+<li class="chapter" data-level="6.5.2" data-path="some-tips-j.html"><a href="some-tips-j.html#后验预测检查"><i class="fa fa-check"></i><b>6.5.2</b> 后验预测检查<span></span></a></li>
+<li class="chapter" data-level="6.5.3" data-path="some-tips-j.html"><a href="some-tips-j.html#诊断"><i class="fa fa-check"></i><b>6.5.3</b> 诊断<span></span></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#part-r-语言文档沟通">(PART) R 语言文档沟通<span></span></a>
+<ul>
+<li class="chapter" data-level="6.6" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-简介"><i class="fa fa-check"></i><b>6.6</b> Rmarkdown 简介<span></span></a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="some-tips-j.html"><a href="some-tips-j.html#官网视频介绍"><i class="fa fa-check"></i><b>6.6.1</b> 官网视频介绍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>6.7</b> Rmarkdown 流程演示<span></span></a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="some-tips-j.html"><a href="some-tips-j.html#安装"><i class="fa fa-check"></i><b>6.7.1</b> 安装<span></span></a></li>
+<li class="chapter" data-level="6.7.2" data-path="some-tips-j.html"><a href="some-tips-j.html#新建rmarkdown项目"><i class="fa fa-check"></i><b>6.7.2</b> 2.2. 新建Rmarkdown项目<span></span></a></li>
+<li class="chapter" data-level="6.7.3" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown的导出"><i class="fa fa-check"></i><b>6.7.3</b> 2.3. Rmarkdown的导出<span></span></a></li>
+<li class="chapter" data-level="6.7.4" data-path="some-tips-j.html"><a href="some-tips-j.html#rstudio界面介绍"><i class="fa fa-check"></i><b>6.7.4</b> Rstudio界面介绍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="some-tips-j.html"><a href="some-tips-j.html#第三章图表和代码输出"><i class="fa fa-check"></i><b>6.8</b> 第三章：图、表和代码输出<span></span></a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="some-tips-j.html"><a href="some-tips-j.html#代码输出"><i class="fa fa-check"></i><b>6.8.1</b> 代码输出<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="some-tips-j.html"><a href="some-tips-j.html#section"><i class="fa fa-check"></i><b>6.9</b> [1] 1 2 3 4 5<span></span></a></li>
+<li class="chapter" data-level="6.10" data-path="some-tips-j.html"><a href="some-tips-j.html#section-1"><i class="fa fa-check"></i><b>6.10</b> [1] 1<span></span></a></li>
+<li class="chapter" data-level="6.11" data-path="some-tips-j.html"><a href="some-tips-j.html#e-17"><i class="fa fa-check"></i><b>6.11</b> [1] 6.123032e-17<span></span></a></li>
+<li class="chapter" data-level="6.12" data-path="some-tips-j.html"><a href="some-tips-j.html#section-2"><i class="fa fa-check"></i><b>6.12</b> [1] 1<span></span></a></li>
+<li class="chapter" data-level="6.13" data-path="some-tips-j.html"><a href="some-tips-j.html#e-17-1"><i class="fa fa-check"></i><b>6.13</b> [1] 6.123032e-17<span></span></a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="some-tips-j.html"><a href="some-tips-j.html#图片输出"><i class="fa fa-check"></i><b>6.13.1</b> 图片输出<span></span></a></li>
+<li class="chapter" data-level="6.13.2" data-path="some-tips-j.html"><a href="some-tips-j.html#表格输出"><i class="fa fa-check"></i><b>6.13.2</b> 表格输出<span></span></a></li>
+<li class="chapter" data-level="6.13.3" data-path="some-tips-j.html"><a href="some-tips-j.html#表格渲染"><i class="fa fa-check"></i><b>6.13.3</b> 表格渲染<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="some-tips-j.html"><a href="some-tips-j.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>6.14</b> Rmarkdown 的主题格式<span></span></a>
+<ul>
+<li class="chapter" data-level="6.14.1" data-path="some-tips-j.html"><a href="some-tips-j.html#rticles-包"><i class="fa fa-check"></i><b>6.14.1</b> 4.1. rticles 包<span></span></a></li>
+<li class="chapter" data-level="6.14.2" data-path="some-tips-j.html"><a href="some-tips-j.html#rmdformats-包"><i class="fa fa-check"></i><b>6.14.2</b> rmdformats 包<span></span></a></li>
+<li class="chapter" data-level="6.14.3" data-path="some-tips-j.html"><a href="some-tips-j.html#prettydoc-包"><i class="fa fa-check"></i><b>6.14.3</b> 4.3. prettydoc 包<span></span></a></li>
+<li class="chapter" data-level="6.14.4" data-path="some-tips-j.html"><a href="some-tips-j.html#tufte-包"><i class="fa fa-check"></i><b>6.14.4</b> tufte 包<span></span></a></li>
+<li class="chapter" data-level="6.14.5" data-path="some-tips-j.html"><a href="some-tips-j.html#cerulean-包"><i class="fa fa-check"></i><b>6.14.5</b> cerulean 包<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.15" data-path="some-tips-j.html"><a href="some-tips-j.html#总结一些常用技巧"><i class="fa fa-check"></i><b>6.15</b> 总结一些常用技巧<span></span></a>
+<ul>
+<li class="chapter" data-level="6.15.1" data-path="some-tips-j.html"><a href="some-tips-j.html#修改某些字体颜色"><i class="fa fa-check"></i><b>6.15.1</b> 修改某些字体颜色<span></span></a></li>
+<li class="chapter" data-level="6.15.2" data-path="some-tips-j.html"><a href="some-tips-j.html#更改全文页边距等"><i class="fa fa-check"></i><b>6.15.2</b> 更改全文页边距等<span></span></a></li>
+<li class="chapter" data-level="6.15.3" data-path="some-tips-j.html"><a href="some-tips-j.html#缩进文本"><i class="fa fa-check"></i><b>6.15.3</b> 缩进文本<span></span></a></li>
+<li class="chapter" data-level="6.15.4" data-path="some-tips-j.html"><a href="some-tips-j.html#分页"><i class="fa fa-check"></i><b>6.15.4</b> 分页<span></span></a></li>
+<li class="chapter" data-level="6.15.5" data-path="some-tips-j.html"><a href="some-tips-j.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>6.15.5</b> 控制文本输出的宽度<span></span></a></li>
+<li class="chapter" data-level="6.15.6" data-path="some-tips-j.html"><a href="some-tips-j.html#控制图片输出大小"><i class="fa fa-check"></i><b>6.15.6</b> 控制图片输出大小<span></span></a></li>
+<li class="chapter" data-level="6.15.7" data-path="some-tips-j.html"><a href="some-tips-j.html#图片对齐"><i class="fa fa-check"></i><b>6.15.7</b> 图片对齐<span></span></a></li>
+<li class="chapter" data-level="6.15.8" data-path="some-tips-j.html"><a href="some-tips-j.html#代码块的行号"><i class="fa fa-check"></i><b>6.15.8</b> 5.8.代码块的行号<span></span></a></li>
+<li class="chapter" data-level="6.15.9" data-path="some-tips-j.html"><a href="some-tips-j.html#多列输出"><i class="fa fa-check"></i><b>6.15.9</b> 多列输出<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>7</b> 其他方式的文档沟通<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>7.1</b> Typora<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>7.2</b> xaringan 幻灯片<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>7.3</b> 制作幻灯片<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>7.4</b> Rbeamer<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>7.5</b> Dashboards<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>7.6</b> shiny<span></span></a></li>
+<li class="chapter" data-level="7.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>7.7</b> blogdown<span></span></a></li>
+<li class="chapter" data-level="7.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>7.8</b> 制作简历<span></span></a></li>
+<li class="chapter" data-level="7.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>7.9</b> bookdown<span></span></a></li>
+<li class="chapter" data-level="7.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>7.10</b> 小编有话说<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>8</b> 附录<span></span></a>
+<ul>
+<li><a href="appendix.html#安装r和rstudio">安装R和Rstudio<span></span></a>
+<ul>
+<li><a href="appendix.html#安装-r">安装 R<span></span></a></li>
+<li><a href="appendix.html#安装rstudio">安装RStudio<span></span></a></li>
+</ul></li>
+<li><a href="appendix.html#可能的问题">可能的问题<span></span></a></li>
+<li><a href="appendix.html#如何获取帮助">如何获取帮助<span></span></a></li>
+<li><a href="appendix.html#r-语言社区">R 语言社区<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>9</b> 参考书籍<span></span></a></li>
 </ul>
 
       </nav>
@@ -329,52 +337,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="some-tips-j" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> 常用案例</h1>
-<div id="绘制不同分布的-qq-图" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> 绘制不同分布的 QQ 图</h2>
+<div id="some-tips-j" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> 常用案例<a href="some-tips-j.html#some-tips-j" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="绘制不同分布的-qq-图" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> 绘制不同分布的 QQ 图<a href="some-tips-j.html#绘制不同分布的-qq-图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>这里主要是用 qqplotr 包进行绘制，参考的博客：<a href="https://cran.r-project.org/web/packages/qqplotr/vignettes/introduction.html">An Introduction to qqplotr</a>。</p>
-<div id="简单版本" class="section level3" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> 简单版本</h3>
-<div id="绘制正态分布的-qq-图" class="section level4" number="6.1.1.1">
-<h4><span class="header-section-number">6.1.1.1</span> 绘制正态分布的 QQ 图</h4>
+<div id="简单版本" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> 简单版本<a href="some-tips-j.html#简单版本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="绘制正态分布的-qq-图" class="section level4 hasAnchor" number="6.1.1.1">
+<h4><span class="header-section-number">6.1.1.1</span> 绘制正态分布的 QQ 图<a href="some-tips-j.html#绘制正态分布的-qq-图" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="some-tips-j.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qqplotr)</span>
 <span id="cb1-2"><a href="some-tips-j.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-3"><a href="some-tips-j.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 随机产生数据</span></span>
 <span id="cb1-4"><a href="some-tips-j.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">0</span>)</span>
 <span id="cb1-5"><a href="some-tips-j.html#cb1-5" aria-hidden="true" tabindex="-1"></a>smp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">norm =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
 <span id="cb1-6"><a href="some-tips-j.html#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制</span></span>
-<span id="cb1-7"><a href="some-tips-j.html#cb1-7" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> smp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> norm)) <span class="sc">+</span> <span class="fu">stat_qq_band</span>() <span class="sc">+</span> <span class="fu">stat_qq_line</span>() <span class="sc">+</span> </span>
-<span id="cb1-8"><a href="some-tips-j.html#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>)</span>
-<span id="cb1-9"><a href="some-tips-j.html#cb1-9" aria-hidden="true" tabindex="-1"></a>gg</span></code></pre></div>
+<span id="cb1-7"><a href="some-tips-j.html#cb1-7" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> smp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> norm)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="some-tips-j.html#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_band</span>() <span class="sc">+</span></span>
+<span id="cb1-9"><a href="some-tips-j.html#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_line</span>() <span class="sc">+</span></span>
+<span id="cb1-10"><a href="some-tips-j.html#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_point</span>() <span class="sc">+</span></span>
+<span id="cb1-11"><a href="some-tips-j.html#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>)</span>
+<span id="cb1-12"><a href="some-tips-j.html#cb1-12" aria-hidden="true" tabindex="-1"></a>gg</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>使用三种不同的置信带构造置信区间，其可以用参数 <code>bandType</code> 调整。</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="some-tips-j.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
-<span id="cb2-2"><a href="some-tips-j.html#cb2-2" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> smp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> norm)) <span class="sc">+</span> <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;ks&quot;</span>, </span>
-<span id="cb2-3"><a href="some-tips-j.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;KS&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span> <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;ts&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;TS&quot;</span>), </span>
-<span id="cb2-4"><a href="some-tips-j.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span> <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;pointwise&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;Normal&quot;</span>), </span>
-<span id="cb2-5"><a href="some-tips-j.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span> <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;boot&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;Bootstrap&quot;</span>), </span>
-<span id="cb2-6"><a href="some-tips-j.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span> <span class="fu">stat_qq_line</span>() <span class="sc">+</span> <span class="fu">stat_qq_point</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, </span>
-<span id="cb2-7"><a href="some-tips-j.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span> <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> T, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb2-8"><a href="some-tips-j.html#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="some-tips-j.html#cb2-9" aria-hidden="true" tabindex="-1"></a>gg</span></code></pre></div>
+<span id="cb2-2"><a href="some-tips-j.html#cb2-2" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> smp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> norm)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="some-tips-j.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;ks&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;KS&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="some-tips-j.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;ts&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;TS&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="some-tips-j.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;pointwise&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;Normal&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="some-tips-j.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_qq_band</span>(<span class="at">bandType =</span> <span class="st">&quot;boot&quot;</span>, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">fill =</span> <span class="st">&quot;Bootstrap&quot;</span>), <span class="at">alpha =</span> <span class="fl">0.9</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="some-tips-j.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_line</span>() <span class="sc">+</span></span>
+<span id="cb2-8"><a href="some-tips-j.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_qq_point</span>() <span class="sc">+</span></span>
+<span id="cb2-9"><a href="some-tips-j.html#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="some-tips-j.html#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_viridis</span>(<span class="at">discrete =</span> T,<span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb2-11"><a href="some-tips-j.html#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="some-tips-j.html#cb2-12" aria-hidden="true" tabindex="-1"></a>gg</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="进阶版本" class="section level3" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> 进阶版本</h3>
+<div id="进阶版本" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> 进阶版本<a href="some-tips-j.html#进阶版本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>读者绘制正态分布的 QQ 图，还是比较简单。但是如果是其他分布的情况呢？</p>
 <blockquote>
 <p>这里以一个可靠性数据为例子，该数据来源于文献：Badar, M. G., Priest, A. M. (1982). Statistical aspects of fiber and bundle strength in hybrid composites. In: Hayashi, T., Kawata, K., Umekawa, S., eds. Progress in Science and Engineering Composites. Tokyo: ICCM-IV, pp. 1129–1136。</p>
 </blockquote>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="some-tips-j.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">c</span>(<span class="fl">1.339</span>, <span class="fl">1.434</span>, <span class="fl">1.549</span>, <span class="fl">1.574</span>, <span class="fl">1.589</span>, <span class="fl">1.613</span>, <span class="fl">1.746</span>, <span class="fl">1.753</span>, <span class="fl">1.764</span>, </span>
-<span id="cb3-2"><a href="some-tips-j.html#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.807</span>, <span class="fl">1.812</span>, <span class="fl">1.84</span>, <span class="fl">1.852</span>, <span class="fl">1.852</span>, <span class="fl">1.862</span>, <span class="fl">1.864</span>, <span class="fl">1.931</span>, <span class="fl">1.952</span>, <span class="fl">1.974</span>, <span class="fl">2.019</span>, <span class="fl">2.051</span>, </span>
-<span id="cb3-3"><a href="some-tips-j.html#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.055</span>, <span class="fl">2.058</span>, <span class="fl">2.088</span>, <span class="fl">2.125</span>, <span class="fl">2.162</span>, <span class="fl">2.171</span>, <span class="fl">2.172</span>, <span class="fl">2.18</span>, <span class="fl">2.194</span>, <span class="fl">2.211</span>, <span class="fl">2.27</span>, <span class="fl">2.272</span>, </span>
-<span id="cb3-4"><a href="some-tips-j.html#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.28</span>, <span class="fl">2.299</span>, <span class="fl">2.308</span>, <span class="fl">2.335</span>, <span class="fl">2.349</span>, <span class="fl">2.356</span>, <span class="fl">2.386</span>, <span class="fl">2.39</span>, <span class="fl">2.41</span>, <span class="fl">2.43</span>, <span class="fl">2.431</span>, <span class="fl">2.458</span>, </span>
-<span id="cb3-5"><a href="some-tips-j.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.471</span>, <span class="fl">2.497</span>, <span class="fl">2.514</span>, <span class="fl">2.558</span>, <span class="fl">2.577</span>, <span class="fl">2.593</span>, <span class="fl">2.601</span>, <span class="fl">2.604</span>, <span class="fl">2.62</span>, <span class="fl">2.633</span>, <span class="fl">2.67</span>, <span class="fl">2.682</span>, </span>
-<span id="cb3-6"><a href="some-tips-j.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.699</span>, <span class="fl">2.705</span>, <span class="fl">2.735</span>, <span class="fl">2.785</span>, <span class="fl">2.785</span>, <span class="fl">3.02</span>, <span class="fl">3.042</span>, <span class="fl">3.116</span>, <span class="fl">3.174</span>))</span></code></pre></div>
-<div id="绘制指数分布的-qq-图" class="section level4" number="6.1.2.1">
-<h4><span class="header-section-number">6.1.2.1</span> 绘制指数分布的 QQ 图</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="some-tips-j.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="st">&#39;y&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.339</span>, <span class="fl">1.434</span>, <span class="fl">1.549</span>, <span class="fl">1.574</span> ,<span class="fl">1.589</span>, <span class="fl">1.613</span>, <span class="fl">1.746</span> ,<span class="fl">1.753</span>, <span class="fl">1.764</span> ,<span class="fl">1.807</span>, <span class="fl">1.812</span>, <span class="fl">1.84</span>, <span class="fl">1.852</span>, <span class="fl">1.852</span>, <span class="fl">1.862</span>, <span class="fl">1.864</span>, <span class="fl">1.931</span>, <span class="fl">1.952</span>, <span class="fl">1.974</span>, <span class="fl">2.019</span>, <span class="fl">2.051</span>, <span class="fl">2.055</span>, <span class="fl">2.058</span> ,<span class="fl">2.088</span>, <span class="fl">2.125</span>, <span class="fl">2.162</span>, <span class="fl">2.171</span>, <span class="fl">2.172</span> ,<span class="fl">2.18</span> ,<span class="fl">2.194</span> ,<span class="fl">2.211</span> ,<span class="fl">2.27</span>, <span class="fl">2.272</span>, <span class="fl">2.28</span>, <span class="fl">2.299</span>, <span class="fl">2.308</span>, <span class="fl">2.335</span> ,<span class="fl">2.349</span> ,<span class="fl">2.356</span> ,<span class="fl">2.386</span>, <span class="fl">2.39</span>, <span class="fl">2.41</span>, <span class="fl">2.43</span>, <span class="fl">2.431</span>, <span class="fl">2.458</span>, <span class="fl">2.471</span>, <span class="fl">2.497</span>, <span class="fl">2.514</span> ,<span class="fl">2.558</span>, <span class="fl">2.577</span>, <span class="fl">2.593</span>, <span class="fl">2.601</span>, <span class="fl">2.604</span>, <span class="fl">2.62</span> ,<span class="fl">2.633</span>, <span class="fl">2.67</span>, <span class="fl">2.682</span>, <span class="fl">2.699</span>, <span class="fl">2.705</span>, <span class="fl">2.735</span>, <span class="fl">2.785</span>, <span class="fl">2.785</span>,<span class="fl">3.02</span>, <span class="fl">3.042</span>, <span class="fl">3.116</span>, <span class="fl">3.174</span>))</span></code></pre></div>
+<div id="绘制指数分布的-qq-图" class="section level4 hasAnchor" number="6.1.2.1">
+<h4><span class="header-section-number">6.1.2.1</span> 绘制指数分布的 QQ 图<a href="some-tips-j.html#绘制指数分布的-qq-图" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>这里我们绘制其指数分布的 QQ 图。根据指数函数参数拟合该数据之后，得到<code>rate =2.2867</code>，并将其保存到 list 中。</p>
 <blockquote>
 <p>具体如何拟合，读者自行搜索 R 包中的相关函数。</p>
@@ -383,24 +392,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="some-tips-j.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># exponential distribution</span></span>
 <span id="cb4-2"><a href="some-tips-j.html#cb4-2" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">rate =</span> <span class="fl">2.2867</span>)</span>
 <span id="cb4-3"><a href="some-tips-j.html#cb4-3" aria-hidden="true" tabindex="-1"></a>di <span class="ot">&lt;-</span> <span class="st">&quot;exp&quot;</span></span>
-<span id="cb4-4"><a href="some-tips-j.html#cb4-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> y)) <span class="sc">+</span> <span class="fu">stat_qq_band</span>(<span class="at">distribution =</span> di, </span>
-<span id="cb4-5"><a href="some-tips-j.html#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">stat_qq_line</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">stat_qq_point</span>(<span class="at">distribution =</span> di, </span>
-<span id="cb4-6"><a href="some-tips-j.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb4-7"><a href="some-tips-j.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb4-8"><a href="some-tips-j.html#cb4-8" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
+<span id="cb4-4"><a href="some-tips-j.html#cb4-4" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> y)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="some-tips-j.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_band</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="some-tips-j.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="some-tips-j.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_point</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="some-tips-j.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="some-tips-j.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb4-10"><a href="some-tips-j.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb4-11"><a href="some-tips-j.html#cb4-11" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="绘制威布尔分布的-qq-图" class="section level4" number="6.1.2.2">
-<h4><span class="header-section-number">6.1.2.2</span> 绘制威布尔分布的 QQ 图</h4>
+<div id="绘制威布尔分布的-qq-图" class="section level4 hasAnchor" number="6.1.2.2">
+<h4><span class="header-section-number">6.1.2.2</span> 绘制威布尔分布的 QQ 图<a href="some-tips-j.html#绘制威布尔分布的-qq-图" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>同理，将该数据应用到威布尔分布中。结果如下：</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="some-tips-j.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># weibull distribution</span></span>
-<span id="cb5-2"><a href="some-tips-j.html#cb5-2" aria-hidden="true" tabindex="-1"></a>di <span class="ot">&lt;-</span> <span class="st">&quot;weibull&quot;</span>  <span class="co"># exponential distribution</span></span>
-<span id="cb5-3"><a href="some-tips-j.html#cb5-3" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">shape =</span> <span class="fl">5.4766</span>, <span class="at">scale =</span> <span class="fl">2.4113</span>)</span>
-<span id="cb5-4"><a href="some-tips-j.html#cb5-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> y)) <span class="sc">+</span> <span class="fu">stat_qq_band</span>(<span class="at">distribution =</span> di, </span>
-<span id="cb5-5"><a href="some-tips-j.html#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">stat_qq_line</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">stat_qq_point</span>(<span class="at">distribution =</span> di, </span>
-<span id="cb5-6"><a href="some-tips-j.html#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">dparams =</span> dp) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb5-7"><a href="some-tips-j.html#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
-<span id="cb5-8"><a href="some-tips-j.html#cb5-8" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
+<span id="cb5-2"><a href="some-tips-j.html#cb5-2" aria-hidden="true" tabindex="-1"></a>di <span class="ot">&lt;-</span> <span class="st">&quot;weibull&quot;</span> <span class="co"># exponential distribution</span></span>
+<span id="cb5-3"><a href="some-tips-j.html#cb5-3" aria-hidden="true" tabindex="-1"></a>dp <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">shape=</span><span class="fl">5.4766</span>,<span class="at">scale=</span><span class="fl">2.4113</span>)</span>
+<span id="cb5-4"><a href="some-tips-j.html#cb5-4" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">=</span> <span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">sample =</span> y)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="some-tips-j.html#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_band</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="some-tips-j.html#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="some-tips-j.html#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_qq_point</span>(<span class="at">distribution =</span> di, <span class="at">dparams =</span> dp) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="some-tips-j.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Theoretical Quantiles&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Sample Quantiles&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="some-tips-j.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb5-10"><a href="some-tips-j.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span>
+<span id="cb5-11"><a href="some-tips-j.html#cb5-11" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>可以看到该数据集，更适合使用 weibull分布进行拟合。</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="some-tips-j.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
@@ -409,53 +424,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<div id="绘制混合密度函数图以及添加分位数线" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> 绘制混合密度函数图以及添加分位数线</h2>
+<div id="绘制混合密度函数图以及添加分位数线" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 绘制混合密度函数图以及添加分位数线<a href="some-tips-j.html#绘制混合密度函数图以及添加分位数线" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>主要使用 <code>ggridges</code> 包中的 <code>stat_density_ridges()</code>。参考的博客：<a href="https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html" class="uri">https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html</a></p>
-<div id="加载包" class="section level3" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> 加载包</h3>
+<div id="加载包" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> 加载包<a href="some-tips-j.html#加载包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="some-tips-j.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb7-2"><a href="some-tips-j.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span></code></pre></div>
 </div>
-<div id="产生数据集" class="section level3" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> 产生数据集</h3>
+<div id="产生数据集" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> 产生数据集<a href="some-tips-j.html#产生数据集" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>假设数据来源于一个混合分布。</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="some-tips-j.html#cb8-1" aria-hidden="true" tabindex="-1"></a>item <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
 <span id="cb8-2"><a href="some-tips-j.html#cb8-2" aria-hidden="true" tabindex="-1"></a>inds <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, item, <span class="fl">0.5</span>)</span>
 <span id="cb8-3"><a href="some-tips-j.html#cb8-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(inds, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">rnorm</span>(item <span class="sc">-</span> inds, <span class="dv">8</span>, <span class="dv">1</span>))</span>
-<span id="cb8-4"><a href="some-tips-j.html#cb8-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">value =</span> x, <span class="at">class =</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">length</span>(x)))</span></code></pre></div>
+<span id="cb8-4"><a href="some-tips-j.html#cb8-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;value&quot;</span> <span class="ot">=</span> x, <span class="st">&quot;class&quot;</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">length</span>(x)))</span></code></pre></div>
 </div>
-<div id="绘制密度函数图并添加分位数线" class="section level3" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> 绘制密度函数图并添加分位数线</h3>
+<div id="绘制密度函数图并添加分位数线" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> 绘制密度函数图并添加分位数线<a href="some-tips-j.html#绘制密度函数图并添加分位数线" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="some-tips-j.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘图</span></span>
-<span id="cb9-2"><a href="some-tips-j.html#cb9-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> class, <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">stat</span>(quantile)))) <span class="sc">+</span> <span class="fu">stat_density_ridges</span>(<span class="at">geom =</span> <span class="st">&quot;density_ridges_gradient&quot;</span>, </span>
-<span id="cb9-3"><a href="some-tips-j.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">calc_ecdf =</span> <span class="cn">TRUE</span>, <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)) <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">name =</span> <span class="st">&quot;Probability&quot;</span>, </span>
-<span id="cb9-4"><a href="some-tips-j.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>, </span>
-<span id="cb9-5"><a href="some-tips-j.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
-<span id="cb9-6"><a href="some-tips-j.html#cb9-6" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
+<span id="cb9-2"><a href="some-tips-j.html#cb9-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> class, <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">stat</span>(quantile)))) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="some-tips-j.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_density_ridges</span>(</span>
+<span id="cb9-4"><a href="some-tips-j.html#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;density_ridges_gradient&quot;</span>,</span>
+<span id="cb9-5"><a href="some-tips-j.html#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">calc_ecdf =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-6"><a href="some-tips-j.html#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>)</span>
+<span id="cb9-7"><a href="some-tips-j.html#cb9-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="some-tips-j.html#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb9-9"><a href="some-tips-j.html#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Probability&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>)</span>
+<span id="cb9-10"><a href="some-tips-j.html#cb9-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-11"><a href="some-tips-j.html#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb9-12"><a href="some-tips-j.html#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>, <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb9-13"><a href="some-tips-j.html#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb9-14"><a href="some-tips-j.html#cb9-14" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="some-tips-j.html#cb10-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> class, <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">stat</span>(quantile)))) <span class="sc">+</span> <span class="fu">stat_density_ridges</span>(<span class="at">geom =</span> <span class="st">&quot;density_ridges_gradient&quot;</span>, </span>
-<span id="cb10-2"><a href="some-tips-j.html#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">calc_ecdf =</span> <span class="cn">TRUE</span>, <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.005</span>, <span class="fl">0.495</span>, <span class="fl">0.51</span>, <span class="fl">0.99</span>)) <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">name =</span> <span class="st">&quot;Probability&quot;</span>, </span>
-<span id="cb10-3"><a href="some-tips-j.html#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>), ) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="some-tips-j.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>, <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, </span>
-<span id="cb10-5"><a href="some-tips-j.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
-<span id="cb10-6"><a href="some-tips-j.html#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="some-tips-j.html#cb10-7" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="some-tips-j.html#cb10-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> value, <span class="at">y =</span> class, <span class="at">fill =</span> <span class="fu">factor</span>(<span class="fu">stat</span>(quantile)))) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="some-tips-j.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_density_ridges</span>(</span>
+<span id="cb10-3"><a href="some-tips-j.html#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;density_ridges_gradient&quot;</span>,</span>
+<span id="cb10-4"><a href="some-tips-j.html#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">calc_ecdf =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-5"><a href="some-tips-j.html#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">quantiles =</span> <span class="fu">c</span>(<span class="fl">0.005</span>, <span class="fl">0.495</span>, <span class="fl">0.51</span>, <span class="fl">0.99</span>)</span>
+<span id="cb10-6"><a href="some-tips-j.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="some-tips-j.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb10-8"><a href="some-tips-j.html#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Probability&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>, <span class="st">&quot;#436FB0&quot;</span>, <span class="st">&quot;#E2EAF6&quot;</span>),</span>
+<span id="cb10-9"><a href="some-tips-j.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="some-tips-j.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb10-11"><a href="some-tips-j.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>, <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="some-tips-j.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb10-13"><a href="some-tips-j.html#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="some-tips-j.html#cb10-14" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
-<div id="合并两图使用cowplot包" class="section level3" number="6.2.4">
-<h3><span class="header-section-number">6.2.4</span> 合并两图（使用cowplot包）</h3>
+<div id="合并两图使用cowplot包" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> 合并两图（使用cowplot包）<a href="some-tips-j.html#合并两图使用cowplot包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="some-tips-j.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
-<span id="cb11-2"><a href="some-tips-j.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pdf(&#39;plot_cow.pdf&#39;, width = 8, height = 4)</span></span>
+<span id="cb11-2"><a href="some-tips-j.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pdf(&quot;plot_cow.pdf&quot;, width = 8, height = 4)</span></span>
 <span id="cb11-3"><a href="some-tips-j.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_grid</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">1</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="some-tips-j.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dev.off()</span></span></code></pre></div>
 </div>
 </div>
-<div id="绘制不同参数的密度函数" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> 绘制不同参数的密度函数</h2>
-<div id="beta-密度函数" class="section level3" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Beta 密度函数</h3>
+<div id="绘制不同参数的密度函数" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 绘制不同参数的密度函数<a href="some-tips-j.html#绘制不同参数的密度函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="beta-密度函数" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Beta 密度函数<a href="some-tips-j.html#beta-密度函数" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>绘制不同参数下的 Beta 密度函数。具体该分布的介绍可见：<a href="https://en.wikipedia.org/wiki/Beta_distribution" class="uri">https://en.wikipedia.org/wiki/Beta_distribution</a></p>
 <p>Beta函数如下：
 <span class="math display">\[
@@ -472,22 +502,23 @@ B(a,b) = \int_{0}^{1} x^{a-1} {(1-x)}^{b-1} dx,\quad a,b&gt;0
 <span id="cb13-3"><a href="some-tips-j.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
 <span id="cb13-4"><a href="some-tips-j.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span>
 <span id="cb13-5"><a href="some-tips-j.html#cb13-5" aria-hidden="true" tabindex="-1"></a>item <span class="ot">=</span> <span class="dv">1000</span></span>
-<span id="cb13-6"><a href="some-tips-j.html#cb13-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length =</span> item)</span>
-<span id="cb13-7"><a href="some-tips-j.html#cb13-7" aria-hidden="true" tabindex="-1"></a>beta_dist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(x, <span class="fu">dbeta</span>(x, <span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="fu">dbeta</span>(x, <span class="dv">2</span>, <span class="dv">2</span>), <span class="fu">dbeta</span>(x, <span class="fl">0.5</span>, </span>
-<span id="cb13-8"><a href="some-tips-j.html#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span>), <span class="fu">dbeta</span>(x, <span class="dv">2</span>, <span class="fl">0.5</span>), <span class="fu">dbeta</span>(x, <span class="dv">1</span>, <span class="dv">5</span>), <span class="fu">dbeta</span>(x, <span class="dv">5</span>, <span class="dv">1</span>), <span class="fu">dbeta</span>(x, <span class="dv">1</span>, <span class="dv">1</span>)))</span>
-<span id="cb13-9"><a href="some-tips-j.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(beta_dist) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;a=0.5,b=0.5&quot;</span>, <span class="st">&quot;a=2,b=2&quot;</span>, <span class="st">&quot;a=0.5,b=2&quot;</span>, <span class="st">&quot;a=2,b=0.5&quot;</span>, </span>
-<span id="cb13-10"><a href="some-tips-j.html#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;a=1,b=5&quot;</span>, <span class="st">&quot;a=5,b=1&quot;</span>, <span class="st">&quot;a=1,b=1&quot;</span>)</span>
-<span id="cb13-11"><a href="some-tips-j.html#cb13-11" aria-hidden="true" tabindex="-1"></a>beta_dist <span class="ot">&lt;-</span> <span class="fu">melt</span>(beta_dist, x)</span>
-<span id="cb13-12"><a href="some-tips-j.html#cb13-12" aria-hidden="true" tabindex="-1"></a>beta_dist<span class="sc">$</span>class <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">2</span> <span class="sc">*</span> item), <span class="fu">rep</span>(<span class="dv">4</span>, item))</span>
-<span id="cb13-13"><a href="some-tips-j.html#cb13-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(beta_dist, <span class="fu">aes</span>(x, value, <span class="at">color =</span> variable))</span>
-<span id="cb13-14"><a href="some-tips-j.html#cb13-14" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(class), <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Beta Distribution&quot;</span>, </span>
-<span id="cb13-15"><a href="some-tips-j.html#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;x&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Probability&quot;</span>) <span class="sc">+</span> <span class="fu">scale_color_aaas</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(), </span>
-<span id="cb13-16"><a href="some-tips-j.html#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<span id="cb13-6"><a href="some-tips-j.html#cb13-6" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="at">length =</span> item)</span>
+<span id="cb13-7"><a href="some-tips-j.html#cb13-7" aria-hidden="true" tabindex="-1"></a>beta_dist <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(x,<span class="fu">dbeta</span>(x,<span class="fl">0.5</span>,<span class="fl">0.5</span>), <span class="fu">dbeta</span>(x,<span class="dv">2</span>,<span class="dv">2</span>), <span class="fu">dbeta</span>(x,<span class="fl">0.5</span>,<span class="dv">2</span>),<span class="fu">dbeta</span>(x,<span class="dv">2</span>,<span class="fl">0.5</span>),<span class="fu">dbeta</span>(x,<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">dbeta</span>(x,<span class="dv">5</span>,<span class="dv">1</span>),<span class="fu">dbeta</span>(x,<span class="dv">1</span>,<span class="dv">1</span>)))</span>
+<span id="cb13-8"><a href="some-tips-j.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(beta_dist) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;a=0.5,b=0.5&quot;</span>,<span class="st">&quot;a=2,b=2&quot;</span>,<span class="st">&quot;a=0.5,b=2&quot;</span>,</span>
+<span id="cb13-9"><a href="some-tips-j.html#cb13-9" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;a=2,b=0.5&quot;</span>,<span class="st">&quot;a=1,b=5&quot;</span>,<span class="st">&quot;a=5,b=1&quot;</span>,<span class="st">&quot;a=1,b=1&quot;</span>)</span>
+<span id="cb13-10"><a href="some-tips-j.html#cb13-10" aria-hidden="true" tabindex="-1"></a>beta_dist <span class="ot">&lt;-</span> <span class="fu">melt</span>(beta_dist,x)</span>
+<span id="cb13-11"><a href="some-tips-j.html#cb13-11" aria-hidden="true" tabindex="-1"></a>beta_dist<span class="sc">$</span><span class="st">&quot;class&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">each =</span> <span class="dv">2</span><span class="sc">*</span>item),<span class="fu">rep</span>(<span class="dv">4</span>,item))</span>
+<span id="cb13-12"><a href="some-tips-j.html#cb13-12" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(beta_dist, <span class="fu">aes</span>(x,value, <span class="at">color=</span>variable))</span>
+<span id="cb13-13"><a href="some-tips-j.html#cb13-13" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb13-14"><a href="some-tips-j.html#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(class),<span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb13-15"><a href="some-tips-j.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">&quot;Beta Distribution&quot;</span>, <span class="at">x=</span><span class="st">&quot;x&quot;</span>, <span class="at">y=</span><span class="st">&quot;Probability&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb13-16"><a href="some-tips-j.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_aaas</span>() <span class="sc">+</span> </span>
+<span id="cb13-17"><a href="some-tips-j.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),<span class="at">legend.position =</span> <span class="st">&#39;none&#39;</span>) </span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 </div>
-<div id="散点图中加入第三变量的密度函数" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> 散点图中加入第三变量的密度函数</h2>
+<div id="散点图中加入第三变量的密度函数" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> 散点图中加入第三变量的密度函数<a href="some-tips-j.html#散点图中加入第三变量的密度函数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="some-tips-j.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Accept-reject algorithm</span></span>
 <span id="cb14-2"><a href="some-tips-j.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="do">### beta(2.7,6.3)</span></span>
 <span id="cb14-3"><a href="some-tips-j.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -509,154 +540,212 @@ B(a,b) = \int_{0}^{1} x^{a-1} {(1-x)}^{b-1} dx,\quad a,b&gt;0
 <span id="cb14-19"><a href="some-tips-j.html#cb14-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb14-20"><a href="some-tips-j.html#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
 <p><img src="5001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="绘制贝叶斯分析相关图形" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> 绘制贝叶斯分析相关图形<a href="some-tips-j.html#绘制贝叶斯分析相关图形" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>主要使用<a href="https://github.com/stan-dev/bayesplot">bayesplot</a>包进行绘制，对应的速查表网址为：<a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/bayesplot.pdf" class="uri">https://raw.githubusercontent.com/rstudio/cheatsheets/main/bayesplot.pdf</a></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="some-tips-j.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 加载需要使用的包</span></span>
+<span id="cb15-2"><a href="some-tips-j.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb15-3"><a href="some-tips-j.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext.auto</span>() <span class="co">#解决中文字体乱码问题</span></span>
+<span id="cb15-4"><a href="some-tips-j.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(bayesplot) </span>
+<span id="cb15-5"><a href="some-tips-j.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rstanarm) </span>
+<span id="cb15-6"><a href="some-tips-j.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">mc.cores =</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>()) </span>
+<span id="cb15-7"><a href="some-tips-j.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) </span>
+<span id="cb15-8"><a href="some-tips-j.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<div id="模型建模" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> 模型建模<a href="some-tips-j.html#模型建模" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>为了展示贝叶斯图，我们将使用 <code>rstanarm::stan glm</code> 拟合线性回归，并始终使用这个模型。</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="some-tips-j.html#cb16-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">stan_glm</span>(mpg<span class="sc">~</span>., <span class="at">data=</span>mtcars, <span class="at">chains=</span><span class="dv">4</span>) </span>
+<span id="cb16-2"><a href="some-tips-j.html#cb16-2" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(model)</span>
+<span id="cb16-3"><a href="some-tips-j.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># head(posterior)</span></span></code></pre></div>
+<p>展示你感兴趣参数的后验分布。</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="some-tips-j.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_areas</span>(posterior, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">&quot;drat&quot;</span>, <span class="st">&quot;am&quot;</span>, <span class="st">&quot;wt&quot;</span>),<span class="at">prob =</span> <span class="fl">0.8</span>) <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;后验分布&quot;</span>, <span class="st">&quot;中位数和80%区间&quot;</span>)</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>使用轨迹追踪图诊断收敛性</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="some-tips-j.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_trace</span>(posterior, <span class="at">pars=</span><span class="fu">c</span>(<span class="st">&quot;sigma&quot;</span>, <span class="st">&quot;wt&quot;</span>))</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>使用<code>as.array</code>，可以提取每一个链的数据。这允许您查看每个链所选参数的跟踪图。</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="some-tips-j.html#cb19-1" aria-hidden="true" tabindex="-1"></a>posterior_chains <span class="ot">&lt;-</span> <span class="fu">as.array</span>(model) </span>
+<span id="cb19-2"><a href="some-tips-j.html#cb19-2" aria-hidden="true" tabindex="-1"></a>fargs <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">labeller =</span> label_parsed) </span>
+<span id="cb19-3"><a href="some-tips-j.html#cb19-3" aria-hidden="true" tabindex="-1"></a>pars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;sigma&quot;</span>) </span>
+<span id="cb19-4"><a href="some-tips-j.html#cb19-4" aria-hidden="true" tabindex="-1"></a>chains_trace <span class="ot">&lt;-</span> <span class="fu">mcmc_trace</span>(posterior_chains, <span class="at">pars =</span> pars, <span class="at">n_warmup =</span> <span class="dv">300</span>, <span class="at">facet_args =</span> fargs)</span>
+<span id="cb19-5"><a href="some-tips-j.html#cb19-5" aria-hidden="true" tabindex="-1"></a>chains_trace</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>配对图有助于确定是否有任何高度相关的参数。</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="some-tips-j.html#cb20-1" aria-hidden="true" tabindex="-1"></a>posterior_chains <span class="sc">%&gt;%</span> <span class="fu">mcmc_pairs</span>(<span class="at">pars =</span> <span class="fu">c</span>(<span class="st">&quot;(Intercept)&quot;</span>, <span class="st">&quot;wt&quot;</span>, <span class="st">&quot;sigma&quot;</span>))</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="后验预测检查" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> 后验预测检查<a href="some-tips-j.html#后验预测检查" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>用后验预测密度来检查模型如何覆盖你的数据。</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="some-tips-j.html#cb21-1" aria-hidden="true" tabindex="-1"></a>ppd <span class="ot">&lt;-</span> <span class="fu">posterior_predict</span>(model, <span class="at">draws=</span><span class="dv">500</span>) </span>
+<span id="cb21-2"><a href="some-tips-j.html#cb21-2" aria-hidden="true" tabindex="-1"></a>ppd <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="some-tips-j.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ppc_intervals</span>(<span class="at">y =</span> mtcars<span class="sc">$</span>mpg, <span class="at">yrep =</span> ., <span class="at">x =</span> mtcars<span class="sc">$</span>wt, <span class="at">prob =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb21-4"><a href="some-tips-j.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Weight (1000 lbs)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;MPG&quot;</span>, <span class="at">title =</span> <span class="st">&quot;MPG的50%后验预测区间&quot;</span>)</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="some-tips-j.html#cb22-1" aria-hidden="true" tabindex="-1"></a>ppd <span class="sc">%&gt;%</span> <span class="fu">ppc_stat_grouped</span>(<span class="at">y =</span> mtcars<span class="sc">$</span>mpg,</span>
+<span id="cb22-2"><a href="some-tips-j.html#cb22-2" aria-hidden="true" tabindex="-1"></a>                         <span class="at">group =</span> mtcars<span class="sc">$</span>am,</span>
+<span id="cb22-3"><a href="some-tips-j.html#cb22-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">stat =</span> <span class="st">&quot;median&quot;</span>, <span class="at">binwidth=</span><span class="fl">0.5</span>)</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-20-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="诊断" class="section level3 hasAnchor" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> 诊断<a href="some-tips-j.html#诊断" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Bayesplot 可以方便地检查 rstanarm 默认使用的NUTS采样方法的诊断。</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="some-tips-j.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_scatter</span>(posterior, <span class="at">pars =</span> <span class="fu">c</span>(<span class="st">&quot;wt&quot;</span>, <span class="st">&quot;sigma&quot;</span>), <span class="at">np =</span> <span class="fu">nuts_params</span>(model<span class="sc">$</span>stanfit))</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="some-tips-j.html#cb24-1" aria-hidden="true" tabindex="-1"></a>np <span class="ot">&lt;-</span> <span class="fu">nuts_params</span>(model<span class="sc">$</span>stanfit)</span>
+<span id="cb24-2"><a href="some-tips-j.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mcmc_nuts_energy</span>(np, <span class="at">binwidth=</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="some-tips-j.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;NUTS Energy Diagnostic&quot;</span>)</span></code></pre></div>
+<p><img src="5001-some-examples_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
+</div>
 
 
 
-<div id="rmarkdown-简介" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Rmarkdown 简介</h2>
-<div id="官网视频介绍" class="section level3" number="6.5.1">
-<h3><span class="header-section-number">6.5.1</span> 官网视频介绍</h3>
+<div id="rmarkdown-简介" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Rmarkdown 简介<a href="some-tips-j.html#rmarkdown-简介" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="官网视频介绍" class="section level3 hasAnchor" number="6.6.1">
+<h3><span class="header-section-number">6.6.1</span> 官网视频介绍<a href="some-tips-j.html#官网视频介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
-<div id="rmarkdown-流程演示" class="section level2" number="6.6">
-<h2><span class="header-section-number">6.6</span> Rmarkdown 流程演示</h2>
-<div id="安装" class="section level3" number="6.6.1">
-<h3><span class="header-section-number">6.6.1</span> 安装</h3>
+<div id="rmarkdown-流程演示" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Rmarkdown 流程演示<a href="some-tips-j.html#rmarkdown-流程演示" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装" class="section level3 hasAnchor" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> 安装<a href="some-tips-j.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="新建rmarkdown项目" class="section level3" number="6.6.2">
-<h3><span class="header-section-number">6.6.2</span> 2.2. 新建Rmarkdown项目</h3>
+<div id="新建rmarkdown项目" class="section level3 hasAnchor" number="6.7.2">
+<h3><span class="header-section-number">6.7.2</span> 2.2. 新建Rmarkdown项目<a href="some-tips-j.html#新建rmarkdown项目" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="rmarkdown的导出" class="section level3" number="6.6.3">
-<h3><span class="header-section-number">6.6.3</span> 2.3. Rmarkdown的导出</h3>
-<div id="手动导出" class="section level4" number="6.6.3.1">
-<h4><span class="header-section-number">6.6.3.1</span> 手动导出</h4>
+<div id="rmarkdown的导出" class="section level3 hasAnchor" number="6.7.3">
+<h3><span class="header-section-number">6.7.3</span> 2.3. Rmarkdown的导出<a href="some-tips-j.html#rmarkdown的导出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="手动导出" class="section level4 hasAnchor" number="6.7.3.1">
+<h4><span class="header-section-number">6.7.3.1</span> 手动导出<a href="some-tips-j.html#手动导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="命令行导出" class="section level4" number="6.6.3.2">
-<h4><span class="header-section-number">6.6.3.2</span> 命令行导出</h4>
-</div>
-</div>
-<div id="rstudio界面介绍" class="section level3" number="6.6.4">
-<h3><span class="header-section-number">6.6.4</span> Rstudio界面介绍</h3>
+<div id="命令行导出" class="section level4 hasAnchor" number="6.7.3.2">
+<h4><span class="header-section-number">6.7.3.2</span> 命令行导出<a href="some-tips-j.html#命令行导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
 </div>
-<div id="第三章图表和代码输出" class="section level2" number="6.7">
-<h2><span class="header-section-number">6.7</span> 第三章：图、表和代码输出</h2>
-<div id="代码输出" class="section level3" number="6.7.1">
-<h3><span class="header-section-number">6.7.1</span> 代码输出</h3>
-<div id="行内代码" class="section level4" number="6.7.1.1">
-<h4><span class="header-section-number">6.7.1.1</span> 行内代码</h4>
-</div>
-<div id="代码块" class="section level4" number="6.7.1.2">
-<h4><span class="header-section-number">6.7.1.2</span> 代码块</h4>
+<div id="rstudio界面介绍" class="section level3 hasAnchor" number="6.7.4">
+<h3><span class="header-section-number">6.7.4</span> Rstudio界面介绍<a href="some-tips-j.html#rstudio界面介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 </div>
+<div id="第三章图表和代码输出" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> 第三章：图、表和代码输出<a href="some-tips-j.html#第三章图表和代码输出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="代码输出" class="section level3 hasAnchor" number="6.8.1">
+<h3><span class="header-section-number">6.8.1</span> 代码输出<a href="some-tips-j.html#代码输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="行内代码" class="section level4 hasAnchor" number="6.8.1.1">
+<h4><span class="header-section-number">6.8.1.1</span> 行内代码<a href="some-tips-j.html#行内代码" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="section" class="section level2" number="6.8">
-<h2><span class="header-section-number">6.8</span> [1] 1 2 3 4 5</h2>
-</div>
-<div id="section-1" class="section level2" number="6.9">
-<h2><span class="header-section-number">6.9</span> [1] 1</h2>
-</div>
-<div id="e-17" class="section level2" number="6.10">
-<h2><span class="header-section-number">6.10</span> [1] 6.123032e-17</h2>
-</div>
-<div id="section-2" class="section level2" number="6.11">
-<h2><span class="header-section-number">6.11</span> [1] 1</h2>
-</div>
-<div id="e-17-1" class="section level2" number="6.12">
-<h2><span class="header-section-number">6.12</span> [1] 6.123032e-17</h2>
-<div id="图片输出" class="section level3" number="6.12.1">
-<h3><span class="header-section-number">6.12.1</span> 图片输出</h3>
-<div id="插入-r-代码生成的图形" class="section level4" number="6.12.1.1">
-<h4><span class="header-section-number">6.12.1.1</span> 插入 R 代码生成的图形</h4>
-</div>
-<div id="插入外部图形文件" class="section level4" number="6.12.1.2">
-<h4><span class="header-section-number">6.12.1.2</span> 插入外部图形文件</h4>
-</div>
-</div>
-<div id="表格输出" class="section level3" number="6.12.2">
-<h3><span class="header-section-number">6.12.2</span> 表格输出</h3>
-<div id="外部表格输入" class="section level4" number="6.12.2.1">
-<h4><span class="header-section-number">6.12.2.1</span> 外部表格输入</h4>
-</div>
-<div id="内部代码输出的表格" class="section level4" number="6.12.2.2">
-<h4><span class="header-section-number">6.12.2.2</span> 内部代码输出的表格</h4>
-</div>
-</div>
-<div id="表格渲染" class="section level3" number="6.12.3">
-<h3><span class="header-section-number">6.12.3</span> 表格渲染</h3>
-<div id="安装-1" class="section level4" number="6.12.3.1">
-<h4><span class="header-section-number">6.12.3.1</span> 安装</h4>
-</div>
-<div id="表格外框设置" class="section level4" number="6.12.3.2">
-<h4><span class="header-section-number">6.12.3.2</span> 表格外框设置</h4>
-</div>
-<div id="设置表格的宽度" class="section level4" number="6.12.3.3">
-<h4><span class="header-section-number">6.12.3.3</span> 设置表格的宽度</h4>
-</div>
-<div id="设置表格的对齐方式" class="section level4" number="6.12.3.4">
-<h4><span class="header-section-number">6.12.3.4</span> 设置表格的对齐方式</h4>
-</div>
-<div id="设置表格的字体大小" class="section level4" number="6.12.3.5">
-<h4><span class="header-section-number">6.12.3.5</span> 设置表格的字体大小</h4>
-</div>
-<div id="设置表格的行与列" class="section level4" number="6.12.3.6">
-<h4><span class="header-section-number">6.12.3.6</span> 设置表格的行与列</h4>
-</div>
-<div id="其它表格渲染" class="section level4" number="6.12.3.7">
-<h4><span class="header-section-number">6.12.3.7</span> 其它表格渲染</h4>
+<div id="代码块" class="section level4 hasAnchor" number="6.8.1.2">
+<h4><span class="header-section-number">6.8.1.2</span> 代码块<a href="some-tips-j.html#代码块" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
 </div>
 </div>
-<div id="rmarkdown-的主题格式" class="section level2" number="6.13">
-<h2><span class="header-section-number">6.13</span> Rmarkdown 的主题格式</h2>
-<div id="rticles-包" class="section level3" number="6.13.1">
-<h3><span class="header-section-number">6.13.1</span> 4.1. rticles 包</h3>
+<div id="section" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> [1] 1 2 3 4 5<a href="some-tips-j.html#section" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="rmdformats-包" class="section level3" number="6.13.2">
-<h3><span class="header-section-number">6.13.2</span> rmdformats 包</h3>
+<div id="section-1" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> [1] 1<a href="some-tips-j.html#section-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="prettydoc-包" class="section level3" number="6.13.3">
-<h3><span class="header-section-number">6.13.3</span> 4.3. prettydoc 包</h3>
+<div id="e-17" class="section level2 hasAnchor" number="6.11">
+<h2><span class="header-section-number">6.11</span> [1] 6.123032e-17<a href="some-tips-j.html#e-17" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="tufte-包" class="section level3" number="6.13.4">
-<h3><span class="header-section-number">6.13.4</span> tufte 包</h3>
+<div id="section-2" class="section level2 hasAnchor" number="6.12">
+<h2><span class="header-section-number">6.12</span> [1] 1<a href="some-tips-j.html#section-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="cerulean-包" class="section level3" number="6.13.5">
-<h3><span class="header-section-number">6.13.5</span> cerulean 包</h3>
+<div id="e-17-1" class="section level2 hasAnchor" number="6.13">
+<h2><span class="header-section-number">6.13</span> [1] 6.123032e-17<a href="some-tips-j.html#e-17-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="图片输出" class="section level3 hasAnchor" number="6.13.1">
+<h3><span class="header-section-number">6.13.1</span> 图片输出<a href="some-tips-j.html#图片输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="插入-r-代码生成的图形" class="section level4 hasAnchor" number="6.13.1.1">
+<h4><span class="header-section-number">6.13.1.1</span> 插入 R 代码生成的图形<a href="some-tips-j.html#插入-r-代码生成的图形" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="插入外部图形文件" class="section level4 hasAnchor" number="6.13.1.2">
+<h4><span class="header-section-number">6.13.1.2</span> 插入外部图形文件<a href="some-tips-j.html#插入外部图形文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
 </div>
-<div id="总结一些常用技巧" class="section level2" number="6.14">
-<h2><span class="header-section-number">6.14</span> 总结一些常用技巧</h2>
-<div id="修改某些字体颜色" class="section level3" number="6.14.1">
-<h3><span class="header-section-number">6.14.1</span> 修改某些字体颜色</h3>
+<div id="表格输出" class="section level3 hasAnchor" number="6.13.2">
+<h3><span class="header-section-number">6.13.2</span> 表格输出<a href="some-tips-j.html#表格输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="外部表格输入" class="section level4 hasAnchor" number="6.13.2.1">
+<h4><span class="header-section-number">6.13.2.1</span> 外部表格输入<a href="some-tips-j.html#外部表格输入" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="更改全文页边距等" class="section level3" number="6.14.2">
-<h3><span class="header-section-number">6.14.2</span> 更改全文页边距等</h3>
+<div id="内部代码输出的表格" class="section level4 hasAnchor" number="6.13.2.2">
+<h4><span class="header-section-number">6.13.2.2</span> 内部代码输出的表格<a href="some-tips-j.html#内部代码输出的表格" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="缩进文本" class="section level3" number="6.14.3">
-<h3><span class="header-section-number">6.14.3</span> 缩进文本</h3>
 </div>
-<div id="分页" class="section level3" number="6.14.4">
-<h3><span class="header-section-number">6.14.4</span> 分页</h3>
+<div id="表格渲染" class="section level3 hasAnchor" number="6.13.3">
+<h3><span class="header-section-number">6.13.3</span> 表格渲染<a href="some-tips-j.html#表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="安装-1" class="section level4 hasAnchor" number="6.13.3.1">
+<h4><span class="header-section-number">6.13.3.1</span> 安装<a href="some-tips-j.html#安装-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="控制文本输出的宽度" class="section level3" number="6.14.5">
-<h3><span class="header-section-number">6.14.5</span> 控制文本输出的宽度</h3>
+<div id="表格外框设置" class="section level4 hasAnchor" number="6.13.3.2">
+<h4><span class="header-section-number">6.13.3.2</span> 表格外框设置<a href="some-tips-j.html#表格外框设置" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="控制图片输出大小" class="section level3" number="6.14.6">
-<h3><span class="header-section-number">6.14.6</span> 控制图片输出大小</h3>
+<div id="设置表格的宽度" class="section level4 hasAnchor" number="6.13.3.3">
+<h4><span class="header-section-number">6.13.3.3</span> 设置表格的宽度<a href="some-tips-j.html#设置表格的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="图片对齐" class="section level3" number="6.14.7">
-<h3><span class="header-section-number">6.14.7</span> 图片对齐</h3>
+<div id="设置表格的对齐方式" class="section level4 hasAnchor" number="6.13.3.4">
+<h4><span class="header-section-number">6.13.3.4</span> 设置表格的对齐方式<a href="some-tips-j.html#设置表格的对齐方式" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="代码块的行号" class="section level3" number="6.14.8">
-<h3><span class="header-section-number">6.14.8</span> 5.8.代码块的行号</h3>
+<div id="设置表格的字体大小" class="section level4 hasAnchor" number="6.13.3.5">
+<h4><span class="header-section-number">6.13.3.5</span> 设置表格的字体大小<a href="some-tips-j.html#设置表格的字体大小" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 </div>
-<div id="多列输出" class="section level3" number="6.14.9">
-<h3><span class="header-section-number">6.14.9</span> 多列输出</h3>
+<div id="设置表格的行与列" class="section level4 hasAnchor" number="6.13.3.6">
+<h4><span class="header-section-number">6.13.3.6</span> 设置表格的行与列<a href="some-tips-j.html#设置表格的行与列" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="其它表格渲染" class="section level4 hasAnchor" number="6.13.3.7">
+<h4><span class="header-section-number">6.13.3.7</span> 其它表格渲染<a href="some-tips-j.html#其它表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+<div id="rmarkdown-的主题格式" class="section level2 hasAnchor" number="6.14">
+<h2><span class="header-section-number">6.14</span> Rmarkdown 的主题格式<a href="some-tips-j.html#rmarkdown-的主题格式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="rticles-包" class="section level3 hasAnchor" number="6.14.1">
+<h3><span class="header-section-number">6.14.1</span> 4.1. rticles 包<a href="some-tips-j.html#rticles-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="rmdformats-包" class="section level3 hasAnchor" number="6.14.2">
+<h3><span class="header-section-number">6.14.2</span> rmdformats 包<a href="some-tips-j.html#rmdformats-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="prettydoc-包" class="section level3 hasAnchor" number="6.14.3">
+<h3><span class="header-section-number">6.14.3</span> 4.3. prettydoc 包<a href="some-tips-j.html#prettydoc-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="tufte-包" class="section level3 hasAnchor" number="6.14.4">
+<h3><span class="header-section-number">6.14.4</span> tufte 包<a href="some-tips-j.html#tufte-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="cerulean-包" class="section level3 hasAnchor" number="6.14.5">
+<h3><span class="header-section-number">6.14.5</span> cerulean 包<a href="some-tips-j.html#cerulean-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="总结一些常用技巧" class="section level2 hasAnchor" number="6.15">
+<h2><span class="header-section-number">6.15</span> 总结一些常用技巧<a href="some-tips-j.html#总结一些常用技巧" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="修改某些字体颜色" class="section level3 hasAnchor" number="6.15.1">
+<h3><span class="header-section-number">6.15.1</span> 修改某些字体颜色<a href="some-tips-j.html#修改某些字体颜色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="更改全文页边距等" class="section level3 hasAnchor" number="6.15.2">
+<h3><span class="header-section-number">6.15.2</span> 更改全文页边距等<a href="some-tips-j.html#更改全文页边距等" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="缩进文本" class="section level3 hasAnchor" number="6.15.3">
+<h3><span class="header-section-number">6.15.3</span> 缩进文本<a href="some-tips-j.html#缩进文本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="分页" class="section level3 hasAnchor" number="6.15.4">
+<h3><span class="header-section-number">6.15.4</span> 分页<a href="some-tips-j.html#分页" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="控制文本输出的宽度" class="section level3 hasAnchor" number="6.15.5">
+<h3><span class="header-section-number">6.15.5</span> 控制文本输出的宽度<a href="some-tips-j.html#控制文本输出的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="控制图片输出大小" class="section level3 hasAnchor" number="6.15.6">
+<h3><span class="header-section-number">6.15.6</span> 控制图片输出大小<a href="some-tips-j.html#控制图片输出大小" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="图片对齐" class="section level3 hasAnchor" number="6.15.7">
+<h3><span class="header-section-number">6.15.7</span> 图片对齐<a href="some-tips-j.html#图片对齐" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="代码块的行号" class="section level3 hasAnchor" number="6.15.8">
+<h3><span class="header-section-number">6.15.8</span> 5.8.代码块的行号<a href="some-tips-j.html#代码块的行号" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="多列输出" class="section level3 hasAnchor" number="6.15.9">
+<h3><span class="header-section-number">6.15.9</span> 多列输出<a href="some-tips-j.html#多列输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 
 </div>
 </div>
@@ -671,7 +760,6 @@ B(a,b) = \int_{0}^{1} x^{a-1} {(1-x)}^{b-1} dx,\quad a,b&gt;0
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -690,6 +778,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -710,6 +799,10 @@ gitbook.start({
 "text": null
 },
 "download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

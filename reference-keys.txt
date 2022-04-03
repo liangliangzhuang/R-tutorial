@@ -68,7 +68,7 @@ plotly包
 dt包
 networkd3包
 利用shiny包实现可交互的web应用
-some-tips
+some-tips-j
 绘制不同分布的-qq-图
 简单版本
 绘制正态分布的-qq-图
@@ -131,7 +131,7 @@ bookdown
 小编有话说
 appendix
 reference
-some-tips-j
+绘制贝叶斯分析相关图形
 新建rmarkdown项目
 rmarkdown的导出
 第三章图表和代码输出
@@ -146,3 +146,6 @@ e-17-1
 rticles-包
 prettydoc-包
 代码块的行号
+模型建模
+后验预测检查
+诊断

@@ -25,7 +25,7 @@ plot），让人在了解`ggplot2`的语言逻辑之前，就能迅速实现数�
 
 
 ```r
-head(iris, 10)
+head(iris,10)
 ```
 
 ```
@@ -62,13 +62,14 @@ str(iris)
 
 ```r
 library(ggplot2)
-qplot(Species, Sepal.Length, data = iris, geom = "boxplot", fill = Species, main = "依据种类分组的花萼长度箱线图")
+qplot(Species, Sepal.Length, data = iris, geom = "boxplot",
+      fill = Species,main = "依据种类分组的花萼长度箱线图")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-boxplot(Sepal.Length ~ Species, data = iris, main = "依据种类分组的花萼长度箱线图")
+boxplot(Sepal.Length~Species,data =iris,main = "依据种类分组的花萼长度箱线图")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" />
@@ -79,8 +80,8 @@ boxplot(Sepal.Length ~ Species, data = iris, main = "依据种类分组的花萼
 
 
 ```r
-qplot(Species, Sepal.Length, data = iris, geom = c("violin", "jitter"), fill = Species, 
-    main = "依据种类分组的花萼长度小提琴图")
+qplot(Species, Sepal.Length, data = iris, geom = c("violin", "jitter"), 
+      fill = Species,main = "依据种类分组的花萼长度小提琴图")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
@@ -91,8 +92,8 @@ qplot(Species, Sepal.Length, data = iris, geom = c("violin", "jitter"), fill = S
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, geom = "point", data = iris, colour = Species, shape = Species, 
-    main = "绘制花萼长度和花萼宽度的散点图")
+qplot(Sepal.Length, Sepal.Width, geom = "point",data = iris, colour = Species, 
+      shape = Species,main = "绘制花萼长度和花萼宽度的散点图")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
@@ -103,8 +104,8 @@ qplot(Sepal.Length, Sepal.Width, geom = "point", data = iris, colour = Species, 
 
 
 ```r
-qplot(Sepal.Length, Sepal.Width, data = iris, geom = c("point", "smooth"), facets = ~Species, 
-    main = "绘制分面板的散点图")
+qplot(Sepal.Length, Sepal.Width, data = iris, geom = c("point", "smooth"),
+      facets = ~Species,main = "绘制分面板的散点图")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
@@ -191,8 +192,9 @@ system，缩写coord)中，而**分面**(facet)则可以用来生成数据不同
 
 
 ```r
-ggplot(data = iris, mapping = aes(Petal.Length, Petal.Width)) + geom_point(size = 2, 
-    alpha = 0.5, col = "red") + geom_smooth(method = "lm", se = F)
+ggplot(data = iris, mapping = aes(Petal.Length,Petal.Width)) +
+  geom_point(size = 2,alpha = 0.5,col ="red") +
+  geom_smooth(method = "lm",se = F)
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
@@ -201,15 +203,15 @@ ggplot(data = iris, mapping = aes(Petal.Length, Petal.Width)) + geom_point(size 
 
 
 ```r
-ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width, col = Species)) + 
-    geom_point()
+ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Species)) +
+  geom_point() 
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-ggplot(data = iris) + geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
-    col = Species))
+ggplot(data = iris) +
+  geom_point(mapping = aes(x = Petal.Length,y = Petal.Width, col = Species))
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" />
@@ -220,17 +222,19 @@ ggplot(data = iris) + geom_point(mapping = aes(x = Petal.Length, y = Petal.Width
 
 
 ```r
-# 版本一
-ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width, col = Species)) + 
-    geom_point() + geom_smooth()
+#版本一
+ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Species)) +
+  geom_point() + 
+  geom_smooth() 
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # 版本二
-ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width)) + geom_point(mapping = aes(col = Species)) + 
-    geom_smooth()
+ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width)) +
+  geom_point(mapping = aes(col = Species)) + 
+  geom_smooth()
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" />
@@ -350,13 +354,15 @@ ggplot2为每一种几何类型指定了一种默认的统计类型，如果仅�
 
 
 ```r
-ggplot(iris) + geom_bar(aes(x = Sepal.Length), stat = "bin", binwidth = 0.5)
+ggplot(iris) + 
+  geom_bar(aes(x=Sepal.Length), stat="bin", binwidth = 0.5)
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-ggplot(iris) + stat_bin(aes(x = Sepal.Length), geom = "bar", binwidth = 0.5)
+ggplot(iris) + 
+  stat_bin(aes(x=Sepal.Length), geom="bar", binwidth = 0.5)
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" />
@@ -378,9 +384,10 @@ Wickham很后悔使用了这么漂亮的缺省值，因为很漂亮了大家都�
 
 
 ```r
-# 解释
-ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width, col = Species)) + 
-    geom_point() + geom_smooth()
+#解释
+ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Species)) +
+  geom_point() + 
+  geom_smooth() 
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
@@ -468,23 +475,28 @@ p + scale_fill_manual(
 
 
 ```r
-# 图一：使用scale_color_manual函数
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) + geom_point(size = 2) + 
-    scale_color_manual(values = c("orange", "olivedrab", "navy"), name = NULL)
+#图一：使用scale_color_manual函数
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
+  geom_point(size = 2) +
+  scale_color_manual(values = c("orange", "olivedrab", "navy"),
+                     name = NULL) 
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-# 图二:使用scale_color_brewer函数
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) + scale_color_grey() + 
-    geom_point(size = 2)
+#图二:使用scale_color_brewer函数
+ggplot(iris,aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
+  scale_color_grey()+
+  geom_point(size=2) 
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-# library(RColorBrewer) brewer.pal(3, 'Set1') display.brewer.all()
+# library(RColorBrewer)
+# brewer.pal(3, "Set1")
+# display.brewer.all()
 ```
 
 ## 坐标系
@@ -498,8 +510,9 @@ ggplot2默认的坐标系是笛卡尔坐标系，可以用如下方法指定取�
 
 ```r
 # 饼图 = 堆叠长条图 + polar_coordinates
-pie <- ggplot(my_iris, aes(x = factor(1), fill = Species)) + geom_bar(width = 1)
-pie + coord_polar(theta = "y", direction = -1, start = 30)
+pie <- ggplot(my_iris, aes(x = factor(1), fill = Species)) +
+  geom_bar(width = 1)
+pie + coord_polar(theta = "y",direction = -1,start = 30)
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
@@ -512,8 +525,9 @@ pie + coord_polar()
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
-# 锯齿图 = 柱状图 + polar_coordinates
-cxc <- ggplot(my_iris, aes(x = Species)) + geom_bar(width = 1, colour = "black")
+#锯齿图 = 柱状图 + polar_coordinates
+cxc <- ggplot(my_iris, aes(x = Species)) +
+  geom_bar(width = 1, colour = "black")
 cxc + coord_polar()
 ```
 
@@ -559,8 +573,10 @@ facet_wrap函数生成一个动态调整的一维布局，根据"\~位置变量1
 
 
 ```r
-ggplot(my_iris1) + geom_violin(aes(x = Species, y = feature_value)) + facet_wrap(~feature_name + 
-    Species, scales = "free_y", nrow = 3, strip.position = "bottom")
+ggplot(my_iris1) +
+  geom_violin(aes(x = Species, y = feature_value)) +
+  facet_wrap(~ feature_name + Species, scales = "free_y",nrow = 3,
+             strip.position = "bottom")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
@@ -593,10 +609,19 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
 
 ```r
 library(gapminder)
-p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp))
-p + geom_point(alpha = 0.4) + labs(title = "各国各年度人均GDP与期望寿命的关系", 
-    subtitle = "1952-2007", tag = "散点图", caption = "数据来源：gapminder", 
-    x = "人均GDP(单位：美元)", y = "期望寿命")
+p <- ggplot(data = gapminder,
+  mapping = aes(
+    x = gdpPercap,
+    y = lifeExp))
+p + geom_point(alpha = 0.4) + 
+  labs(
+    title = "各国各年度人均GDP与期望寿命的关系",
+    subtitle = "1952-2007",
+    tag = "散点图",
+    caption = "数据来源：gapminder",
+    x = "人均GDP(单位：美元)",
+    y = "期望寿命"
+  )
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
@@ -631,10 +656,19 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
 
 
 ```r
-p + geom_point() + geom_smooth(method = "gam") + scale_x_log10() + annotate(geom = "rect", 
-    xmin = 55000, xmax = 120000, ymin = 54, ymax = 71, col = "red", fill = "red", 
-    alpha = 0.5) + annotate(geom = "line", x = c(59000, 31600), y = c(53, 40), arrow = arrow(angle = 20, 
-    length = unit(4, "mm"))) + annotate(geom = "text", x = 31600, y = 38, label = "这些国家的期望寿命低于预期")
+p + geom_point() +
+  geom_smooth(method="gam") +
+  scale_x_log10() +
+  annotate(geom = "rect", 
+           xmin = 5.5E4, xmax = 1.2E5,
+           ymin = 54, ymax = 71,col = 'red',fill = 'red',alpha = 0.5) + 
+  annotate(geom = "line",
+           x = c(5.9E4, 3.16E4),
+           y = c(53,  40),
+           arrow = arrow(angle = 20, length = unit(4, "mm"))) +
+  annotate(geom = "text",
+           x = 3.16E4, y = 38,
+           label = "这些国家的期望寿命低于预期")
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" />
@@ -688,7 +722,7 @@ theme()函数用来指定设计元素，称为主题(theme)，而且可以单独
 
 
 ```r
-# iris 例子
+#iris 例子
 ```
 
 ## 保存图片
@@ -703,7 +737,8 @@ ggplot2包中提供ggsave函数进行图形保存。ggsave函数的使用格式�
 
 
 ```r
-ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species)) + geom_point(size = 2)
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
+  geom_point(size = 2)
 ```
 
 <img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" />
@@ -832,8 +867,8 @@ p2
 ```r
 ## 合并两图（使用cowplot包）
 library(cowplot)
-pdf("test/plot_cow.pdf", width = 8, height = 4)
-plot_grid(p1, p2, ncol = 2, nrow = 1, labels = c("d", "e"))
+pdf("test/plot_cow.pdf",width = 8,height = 4)
+plot_grid(p1,p2,ncol = 2,nrow = 1,labels = c("d","e"))
 dev.off()
 ```
 

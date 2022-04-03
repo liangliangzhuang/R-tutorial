@@ -123,9 +123,9 @@ rmarkdown::render("test.Rmd")
 1）自动更新日期
 
 ````markdown
-date: "2022-03-25"
-date: "25 March, 2022"
-date: "Last compiled on 25 March, 2022"
+date: "2022-04-03"
+date: "03 April, 2022"
+date: "Last compiled on 03 April, 2022"
 ```
 
 具体细节可参考：https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html

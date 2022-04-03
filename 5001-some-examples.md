@@ -283,7 +283,7 @@ ggplot(data) +
 ```r
 # 加载需要使用的包
 library(showtext)
-showtext.auto() #解决中文字体乱码问题
+showtext_auto() #解决中文字体乱码问题
 library(bayesplot) 
 library(rstanarm) 
 options(mc.cores = parallel::detectCores()) 
@@ -306,7 +306,8 @@ posterior <- as.matrix(model)
 
 
 ```r
-mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("后验分布", "中位数和80%区间")
+showtext_auto() 
+mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("Posterior")
 ```
 
 <img src="5001-some-examples_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
@@ -348,7 +349,7 @@ posterior_chains %>% mcmc_pairs(pars = c("(Intercept)", "wt", "sigma"))
 ppd <- posterior_predict(model, draws=500) 
 ppd %>%
   ppc_intervals(y = mtcars$mpg, yrep = ., x = mtcars$wt, prob = 0.5) + 
-  labs(x = "Weight (1000 lbs)", y = "MPG", title = "MPG的50%后验预测区间")
+  labs(x = "Weight (1000 lbs)", y = "MPG", title = "")
 ```
 
 <img src="5001-some-examples_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />

@@ -28,7 +28,9 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) +
 gg
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 
 使用三种不同的置信带构造置信区间，其可以用参数 `bandType` 调整。
@@ -48,7 +50,9 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) +
 gg
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 
 ### 进阶版本
@@ -86,7 +90,9 @@ p1 = ggplot(data = data, mapping = aes(sample = y)) +
 p1
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 
 #### 绘制威布尔分布的 QQ 图
@@ -108,7 +114,9 @@ p2 = ggplot(data = data, mapping = aes(sample = y)) +
 p2
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 可以看到该数据集，更适合使用 weibull分布进行拟合。
 
@@ -118,7 +126,9 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 2, nrow = 1)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 
 ## 绘制混合密度函数图以及添加分位数线
@@ -164,7 +174,9 @@ p1 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) +
 p1
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 
 ```r
@@ -184,7 +196,9 @@ p2 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) +
 p2
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 
 ### 合并两图（使用cowplot包）
@@ -195,7 +209,9 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 1, nrow = 2)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 ```r
 # dev.off()
@@ -242,7 +258,9 @@ g + geom_line() +
   theme_bw() + theme(panel.grid = element_blank(),legend.position = 'none') 
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-12-1} \end{center}
 
 
 ## 散点图中加入第三变量的密度函数
@@ -271,7 +289,9 @@ ggplot(data) +
   theme(panel.grid = element_blank())
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 
 ## 绘制贝叶斯分析相关图形
@@ -310,7 +330,9 @@ showtext_auto()
 mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("Posterior")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 使用轨迹追踪图诊断收敛性
 
@@ -318,7 +340,9 @@ mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("Poster
 mcmc_trace(posterior, pars=c("sigma", "wt"))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 使用`as.array`，可以提取每一个链的数据。这允许您查看每个链所选参数的跟踪图。
 
@@ -331,7 +355,9 @@ chains_trace <- mcmc_trace(posterior_chains, pars = pars, n_warmup = 300, facet_
 chains_trace
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
 配对图有助于确定是否有任何高度相关的参数。
 
@@ -339,7 +365,9 @@ chains_trace
 posterior_chains %>% mcmc_pairs(pars = c("(Intercept)", "wt", "sigma"))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 ### 后验预测检查
 
@@ -352,7 +380,9 @@ ppd %>%
   labs(x = "Weight (1000 lbs)", y = "MPG", title = "")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
 ```r
 ppd %>% ppc_stat_grouped(y = mtcars$mpg,
@@ -360,7 +390,9 @@ ppd %>% ppc_stat_grouped(y = mtcars$mpg,
                          stat = "median", binwidth=0.5)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-20-2.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-20-2} \end{center}
 
 ### 诊断
 
@@ -371,7 +403,9 @@ Bayesplot 可以方便地检查 rstanarm 默认使用的NUTS采样方法的诊�
 mcmc_scatter(posterior, pars = c("wt", "sigma"), np = nuts_params(model$stanfit))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-21-1} \end{center}
 
 
 ```r
@@ -380,7 +414,9 @@ mcmc_nuts_energy(np, binwidth=1) +
   ggtitle("NUTS Energy Diagnostic")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
 
 

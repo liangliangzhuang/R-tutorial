@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>10 附录 | 庄闪闪的可视化手册</title>
+  <title>11 附录 | 庄闪闪的可视化手册</title>
   <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="10 附录 | 庄闪闪的可视化手册" />
+  <meta property="og:title" content="11 附录 | 庄闪闪的可视化手册" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="10 附录 | 庄闪闪的可视化手册" />
+  <meta name="twitter:title" content="11 附录 | 庄闪闪的可视化手册" />
   
   <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
   
@@ -51,6 +51,13 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   jax: ["input/TeX","output/SVG"],
@@ -208,93 +215,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>5</b> 其他相关拓展包<span></span></a>
+<li class="chapter" data-level="5" data-path="main-diagram-types.html"><a href="main-diagram-types.html"><i class="fa fa-check"></i><b>5</b> 常用图形<span></span></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>5.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
-<li class="chapter" data-level="5.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>5.2</b> 整理的相关扩展包<span></span></a></li>
+<li class="chapter" data-level="5.1" data-path="main-diagram-types.html"><a href="main-diagram-types.html#散点图-1"><i class="fa fa-check"></i><b>5.1</b> 散点图<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="main-diagram-types.html"><a href="main-diagram-types.html#气泡图"><i class="fa fa-check"></i><b>5.2</b> 气泡图<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="main-diagram-types.html"><a href="main-diagram-types.html#线性图"><i class="fa fa-check"></i><b>5.3</b> 线性图<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="main-diagram-types.html"><a href="main-diagram-types.html#相关系数图热力图"><i class="fa fa-check"></i><b>5.4</b> 相关系数图/热力图<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="main-diagram-types.html"><a href="main-diagram-types.html#条形图-1"><i class="fa fa-check"></i><b>5.5</b> 条形图<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="main-diagram-types.html"><a href="main-diagram-types.html#箱线图-1"><i class="fa fa-check"></i><b>5.6</b> 箱线图<span></span></a></li>
+<li class="chapter" data-level="5.7" data-path="main-diagram-types.html"><a href="main-diagram-types.html#小提琴图-1"><i class="fa fa-check"></i><b>5.7</b> 小提琴图<span></span></a></li>
+<li class="chapter" data-level="5.8" data-path="main-diagram-types.html"><a href="main-diagram-types.html#饼图-1"><i class="fa fa-check"></i><b>5.8</b> 饼图<span></span></a></li>
+<li class="chapter" data-level="5.9" data-path="main-diagram-types.html"><a href="main-diagram-types.html#冲积图"><i class="fa fa-check"></i><b>5.9</b> 冲积图<span></span></a></li>
+<li class="chapter" data-level="5.10" data-path="main-diagram-types.html"><a href="main-diagram-types.html#系谱图"><i class="fa fa-check"></i><b>5.10</b> 系谱图<span></span></a></li>
+<li class="chapter" data-level="5.11" data-path="main-diagram-types.html"><a href="main-diagram-types.html#哑铃图"><i class="fa fa-check"></i><b>5.11</b> 哑铃图<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="main-diagram-types.html"><a href="main-diagram-types.html#斜率图"><i class="fa fa-check"></i><b>5.12</b> 斜率图<span></span></a></li>
+<li class="chapter" data-level="5.13" data-path="main-diagram-types.html"><a href="main-diagram-types.html#堆叠面积图"><i class="fa fa-check"></i><b>5.13</b> 堆叠面积图<span></span></a></li>
+<li class="chapter" data-level="5.14" data-path="main-diagram-types.html"><a href="main-diagram-types.html#棒棒糖图"><i class="fa fa-check"></i><b>5.14</b> 棒棒糖图<span></span></a></li>
+<li class="chapter" data-level="5.15" data-path="main-diagram-types.html"><a href="main-diagram-types.html#树状图"><i class="fa fa-check"></i><b>5.15</b> 树状图<span></span></a></li>
+<li class="chapter" data-level="5.16" data-path="main-diagram-types.html"><a href="main-diagram-types.html#瀑布图"><i class="fa fa-check"></i><b>5.16</b> 瀑布图<span></span></a></li>
+<li class="chapter" data-level="5.17" data-path="main-diagram-types.html"><a href="main-diagram-types.html#双标图"><i class="fa fa-check"></i><b>5.17</b> 双标图<span></span></a></li>
+<li class="chapter" data-level="5.18" data-path="main-diagram-types.html"><a href="main-diagram-types.html#雷达图星图蜘蛛图"><i class="fa fa-check"></i><b>5.18</b> 雷达图/星图/蜘蛛图<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>6</b> 认识交互式绘图工具<span></span></a>
+<li class="chapter" data-level="6" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>6</b> 其他相关拓展包<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>6.1</b> leaflet包<span></span></a></li>
-<li class="chapter" data-level="6.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>6.2</b> dygraphs包<span></span></a></li>
-<li class="chapter" data-level="6.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>6.3</b> plotly包<span></span></a></li>
-<li class="chapter" data-level="6.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>6.4</b> DT包<span></span></a></li>
-<li class="chapter" data-level="6.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>6.5</b> networkD3包<span></span></a></li>
-<li class="chapter" data-level="6.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>6.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
+<li class="chapter" data-level="6.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>6.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>6.2</b> 整理的相关扩展包<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="some-tips-alls.html"><a href="some-tips-alls.html"><i class="fa fa-check"></i><b>7</b> 常用案例<span></span></a>
+<li class="chapter" data-level="7" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>7</b> 认识交互式绘图工具<span></span></a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>7.1</b> 绘制不同分布的 QQ 图<span></span></a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#简单版本"><i class="fa fa-check"></i><b>7.1.1</b> 简单版本<span></span></a></li>
-<li class="chapter" data-level="7.1.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#进阶版本"><i class="fa fa-check"></i><b>7.1.2</b> 进阶版本<span></span></a></li>
+<li class="chapter" data-level="7.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>7.1</b> leaflet包<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>7.2</b> dygraphs包<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>7.3</b> plotly包<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>7.4</b> DT包<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>7.5</b> networkD3包<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>7.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>7.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
+<li class="chapter" data-level="8" data-path="some-tips-alls.html"><a href="some-tips-alls.html"><i class="fa fa-check"></i><b>8</b> 常用案例<span></span></a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#加载包"><i class="fa fa-check"></i><b>7.2.1</b> 加载包<span></span></a></li>
-<li class="chapter" data-level="7.2.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#产生数据集"><i class="fa fa-check"></i><b>7.2.2</b> 产生数据集<span></span></a></li>
-<li class="chapter" data-level="7.2.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>7.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
-<li class="chapter" data-level="7.2.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>7.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
+<li class="chapter" data-level="8.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>8.1</b> 绘制不同分布的 QQ 图<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#简单版本"><i class="fa fa-check"></i><b>8.1.1</b> 简单版本<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#进阶版本"><i class="fa fa-check"></i><b>8.1.2</b> 进阶版本<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>7.3</b> 绘制不同参数的密度函数<span></span></a>
+<li class="chapter" data-level="8.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>8.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#beta-密度函数"><i class="fa fa-check"></i><b>7.3.1</b> Beta 密度函数<span></span></a></li>
+<li class="chapter" data-level="8.2.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#加载包"><i class="fa fa-check"></i><b>8.2.1</b> 加载包<span></span></a></li>
+<li class="chapter" data-level="8.2.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#产生数据集"><i class="fa fa-check"></i><b>8.2.2</b> 产生数据集<span></span></a></li>
+<li class="chapter" data-level="8.2.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>8.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
+<li class="chapter" data-level="8.2.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>8.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>7.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
-<li class="chapter" data-level="7.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>7.5</b> 绘制贝叶斯分析相关图形<span></span></a>
+<li class="chapter" data-level="8.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>8.3</b> 绘制不同参数的密度函数<span></span></a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>7.5.1</b> 模型建模<span></span></a></li>
-<li class="chapter" data-level="7.5.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>7.5.2</b> 后验预测检查<span></span></a></li>
-<li class="chapter" data-level="7.5.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>7.5.3</b> 诊断<span></span></a></li>
+<li class="chapter" data-level="8.3.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#beta-密度函数"><i class="fa fa-check"></i><b>8.3.1</b> Beta 密度函数<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>8.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
+<li class="chapter" data-level="8.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.5</b> 绘制贝叶斯分析相关图形<span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.5.1</b> 模型建模<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.5.2</b> 后验预测检查<span></span></a></li>
+<li class="chapter" data-level="8.5.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.5.3</b> 诊断<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
-<li class="chapter" data-level="8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>8</b> R Markdown 入门教程<span></span></a>
+<li class="chapter" data-level="9" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>9</b> R Markdown 入门教程<span></span></a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>8.1</b> Rmarkdown 简介<span></span></a>
+<li class="chapter" data-level="9.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>9.1</b> Rmarkdown 简介<span></span></a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>8.1.1</b> 官网视频介绍<span></span></a></li>
+<li class="chapter" data-level="9.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>9.1.1</b> 官网视频介绍<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>8.2</b> Rmarkdown 流程演示<span></span></a>
+<li class="chapter" data-level="9.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>9.2</b> Rmarkdown 流程演示<span></span></a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>8.2.1</b> 安装<span></span></a></li>
-<li class="chapter" data-level="8.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>8.2.2</b> Rstudio界面介绍<span></span></a></li>
-<li class="chapter" data-level="8.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>8.2.3</b> 代码输出<span></span></a></li>
-<li class="chapter" data-level="8.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>8.2.4</b> 表格输出<span></span></a></li>
-<li class="chapter" data-level="8.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>8.2.5</b> 表格渲染<span></span></a></li>
+<li class="chapter" data-level="9.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>9.2.1</b> 安装<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>9.2.2</b> Rstudio界面介绍<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>9.2.3</b> 代码输出<span></span></a></li>
+<li class="chapter" data-level="9.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>9.2.4</b> 表格输出<span></span></a></li>
+<li class="chapter" data-level="9.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>9.2.5</b> 表格渲染<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>8.3</b> Rmarkdown 的主题格式<span></span></a>
+<li class="chapter" data-level="9.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>9.3</b> Rmarkdown 的主题格式<span></span></a>
 <ul>
-<li class="chapter" data-level="8.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>8.3.1</b> rmdformats 包<span></span></a></li>
-<li class="chapter" data-level="8.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>8.3.2</b> tufte 包<span></span></a></li>
-<li class="chapter" data-level="8.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>8.3.3</b> cerulean 包<span></span></a></li>
+<li class="chapter" data-level="9.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>9.3.1</b> rmdformats 包<span></span></a></li>
+<li class="chapter" data-level="9.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>9.3.2</b> tufte 包<span></span></a></li>
+<li class="chapter" data-level="9.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>9.3.3</b> cerulean 包<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>8.4</b> 总结一些常用技巧<span></span></a>
+<li class="chapter" data-level="9.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>9.4</b> 总结一些常用技巧<span></span></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>8.4.1</b> 修改某些字体颜色<span></span></a></li>
-<li class="chapter" data-level="8.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>8.4.2</b> 更改全文页边距等<span></span></a></li>
-<li class="chapter" data-level="8.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>8.4.3</b> 缩进文本<span></span></a></li>
-<li class="chapter" data-level="8.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>8.4.4</b> 分页<span></span></a></li>
-<li class="chapter" data-level="8.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>8.4.5</b> 控制文本输出的宽度<span></span></a></li>
-<li class="chapter" data-level="8.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>8.4.6</b> 控制图片输出大小<span></span></a></li>
-<li class="chapter" data-level="8.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>8.4.7</b> 图片对齐<span></span></a></li>
-<li class="chapter" data-level="8.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>8.4.8</b> 多列输出<span></span></a></li>
+<li class="chapter" data-level="9.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>9.4.1</b> 修改某些字体颜色<span></span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>9.4.2</b> 更改全文页边距等<span></span></a></li>
+<li class="chapter" data-level="9.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>9.4.3</b> 缩进文本<span></span></a></li>
+<li class="chapter" data-level="9.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>9.4.4</b> 分页<span></span></a></li>
+<li class="chapter" data-level="9.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>9.4.5</b> 控制文本输出的宽度<span></span></a></li>
+<li class="chapter" data-level="9.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>9.4.6</b> 控制图片输出大小<span></span></a></li>
+<li class="chapter" data-level="9.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>9.4.7</b> 图片对齐<span></span></a></li>
+<li class="chapter" data-level="9.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>9.4.8</b> 多列输出<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>9</b> 其他方式的文档沟通<span></span></a>
+<li class="chapter" data-level="10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>10</b> 其他方式的文档沟通<span></span></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>9.1</b> Typora<span></span></a></li>
-<li class="chapter" data-level="9.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>9.2</b> xaringan 幻灯片<span></span></a></li>
-<li class="chapter" data-level="9.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>9.3</b> 制作幻灯片<span></span></a></li>
-<li class="chapter" data-level="9.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>9.4</b> Rbeamer<span></span></a></li>
-<li class="chapter" data-level="9.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>9.5</b> Dashboards<span></span></a></li>
-<li class="chapter" data-level="9.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>9.6</b> shiny<span></span></a></li>
-<li class="chapter" data-level="9.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>9.7</b> blogdown<span></span></a></li>
-<li class="chapter" data-level="9.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>9.8</b> 制作简历<span></span></a></li>
-<li class="chapter" data-level="9.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>9.9</b> bookdown<span></span></a></li>
-<li class="chapter" data-level="9.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>9.10</b> 小编有话说<span></span></a></li>
+<li class="chapter" data-level="10.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>10.1</b> Typora<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>10.2</b> xaringan 幻灯片<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>10.3</b> 制作幻灯片<span></span></a></li>
+<li class="chapter" data-level="10.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>10.4</b> Rbeamer<span></span></a></li>
+<li class="chapter" data-level="10.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>10.5</b> Dashboards<span></span></a></li>
+<li class="chapter" data-level="10.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>10.6</b> shiny<span></span></a></li>
+<li class="chapter" data-level="10.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>10.7</b> blogdown<span></span></a></li>
+<li class="chapter" data-level="10.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>10.8</b> 制作简历<span></span></a></li>
+<li class="chapter" data-level="10.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>10.9</b> bookdown<span></span></a></li>
+<li class="chapter" data-level="10.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>10.10</b> 小编有话说<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>10</b> 附录<span></span></a>
+<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> 附录<span></span></a>
 <ul>
 <li><a href="appendix.html#安装r和rstudio">安装R和Rstudio<span></span></a>
 <ul>
@@ -305,7 +333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="appendix.html#如何获取帮助">如何获取帮助<span></span></a></li>
 <li><a href="appendix.html#r-语言社区">R 语言社区<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>11</b> 参考书籍<span></span></a></li>
+<li class="chapter" data-level="12" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>12</b> 参考书籍<span></span></a></li>
 </ul>
 
       </nav>
@@ -323,8 +351,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="appendix" class="section level1 hasAnchor" number="10">
-<h1><span class="header-section-number">10</span> 附录<a href="appendix.html#appendix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="appendix" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">11</span> 附录<a href="appendix.html#appendix" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>为了方便初学者快速入门以及文稿的完整性，这里罗列了常用问题的介绍，包括：安装R和Rstudio，使用Rstudio可能遇到的问题以及如何获取帮助。</p>
 <p><strong>注：</strong>该部分来源于<a href="https://bookdown.org/wangminjie/R4DS/intro-R.html#%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E5%B8%AE%E5%8A%A9">《数据科学中的 R 语言》</a>。</p>
 <div id="安装r和rstudio" class="section level2 unnumbered hasAnchor">

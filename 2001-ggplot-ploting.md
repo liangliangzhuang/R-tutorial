@@ -1,4 +1,4 @@
-# 使用 ggplot2 包绘图{#ggplot2-plot}
+# 使用 ggplot2 包绘图 {#ggplot2-plot}
 
 
 

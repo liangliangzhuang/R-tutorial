@@ -66,17 +66,13 @@ qplot(Species, Sepal.Length, data = iris, geom = "boxplot",
       fill = Species,main = "依据种类分组的花萼长度箱线图")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-3-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 boxplot(Sepal.Length~Species,data =iris,main = "依据种类分组的花萼长度箱线图")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-3-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-3-2.png" width="672" style="display: block; margin: auto;" />
 
 -   **例子二：**
 
@@ -88,9 +84,7 @@ qplot(Species, Sepal.Length, data = iris, geom = c("violin", "jitter"),
       fill = Species,main = "依据种类分组的花萼长度小提琴图")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-4-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
 
 -   **例子三：**
 
@@ -102,9 +96,7 @@ qplot(Sepal.Length, Sepal.Width, geom = "point",data = iris, colour = Species,
       shape = Species,main = "绘制花萼长度和花萼宽度的散点图")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-5-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
 
 -   **例子四：**
 
@@ -116,9 +108,7 @@ qplot(Sepal.Length, Sepal.Width, data = iris, geom = c("point", "smooth"),
       facets = ~Species,main = "绘制分面板的散点图")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-6-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
 
 ## ggplot2包图形语法
 
@@ -142,18 +132,14 @@ Fundamentals of Data Visualization <https://clauswilke.com/dataviz/>
 plot(iris$Sepal.Length, iris$Sepal.Width)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-8-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # qplot()
 qplot(x = Sepal.Length, y = Sepal.Width,data = iris,geom = "point")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-8-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # ggplot()
@@ -161,9 +147,7 @@ ggplot(data= iris, aes(x = Sepal.Length, y = Sepal.Width)) +  #绘制底层画�
 geom_point()  #在画布上添加点
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-8-3} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-8-3.png" width="672" style="display: block; margin: auto;" />
 
 ### 思想介绍
 
@@ -213,9 +197,7 @@ ggplot(data = iris, mapping = aes(Petal.Length,Petal.Width)) +
   geom_smooth(method = "lm",se = F)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-9-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
 
 ### 全局变量 vs. 局部变量
 
@@ -225,18 +207,14 @@ ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Specie
   geom_point() 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-10-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 ggplot(data = iris) +
   geom_point(mapping = aes(x = Petal.Length,y = Petal.Width, col = Species))
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-10-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-10-2.png" width="672" style="display: block; margin: auto;" />
 
 大家可以看到，以上两段代码出来的图是一样。但背后的含义却不同。
 
@@ -250,9 +228,7 @@ ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Specie
   geom_smooth() 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-11-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # 版本二
@@ -261,9 +237,7 @@ ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width)) +
   geom_smooth()
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-11-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" />
 
 ## 几何对象
 
@@ -384,18 +358,14 @@ ggplot(iris) +
   geom_bar(aes(x=Sepal.Length), stat="bin", binwidth = 0.5)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-12-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 ggplot(iris) + 
   stat_bin(aes(x=Sepal.Length), geom="bar", binwidth = 0.5)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-12-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-12-2.png" width="672" style="display: block; margin: auto;" />
 
 ## 刻度scale
 
@@ -420,9 +390,7 @@ ggplot(data = iris, mapping = aes(x = Petal.Length,y = Petal.Width, col = Specie
   geom_smooth() 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-13-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
 
 ### 丰富的刻度体系
 
@@ -486,9 +454,7 @@ p <- ggplot(my_iris) +
 p
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-14-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 p + scale_fill_manual(
@@ -501,9 +467,7 @@ p + scale_fill_manual(
   theme_bw()
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-14-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-14-2.png" width="672" style="display: block; margin: auto;" />
 
 使用`scale_color_manual`或`scale_color_brewer`函数修改图形的颜色。在对iris数据集中的Sepal.Length与Sepal.Width的散点图分别使用以上两种方法修改散点颜色
 
@@ -518,9 +482,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
                      name = NULL) 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-16-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 #图二:使用scale_color_brewer函数
@@ -529,9 +491,7 @@ ggplot(iris,aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
   geom_point(size=2) 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-16-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # library(RColorBrewer)
@@ -555,18 +515,14 @@ pie <- ggplot(my_iris, aes(x = factor(1), fill = Species)) +
 pie + coord_polar(theta = "y",direction = -1,start = 30)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-17-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 # 靶心图 = 饼图 + polar_coordinates
 pie + coord_polar()
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-17-2} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-2.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 #锯齿图 = 柱状图 + polar_coordinates
@@ -575,9 +531,7 @@ cxc <- ggplot(my_iris, aes(x = Species)) +
 cxc + coord_polar()
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-17-3} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-17-3.png" width="672" style="display: block; margin: auto;" />
 
 ## 分面
 
@@ -600,9 +554,7 @@ ggplot(my_iris1) +
   facet_grid(feature_name ~ Species, scales = "free")  # 分面
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-18-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -613,9 +565,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
   facet_grid(~Species)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-19-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
 
 **2. facet_wrap函数**
 
@@ -629,9 +579,7 @@ ggplot(my_iris1) +
              strip.position = "bottom")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-20-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -642,9 +590,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
   facet_wrap(~Species)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-21-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
 
 ## 标题、标注、指南、拼接
 
@@ -678,9 +624,7 @@ p + geom_point(alpha = 0.4) +
   )
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-22-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -695,9 +639,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
   )
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-23-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
 
 `labs()`只是提供了这些标题功能，一般并不会同时使用这些功能。
 在出版图书内，图形下方一般伴随有图形说明，这时一般就不再使用标题、副标题、标签、标注，而只需写在图的伴随说明文字中，当然，坐标轴标签一般还是需要的。
@@ -729,9 +671,7 @@ p + geom_point() +
            label = "这些国家的期望寿命低于预期")
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-24-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -741,9 +681,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) +  # 底�
   geom_smooth() 
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-25-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" />
 
 可以用`geom_hline()`、`geom_vline()`和`geom_abline()`画横线、竖线、斜线。
 ggplot2的默认主题会自动画参考线，可以用`theme()`函数指定参考线画法。
@@ -768,9 +706,7 @@ ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width,col = Specie
   theme(legend.position = 'left',panel.background = element_blank()) +theme_bw()
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-26-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
 
 ### 主题
 
@@ -805,9 +741,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, colour = Species))+
   geom_point(size = 2)
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-28-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 ggsave(file = "mygraph1.png", width = 6, height = 8)
@@ -863,9 +797,7 @@ p1 = ggplot(data,aes(x = group, y = value)) +
 p1
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-29-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" />
 
 ### 有正值和负值的柱形图
 
@@ -917,9 +849,7 @@ p2 = ggplot(df2,aes(x,y)) +
 p2  
 ```
 
-
-
-\begin{center}\includegraphics{2001-ggplot-ploting_files/figure-latex/unnamed-chunk-30-1} \end{center}
+<img src="2001-ggplot-ploting_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" />
 
 ### 合并两图
 
@@ -943,7 +873,7 @@ dev.off()
 ```
 
 ```
-## pdf 
-##   2
+## quartz_off_screen 
+##                 2
 ```
 

@@ -1,4 +1,4 @@
-<!--  -->
+<!-- # References {-} -->
 # 参考书籍{#reference}
 
 这里书籍都有线上免费版本，可以点击**书籍名称跳转**。同时感谢**西京学院刘琦老师**对文稿提供的帮助。
@@ -15,14 +15,10 @@
 
 其他有关**R语言**的书籍可在[**庄闪闪的R语言手册**](https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI1NjUwMjQxMQ==&scene=124#wechat_redirect)(**可跳转**)命令窗口输入**“R”**获取。也欢迎**关注**我的个人公众号，和我一起学R，统计和数据科学。
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{figure/vcode} 
-
-}
-
-\caption{个人公众号：庄闪闪的R语言手册}(\#fig:unnamed-chunk-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="figure/vcode.jpg" alt="个人公众号：庄闪闪的R语言手册" width="45%" />
+<p class="caption">(\#fig:unnamed-chunk-1)个人公众号：庄闪闪的R语言手册</p>
+</div>
 
 ![公众号内容：可视化，数据科学学习，有趣的R包，R基础视频教程](figure/me.png)
 **其他联系方式(可跳转)**：

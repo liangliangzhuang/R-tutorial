@@ -275,11 +275,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>8.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
 <li class="chapter" data-level="8.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制-gamma-分布相关图形"><i class="fa fa-check"></i><b>8.5</b> 绘制 Gamma 分布相关图形<span></span></a></li>
-<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.6</b> 绘制贝叶斯分析相关图形<span></span></a>
+<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#纯手动复现密度图"><i class="fa fa-check"></i><b>8.6</b> 纯手动复现密度图<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.7</b> 绘制贝叶斯分析相关图形<span></span></a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.6.1</b> 模型建模<span></span></a></li>
-<li class="chapter" data-level="8.6.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.6.2</b> 后验预测检查<span></span></a></li>
-<li class="chapter" data-level="8.6.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.6.3</b> 诊断<span></span></a></li>
+<li class="chapter" data-level="8.7.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.7.1</b> 模型建模<span></span></a></li>
+<li class="chapter" data-level="8.7.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.7.2</b> 后验预测检查<span></span></a></li>
+<li class="chapter" data-level="8.7.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.7.3</b> 诊断<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
@@ -361,8 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">4</span> 使用 ggplot2 包绘图<a href="ggplot2-plot.html#ggplot2-plot" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="简介-1" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> 简介<a href="ggplot2-plot.html#简介-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>ggplot2 包是 Harley
-Wickham 在 2005 年创建的，是包含了一套全面而连贯的语法的绘图系统。</p>
+<p>ggplot2 包是 Harley Wickham 在 2005
+年创建的，是包含了一套全面而连贯的语法的绘图系统。</p>
 <div class="figure">
 <img src="figure/15.png" alt="" />
 <p class="caption">Harley Wickham</p>
@@ -882,7 +883,7 @@ ggplot2的默认主题会自动画参考线，可以用<code>theme()</code>函�
 </div>
 <div id="例子" class="section level2 hasAnchor" number="4.11">
 <h2><span class="header-section-number">4.11</span> 例子<a href="ggplot2-plot.html#例子" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>该部分来源于：公众号[小明的数据分析笔记本]。大家可以通过以下例子对今天所学的知识进行回顾。</p>
+<p>该部分来源于：公众号[小明的数据分析笔记本]。大家可以通过以下例子对今天所学的知识进行回顾。其他例子可以在第 <span class="math inline">\(\ref{#some-tips-alls}\)</span> 找到。</p>
 <div id="柱状图误差项" class="section level3 hasAnchor" number="4.11.1">
 <h3><span class="header-section-number">4.11.1</span> 柱状图+误差项<a href="ggplot2-plot.html#柱状图误差项" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="ggplot2-plot.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="do">## 小明推送笔记《小明的数据分析笔记本》</span></span>

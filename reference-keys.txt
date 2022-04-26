@@ -103,6 +103,7 @@ some-tips-alls
 beta-密度函数
 散点图中加入第三变量的密度函数
 绘制-gamma-分布相关图形
+纯手动复现密度图
 绘制贝叶斯分析相关图形
 模型建模
 后验预测检查
@@ -155,3 +156,17 @@ bookdown
 小编有话说
 appendix
 reference
+新建rmarkdown项目
+rmarkdown的导出
+第三章图表和代码输出
+代码块
+section
+section-1
+e-17
+section-2
+e-17-1
+图片输出
+插入-r-代码生成的图形
+rticles-包
+prettydoc-包
+代码块的行号

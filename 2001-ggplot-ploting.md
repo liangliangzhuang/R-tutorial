@@ -1,3 +1,9 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # 使用 ggplot2 包绘图 {#ggplot2-plot}
 
 
@@ -6,8 +12,8 @@
 
 ## 简介
 
-ggplot2 包是 Harley
-Wickham 在 2005 年创建的，是包含了一套全面而连贯的语法的绘图系统。
+ggplot2 包是 Harley Wickham 在 2005
+年创建的，是包含了一套全面而连贯的语法的绘图系统。
 
 ![Harley Wickham](figure/15.png)
 
@@ -178,7 +184,7 @@ Wickham将这套可视化语法诠释为：一张统计图形就是从**数据**
 object，缩写geom)的**图形属性**(aesthetic
 attribute，缩写aes)的一个映射。
 
-![](figure/10.png) 
+![](figure/10.png)
 
 此外，图形中还可能包含数据的**统计变换**(statistical
 transformation，缩写stats)，最后绘制在某个特定的**坐标系**(coordinate
@@ -751,7 +757,7 @@ ggsave(file = "mygraph1.png", width = 6, height = 8)
 
 ## 例子
 
-该部分来源于：公众号[小明的数据分析笔记本]。大家可以通过以下例子对今天所学的知识进行回顾。
+该部分来源于：公众号[小明的数据分析笔记本]。大家可以通过以下例子对今天所学的知识进行回顾。其他例子可以在第 \ref{#some-tips-alls} 找到。
 
 ### 柱状图+误差项
 
@@ -876,4 +882,3 @@ dev.off()
 ## quartz_off_screen 
 ##                 2
 ```
-

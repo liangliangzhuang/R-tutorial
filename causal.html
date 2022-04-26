@@ -275,11 +275,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>8.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
 <li class="chapter" data-level="8.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制-gamma-分布相关图形"><i class="fa fa-check"></i><b>8.5</b> 绘制 Gamma 分布相关图形<span></span></a></li>
-<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.6</b> 绘制贝叶斯分析相关图形<span></span></a>
+<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#纯手动复现密度图"><i class="fa fa-check"></i><b>8.6</b> 纯手动复现密度图<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.7</b> 绘制贝叶斯分析相关图形<span></span></a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.6.1</b> 模型建模<span></span></a></li>
-<li class="chapter" data-level="8.6.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.6.2</b> 后验预测检查<span></span></a></li>
-<li class="chapter" data-level="8.6.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.6.3</b> 诊断<span></span></a></li>
+<li class="chapter" data-level="8.7.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.7.1</b> 模型建模<span></span></a></li>
+<li class="chapter" data-level="8.7.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.7.2</b> 后验预测检查<span></span></a></li>
+<li class="chapter" data-level="8.7.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.7.3</b> 诊断<span></span></a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
@@ -374,9 +375,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="causal.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#数据模拟产生</span></span>
 <span id="cb1-2"><a href="causal.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">1</span>)</span>
 <span id="cb1-3"><a href="causal.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(x,<span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 12.32  8.88 10.59  9.97  9.35 10.96 10.48  7.94  9.34  9.87 10.88 10.21
-## [13] 11.10 10.99  9.06 11.27 11.45  8.62  9.05  9.86 10.84  9.49 10.08  8.77
-## [25] 10.96  8.34 10.48  9.56 10.87 10.26</code></pre>
+<pre><code>##  [1]  8.53 11.42  9.91 10.00  9.32 10.14  8.67 11.40 10.15  9.79 12.00 12.15
+## [13] 10.18 11.32  9.92  8.60 11.59 11.12  9.73  8.34 11.01 10.74  9.79 11.56
+## [25] 10.40 10.13 10.52  9.93  9.35  9.57</code></pre>
 <p><code>hist()</code>中的<code>breaks()</code>可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="causal.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x,<span class="at">breaks =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>

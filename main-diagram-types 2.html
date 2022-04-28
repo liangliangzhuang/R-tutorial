@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 常用图形 | 庄闪闪的可视化手册</title>
+  <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 常用图形 | 庄闪闪的可视化手册" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 常用图形 | 庄闪闪的可视化手册" />
+  
+  <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+<meta name="author" content="庄闪闪" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ggplot2-plot.html"/>
+<link rel="next" href="other-packages.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.22/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#简介">简介<span></span></a></li>
+<li class="part"><span><b>I R 语言基础<span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列<span></span></a></li>
+<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列<span></span></a></li>
+<li class="part"><span><b>II R 语言可视化<span></span></b></span></li>
+<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数<span></span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形<span></span></a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法<span></span></a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法<span></span></a></li>
+<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍<span></span></a></li>
+<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象<span></span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换<span></span></a></li>
+<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale<span></span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系<span></span></a></li>
+<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面<span></span></a></li>
+<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接<span></span></a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题<span></span></a></li>
+<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能<span></span></a></li>
+<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南<span></span></a></li>
+<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片<span></span></a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子<span></span></a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项<span></span></a></li>
+<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图<span></span></a></li>
+<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="main-diagram-types.html"><a href="main-diagram-types.html"><i class="fa fa-check"></i><b>5</b> 常用图形<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="main-diagram-types.html"><a href="main-diagram-types.html#散点图-1"><i class="fa fa-check"></i><b>5.1</b> 散点图<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="main-diagram-types.html"><a href="main-diagram-types.html#气泡图"><i class="fa fa-check"></i><b>5.2</b> 气泡图<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="main-diagram-types.html"><a href="main-diagram-types.html#线性图"><i class="fa fa-check"></i><b>5.3</b> 线性图<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="main-diagram-types.html"><a href="main-diagram-types.html#相关系数图热力图"><i class="fa fa-check"></i><b>5.4</b> 相关系数图/热力图<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="main-diagram-types.html"><a href="main-diagram-types.html#条形图-1"><i class="fa fa-check"></i><b>5.5</b> 条形图<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="main-diagram-types.html"><a href="main-diagram-types.html#箱线图-1"><i class="fa fa-check"></i><b>5.6</b> 箱线图<span></span></a></li>
+<li class="chapter" data-level="5.7" data-path="main-diagram-types.html"><a href="main-diagram-types.html#小提琴图-1"><i class="fa fa-check"></i><b>5.7</b> 小提琴图<span></span></a></li>
+<li class="chapter" data-level="5.8" data-path="main-diagram-types.html"><a href="main-diagram-types.html#饼图-1"><i class="fa fa-check"></i><b>5.8</b> 饼图<span></span></a></li>
+<li class="chapter" data-level="5.9" data-path="main-diagram-types.html"><a href="main-diagram-types.html#冲积图"><i class="fa fa-check"></i><b>5.9</b> 冲积图<span></span></a></li>
+<li class="chapter" data-level="5.10" data-path="main-diagram-types.html"><a href="main-diagram-types.html#系谱图"><i class="fa fa-check"></i><b>5.10</b> 系谱图<span></span></a></li>
+<li class="chapter" data-level="5.11" data-path="main-diagram-types.html"><a href="main-diagram-types.html#哑铃图"><i class="fa fa-check"></i><b>5.11</b> 哑铃图<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="main-diagram-types.html"><a href="main-diagram-types.html#斜率图"><i class="fa fa-check"></i><b>5.12</b> 斜率图<span></span></a></li>
+<li class="chapter" data-level="5.13" data-path="main-diagram-types.html"><a href="main-diagram-types.html#堆叠面积图"><i class="fa fa-check"></i><b>5.13</b> 堆叠面积图<span></span></a></li>
+<li class="chapter" data-level="5.14" data-path="main-diagram-types.html"><a href="main-diagram-types.html#棒棒糖图"><i class="fa fa-check"></i><b>5.14</b> 棒棒糖图<span></span></a></li>
+<li class="chapter" data-level="5.15" data-path="main-diagram-types.html"><a href="main-diagram-types.html#树状图"><i class="fa fa-check"></i><b>5.15</b> 树状图<span></span></a></li>
+<li class="chapter" data-level="5.16" data-path="main-diagram-types.html"><a href="main-diagram-types.html#瀑布图"><i class="fa fa-check"></i><b>5.16</b> 瀑布图<span></span></a></li>
+<li class="chapter" data-level="5.17" data-path="main-diagram-types.html"><a href="main-diagram-types.html#双标图"><i class="fa fa-check"></i><b>5.17</b> 双标图<span></span></a></li>
+<li class="chapter" data-level="5.18" data-path="main-diagram-types.html"><a href="main-diagram-types.html#雷达图星图蜘蛛图"><i class="fa fa-check"></i><b>5.18</b> 雷达图/星图/蜘蛛图<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>6</b> 其他相关拓展包<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>6.1</b> ggplot2 官网 109 种拓展包<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>6.2</b> 整理的相关扩展包<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>7</b> 认识交互式绘图工具<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>7.1</b> leaflet包<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>7.2</b> dygraphs包<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>7.3</b> plotly包<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>7.4</b> DT包<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>7.5</b> networkD3包<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>7.6</b> 利用Shiny包实现可交互的Web应用<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="some-tips-alls.html"><a href="some-tips-alls.html"><i class="fa fa-check"></i><b>8</b> 常用案例<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>8.1</b> 绘制不同分布的 QQ 图<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#简单版本"><i class="fa fa-check"></i><b>8.1.1</b> 简单版本<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#进阶版本"><i class="fa fa-check"></i><b>8.1.2</b> 进阶版本<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>8.2</b> 绘制混合密度函数图以及添加分位数线<span></span></a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#加载包"><i class="fa fa-check"></i><b>8.2.1</b> 加载包<span></span></a></li>
+<li class="chapter" data-level="8.2.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#产生数据集"><i class="fa fa-check"></i><b>8.2.2</b> 产生数据集<span></span></a></li>
+<li class="chapter" data-level="8.2.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>8.2.3</b> 绘制密度函数图并添加分位数线<span></span></a></li>
+<li class="chapter" data-level="8.2.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>8.2.4</b> 合并两图（使用cowplot包）<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>8.3</b> 绘制不同参数的密度函数<span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#beta-密度函数"><i class="fa fa-check"></i><b>8.3.1</b> Beta 密度函数<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>8.4</b> 散点图中加入第三变量的密度函数<span></span></a></li>
+<li class="chapter" data-level="8.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制-gamma-分布相关图形"><i class="fa fa-check"></i><b>8.5</b> 绘制 Gamma 分布相关图形<span></span></a></li>
+<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.6</b> 绘制贝叶斯分析相关图形<span></span></a>
+<ul>
+<li class="chapter" data-level="8.6.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.6.1</b> 模型建模<span></span></a></li>
+<li class="chapter" data-level="8.6.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.6.2</b> 后验预测检查<span></span></a></li>
+<li class="chapter" data-level="8.6.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.6.3</b> 诊断<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III R 语言文档沟通<span></span></b></span></li>
+<li class="chapter" data-level="9" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>9</b> R Markdown 入门教程<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>9.1</b> Rmarkdown 简介<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>9.1.1</b> 官网视频介绍<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>9.2</b> Rmarkdown 流程演示<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>9.2.1</b> 安装<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>9.2.2</b> Rstudio界面介绍<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>9.2.3</b> 代码输出<span></span></a></li>
+<li class="chapter" data-level="9.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>9.2.4</b> 表格输出<span></span></a></li>
+<li class="chapter" data-level="9.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>9.2.5</b> 表格渲染<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>9.3</b> Rmarkdown 的主题格式<span></span></a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>9.3.1</b> rmdformats 包<span></span></a></li>
+<li class="chapter" data-level="9.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>9.3.2</b> tufte 包<span></span></a></li>
+<li class="chapter" data-level="9.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>9.3.3</b> cerulean 包<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>9.4</b> 总结一些常用技巧<span></span></a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>9.4.1</b> 修改某些字体颜色<span></span></a></li>
+<li class="chapter" data-level="9.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>9.4.2</b> 更改全文页边距等<span></span></a></li>
+<li class="chapter" data-level="9.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>9.4.3</b> 缩进文本<span></span></a></li>
+<li class="chapter" data-level="9.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>9.4.4</b> 分页<span></span></a></li>
+<li class="chapter" data-level="9.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>9.4.5</b> 控制文本输出的宽度<span></span></a></li>
+<li class="chapter" data-level="9.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>9.4.6</b> 控制图片输出大小<span></span></a></li>
+<li class="chapter" data-level="9.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>9.4.7</b> 图片对齐<span></span></a></li>
+<li class="chapter" data-level="9.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>9.4.8</b> 多列输出<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>10</b> 其他方式的文档沟通<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>10.1</b> Typora<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>10.2</b> xaringan 幻灯片<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>10.3</b> 制作幻灯片<span></span></a></li>
+<li class="chapter" data-level="10.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>10.4</b> Rbeamer<span></span></a></li>
+<li class="chapter" data-level="10.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>10.5</b> Dashboards<span></span></a></li>
+<li class="chapter" data-level="10.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>10.6</b> shiny<span></span></a></li>
+<li class="chapter" data-level="10.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>10.7</b> blogdown<span></span></a></li>
+<li class="chapter" data-level="10.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>10.8</b> 制作简历<span></span></a></li>
+<li class="chapter" data-level="10.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>10.9</b> bookdown<span></span></a></li>
+<li class="chapter" data-level="10.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>10.10</b> 小编有话说<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> 附录<span></span></a>
+<ul>
+<li><a href="appendix.html#安装r和rstudio">安装R和Rstudio<span></span></a>
+<ul>
+<li><a href="appendix.html#安装-r">安装 R<span></span></a></li>
+<li><a href="appendix.html#安装rstudio">安装RStudio<span></span></a></li>
+</ul></li>
+<li><a href="appendix.html#可能的问题">可能的问题<span></span></a></li>
+<li><a href="appendix.html#如何获取帮助">如何获取帮助<span></span></a></li>
+<li><a href="appendix.html#r-语言社区">R 语言社区<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>12</b> 参考书籍<span></span></a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">庄闪闪的可视化手册</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="main-diagram-types" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> 常用图形<a href="main-diagram-types.html#main-diagram-types" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR4pD2EmW9Gzxr1Q3qwgjEYkU64o2-ThlX1mXqfNQ2EKteVUVt6Qg2ImEKKi9XLv-Iutb3lD8esLyU7/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="main-diagram-types.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb100-2"><a href="main-diagram-types.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggExtra)</span>
+<span id="cb100-3"><a href="main-diagram-types.html#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ragg)</span>
+<span id="cb100-4"><a href="main-diagram-types.html#cb100-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalluvial)</span>
+<span id="cb100-5"><a href="main-diagram-types.html#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(treemapify)</span>
+<span id="cb100-6"><a href="main-diagram-types.html#cb100-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggalt)</span>
+<span id="cb100-7"><a href="main-diagram-types.html#cb100-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="main-diagram-types.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##   species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g sex  
+##   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;            &lt;int&gt;       &lt;int&gt; &lt;fct&gt;
+## 1 Adelie  Torge…           39.1          18.7              181        3750 male 
+## 2 Adelie  Torge…           39.5          17.4              186        3800 fema…
+## 3 Adelie  Torge…           40.3          18                195        3250 fema…
+## 4 Adelie  Torge…           NA            NA                 NA          NA &lt;NA&gt; 
+## 5 Adelie  Torge…           36.7          19.3              193        3450 fema…
+## 6 Adelie  Torge…           39.3          20.6              190        3650 male 
+## # … with 1 more variable: year &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="main-diagram-types.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co">#head(penguins_raw)</span></span></code></pre></div>
+<ul>
+<li>set <a href="https://jfly.uni-koeln.de/color/">colorblind-friendly palettes</a></li>
+</ul>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="main-diagram-types.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The palette with grey:</span></span>
+<span id="cb104-2"><a href="main-diagram-types.html#cb104-2" aria-hidden="true" tabindex="-1"></a>cbp1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#999999&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>,</span>
+<span id="cb104-3"><a href="main-diagram-types.html#cb104-3" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb104-4"><a href="main-diagram-types.html#cb104-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-5"><a href="main-diagram-types.html#cb104-5" aria-hidden="true" tabindex="-1"></a><span class="co"># The palette with black:</span></span>
+<span id="cb104-6"><a href="main-diagram-types.html#cb104-6" aria-hidden="true" tabindex="-1"></a>cbp2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#000000&quot;</span>, <span class="st">&quot;#E69F00&quot;</span>, <span class="st">&quot;#56B4E9&quot;</span>, <span class="st">&quot;#009E73&quot;</span>,</span>
+<span id="cb104-7"><a href="main-diagram-types.html#cb104-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">&quot;#F0E442&quot;</span>, <span class="st">&quot;#0072B2&quot;</span>, <span class="st">&quot;#D55E00&quot;</span>, <span class="st">&quot;#CC79A7&quot;</span>)</span>
+<span id="cb104-8"><a href="main-diagram-types.html#cb104-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-9"><a href="main-diagram-types.html#cb104-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotrix)</span>
+<span id="cb104-10"><a href="main-diagram-types.html#cb104-10" aria-hidden="true" tabindex="-1"></a>sliceValues <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">10</span>, <span class="dv">8</span>) <span class="co"># each slice value=10 for proportionate slices</span></span>
+<span id="cb104-11"><a href="main-diagram-types.html#cb104-11" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb104-12"><a href="main-diagram-types.html#cb104-12" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">pie3D</span>(sliceValues, </span>
+<span id="cb104-13"><a href="main-diagram-types.html#cb104-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">explode=</span><span class="dv">0</span>, </span>
+<span id="cb104-14"><a href="main-diagram-types.html#cb104-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">theta =</span> <span class="fl">1.2</span>, </span>
+<span id="cb104-15"><a href="main-diagram-types.html#cb104-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">col =</span> cbp1, </span>
+<span id="cb104-16"><a href="main-diagram-types.html#cb104-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> cbp1, </span>
+<span id="cb104-17"><a href="main-diagram-types.html#cb104-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">labelcex =</span> <span class="fl">0.9</span>,</span>
+<span id="cb104-18"><a href="main-diagram-types.html#cb104-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">shade =</span> <span class="fl">0.6</span>,</span>
+<span id="cb104-19"><a href="main-diagram-types.html#cb104-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">main =</span> <span class="st">&quot;Colorblind</span><span class="sc">\n</span><span class="st">friendly palette&quot;</span>)</span>
+<span id="cb104-20"><a href="main-diagram-types.html#cb104-20" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre><code>## [1] 0.3926991 1.1780972 1.9634954 2.7488936 3.5342917 4.3196899 5.1050881
+## [8] 5.8904862</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="main-diagram-types.html#cb106-1" aria-hidden="true" tabindex="-1"></a>ggplot <span class="ot">&lt;-</span> <span class="cf">function</span>(...) ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(...) <span class="sc">+</span> </span>
+<span id="cb106-2"><a href="main-diagram-types.html#cb106-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb106-3"><a href="main-diagram-types.html#cb106-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span> <span class="co"># note: needs to be overridden when using continuous color scales</span></span>
+<span id="cb106-4"><a href="main-diagram-types.html#cb106-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="main-diagram-types.html#cb107-1" aria-hidden="true" tabindex="-1"></a>penguins</span></code></pre></div>
+<pre><code>## # A tibble: 344 × 8
+##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+##    &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+##  1 Adelie  Torgersen           39.1          18.7               181        3750
+##  2 Adelie  Torgersen           39.5          17.4               186        3800
+##  3 Adelie  Torgersen           40.3          18                 195        3250
+##  4 Adelie  Torgersen           NA            NA                  NA          NA
+##  5 Adelie  Torgersen           36.7          19.3               193        3450
+##  6 Adelie  Torgersen           39.3          20.6               190        3650
+##  7 Adelie  Torgersen           38.9          17.8               181        3625
+##  8 Adelie  Torgersen           39.2          19.6               195        4675
+##  9 Adelie  Torgersen           34.1          18.1               193        3475
+## 10 Adelie  Torgersen           42            20.2               190        4250
+## # … with 334 more rows, and 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="main-diagram-types.html#cb109-1" aria-hidden="true" tabindex="-1"></a>penguins_long <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb109-2"><a href="main-diagram-types.html#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;key&quot;</span>, <span class="st">&quot;value&quot;</span>, bill_length_mm<span class="sc">:</span>body_mass_g)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="main-diagram-types.html#cb110-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb110-2"><a href="main-diagram-types.html#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb110-3"><a href="main-diagram-types.html#cb110-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(sex) <span class="sc">%&gt;%</span></span>
+<span id="cb110-4"><a href="main-diagram-types.html#cb110-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 8 × 3
+## # Groups:   species [3]
+##   species   sex        n
+##   &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;
+## 1 Adelie    female    73
+## 2 Adelie    male      73
+## 3 Gentoo    male      61
+## 4 Gentoo    female    58
+## 5 Chinstrap female    34
+## 6 Chinstrap male      34
+## 7 Adelie    &lt;NA&gt;       6
+## 8 Gentoo    &lt;NA&gt;       5</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="main-diagram-types.html#cb112-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb112-2"><a href="main-diagram-types.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="st">&quot;key&quot;</span>, <span class="st">&quot;value&quot;</span>, bill_length_mm<span class="sc">:</span>body_mass_g) <span class="sc">%&gt;%</span></span>
+<span id="cb112-3"><a href="main-diagram-types.html#cb112-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex, island, key) <span class="sc">%&gt;%</span></span>
+<span id="cb112-4"><a href="main-diagram-types.html#cb112-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb112-5"><a href="main-diagram-types.html#cb112-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sum =</span> <span class="fu">sum</span>(value),</span>
+<span id="cb112-6"><a href="main-diagram-types.html#cb112-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
+<span id="cb112-7"><a href="main-diagram-types.html#cb112-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">median =</span> <span class="fu">median</span>(value),</span>
+<span id="cb112-8"><a href="main-diagram-types.html#cb112-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(value),</span>
+<span id="cb112-9"><a href="main-diagram-types.html#cb112-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">se =</span> <span class="fu">sd</span>(value) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>()))</span></code></pre></div>
+<pre><code>## # A tibble: 52 × 10
+## # Groups:   species, sex, island [13]
+##    species sex    island    key            n    sum   mean median      sd     se
+##    &lt;fct&gt;   &lt;fct&gt;  &lt;fct&gt;     &lt;chr&gt;      &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Adelie  female Biscoe    bill_dept…    22   389.   17.7   17.7   1.09   0.233
+##  2 Adelie  female Biscoe    bill_leng…    22   822.   37.4   37.8   1.76   0.376
+##  3 Adelie  female Biscoe    body_mass…    22 74125  3369.  3375   343.    73.2  
+##  4 Adelie  female Biscoe    flipper_l…    22  4118   187.   187     6.74   1.44 
+##  5 Adelie  female Dream     bill_dept…    27   476.   17.6   17.8   0.897  0.173
+##  6 Adelie  female Dream     bill_leng…    27   997.   36.9   36.8   2.09   0.402
+##  7 Adelie  female Dream     body_mass…    27 90300  3344.  3400   212.    40.8  
+##  8 Adelie  female Dream     flipper_l…    27  5072   188.   188     5.51   1.06 
+##  9 Adelie  female Torgersen bill_dept…    24   421.   17.6   17.4   0.880  0.180
+## 10 Adelie  female Torgersen bill_leng…    24   901.   37.6   37.6   2.21   0.451
+## # … with 42 more rows</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="main-diagram-types.html#cb114-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb114-2"><a href="main-diagram-types.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, sex, island, year) <span class="sc">%&gt;%</span></span>
+<span id="cb114-3"><a href="main-diagram-types.html#cb114-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_each</span>(<span class="fu">funs</span>(sum, </span>
+<span id="cb114-4"><a href="main-diagram-types.html#cb114-4" aria-hidden="true" tabindex="-1"></a>                      mean, </span>
+<span id="cb114-5"><a href="main-diagram-types.html#cb114-5" aria-hidden="true" tabindex="-1"></a>                      median, </span>
+<span id="cb114-6"><a href="main-diagram-types.html#cb114-6" aria-hidden="true" tabindex="-1"></a>                      sd, </span>
+<span id="cb114-7"><a href="main-diagram-types.html#cb114-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">se =</span> <span class="fu">sd</span>(.) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">n</span>())</span>
+<span id="cb114-8"><a href="main-diagram-types.html#cb114-8" aria-hidden="true" tabindex="-1"></a>                      )</span>
+<span id="cb114-9"><a href="main-diagram-types.html#cb114-9" aria-hidden="true" tabindex="-1"></a>                 )</span></code></pre></div>
+<pre><code>## # A tibble: 35 × 24
+## # Groups:   species, sex, island [13]
+##    species sex   island  year bill_length_mm_… bill_depth_mm_s… flipper_length_…
+##    &lt;fct&gt;   &lt;fct&gt; &lt;fct&gt;  &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;            &lt;int&gt;
+##  1 Adelie  fema… Biscoe  2007             187.             92.9              909
+##  2 Adelie  fema… Biscoe  2008             330.            155               1679
+##  3 Adelie  fema… Biscoe  2009             305.            142.              1530
+##  4 Adelie  fema… Dream   2007             341.            161.              1665
+##  5 Adelie  fema… Dream   2008             290.            142.              1512
+##  6 Adelie  fema… Dream   2009             366.            173.              1895
+##  7 Adelie  fema… Torge…  2007             306.            145.              1501
+##  8 Adelie  fema… Torge…  2008             293.            139.              1520
+##  9 Adelie  fema… Torge…  2009             302.            137.              1498
+## 10 Adelie  male  Biscoe  2007             196.             91.5              908
+## # … with 25 more rows, and 17 more variables: body_mass_g_sum &lt;int&gt;,
+## #   bill_length_mm_mean &lt;dbl&gt;, bill_depth_mm_mean &lt;dbl&gt;,
+## #   flipper_length_mm_mean &lt;dbl&gt;, body_mass_g_mean &lt;dbl&gt;,
+## #   bill_length_mm_median &lt;dbl&gt;, bill_depth_mm_median &lt;dbl&gt;,
+## #   flipper_length_mm_median &lt;dbl&gt;, body_mass_g_median &lt;dbl&gt;,
+## #   bill_length_mm_sd &lt;dbl&gt;, bill_depth_mm_sd &lt;dbl&gt;,
+## #   flipper_length_mm_sd &lt;dbl&gt;, body_mass_g_sd &lt;dbl&gt;, …</code></pre>
+<div id="散点图-1" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 散点图<a href="main-diagram-types.html#散点图-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="main-diagram-types.html#cb116-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb116-2"><a href="main-diagram-types.html#cb116-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb116-3"><a href="main-diagram-types.html#cb116-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm, <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb116-4"><a href="main-diagram-types.html#cb116-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb116-5"><a href="main-diagram-types.html#cb116-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">#facet_wrap(vars(species), ncol = 3) +</span></span>
+<span id="cb116-6"><a href="main-diagram-types.html#cb116-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#scale_x_reverse() +</span></span>
+<span id="cb116-7"><a href="main-diagram-types.html#cb116-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#scale_y_reverse() +</span></span>
+<span id="cb116-8"><a href="main-diagram-types.html#cb116-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb116-9"><a href="main-diagram-types.html#cb116-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb116-10"><a href="main-diagram-types.html#cb116-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="st">&quot;body mass (g)&quot;</span>,</span>
+<span id="cb116-11"><a href="main-diagram-types.html#cb116-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Scatterplot&quot;</span>, </span>
+<span id="cb116-12"><a href="main-diagram-types.html#cb116-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species&quot;</span>,</span>
+<span id="cb116-13"><a href="main-diagram-types.html#cb116-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="main-diagram-types.html#cb117-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb117-2"><a href="main-diagram-types.html#cb117-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb117-3"><a href="main-diagram-types.html#cb117-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb117-4"><a href="main-diagram-types.html#cb117-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb117-5"><a href="main-diagram-types.html#cb117-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb117-6"><a href="main-diagram-types.html#cb117-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb117-7"><a href="main-diagram-types.html#cb117-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb117-8"><a href="main-diagram-types.html#cb117-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Scatterplot&quot;</span>, </span>
+<span id="cb117-9"><a href="main-diagram-types.html#cb117-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species&quot;</span>,</span>
+<span id="cb117-10"><a href="main-diagram-types.html#cb117-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<ul>
+<li>with labels/text</li>
+</ul>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="main-diagram-types.html#cb118-1" aria-hidden="true" tabindex="-1"></a>max_lables <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb118-2"><a href="main-diagram-types.html#cb118-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb118-3"><a href="main-diagram-types.html#cb118-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span></span>
+<span id="cb118-4"><a href="main-diagram-types.html#cb118-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">bill_length_mm =</span> <span class="fu">max</span>(bill_length_mm),</span>
+<span id="cb118-5"><a href="main-diagram-types.html#cb118-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">flipper_length_mm =</span> <span class="fu">max</span>(flipper_length_mm))</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="main-diagram-types.html#cb119-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb119-2"><a href="main-diagram-types.html#cb119-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb119-3"><a href="main-diagram-types.html#cb119-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb119-4"><a href="main-diagram-types.html#cb119-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb119-5"><a href="main-diagram-types.html#cb119-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb119-6"><a href="main-diagram-types.html#cb119-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_text</span>(<span class="at">data =</span> max_lables, <span class="fu">aes</span>(<span class="at">label =</span> island)) <span class="sc">+</span></span>
+<span id="cb119-7"><a href="main-diagram-types.html#cb119-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb119-8"><a href="main-diagram-types.html#cb119-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb119-9"><a href="main-diagram-types.html#cb119-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Scatterplot&quot;</span>, </span>
+<span id="cb119-10"><a href="main-diagram-types.html#cb119-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species&quot;</span>,</span>
+<span id="cb119-11"><a href="main-diagram-types.html#cb119-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<ul>
+<li>Jitter with smoothing line</li>
+</ul>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="main-diagram-types.html#cb120-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb120-2"><a href="main-diagram-types.html#cb120-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb120-3"><a href="main-diagram-types.html#cb120-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb120-4"><a href="main-diagram-types.html#cb120-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb120-5"><a href="main-diagram-types.html#cb120-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb120-6"><a href="main-diagram-types.html#cb120-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb120-7"><a href="main-diagram-types.html#cb120-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species), <span class="at">nrow =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb120-8"><a href="main-diagram-types.html#cb120-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb120-9"><a href="main-diagram-types.html#cb120-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb120-10"><a href="main-diagram-types.html#cb120-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Scatterplot with smoothing line&quot;</span>, </span>
+<span id="cb120-11"><a href="main-diagram-types.html#cb120-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species with loess smoothing line&quot;</span>,</span>
+<span id="cb120-12"><a href="main-diagram-types.html#cb120-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="main-diagram-types.html#cb121-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb121-2"><a href="main-diagram-types.html#cb121-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb121-3"><a href="main-diagram-types.html#cb121-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Adelie&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb121-4"><a href="main-diagram-types.html#cb121-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb121-5"><a href="main-diagram-types.html#cb121-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb121-6"><a href="main-diagram-types.html#cb121-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb121-7"><a href="main-diagram-types.html#cb121-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb121-8"><a href="main-diagram-types.html#cb121-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb121-9"><a href="main-diagram-types.html#cb121-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Scatterplot with smoothing line&quot;</span>, </span>
+<span id="cb121-10"><a href="main-diagram-types.html#cb121-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species with</span><span class="sc">\n</span><span class="st">loess smoothing line, histogram &amp; density distribution&quot;</span>,</span>
+<span id="cb121-11"><a href="main-diagram-types.html#cb121-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="main-diagram-types.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co">#(ggMarginal(p, type = &quot;densigram&quot;, fill = &quot;transparent&quot;))</span></span></code></pre></div>
+</div>
+<div id="气泡图" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> 气泡图<a href="main-diagram-types.html#气泡图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="main-diagram-types.html#cb123-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb123-2"><a href="main-diagram-types.html#cb123-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb123-3"><a href="main-diagram-types.html#cb123-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb123-4"><a href="main-diagram-types.html#cb123-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> species, <span class="at">shape =</span> species, <span class="at">size =</span> body_mass_g)) <span class="sc">+</span></span>
+<span id="cb123-5"><a href="main-diagram-types.html#cb123-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb123-6"><a href="main-diagram-types.html#cb123-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb123-7"><a href="main-diagram-types.html#cb123-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb123-8"><a href="main-diagram-types.html#cb123-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Bubble plot&quot;</span>, </span>
+<span id="cb123-9"><a href="main-diagram-types.html#cb123-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">&quot;body mass (g)&quot;</span>,</span>
+<span id="cb123-10"><a href="main-diagram-types.html#cb123-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species;</span><span class="sc">\n</span><span class="st">size indicates body mass in grams&quot;</span>,</span>
+<span id="cb123-11"><a href="main-diagram-types.html#cb123-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="线性图" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 线性图<a href="main-diagram-types.html#线性图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="main-diagram-types.html#cb124-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb124-2"><a href="main-diagram-types.html#cb124-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb124-3"><a href="main-diagram-types.html#cb124-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">&quot;Adelie&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb124-4"><a href="main-diagram-types.html#cb124-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, <span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb124-5"><a href="main-diagram-types.html#cb124-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb124-6"><a href="main-diagram-types.html#cb124-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb124-7"><a href="main-diagram-types.html#cb124-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb124-8"><a href="main-diagram-types.html#cb124-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Bill length (mm)&quot;</span>, </span>
+<span id="cb124-9"><a href="main-diagram-types.html#cb124-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">&quot;Flipper length (mm)&quot;</span>,</span>
+<span id="cb124-10"><a href="main-diagram-types.html#cb124-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">&quot;Line plot&quot;</span>, </span>
+<span id="cb124-11"><a href="main-diagram-types.html#cb124-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">subtitle =</span> <span class="st">&quot;Penguins bill v. flipper length by species and sex&quot;</span>,</span>
+<span id="cb124-12"><a href="main-diagram-types.html#cb124-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="相关系数图热力图" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> 相关系数图/热力图<a href="main-diagram-types.html#相关系数图热力图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="main-diagram-types.html#cb125-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb125-2"><a href="main-diagram-types.html#cb125-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb125-3"><a href="main-diagram-types.html#cb125-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(bill_depth_mm, bill_length_mm, body_mass_g, flipper_length_mm)</span>
+<span id="cb125-4"><a href="main-diagram-types.html#cb125-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb125-5"><a href="main-diagram-types.html#cb125-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(mat)</span></code></pre></div>
+<pre><code>## tibble [333 × 4] (S3: tbl_df/tbl/data.frame)
+##  $ bill_depth_mm    : num [1:333] 18.7 17.4 18 19.3 20.6 17.8 19.6 17.6 21.2 21.1 ...
+##  $ bill_length_mm   : num [1:333] 39.1 39.5 40.3 36.7 39.3 38.9 39.2 41.1 38.6 34.6 ...
+##  $ body_mass_g      : int [1:333] 3750 3800 3250 3450 3650 3625 4675 3200 3800 4400 ...
+##  $ flipper_length_mm: int [1:333] 181 186 195 193 190 181 195 182 191 198 ...</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="main-diagram-types.html#cb127-1" aria-hidden="true" tabindex="-1"></a>cormat <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">cor</span>(mat), <span class="dv">2</span>)</span>
+<span id="cb127-2"><a href="main-diagram-types.html#cb127-2" aria-hidden="true" tabindex="-1"></a>cormat[<span class="fu">upper.tri</span>(cormat)] <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb127-3"><a href="main-diagram-types.html#cb127-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-4"><a href="main-diagram-types.html#cb127-4" aria-hidden="true" tabindex="-1"></a>cormat <span class="ot">&lt;-</span> cormat <span class="sc">%&gt;%</span></span>
+<span id="cb127-5"><a href="main-diagram-types.html#cb127-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_data_frame</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb127-6"><a href="main-diagram-types.html#cb127-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">colnames</span>(mat)) <span class="sc">%&gt;%</span></span>
+<span id="cb127-7"><a href="main-diagram-types.html#cb127-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;y&quot;</span>, <span class="at">value =</span> <span class="st">&quot;value&quot;</span>, bill_depth_mm<span class="sc">:</span>flipper_length_mm)</span>
+<span id="cb127-8"><a href="main-diagram-types.html#cb127-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb127-9"><a href="main-diagram-types.html#cb127-9" aria-hidden="true" tabindex="-1"></a>cormat <span class="sc">%&gt;%</span></span>
+<span id="cb127-10"><a href="main-diagram-types.html#cb127-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb127-11"><a href="main-diagram-types.html#cb127-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(x, y) <span class="sc">%&gt;%</span></span>
+<span id="cb127-12"><a href="main-diagram-types.html#cb127-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">fill =</span> value)) <span class="sc">+</span> </span>
+<span id="cb127-13"><a href="main-diagram-types.html#cb127-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb127-14"><a href="main-diagram-types.html#cb127-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">high =</span> <span class="st">&quot;red&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb127-15"><a href="main-diagram-types.html#cb127-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">midpoint =</span> <span class="dv">0</span>, <span class="at">limit =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>), <span class="at">space =</span> <span class="st">&quot;Lab&quot;</span>, </span>
+<span id="cb127-16"><a href="main-diagram-types.html#cb127-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">name =</span> <span class="st">&quot;Pearson</span><span class="sc">\n</span><span class="st">Correlation&quot;</span>) <span class="sc">+</span></span>
+<span id="cb127-17"><a href="main-diagram-types.html#cb127-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb127-18"><a href="main-diagram-types.html#cb127-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_fixed</span>() <span class="sc">+</span></span>
+<span id="cb127-19"><a href="main-diagram-types.html#cb127-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb127-20"><a href="main-diagram-types.html#cb127-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb127-21"><a href="main-diagram-types.html#cb127-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Correlation heatmap&quot;</span>, </span>
+<span id="cb127-22"><a href="main-diagram-types.html#cb127-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Correlation btw. penguins&#39; traits&quot;</span>,</span>
+<span id="cb127-23"><a href="main-diagram-types.html#cb127-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+<div id="条形图-1" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> 条形图<a href="main-diagram-types.html#条形图-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>per default: counts</li>
+</ul>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="main-diagram-types.html#cb128-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a href="main-diagram-types.html#cb128-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb128-3"><a href="main-diagram-types.html#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species,</span>
+<span id="cb128-4"><a href="main-diagram-types.html#cb128-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb128-5"><a href="main-diagram-types.html#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb128-6"><a href="main-diagram-types.html#cb128-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb128-7"><a href="main-diagram-types.html#cb128-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Counts&quot;</span>,</span>
+<span id="cb128-8"><a href="main-diagram-types.html#cb128-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Barchart&quot;</span>, </span>
+<span id="cb128-9"><a href="main-diagram-types.html#cb128-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Counts of male &amp; female penguins per species in study&quot;</span>,</span>
+<span id="cb128-10"><a href="main-diagram-types.html#cb128-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="main-diagram-types.html#cb129-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb129-2"><a href="main-diagram-types.html#cb129-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb129-3"><a href="main-diagram-types.html#cb129-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species,</span>
+<span id="cb129-4"><a href="main-diagram-types.html#cb129-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb129-5"><a href="main-diagram-types.html#cb129-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="sc">+</span></span>
+<span id="cb129-6"><a href="main-diagram-types.html#cb129-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb129-7"><a href="main-diagram-types.html#cb129-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Counts&quot;</span>,</span>
+<span id="cb129-8"><a href="main-diagram-types.html#cb129-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Barchart&quot;</span>, </span>
+<span id="cb129-9"><a href="main-diagram-types.html#cb129-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Counts of male &amp; female penguins per species in study&quot;</span>,</span>
+<span id="cb129-10"><a href="main-diagram-types.html#cb129-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<ul>
+<li>alternative: set y-values</li>
+</ul>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="main-diagram-types.html#cb130-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb130-2"><a href="main-diagram-types.html#cb130-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb130-3"><a href="main-diagram-types.html#cb130-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb130-4"><a href="main-diagram-types.html#cb130-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g),</span>
+<span id="cb130-5"><a href="main-diagram-types.html#cb130-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd_bmg =</span> <span class="fu">sd</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb130-6"><a href="main-diagram-types.html#cb130-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_bmg,</span>
+<span id="cb130-7"><a href="main-diagram-types.html#cb130-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb130-8"><a href="main-diagram-types.html#cb130-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-9"><a href="main-diagram-types.html#cb130-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_bmg <span class="sc">-</span> sd_bmg, </span>
+<span id="cb130-10"><a href="main-diagram-types.html#cb130-10" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> mean_bmg <span class="sc">+</span> sd_bmg), </span>
+<span id="cb130-11"><a href="main-diagram-types.html#cb130-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb130-12"><a href="main-diagram-types.html#cb130-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb130-13"><a href="main-diagram-types.html#cb130-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb130-14"><a href="main-diagram-types.html#cb130-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Mean body mass (in g)&quot;</span>,</span>
+<span id="cb130-15"><a href="main-diagram-types.html#cb130-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Barchart&quot;</span>, </span>
+<span id="cb130-16"><a href="main-diagram-types.html#cb130-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Mean body mass of male &amp; female penguins per species</span><span class="sc">\n</span><span class="st">with standard deviation&quot;</span>,</span>
+<span id="cb130-17"><a href="main-diagram-types.html#cb130-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="main-diagram-types.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb131-2"><a href="main-diagram-types.html#cb131-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-3"><a href="main-diagram-types.html#cb131-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb131-4"><a href="main-diagram-types.html#cb131-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb131-5"><a href="main-diagram-types.html#cb131-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb131-6"><a href="main-diagram-types.html#cb131-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g),</span>
+<span id="cb131-7"><a href="main-diagram-types.html#cb131-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">sd_bmg =</span> <span class="fu">sd</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb131-8"><a href="main-diagram-types.html#cb131-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> mean_bmg,</span>
+<span id="cb131-9"><a href="main-diagram-types.html#cb131-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb131-10"><a href="main-diagram-types.html#cb131-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-11"><a href="main-diagram-types.html#cb131-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_bmg <span class="sc">-</span> sd_bmg, </span>
+<span id="cb131-12"><a href="main-diagram-types.html#cb131-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">ymax =</span> mean_bmg <span class="sc">+</span> sd_bmg), </span>
+<span id="cb131-13"><a href="main-diagram-types.html#cb131-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">width =</span> <span class="fl">0.2</span>,</span>
+<span id="cb131-14"><a href="main-diagram-types.html#cb131-14" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb131-15"><a href="main-diagram-types.html#cb131-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb131-16"><a href="main-diagram-types.html#cb131-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Mean body mass (in g)&quot;</span>,</span>
+<span id="cb131-17"><a href="main-diagram-types.html#cb131-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Barchart&quot;</span>, </span>
+<span id="cb131-18"><a href="main-diagram-types.html#cb131-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Mean body mass of male &amp; female penguins per species</span><span class="sc">\n</span><span class="st">with standard deviation&quot;</span>,</span>
+<span id="cb131-19"><a href="main-diagram-types.html#cb131-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span>
+<span id="cb131-20"><a href="main-diagram-types.html#cb131-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-21"><a href="main-diagram-types.html#cb131-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div>
+<div id="htmlwidget-dbec7b6c18bbbf4bdd16" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dbec7b6c18bbbf4bdd16">{"x":{"data":[{"orientation":"v","width":[0.45,0.45,0.45],"base":[0,0,0],"x":[0.775,1.775,2.775],"y":[3368.83561643836,3527.20588235294,4679.74137931035],"text":["species: Adelie<br />mean_bmg: 3368.836<br />sex: female","species: Chinstrap<br />mean_bmg: 3527.206<br />sex: female","species: Gentoo<br />mean_bmg: 4679.741<br />sex: female"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(153,153,153,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"(female,1)","legendgroup":"(female,1)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.45,0.45,0.45],"base":[0,0,0],"x":[1.225,2.225,3.225],"y":[4043.49315068493,3938.97058823529,5484.83606557377],"text":["species: Adelie<br />mean_bmg: 4043.493<br />sex: male","species: Chinstrap<br />mean_bmg: 3938.971<br />sex: male","species: Gentoo<br />mean_bmg: 5484.836<br />sex: male"],"type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(230,159,0,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"(male,1)","legendgroup":"(male,1)","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[0.775,1.775,2.775],"y":[3368.83561643836,3527.20588235294,4679.74137931035],"text":["species: Adelie<br />mean_bmg: 3368.836<br />sex: female<br />mean_bmg - sd_bmg: 3099.456<br />mean_bmg + sd_bmg: 3638.216","species: Chinstrap<br />mean_bmg: 3527.206<br />sex: female<br />mean_bmg - sd_bmg: 3241.872<br />mean_bmg + sd_bmg: 3812.540","species: Gentoo<br />mean_bmg: 4679.741<br />sex: female<br />mean_bmg - sd_bmg: 4398.163<br />mean_bmg + sd_bmg: 4961.320"],"type":"scatter","mode":"lines","opacity":1,"line":{"color":"transparent"},"error_y":{"array":[269.380101843856,285.333911718307,281.578293642631],"arrayminus":[269.380101843856,285.333911718307,281.578293642631],"type":"data","width":5.25,"symmetric":false,"color":"rgba(0,0,0,1)"},"name":"(female,1)","legendgroup":"(female,1)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1.225,2.225,3.225],"y":[4043.49315068493,3938.97058823529,5484.83606557377],"text":["species: Adelie<br />mean_bmg: 4043.493<br />sex: male<br />mean_bmg - sd_bmg: 3696.682<br />mean_bmg + sd_bmg: 4390.305","species: Chinstrap<br />mean_bmg: 3938.971<br />sex: male<br />mean_bmg - sd_bmg: 3576.833<br />mean_bmg + sd_bmg: 4301.108","species: Gentoo<br />mean_bmg: 5484.836<br />sex: male<br />mean_bmg - sd_bmg: 5171.677<br />mean_bmg + sd_bmg: 5797.995"],"type":"scatter","mode":"lines","opacity":1,"line":{"color":"transparent"},"error_y":{"array":[346.811553187978,362.13755006812,313.158595620381],"arrayminus":[346.811553187978,362.137550068121,313.158595620381],"type":"data","width":5.25,"symmetric":false,"color":"rgba(0,0,0,1)"},"name":"(male,1)","legendgroup":"(male,1)","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":48.9497716894977},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Barchart","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,3.6],"tickmode":"array","ticktext":["Adelie","Chinstrap","Gentoo"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Adelie","Chinstrap","Gentoo"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Species","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-289.899733059708,6087.89439425386],"tickmode":"array","ticktext":["0","2000","4000","6000"],"tickvals":[0,2000,4000,6000],"categoryorder":"array","categoryarray":["0","2000","4000","6000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Mean body mass (in g)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"sex","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"d6c386d842":{"x":{},"y":{},"fill":{},"type":"bar"},"d6c9dfd6dd":{"x":{},"y":{},"fill":{},"ymin":{},"ymax":{}}},"cur_data":"d6c386d842","visdat":{"d6c386d842":["function (y) ","x"],"d6c9dfd6dd":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="箱线图-1" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> 箱线图<a href="main-diagram-types.html#箱线图-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="main-diagram-types.html#cb132-1" aria-hidden="true" tabindex="-1"></a>pp <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb132-2"><a href="main-diagram-types.html#cb132-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb132-3"><a href="main-diagram-types.html#cb132-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g,</span>
+<span id="cb132-4"><a href="main-diagram-types.html#cb132-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb132-5"><a href="main-diagram-types.html#cb132-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb132-6"><a href="main-diagram-types.html#cb132-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb132-7"><a href="main-diagram-types.html#cb132-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (in g)&quot;</span>,</span>
+<span id="cb132-8"><a href="main-diagram-types.html#cb132-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Boxplot&quot;</span>, </span>
+<span id="cb132-9"><a href="main-diagram-types.html#cb132-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Body mass of three penguin species per sex&quot;</span>,</span>
+<span id="cb132-10"><a href="main-diagram-types.html#cb132-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span>
+<span id="cb132-11"><a href="main-diagram-types.html#cb132-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-12"><a href="main-diagram-types.html#cb132-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(pp)</span></code></pre></div>
+<div id="htmlwidget-f1611d8806f0ffdb0ea3" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f1611d8806f0ffdb0ea3">{"x":{"data":[{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"y":[3250,3700,3550,3700,3500,3200,3700,3550,3800,2850,3450,2850,3450,3600,2900,3050,3800,3800,3350,3550,3150,3725,3450,3075,3550,3550,3400,3200,3300,3175,3600,3825,2900,3200,3300,3900,3325,2900,2925,3350,3350,3150,3150,3700,3100,3050,3000,3275,3500,3050,3600,3325,3625,3300,3200,3425,3450,3175,3450,3400,3325,3400,3400,3050,3800,3000,3500,3750,3475,3450,3150,3700,3250,4500,4300,4450,4150,4900,4550,4800,5100,4400,4850,4650,4400,4650,4900,4200,4300,4650,4450,4800,4200,4975,5000,4400,4700,5000,4575,4700,4600,4750,4750,4700,5050,4700,5150,4600,4950,4750,4350,4625,3950,4725,5000,4875,4625,4600,4200,4875,5200,4950,4850,4750,4375,4850,4400,4850,4700,4925,5200,3500,3650,3700,3525,3675,3950,3250,3600,4150,3675,3800,3300,3700,3400,3575,3350,3250,3700,3450,3525,3400,3650,2900,3850,3325,2700,3600,3775,3350,3200,3900,3650,3400,3500],"hoverinfo":"y","type":"box","fillcolor":"rgba(153,153,153,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"},"size":5.66929133858268},"line":{"color":"rgba(51,51,51,1)","width":1.88976377952756},"name":"(female,1)","legendgroup":"(female,1)","showlegend":true,"xaxis":"x","yaxis":"y","frame":null},{"x":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2],"y":[3750,3425,3950,4150,3650,4300,4675,4050,3800,4400,4450,3800,4500,3750,4200,4400,3600,4050,3950,3800,4250,3550,4700,3900,3950,3900,3900,4150,3900,4250,4150,3950,4300,4000,4650,4100,3700,4200,4400,3550,4600,4300,4725,4000,4250,3900,3950,4450,4475,3500,4775,4350,4600,4100,4275,3500,4075,3650,3725,4300,3325,3975,3900,3800,3875,3475,4000,4000,3775,3550,3900,4250,3750,5550,5850,5700,6300,5700,5200,5550,5100,5150,5700,5550,5250,5650,5050,5350,5800,5100,5650,5250,5700,5350,5450,5700,5350,4750,5600,5400,6050,5400,5550,5300,5400,5300,5650,5000,5200,4925,5850,5000,5250,5300,5600,5300,5500,5500,5050,5500,5800,5500,5550,5950,5000,5500,5550,5850,6000,5400,6000,5750,5950,5400,4550,3750,3650,3775,3600,4300,3950,4050,3550,4050,3725,4450,4100,4300,3250,3800,4800,4150,4500,4050,3900,3450,3300,4050,3800,4400,3950,3400,3700,4000,3950,3775,4100,3800],"hoverinfo":"y","type":"box","fillcolor":"rgba(230,159,0,1)","marker":{"opacity":null,"outliercolor":"rgba(0,0,0,1)","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"},"size":5.66929133858268},"line":{"color":"rgba(51,51,51,1)","width":1.88976377952756},"name":"(male,1)","legendgroup":"(male,1)","showlegend":true,"xaxis":"x","yaxis":"y","frame":null}],"layout":{"margin":{"t":43.7625570776256,"r":7.30593607305936,"b":40.1826484018265,"l":48.9497716894977},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Boxplot","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.4,3.6],"tickmode":"array","ticktext":["Adelie","Chinstrap","Gentoo"],"tickvals":[1,2,3],"categoryorder":"array","categoryarray":["Adelie","Chinstrap","Gentoo"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"Species","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2520,6480],"tickmode":"array","ticktext":["3000","4000","5000","6000"],"tickvals":[3000,4000,5000,6000],"categoryorder":"array","categoryarray":["3000","4000","5000","6000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"Body mass (in g)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"title":{"text":"sex","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"d6c1d940114":{"x":{},"y":{},"fill":{},"type":"box"}},"cur_data":"d6c1d940114","visdat":{"d6c1d940114":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>with points</li>
+</ul>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="main-diagram-types.html#cb133-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb133-2"><a href="main-diagram-types.html#cb133-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb133-3"><a href="main-diagram-types.html#cb133-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g,</span>
+<span id="cb133-4"><a href="main-diagram-types.html#cb133-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb133-5"><a href="main-diagram-types.html#cb133-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">notch =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb133-6"><a href="main-diagram-types.html#cb133-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">position=</span><span class="fu">position_jitter</span>(<span class="fl">0.3</span>)) <span class="sc">+</span></span>
+<span id="cb133-7"><a href="main-diagram-types.html#cb133-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb133-8"><a href="main-diagram-types.html#cb133-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (in g)&quot;</span>,</span>
+<span id="cb133-9"><a href="main-diagram-types.html#cb133-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Boxplot with points (dotplot)&quot;</span>, </span>
+<span id="cb133-10"><a href="main-diagram-types.html#cb133-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Body mass of three penguin species per sex&quot;</span>,</span>
+<span id="cb133-11"><a href="main-diagram-types.html#cb133-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="小提琴图-1" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> 小提琴图<a href="main-diagram-types.html#小提琴图-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="main-diagram-types.html#cb134-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb134-2"><a href="main-diagram-types.html#cb134-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb134-3"><a href="main-diagram-types.html#cb134-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g,</span>
+<span id="cb134-4"><a href="main-diagram-types.html#cb134-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb134-5"><a href="main-diagram-types.html#cb134-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_violin</span>(<span class="at">scale =</span> <span class="st">&quot;area&quot;</span>) <span class="sc">+</span></span>
+<span id="cb134-6"><a href="main-diagram-types.html#cb134-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb134-7"><a href="main-diagram-types.html#cb134-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (in g)&quot;</span>,</span>
+<span id="cb134-8"><a href="main-diagram-types.html#cb134-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Violinplot&quot;</span>, </span>
+<span id="cb134-9"><a href="main-diagram-types.html#cb134-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Body mass of three penguin species per sex&quot;</span>,</span>
+<span id="cb134-10"><a href="main-diagram-types.html#cb134-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<ul>
+<li>with dots (sina-plots)</li>
+</ul>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="main-diagram-types.html#cb135-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb135-2"><a href="main-diagram-types.html#cb135-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb135-3"><a href="main-diagram-types.html#cb135-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> species, <span class="at">y =</span> body_mass_g,</span>
+<span id="cb135-4"><a href="main-diagram-types.html#cb135-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb135-5"><a href="main-diagram-types.html#cb135-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_dotplot</span>(<span class="at">method =</span> <span class="st">&quot;dotdensity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>,</span>
+<span id="cb135-6"><a href="main-diagram-types.html#cb135-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">binaxis =</span> <span class="st">&#39;y&#39;</span>, <span class="at">stackdir =</span> <span class="st">&#39;center&#39;</span>,</span>
+<span id="cb135-7"><a href="main-diagram-types.html#cb135-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb135-8"><a href="main-diagram-types.html#cb135-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species&quot;</span>, </span>
+<span id="cb135-9"><a href="main-diagram-types.html#cb135-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (in g)&quot;</span>,</span>
+<span id="cb135-10"><a href="main-diagram-types.html#cb135-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Violinplot with points (dotplot)&quot;</span>, </span>
+<span id="cb135-11"><a href="main-diagram-types.html#cb135-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Body mass of three penguin species per sex&quot;</span>,</span>
+<span id="cb135-12"><a href="main-diagram-types.html#cb135-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+</div>
+<div id="饼图-1" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> 饼图<a href="main-diagram-types.html#饼图-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="main-diagram-types.html#cb136-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb136-2"><a href="main-diagram-types.html#cb136-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb136-3"><a href="main-diagram-types.html#cb136-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb136-4"><a href="main-diagram-types.html#cb136-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb136-5"><a href="main-diagram-types.html#cb136-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">freq =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n),</span>
+<span id="cb136-6"><a href="main-diagram-types.html#cb136-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">percentage =</span> freq <span class="sc">*</span> <span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb136-7"><a href="main-diagram-types.html#cb136-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> percentage,</span>
+<span id="cb136-8"><a href="main-diagram-types.html#cb136-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb136-9"><a href="main-diagram-types.html#cb136-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species), <span class="at">nrow =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb136-10"><a href="main-diagram-types.html#cb136-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb136-11"><a href="main-diagram-types.html#cb136-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_polar</span>(<span class="st">&quot;y&quot;</span>, <span class="at">start =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb136-12"><a href="main-diagram-types.html#cb136-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb136-13"><a href="main-diagram-types.html#cb136-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Percentage&quot;</span>,</span>
+<span id="cb136-14"><a href="main-diagram-types.html#cb136-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Piechart&quot;</span>, </span>
+<span id="cb136-15"><a href="main-diagram-types.html#cb136-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Percentage of male v. female penguins per species in study&quot;</span>,</span>
+<span id="cb136-16"><a href="main-diagram-types.html#cb136-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="冲积图" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> 冲积图<a href="main-diagram-types.html#冲积图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="main-diagram-types.html#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(UCBAdmissions) <span class="sc">%&gt;%</span></span>
+<span id="cb137-2"><a href="main-diagram-types.html#cb137-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> Freq, <span class="at">axis1 =</span> Gender, <span class="at">axis2 =</span> Dept)) <span class="sc">+</span></span>
+<span id="cb137-3"><a href="main-diagram-types.html#cb137-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_alluvium</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Admit), <span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb137-4"><a href="main-diagram-types.html#cb137-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_stratum</span>(<span class="at">width =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">12</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>) <span class="sc">+</span></span>
+<span id="cb137-5"><a href="main-diagram-types.html#cb137-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_label</span>(<span class="at">stat =</span> <span class="st">&quot;stratum&quot;</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(stratum))) <span class="sc">+</span></span>
+<span id="cb137-6"><a href="main-diagram-types.html#cb137-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_discrete</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="st">&quot;Gender&quot;</span>, <span class="st">&quot;Dept&quot;</span>), <span class="at">expand =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">05</span>)) <span class="sc">+</span></span>
+<span id="cb137-7"><a href="main-diagram-types.html#cb137-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb137-8"><a href="main-diagram-types.html#cb137-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
+<span id="cb137-9"><a href="main-diagram-types.html#cb137-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Alluvial chart&quot;</span>, </span>
+<span id="cb137-10"><a href="main-diagram-types.html#cb137-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;UC Berkeley admissions and rejections, by sex and department&quot;</span>,</span>
+<span id="cb137-11"><a href="main-diagram-types.html#cb137-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: Bickel et al. (1975)</span><span class="sc">\n</span><span class="st">Sex bias in graduate admissions: Data from Berkeley. Science, 187, 398–403.&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+<div id="系谱图" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> 系谱图<a href="main-diagram-types.html#系谱图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="main-diagram-types.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(UCBAdmissions) <span class="sc">%&gt;%</span></span>
+<span id="cb138-2"><a href="main-diagram-types.html#cb138-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(Admit, Gender) <span class="sc">%&gt;%</span></span>
+<span id="cb138-3"><a href="main-diagram-types.html#cb138-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">sum_freq =</span> <span class="fu">sum</span>(Freq)) <span class="sc">%&gt;%</span></span>
+<span id="cb138-4"><a href="main-diagram-types.html#cb138-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">area =</span> sum_freq, <span class="at">fill =</span> sum_freq, <span class="at">label =</span> Gender, </span>
+<span id="cb138-5"><a href="main-diagram-types.html#cb138-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> Admit)) <span class="sc">+</span></span>
+<span id="cb138-6"><a href="main-diagram-types.html#cb138-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_treemap</span>() <span class="sc">+</span></span>
+<span id="cb138-7"><a href="main-diagram-types.html#cb138-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_treemap_subgroup_border</span>() <span class="sc">+</span></span>
+<span id="cb138-8"><a href="main-diagram-types.html#cb138-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_treemap_subgroup_text</span>(<span class="at">place =</span> <span class="st">&quot;centre&quot;</span>, <span class="at">grow =</span> T, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span></span>
+<span id="cb138-9"><a href="main-diagram-types.html#cb138-9" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;black&quot;</span>, <span class="at">fontface =</span> <span class="st">&quot;italic&quot;</span>, <span class="at">min.size =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb138-10"><a href="main-diagram-types.html#cb138-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_treemap_text</span>(<span class="at">colour =</span> <span class="st">&quot;white&quot;</span>, <span class="at">place =</span> <span class="st">&quot;centre&quot;</span>, <span class="at">reflow =</span> T) <span class="sc">+</span></span>
+<span id="cb138-11"><a href="main-diagram-types.html#cb138-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">&quot;#999999&quot;</span>, <span class="at">high =</span> <span class="st">&quot;#E69F00&quot;</span>, <span class="at">mid =</span> <span class="st">&quot;white&quot;</span>, <span class="at">midpoint =</span> <span class="dv">1000</span>, <span class="at">space =</span> <span class="st">&quot;Lab&quot;</span>, </span>
+<span id="cb138-12"><a href="main-diagram-types.html#cb138-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">name =</span> <span class="st">&quot;Sum of</span><span class="sc">\n</span><span class="st">frequencies&quot;</span>) <span class="sc">+</span></span>
+<span id="cb138-13"><a href="main-diagram-types.html#cb138-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb138-14"><a href="main-diagram-types.html#cb138-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb138-15"><a href="main-diagram-types.html#cb138-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Treemap&quot;</span>, </span>
+<span id="cb138-16"><a href="main-diagram-types.html#cb138-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;UC Berkeley admissions and rejections by sex&quot;</span>,</span>
+<span id="cb138-17"><a href="main-diagram-types.html#cb138-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: Bickel et al. (1975)</span><span class="sc">\n</span><span class="st">Sex bias in graduate admissions: Data from Berkeley. Science, 187, 398–403.&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+</div>
+<div id="哑铃图" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> 哑铃图<a href="main-diagram-types.html#哑铃图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="main-diagram-types.html#cb139-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb139-2"><a href="main-diagram-types.html#cb139-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb139-3"><a href="main-diagram-types.html#cb139-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb139-4"><a href="main-diagram-types.html#cb139-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb139-5"><a href="main-diagram-types.html#cb139-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">species_sex =</span> <span class="fu">paste</span>(species, sex, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>),</span>
+<span id="cb139-6"><a href="main-diagram-types.html#cb139-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">year =</span> <span class="fu">paste0</span>(<span class="st">&quot;year_&quot;</span>, year)) <span class="sc">%&gt;%</span></span>
+<span id="cb139-7"><a href="main-diagram-types.html#cb139-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">spread</span>(year, mean_bmg) <span class="sc">%&gt;%</span></span>
+<span id="cb139-8"><a href="main-diagram-types.html#cb139-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year_2007, <span class="at">xend =</span> year_2009, </span>
+<span id="cb139-9"><a href="main-diagram-types.html#cb139-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> <span class="fu">reorder</span>(species_sex, year_2009))) <span class="sc">+</span></span>
+<span id="cb139-10"><a href="main-diagram-types.html#cb139-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_dumbbell</span>(<span class="at">color =</span> <span class="st">&quot;#999999&quot;</span>, </span>
+<span id="cb139-11"><a href="main-diagram-types.html#cb139-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size_x =</span> <span class="dv">3</span>, </span>
+<span id="cb139-12"><a href="main-diagram-types.html#cb139-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size_xend =</span> <span class="dv">3</span>,</span>
+<span id="cb139-13"><a href="main-diagram-types.html#cb139-13" aria-hidden="true" tabindex="-1"></a>                      <span class="co">#Note: there is no US:&#39;color&#39; for UK:&#39;colour&#39; </span></span>
+<span id="cb139-14"><a href="main-diagram-types.html#cb139-14" aria-hidden="true" tabindex="-1"></a>                      <span class="co"># in geom_dumbbel unlike standard geoms in ggplot()</span></span>
+<span id="cb139-15"><a href="main-diagram-types.html#cb139-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colour_x =</span> <span class="st">&quot;#999999&quot;</span>,</span>
+<span id="cb139-16"><a href="main-diagram-types.html#cb139-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">colour_xend =</span> <span class="st">&quot;#E69F00&quot;</span>) <span class="sc">+</span></span>
+<span id="cb139-17"><a href="main-diagram-types.html#cb139-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Body mass (g)&quot;</span>, </span>
+<span id="cb139-18"><a href="main-diagram-types.html#cb139-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Species &amp; sex&quot;</span>,</span>
+<span id="cb139-19"><a href="main-diagram-types.html#cb139-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Dumbbell plot&quot;</span>, </span>
+<span id="cb139-20"><a href="main-diagram-types.html#cb139-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Penguin&#39;s change in body mass from 2007 to 2009&quot;</span>,</span>
+<span id="cb139-21"><a href="main-diagram-types.html#cb139-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+</div>
+<div id="斜率图" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> 斜率图<a href="main-diagram-types.html#斜率图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="main-diagram-types.html#cb140-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb140-2"><a href="main-diagram-types.html#cb140-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb140-3"><a href="main-diagram-types.html#cb140-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb140-4"><a href="main-diagram-types.html#cb140-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb140-5"><a href="main-diagram-types.html#cb140-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_bmg, <span class="at">group =</span> sex,</span>
+<span id="cb140-6"><a href="main-diagram-types.html#cb140-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb140-7"><a href="main-diagram-types.html#cb140-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species), <span class="at">nrow =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb140-8"><a href="main-diagram-types.html#cb140-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb140-9"><a href="main-diagram-types.html#cb140-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb140-10"><a href="main-diagram-types.html#cb140-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2007</span>, <span class="dv">2008</span>, <span class="dv">2009</span>)) <span class="sc">+</span></span>
+<span id="cb140-11"><a href="main-diagram-types.html#cb140-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, </span>
+<span id="cb140-12"><a href="main-diagram-types.html#cb140-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (g)&quot;</span>,</span>
+<span id="cb140-13"><a href="main-diagram-types.html#cb140-13" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb140-14"><a href="main-diagram-types.html#cb140-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Slope chart&quot;</span>, </span>
+<span id="cb140-15"><a href="main-diagram-types.html#cb140-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Penguin&#39;s change in body mass from 2007 to 2009&quot;</span>,</span>
+<span id="cb140-16"><a href="main-diagram-types.html#cb140-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+</div>
+<div id="堆叠面积图" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> 堆叠面积图<a href="main-diagram-types.html#堆叠面积图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="main-diagram-types.html#cb141-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb141-2"><a href="main-diagram-types.html#cb141-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb141-3"><a href="main-diagram-types.html#cb141-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb141-4"><a href="main-diagram-types.html#cb141-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb141-5"><a href="main-diagram-types.html#cb141-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> mean_bmg, <span class="at">fill =</span> sex)) <span class="sc">+</span></span>
+<span id="cb141-6"><a href="main-diagram-types.html#cb141-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(species), <span class="at">nrow =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb141-7"><a href="main-diagram-types.html#cb141-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size=</span>.<span class="dv">5</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb141-8"><a href="main-diagram-types.html#cb141-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">2007</span>, <span class="dv">2008</span>, <span class="dv">2009</span>)) <span class="sc">+</span></span>
+<span id="cb141-9"><a href="main-diagram-types.html#cb141-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Year&quot;</span>, </span>
+<span id="cb141-10"><a href="main-diagram-types.html#cb141-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Mean body mass (g)&quot;</span>,</span>
+<span id="cb141-11"><a href="main-diagram-types.html#cb141-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;Sex&quot;</span>,</span>
+<span id="cb141-12"><a href="main-diagram-types.html#cb141-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Stacked area chart&quot;</span>, </span>
+<span id="cb141-13"><a href="main-diagram-types.html#cb141-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Penguin&#39;s change in body mass from 2007 to 2009&quot;</span>,</span>
+<span id="cb141-14"><a href="main-diagram-types.html#cb141-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+</div>
+<div id="棒棒糖图" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> 棒棒糖图<a href="main-diagram-types.html#棒棒糖图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="main-diagram-types.html#cb142-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb142-2"><a href="main-diagram-types.html#cb142-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb142-3"><a href="main-diagram-types.html#cb142-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year, species, sex) <span class="sc">%&gt;%</span></span>
+<span id="cb142-4"><a href="main-diagram-types.html#cb142-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_bmg =</span> <span class="fu">mean</span>(body_mass_g)) <span class="sc">%&gt;%</span></span>
+<span id="cb142-5"><a href="main-diagram-types.html#cb142-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">species_sex =</span> <span class="fu">paste</span>(species, sex, <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>),</span>
+<span id="cb142-6"><a href="main-diagram-types.html#cb142-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">year =</span> <span class="fu">paste0</span>(<span class="st">&quot;year_&quot;</span>, year)) <span class="sc">%&gt;%</span></span>
+<span id="cb142-7"><a href="main-diagram-types.html#cb142-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">spread</span>(year, mean_bmg) <span class="sc">%&gt;%</span></span>
+<span id="cb142-8"><a href="main-diagram-types.html#cb142-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb142-9"><a href="main-diagram-types.html#cb142-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(species_sex, <span class="sc">-</span>year_2009), <span class="at">xend =</span> <span class="fu">reorder</span>(species_sex, <span class="sc">-</span>year_2009), </span>
+<span id="cb142-10"><a href="main-diagram-types.html#cb142-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> year_2009),</span>
+<span id="cb142-11"><a href="main-diagram-types.html#cb142-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;#999999&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb142-12"><a href="main-diagram-types.html#cb142-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(species_sex, <span class="sc">-</span>year_2009), <span class="at">y =</span> year_2009),</span>
+<span id="cb142-13"><a href="main-diagram-types.html#cb142-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">&quot;#E69F00&quot;</span>) <span class="sc">+</span></span>
+<span id="cb142-14"><a href="main-diagram-types.html#cb142-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb142-15"><a href="main-diagram-types.html#cb142-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Species &amp; sex&quot;</span>, </span>
+<span id="cb142-16"><a href="main-diagram-types.html#cb142-16" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="st">&quot;Body mass (g)&quot;</span>,</span>
+<span id="cb142-17"><a href="main-diagram-types.html#cb142-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Lollipop chart&quot;</span>, </span>
+<span id="cb142-18"><a href="main-diagram-types.html#cb142-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Penguin&#39;s body mass in 2009&quot;</span>,</span>
+<span id="cb142-19"><a href="main-diagram-types.html#cb142-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+</div>
+<div id="树状图" class="section level2 hasAnchor" number="5.15">
+<h2><span class="header-section-number">5.15</span> 树状图<a href="main-diagram-types.html#树状图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="main-diagram-types.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdendro)</span>
+<span id="cb143-2"><a href="main-diagram-types.html#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dendextend)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="main-diagram-types.html#cb144-1" aria-hidden="true" tabindex="-1"></a>penguins_hist <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb144-2"><a href="main-diagram-types.html#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="st">&quot;male&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb144-3"><a href="main-diagram-types.html#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g) <span class="sc">%&gt;%</span></span>
+<span id="cb144-4"><a href="main-diagram-types.html#cb144-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> </span>
+<span id="cb144-5"><a href="main-diagram-types.html#cb144-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb144-6"><a href="main-diagram-types.html#cb144-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span>
+<span id="cb144-7"><a href="main-diagram-types.html#cb144-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(penguins_hist) <span class="ot">&lt;-</span> <span class="fu">paste</span>(penguins_hist<span class="sc">$</span>species, <span class="fu">seq_len</span>(<span class="fu">nrow</span>(penguins_hist)), <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
+<span id="cb144-8"><a href="main-diagram-types.html#cb144-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-9"><a href="main-diagram-types.html#cb144-9" aria-hidden="true" tabindex="-1"></a>penguins_hist <span class="ot">&lt;-</span> penguins_hist <span class="sc">%&gt;%</span></span>
+<span id="cb144-10"><a href="main-diagram-types.html#cb144-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
+<span id="cb144-11"><a href="main-diagram-types.html#cb144-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_missing</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="main-diagram-types.html#cb145-1" aria-hidden="true" tabindex="-1"></a>hc <span class="ot">&lt;-</span> <span class="fu">hclust</span>(<span class="fu">dist</span>(penguins_hist, <span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>), <span class="at">method =</span> <span class="st">&quot;ward.D2&quot;</span>)</span>
+<span id="cb145-2"><a href="main-diagram-types.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggdendrogram</span>(hc)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="main-diagram-types.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dendrogram and plot it</span></span>
+<span id="cb146-2"><a href="main-diagram-types.html#cb146-2" aria-hidden="true" tabindex="-1"></a>penguins_hist <span class="sc">%&gt;%</span>  </span>
+<span id="cb146-3"><a href="main-diagram-types.html#cb146-3" aria-hidden="true" tabindex="-1"></a>  scale <span class="sc">%&gt;%</span> </span>
+<span id="cb146-4"><a href="main-diagram-types.html#cb146-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dist</span>(<span class="at">method =</span> <span class="st">&quot;euclidean&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb146-5"><a href="main-diagram-types.html#cb146-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hclust</span>(<span class="at">method =</span> <span class="st">&quot;ward.D2&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb146-6"><a href="main-diagram-types.html#cb146-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.dendrogram</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb146-7"><a href="main-diagram-types.html#cb146-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>()</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-35-2.png" width="672" /></p>
+</div>
+<div id="瀑布图" class="section level2 hasAnchor" number="5.16">
+<h2><span class="header-section-number">5.16</span> 瀑布图<a href="main-diagram-types.html#瀑布图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="main-diagram-types.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(waterfall)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="main-diagram-types.html#cb148-1" aria-hidden="true" tabindex="-1"></a>jaquith <span class="sc">%&gt;%</span></span>
+<span id="cb148-2"><a href="main-diagram-types.html#cb148-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(score) <span class="sc">%&gt;%</span></span>
+<span id="cb148-3"><a href="main-diagram-types.html#cb148-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_row</span>(<span class="at">factor =</span> <span class="st">&quot;Total&quot;</span>, <span class="at">score =</span> <span class="fu">sum</span>(jaquith<span class="sc">$</span>score)) <span class="sc">%&gt;%</span></span>
+<span id="cb148-4"><a href="main-diagram-types.html#cb148-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">factor =</span> <span class="fu">factor</span>(factor, <span class="at">levels =</span> factor),</span>
+<span id="cb148-5"><a href="main-diagram-types.html#cb148-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">id =</span> <span class="fu">seq_along</span>(score)) <span class="sc">%&gt;%</span></span>
+<span id="cb148-6"><a href="main-diagram-types.html#cb148-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">end =</span> <span class="fu">cumsum</span>(score),</span>
+<span id="cb148-7"><a href="main-diagram-types.html#cb148-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">0</span>, end[<span class="sc">-</span><span class="fu">length</span>(end)]),</span>
+<span id="cb148-8"><a href="main-diagram-types.html#cb148-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">start =</span> <span class="fu">c</span>(start[<span class="sc">-</span><span class="fu">length</span>(start)], <span class="dv">0</span>),</span>
+<span id="cb148-9"><a href="main-diagram-types.html#cb148-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">end =</span> <span class="fu">c</span>(end[<span class="sc">-</span><span class="fu">length</span>(end)], score[<span class="fu">length</span>(score)]),</span>
+<span id="cb148-10"><a href="main-diagram-types.html#cb148-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">gr_col =</span> <span class="fu">ifelse</span>(factor <span class="sc">==</span> <span class="st">&quot;Total&quot;</span>, <span class="st">&quot;Total&quot;</span>, <span class="st">&quot;Part&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb148-11"><a href="main-diagram-types.html#cb148-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> factor, <span class="at">fill =</span> gr_col)) <span class="sc">+</span> </span>
+<span id="cb148-12"><a href="main-diagram-types.html#cb148-12" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_rect</span>(<span class="fu">aes</span>(<span class="at">x =</span> factor,</span>
+<span id="cb148-13"><a href="main-diagram-types.html#cb148-13" aria-hidden="true" tabindex="-1"></a>                    <span class="at">xmin =</span> id <span class="sc">-</span> <span class="fl">0.45</span>, <span class="at">xmax =</span> id <span class="sc">+</span> <span class="fl">0.45</span>, </span>
+<span id="cb148-14"><a href="main-diagram-types.html#cb148-14" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymin =</span> end, <span class="at">ymax =</span> start)) <span class="sc">+</span></span>
+<span id="cb148-15"><a href="main-diagram-types.html#cb148-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">60</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb148-16"><a href="main-diagram-types.html#cb148-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb148-17"><a href="main-diagram-types.html#cb148-17" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, </span>
+<span id="cb148-18"><a href="main-diagram-types.html#cb148-18" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> <span class="st">&quot;Amount&quot;</span>,</span>
+<span id="cb148-19"><a href="main-diagram-types.html#cb148-19" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">&quot;Waterfall chart&quot;</span>, </span>
+<span id="cb148-20"><a href="main-diagram-types.html#cb148-20" aria-hidden="true" tabindex="-1"></a>            <span class="at">subtitle =</span> <span class="st">&quot;Sample business-adjusted risk from Security Metrics&quot;</span>,</span>
+<span id="cb148-21"><a href="main-diagram-types.html#cb148-21" aria-hidden="true" tabindex="-1"></a>            <span class="at">caption =</span> <span class="st">&quot;Andrew Jaquith, Security Metrics: Replacing Fear, Uncertainty, and Doubt</span><span class="sc">\n</span><span class="st">(Boston: Addison-Wesley Professional, 2007), 170-171.&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+</div>
+<div id="双标图" class="section level2 hasAnchor" number="5.17">
+<h2><span class="header-section-number">5.17</span> 双标图<a href="main-diagram-types.html#双标图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="main-diagram-types.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggfortify)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="main-diagram-types.html#cb150-1" aria-hidden="true" tabindex="-1"></a>penguins_prep <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb150-2"><a href="main-diagram-types.html#cb150-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb150-3"><a href="main-diagram-types.html#cb150-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(bill_length_mm<span class="sc">:</span>body_mass_g)</span>
+<span id="cb150-4"><a href="main-diagram-types.html#cb150-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb150-5"><a href="main-diagram-types.html#cb150-5" aria-hidden="true" tabindex="-1"></a>penguins_pca <span class="ot">&lt;-</span> penguins_prep <span class="sc">%&gt;%</span></span>
+<span id="cb150-6"><a href="main-diagram-types.html#cb150-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prcomp</span>(<span class="at">scale. =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="main-diagram-types.html#cb151-1" aria-hidden="true" tabindex="-1"></a>penguins_km <span class="ot">&lt;-</span> penguins_prep <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a href="main-diagram-types.html#cb151-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kmeans</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="main-diagram-types.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(penguins_pca, </span>
+<span id="cb152-2"><a href="main-diagram-types.html#cb152-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins <span class="sc">%&gt;%</span> <span class="fu">remove_missing</span>(), </span>
+<span id="cb152-3"><a href="main-diagram-types.html#cb152-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&#39;species&#39;</span>,</span>
+<span id="cb152-4"><a href="main-diagram-types.html#cb152-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">shape =</span> <span class="st">&#39;species&#39;</span>,</span>
+<span id="cb152-5"><a href="main-diagram-types.html#cb152-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb152-6"><a href="main-diagram-types.html#cb152-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.colour =</span> <span class="st">&#39;blue&#39;</span>,</span>
+<span id="cb152-7"><a href="main-diagram-types.html#cb152-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb152-8"><a href="main-diagram-types.html#cb152-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">loadings.label.size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb152-9"><a href="main-diagram-types.html#cb152-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb152-10"><a href="main-diagram-types.html#cb152-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb152-11"><a href="main-diagram-types.html#cb152-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb152-12"><a href="main-diagram-types.html#cb152-12" aria-hidden="true" tabindex="-1"></a>            <span class="fu">labs</span>(</span>
+<span id="cb152-13"><a href="main-diagram-types.html#cb152-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">&quot;Biplot PCA&quot;</span>, </span>
+<span id="cb152-14"><a href="main-diagram-types.html#cb152-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="main-diagram-types.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(penguins_km, </span>
+<span id="cb153-2"><a href="main-diagram-types.html#cb153-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> penguins <span class="sc">%&gt;%</span> <span class="fu">remove_missing</span>(), </span>
+<span id="cb153-3"><a href="main-diagram-types.html#cb153-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> <span class="st">&#39;species&#39;</span>,</span>
+<span id="cb153-4"><a href="main-diagram-types.html#cb153-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">shape =</span> <span class="st">&#39;species&#39;</span>,</span>
+<span id="cb153-5"><a href="main-diagram-types.html#cb153-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">frame =</span> <span class="cn">TRUE</span>, <span class="at">frame.type =</span> <span class="st">&#39;norm&#39;</span>) <span class="sc">+</span></span>
+<span id="cb153-6"><a href="main-diagram-types.html#cb153-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">scale_color_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb153-7"><a href="main-diagram-types.html#cb153-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb153-8"><a href="main-diagram-types.html#cb153-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb153-9"><a href="main-diagram-types.html#cb153-9" aria-hidden="true" tabindex="-1"></a>            <span class="fu">labs</span>(</span>
+<span id="cb153-10"><a href="main-diagram-types.html#cb153-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">&quot;Biplot k-Means clustering&quot;</span>, </span>
+<span id="cb153-11"><a href="main-diagram-types.html#cb153-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+</div>
+<div id="雷达图星图蜘蛛图" class="section level2 hasAnchor" number="5.18">
+<h2><span class="header-section-number">5.18</span> 雷达图/星图/蜘蛛图<a href="main-diagram-types.html#雷达图星图蜘蛛图" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://www.data-to-viz.com/caveat/spider.html" class="uri">https://www.data-to-viz.com/caveat/spider.html</a></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="main-diagram-types.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggiraphExtra)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="main-diagram-types.html#cb155-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb155-2"><a href="main-diagram-types.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">remove_missing</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb155-3"><a href="main-diagram-types.html#cb155-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>island, <span class="sc">-</span>year) <span class="sc">%&gt;%</span></span>
+<span id="cb155-4"><a href="main-diagram-types.html#cb155-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggRadar</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">c</span>(bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g), </span>
+<span id="cb155-5"><a href="main-diagram-types.html#cb155-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">group =</span> species,</span>
+<span id="cb155-6"><a href="main-diagram-types.html#cb155-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">colour =</span> sex, <span class="at">facet =</span> sex), </span>
+<span id="cb155-7"><a href="main-diagram-types.html#cb155-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">rescale =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb155-8"><a href="main-diagram-types.html#cb155-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">1</span>, <span class="at">interactive =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb155-9"><a href="main-diagram-types.html#cb155-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">use.label =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb155-10"><a href="main-diagram-types.html#cb155-10" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_color_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb155-11"><a href="main-diagram-types.html#cb155-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> cbp1) <span class="sc">+</span></span>
+<span id="cb155-12"><a href="main-diagram-types.html#cb155-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb155-13"><a href="main-diagram-types.html#cb155-13" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_y_discrete</span>(<span class="at">breaks =</span> <span class="cn">NULL</span>) <span class="sc">+</span> <span class="co"># don&#39;t show ticks</span></span>
+<span id="cb155-14"><a href="main-diagram-types.html#cb155-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(</span>
+<span id="cb155-15"><a href="main-diagram-types.html#cb155-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">title =</span> <span class="st">&quot;Radar/spider/star chart&quot;</span>, </span>
+<span id="cb155-16"><a href="main-diagram-types.html#cb155-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">&quot;Body mass of male &amp; female penguins per species&quot;</span>,</span>
+<span id="cb155-17"><a href="main-diagram-types.html#cb155-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Source: https://github.com/allisonhorst/palmerpenguins&quot;</span>)</span></code></pre></div>
+<p><img src="3001-Main-diagram-types_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ggplot2-plot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="other-packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

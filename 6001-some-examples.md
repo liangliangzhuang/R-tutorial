@@ -339,7 +339,7 @@ plot_grid(p1,p2,ncol = 1)
 
 ## 纯手动复现密度图
 
-老板觉得课件的图形太过模糊和单调，于是想让我用 [ggplot2](<https://ggplot2.tidyverse.org/>) 包复现一下结果，做的更加高清、精美些。于是我花将近一个小时复现了下面这个图形：
+老板觉得课件的图形太过模糊和单调，于是想让我用 [ggplot2](https://ggplot2.tidyverse.org/) 包复现一下结果，做的更加高清、精美些。于是我花将近一个小时复现了下面这个图形：
 
 ![](images/paste-224B4B25.png)
 
@@ -407,8 +407,8 @@ ggplot(data, aes(x = value, y = class,fill = factor(stat(quantile)))) +
              y = c(3.8, 3.2),
              arrow = arrow(angle = 20, length = unit(4, "mm"))) +
   annotate("text", x = mu[1], y = 7.3, label = "CL") +
-  annotate("text", x = mu[2]-1, y = 7.4, label = "LCL") +
-  annotate("text", x = mu[1]-2, y = 7.4, label = "UCL") +
+  annotate("text", x = mu[2]-1, y = 7.4, label = "UCL") +
+  annotate("text", x = mu[1]-2, y = 7.4, label = "LCL") +
   annotate("text", x = -1.3, y = 2.3, label = expression(alpha[1] + alpha[2] == alpha)) +
   coord_flip() +
   theme_bw() +

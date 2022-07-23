@@ -295,8 +295,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>9.2.1</b> 安装</a></li>
 <li class="chapter" data-level="9.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>9.2.2</b> Rstudio界面介绍</a></li>
 <li class="chapter" data-level="9.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>9.2.3</b> 代码输出</a></li>
-<li class="chapter" data-level="9.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>9.2.4</b> 表格输出</a></li>
-<li class="chapter" data-level="9.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>9.2.5</b> 表格渲染</a></li>
+<li class="chapter" data-level="9.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片输出"><i class="fa fa-check"></i><b>9.2.4</b> 图片输出</a></li>
+<li class="chapter" data-level="9.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>9.2.5</b> 表格输出</a></li>
+<li class="chapter" data-level="9.2.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>9.2.6</b> 表格渲染</a></li>
 </ul></li>
 <li class="chapter" data-level="9.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>9.3</b> Rmarkdown 的主题格式</a>
 <ul>
@@ -375,9 +376,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="causal.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#数据模拟产生</span></span>
 <span id="cb1-2"><a href="causal.html#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="dv">1</span>)</span>
 <span id="cb1-3"><a href="causal.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">round</span>(x,<span class="dv">2</span>))</span></code></pre></div>
-<pre><code>##  [1] 10.31 11.63 12.47 10.10  9.80 10.24  7.65 12.06 10.46 11.10 11.00  9.90
-## [13] 11.72 12.00  9.78 10.91 10.79 10.03 10.68 11.56 10.99 10.22  8.15 11.24
-## [25]  9.90  7.73  8.63  8.56 10.09 10.85</code></pre>
+<pre><code>##  [1]  8.39 10.98 10.41  9.40  9.56 10.44 10.27  9.35 10.42  9.23  8.67 11.05
+## [13]  8.44  7.91 11.13  8.71  9.65 10.23  9.75  9.14  8.04 11.00  8.80 10.67
+## [25] 10.00  8.79  9.93  9.39  9.93 11.60</code></pre>
 <p><code>hist()</code>中的<code>breaks()</code>可以分段区间，取值可以是一个向量（各区间端点）或者一个数字（拆分为多少段），或者一个字符串（计算划分区间的算法名称），或者一个函数（划分区间个数的方法）。这里给出例子</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="causal.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x,<span class="at">breaks =</span> <span class="dv">3</span>)</span></code></pre></div>
 <p><img src="1001-base-ploting_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>

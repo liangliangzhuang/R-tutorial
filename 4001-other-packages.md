@@ -6,7 +6,9 @@
 
 该网站一共汇总了 109 种与ggplot2 包相关的[拓展包](https://exts.ggplot2.tidyverse.org/gallery/)，并且在不断更新中。拓展包与 ggplot2 包可以无缝连接，网站截图如下：
 
-![](images/paste-3B74BCEF.png)
+![](images/38711658555602_.pic.jpg)
+
+![](images/38701658555592_.pic.jpg)
 
 ## 整理的相关扩展包
 

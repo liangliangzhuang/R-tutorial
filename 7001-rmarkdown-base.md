@@ -385,7 +385,6 @@ plot(1:10)
 
 ![](images/paste-826D2A4B.png)
 
-![](https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211033682.png)
 
 -   **方式二**
 
@@ -394,7 +393,6 @@ images 中，或者点击图形按钮导入。
 
 ![](images/paste-62C72EF4.png)
 
-![](https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211101185.png)
 
 -   **方式三**
 

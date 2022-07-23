@@ -26,7 +26,9 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) +
 gg
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
 使用三种不同的置信带构造置信区间，其可以用参数 `bandType` 调整。
 
@@ -46,7 +48,9 @@ gg <- ggplot(data = smp, mapping = aes(sample = norm)) +
 gg
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-2-1} \end{center}
 
 ### 进阶版本
 
@@ -82,7 +86,9 @@ p1 = ggplot(data = data, mapping = aes(sample = y)) +
 p1
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
 #### 绘制威布尔分布的 QQ 图
 
@@ -103,7 +109,9 @@ p2 = ggplot(data = data, mapping = aes(sample = y)) +
 p2
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-5-1} \end{center}
 
 可以看到该数据集，更适合使用 weibull分布进行拟合。
 
@@ -113,7 +121,9 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 2, nrow = 1)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 ## 绘制混合密度函数图以及添加分位数线
 
@@ -159,7 +169,9 @@ p1 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) +
 p1
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 
 ```r
@@ -179,7 +191,9 @@ p2 <- ggplot(data, aes(x = value, y = class, fill = factor(stat(quantile)))) +
 p2
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 ### 合并两图（使用cowplot包）
 
@@ -190,7 +204,9 @@ library(cowplot)
 plot_grid(p1, p2, ncol = 1, nrow = 2)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 ```r
 # dev.off()
@@ -235,7 +251,9 @@ g + geom_line() +
   theme_bw() + theme(panel.grid = element_blank(),legend.position = 'none') 
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-12-1} \end{center}
 
 ## 散点图中加入第三变量的密度函数
 
@@ -263,7 +281,9 @@ ggplot(data) +
   theme(panel.grid = element_blank())
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 ## 绘制 Gamma 分布相关图形
 
@@ -293,10 +313,9 @@ data = data.frame('id' = 1:num,'value' = rgamma(num,2,1),'class' = factor(gl(5,n
 datatable(data)
 ```
 
-```{=html}
-<div id="htmlwidget-4036defd9dea422f80fb" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4036defd9dea422f80fb">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"],[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100],[1.08910568471399,2.3924841180044,1.09812011053858,2.5324710486822,2.47536196011498,1.46782830106023,0.33584492113963,1.37133001028442,1.27270852651137,2.35078221168434,3.14819166753074,1.37057004593817,1.45110746592129,1.30349702632285,1.84037709909884,0.687583409303457,2.28671985589332,2.4620298290158,3.08392573233002,1.63993291133046,2.26611165728109,0.433428230571848,3.35265289379667,1.72819501355172,1.70560302954343,2.56173856144086,3.64755717497657,0.923727750626649,0.694074297098522,2.47039182474519,0.0623684802372504,0.678227082150289,1.17154457954168,2.10041820399458,2.00029494799612,0.859250236167295,3.94203816881858,2.35701302796049,4.19277139849466,1.30270077017096,1.86591552426609,7.71626903554131,1.52448816266655,0.698583389358126,1.4985817796345,1.45366985343608,0.075310652421171,0.948355855045624,2.27251934557899,1.2628547534143,1.23127106388098,0.248188324064894,3.12628060140583,2.726038537938,0.487052530008442,1.83635849669562,1.94955500924819,5.90022354270267,3.32487325480315,0.674409761195038,3.29512309607874,0.64502496942193,3.94395751855318,2.51018491591087,2.09777223265003,0.10501914406196,1.39162901957887,1.96236628796907,1.13865866035873,4.34850991101787,3.71004894210901,1.06281859052428,4.42395197725301,1.13475809816636,2.18918887905453,1.74667946214936,3.63616436740588,0.969512318642319,2.42364257821777,0.961249262765573,0.820804385773503,1.08611537836246,3.00264342220849,2.59142737789351,1.09691145863492,1.71671162643948,3.01238820566679,1.68359647917433,1.43305790874889,2.7937806225622,6.79512675905874,3.96998310591589,1.07270170306943,2.18160748336591,0.608671216579337,2.26068147104613,1.67534415257212,1.06118027317853,2.38516102723518,3.94497519804781],["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","2","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","3","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","4","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5","5"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>id<\/th>\n      <th>value<\/th>\n      <th>class<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
-```
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 -   绘图
 
@@ -311,7 +330,9 @@ p1 = ggplot(data,aes(id,value)) +
 p1
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 ```r
 ## 纵向密度函数图
@@ -325,7 +346,9 @@ p2 = ggplot(data, aes(x =  value, y =class, fill = class)) +
 p2
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-16-2} \end{center}
 
 -   合并图形
 
@@ -335,7 +358,9 @@ library(cowplot)
 plot_grid(p1,p2,ncol = 1)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 ## 纯手动复现密度图
 
@@ -362,15 +387,23 @@ knitr::kable(head(data))
 ```
 
 
-
-|    value|class |
-|--------:|:-----|
-| 1.373546|1     |
-| 2.183643|1     |
-| 1.164371|1     |
-| 3.595281|1     |
-| 2.329508|1     |
-| 1.179532|1     |
+\begin{tabular}{r|l}
+\hline
+value & class\\
+\hline
+1.373546 & 1\\
+\hline
+2.183643 & 1\\
+\hline
+1.164371 & 1\\
+\hline
+3.595281 & 1\\
+\hline
+2.329508 & 1\\
+\hline
+1.179532 & 1\\
+\hline
+\end{tabular}
 
 -   画图
 
@@ -415,7 +448,9 @@ ggplot(data, aes(x = value, y = class,fill = factor(stat(quantile)))) +
   theme_manual() + xlab('') + ylab('')
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 可以看到，现在得到的结果还是有点问题的。笔者能力有限，不能使用代卖复现的一模一样（也是为了省时间），于是我是用了 [AI](https://mp.weixin.qq.com/s/BkPAsH8qDZzQkcBRgMsOSw) 大法，对该图形进行了修改。最后得到：
 
@@ -456,7 +491,9 @@ showtext_auto()
 mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("Posterior")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
 使用轨迹追踪图诊断收敛性
 
@@ -465,7 +502,9 @@ mcmc_areas(posterior, pars = c("drat", "am", "wt"),prob = 0.8) + ggtitle("Poster
 mcmc_trace(posterior, pars=c("sigma", "wt"))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
 使用`as.array`，可以提取每一个链的数据。这允许您查看每个链所选参数的跟踪图。
 
@@ -478,7 +517,9 @@ chains_trace <- mcmc_trace(posterior_chains, pars = pars, n_warmup = 300, facet_
 chains_trace
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-24-1} \end{center}
 
 配对图有助于确定是否有任何高度相关的参数。
 
@@ -487,7 +528,9 @@ chains_trace
 posterior_chains %>% mcmc_pairs(pars = c("(Intercept)", "wt", "sigma"))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-25-1} \end{center}
 
 ### 后验预测检查
 
@@ -501,7 +544,9 @@ ppd %>%
   labs(x = "Weight (1000 lbs)", y = "MPG", title = "")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-26-1} \end{center}
 
 ```r
 ppd %>% ppc_stat_grouped(y = mtcars$mpg,
@@ -509,7 +554,9 @@ ppd %>% ppc_stat_grouped(y = mtcars$mpg,
                          stat = "median", binwidth=0.5)
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-26-2.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-26-2} \end{center}
 
 ### 诊断
 
@@ -520,7 +567,9 @@ Bayesplot 可以方便地检查 rstanarm 默认使用的NUTS采样方法的诊�
 mcmc_scatter(posterior, pars = c("wt", "sigma"), np = nuts_params(model$stanfit))
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-27-1} \end{center}
 
 
 ```r
@@ -529,4 +578,6 @@ mcmc_nuts_energy(np, binwidth=1) +
   ggtitle("NUTS Energy Diagnostic")
 ```
 
-<img src="6001-some-examples_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics{6001-some-examples_files/figure-latex/unnamed-chunk-28-1} \end{center}

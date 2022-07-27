@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>9 R Markdown 入门教程 | 庄闪闪的可视化手册</title>
+  <meta name="description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="9 R Markdown 入门教程 | 庄闪闪的可视化手册" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="9 R Markdown 入门教程 | 庄闪闪的可视化手册" />
+  
+  <meta name="twitter:description" content="这是用R的bookdown功能制作中文图书的模板，输出格式为bookdown::gitbook和bookdown::pdf_book." />
+  
+
+<meta name="author" content="庄闪闪" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="some-tips-alls.html"/>
+<link rel="next" href="rmarkdown-extended.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.23/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/SVG"],
+  extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+   src="../../../MathJax/MathJax.js">
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>简介</a></li>
+<li class="part"><span><b>I R 语言基础</b></span></li>
+<li class="chapter" data-level="1" data-path="base-tutorial.html"><a href="base-tutorial.html"><i class="fa fa-check"></i><b>1</b> Base 系列</a></li>
+<li class="chapter" data-level="2" data-path="tidyverse-tutorial.html"><a href="tidyverse-tutorial.html"><i class="fa fa-check"></i><b>2</b> Tidyverse 系列</a></li>
+<li class="part"><span><b>II R 语言可视化</b></span></li>
+<li class="chapter" data-level="3" data-path="causal.html"><a href="causal.html"><i class="fa fa-check"></i><b>3</b> 使用基础包绘图</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="causal.html"><a href="causal.html#绘制基本图形"><i class="fa fa-check"></i><b>3.1</b> 绘制基本图形</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="causal.html"><a href="causal.html#绘制分布关系"><i class="fa fa-check"></i><b>3.1.1</b> 绘制分布关系</a></li>
+<li class="chapter" data-level="3.1.2" data-path="causal.html"><a href="causal.html#绘制数据间关系"><i class="fa fa-check"></i><b>3.1.2</b> 绘制数据间关系</a></li>
+<li class="chapter" data-level="3.1.3" data-path="causal.html"><a href="causal.html#绘制其他图形"><i class="fa fa-check"></i><b>3.1.3</b> 绘制其他图形</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="causal.html"><a href="causal.html#修改图形参数"><i class="fa fa-check"></i><b>3.2</b> 修改图形参数</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="causal.html"><a href="causal.html#修改颜色"><i class="fa fa-check"></i><b>3.2.1</b> 修改颜色</a></li>
+<li class="chapter" data-level="3.2.2" data-path="causal.html"><a href="causal.html#修改点符号与线条"><i class="fa fa-check"></i><b>3.2.2</b> 修改点符号与线条</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="causal.html"><a href="causal.html#绘制组合图形"><i class="fa fa-check"></i><b>3.3</b> 绘制组合图形</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="causal.html"><a href="causal.html#par"><i class="fa fa-check"></i><b>3.3.1</b> par()</a></li>
+<li class="chapter" data-level="3.3.2" data-path="causal.html"><a href="causal.html#layout"><i class="fa fa-check"></i><b>3.3.2</b> layout</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="causal.html"><a href="causal.html#保存图形"><i class="fa fa-check"></i><b>3.4</b> 保存图形</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="causal.html"><a href="causal.html#使用代码"><i class="fa fa-check"></i><b>3.4.1</b> 使用代码</a></li>
+<li class="chapter" data-level="3.4.2" data-path="causal.html"><a href="causal.html#在-rstudio-窗口点击按钮保存"><i class="fa fa-check"></i><b>3.4.2</b> 在 Rstudio 窗口点击按钮保存</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html"><i class="fa fa-check"></i><b>4</b> 使用 ggplot2 包绘图</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#简介-1"><i class="fa fa-check"></i><b>4.1</b> 简介</a></li>
+<li class="chapter" data-level="4.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#qplot"><i class="fa fa-check"></i><b>4.2</b> qplot</a></li>
+<li class="chapter" data-level="4.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#ggplot2包图形语法"><i class="fa fa-check"></i><b>4.3</b> ggplot2包图形语法</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#对比不同画图语法"><i class="fa fa-check"></i><b>4.3.1</b> 对比不同画图语法</a></li>
+<li class="chapter" data-level="4.3.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#思想介绍"><i class="fa fa-check"></i><b>4.3.2</b> 思想介绍</a></li>
+<li class="chapter" data-level="4.3.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#全局变量-vs.-局部变量"><i class="fa fa-check"></i><b>4.3.3</b> 全局变量 vs. 局部变量</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#几何对象"><i class="fa fa-check"></i><b>4.4</b> 几何对象</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#参考书籍"><i class="fa fa-check"></i><b>4.4.1</b> 参考书籍</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#统计变换"><i class="fa fa-check"></i><b>4.5</b> 统计变换</a></li>
+<li class="chapter" data-level="4.6" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#刻度scale"><i class="fa fa-check"></i><b>4.6</b> 刻度scale</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#丰富的刻度体系"><i class="fa fa-check"></i><b>4.6.1</b> 丰富的刻度体系</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#坐标系"><i class="fa fa-check"></i><b>4.7</b> 坐标系</a></li>
+<li class="chapter" data-level="4.8" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#分面"><i class="fa fa-check"></i><b>4.8</b> 分面</a></li>
+<li class="chapter" data-level="4.9" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题标注指南拼接"><i class="fa fa-check"></i><b>4.9</b> 标题、标注、指南、拼接</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标题"><i class="fa fa-check"></i><b>4.9.1</b> 标题</a></li>
+<li class="chapter" data-level="4.9.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#标注功能"><i class="fa fa-check"></i><b>4.9.2</b> 标注功能</a></li>
+<li class="chapter" data-level="4.9.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#指南"><i class="fa fa-check"></i><b>4.9.3</b> 指南</a></li>
+<li class="chapter" data-level="4.9.4" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#主题"><i class="fa fa-check"></i><b>4.9.4</b> 主题</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#保存图片"><i class="fa fa-check"></i><b>4.10</b> 保存图片</a></li>
+<li class="chapter" data-level="4.11" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#例子"><i class="fa fa-check"></i><b>4.11</b> 例子</a>
+<ul>
+<li class="chapter" data-level="4.11.1" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#柱状图误差项"><i class="fa fa-check"></i><b>4.11.1</b> 柱状图+误差项</a></li>
+<li class="chapter" data-level="4.11.2" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#有正值和负值的柱形图"><i class="fa fa-check"></i><b>4.11.2</b> 有正值和负值的柱形图</a></li>
+<li class="chapter" data-level="4.11.3" data-path="ggplot2-plot.html"><a href="ggplot2-plot.html#合并两图"><i class="fa fa-check"></i><b>4.11.3</b> 合并两图</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="main-diagram-types.html"><a href="main-diagram-types.html"><i class="fa fa-check"></i><b>5</b> 常用图形</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="main-diagram-types.html"><a href="main-diagram-types.html#散点图-1"><i class="fa fa-check"></i><b>5.1</b> 散点图</a></li>
+<li class="chapter" data-level="5.2" data-path="main-diagram-types.html"><a href="main-diagram-types.html#气泡图"><i class="fa fa-check"></i><b>5.2</b> 气泡图</a></li>
+<li class="chapter" data-level="5.3" data-path="main-diagram-types.html"><a href="main-diagram-types.html#线性图"><i class="fa fa-check"></i><b>5.3</b> 线性图</a></li>
+<li class="chapter" data-level="5.4" data-path="main-diagram-types.html"><a href="main-diagram-types.html#相关系数图热力图"><i class="fa fa-check"></i><b>5.4</b> 相关系数图/热力图</a></li>
+<li class="chapter" data-level="5.5" data-path="main-diagram-types.html"><a href="main-diagram-types.html#条形图-1"><i class="fa fa-check"></i><b>5.5</b> 条形图</a></li>
+<li class="chapter" data-level="5.6" data-path="main-diagram-types.html"><a href="main-diagram-types.html#箱线图-1"><i class="fa fa-check"></i><b>5.6</b> 箱线图</a></li>
+<li class="chapter" data-level="5.7" data-path="main-diagram-types.html"><a href="main-diagram-types.html#小提琴图-1"><i class="fa fa-check"></i><b>5.7</b> 小提琴图</a></li>
+<li class="chapter" data-level="5.8" data-path="main-diagram-types.html"><a href="main-diagram-types.html#饼图-1"><i class="fa fa-check"></i><b>5.8</b> 饼图</a></li>
+<li class="chapter" data-level="5.9" data-path="main-diagram-types.html"><a href="main-diagram-types.html#冲积图"><i class="fa fa-check"></i><b>5.9</b> 冲积图</a></li>
+<li class="chapter" data-level="5.10" data-path="main-diagram-types.html"><a href="main-diagram-types.html#系谱图"><i class="fa fa-check"></i><b>5.10</b> 系谱图</a></li>
+<li class="chapter" data-level="5.11" data-path="main-diagram-types.html"><a href="main-diagram-types.html#哑铃图"><i class="fa fa-check"></i><b>5.11</b> 哑铃图</a></li>
+<li class="chapter" data-level="5.12" data-path="main-diagram-types.html"><a href="main-diagram-types.html#斜率图"><i class="fa fa-check"></i><b>5.12</b> 斜率图</a></li>
+<li class="chapter" data-level="5.13" data-path="main-diagram-types.html"><a href="main-diagram-types.html#堆叠面积图"><i class="fa fa-check"></i><b>5.13</b> 堆叠面积图</a></li>
+<li class="chapter" data-level="5.14" data-path="main-diagram-types.html"><a href="main-diagram-types.html#棒棒糖图"><i class="fa fa-check"></i><b>5.14</b> 棒棒糖图</a></li>
+<li class="chapter" data-level="5.15" data-path="main-diagram-types.html"><a href="main-diagram-types.html#树状图"><i class="fa fa-check"></i><b>5.15</b> 树状图</a></li>
+<li class="chapter" data-level="5.16" data-path="main-diagram-types.html"><a href="main-diagram-types.html#瀑布图"><i class="fa fa-check"></i><b>5.16</b> 瀑布图</a></li>
+<li class="chapter" data-level="5.17" data-path="main-diagram-types.html"><a href="main-diagram-types.html#双标图"><i class="fa fa-check"></i><b>5.17</b> 双标图</a></li>
+<li class="chapter" data-level="5.18" data-path="main-diagram-types.html"><a href="main-diagram-types.html#雷达图星图蜘蛛图"><i class="fa fa-check"></i><b>5.18</b> 雷达图/星图/蜘蛛图</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="other-packages.html"><a href="other-packages.html"><i class="fa fa-check"></i><b>6</b> 其他相关拓展包</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="other-packages.html"><a href="other-packages.html#ggplot2-官网-109-种拓展包"><i class="fa fa-check"></i><b>6.1</b> ggplot2 官网 109 种拓展包</a></li>
+<li class="chapter" data-level="6.2" data-path="other-packages.html"><a href="other-packages.html#整理的相关扩展包"><i class="fa fa-check"></i><b>6.2</b> 整理的相关扩展包</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="interactive-ploting.html"><a href="interactive-ploting.html"><i class="fa fa-check"></i><b>7</b> 认识交互式绘图工具</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="interactive-ploting.html"><a href="interactive-ploting.html#leaflet包"><i class="fa fa-check"></i><b>7.1</b> leaflet包</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dygraphs包"><i class="fa fa-check"></i><b>7.2</b> dygraphs包</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-ploting.html"><a href="interactive-ploting.html#plotly包"><i class="fa fa-check"></i><b>7.3</b> plotly包</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-ploting.html"><a href="interactive-ploting.html#dt包"><i class="fa fa-check"></i><b>7.4</b> DT包</a></li>
+<li class="chapter" data-level="7.5" data-path="interactive-ploting.html"><a href="interactive-ploting.html#networkd3包"><i class="fa fa-check"></i><b>7.5</b> networkD3包</a></li>
+<li class="chapter" data-level="7.6" data-path="interactive-ploting.html"><a href="interactive-ploting.html#利用shiny包实现可交互的web应用"><i class="fa fa-check"></i><b>7.6</b> 利用Shiny包实现可交互的Web应用</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="some-tips-alls.html"><a href="some-tips-alls.html"><i class="fa fa-check"></i><b>8</b> 常用案例</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同分布的-qq-图"><i class="fa fa-check"></i><b>8.1</b> 绘制不同分布的 QQ 图</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#简单版本"><i class="fa fa-check"></i><b>8.1.1</b> 简单版本</a></li>
+<li class="chapter" data-level="8.1.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#进阶版本"><i class="fa fa-check"></i><b>8.1.2</b> 进阶版本</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制混合密度函数图以及添加分位数线"><i class="fa fa-check"></i><b>8.2</b> 绘制混合密度函数图以及添加分位数线</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#加载包"><i class="fa fa-check"></i><b>8.2.1</b> 加载包</a></li>
+<li class="chapter" data-level="8.2.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#产生数据集"><i class="fa fa-check"></i><b>8.2.2</b> 产生数据集</a></li>
+<li class="chapter" data-level="8.2.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制密度函数图并添加分位数线"><i class="fa fa-check"></i><b>8.2.3</b> 绘制密度函数图并添加分位数线</a></li>
+<li class="chapter" data-level="8.2.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#合并两图使用cowplot包"><i class="fa fa-check"></i><b>8.2.4</b> 合并两图（使用cowplot包）</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制不同参数的密度函数"><i class="fa fa-check"></i><b>8.3</b> 绘制不同参数的密度函数</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#beta-密度函数"><i class="fa fa-check"></i><b>8.3.1</b> Beta 密度函数</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="some-tips-alls.html"><a href="some-tips-alls.html#散点图中加入第三变量的密度函数"><i class="fa fa-check"></i><b>8.4</b> 散点图中加入第三变量的密度函数</a></li>
+<li class="chapter" data-level="8.5" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制-gamma-分布相关图形"><i class="fa fa-check"></i><b>8.5</b> 绘制 Gamma 分布相关图形</a></li>
+<li class="chapter" data-level="8.6" data-path="some-tips-alls.html"><a href="some-tips-alls.html#纯手动复现密度图"><i class="fa fa-check"></i><b>8.6</b> 纯手动复现密度图</a></li>
+<li class="chapter" data-level="8.7" data-path="some-tips-alls.html"><a href="some-tips-alls.html#绘制贝叶斯分析相关图形"><i class="fa fa-check"></i><b>8.7</b> 绘制贝叶斯分析相关图形</a>
+<ul>
+<li class="chapter" data-level="8.7.1" data-path="some-tips-alls.html"><a href="some-tips-alls.html#模型建模"><i class="fa fa-check"></i><b>8.7.1</b> 模型建模</a></li>
+<li class="chapter" data-level="8.7.2" data-path="some-tips-alls.html"><a href="some-tips-alls.html#后验预测检查"><i class="fa fa-check"></i><b>8.7.2</b> 后验预测检查</a></li>
+<li class="chapter" data-level="8.7.3" data-path="some-tips-alls.html"><a href="some-tips-alls.html#诊断"><i class="fa fa-check"></i><b>8.7.3</b> 诊断</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III R 语言文档沟通</b></span></li>
+<li class="chapter" data-level="9" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html"><i class="fa fa-check"></i><b>9</b> R Markdown 入门教程</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-简介"><i class="fa fa-check"></i><b>9.1</b> Rmarkdown 简介</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#官网视频介绍"><i class="fa fa-check"></i><b>9.1.1</b> 官网视频介绍</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-流程演示"><i class="fa fa-check"></i><b>9.2</b> Rmarkdown 流程演示</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#安装"><i class="fa fa-check"></i><b>9.2.1</b> 安装</a></li>
+<li class="chapter" data-level="9.2.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rstudio界面介绍"><i class="fa fa-check"></i><b>9.2.2</b> Rstudio界面介绍</a></li>
+<li class="chapter" data-level="9.2.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#代码输出"><i class="fa fa-check"></i><b>9.2.3</b> 代码输出</a></li>
+<li class="chapter" data-level="9.2.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格输出"><i class="fa fa-check"></i><b>9.2.4</b> 表格输出</a></li>
+<li class="chapter" data-level="9.2.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#表格渲染"><i class="fa fa-check"></i><b>9.2.5</b> 表格渲染</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmarkdown-的主题格式"><i class="fa fa-check"></i><b>9.3</b> Rmarkdown 的主题格式</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#rmdformats-包"><i class="fa fa-check"></i><b>9.3.1</b> rmdformats 包</a></li>
+<li class="chapter" data-level="9.3.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#tufte-包"><i class="fa fa-check"></i><b>9.3.2</b> tufte 包</a></li>
+<li class="chapter" data-level="9.3.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#cerulean-包"><i class="fa fa-check"></i><b>9.3.3</b> cerulean 包</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#总结一些常用技巧"><i class="fa fa-check"></i><b>9.4</b> 总结一些常用技巧</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#修改某些字体颜色"><i class="fa fa-check"></i><b>9.4.1</b> 修改某些字体颜色</a></li>
+<li class="chapter" data-level="9.4.2" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#更改全文页边距等"><i class="fa fa-check"></i><b>9.4.2</b> 更改全文页边距等</a></li>
+<li class="chapter" data-level="9.4.3" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#缩进文本"><i class="fa fa-check"></i><b>9.4.3</b> 缩进文本</a></li>
+<li class="chapter" data-level="9.4.4" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#分页"><i class="fa fa-check"></i><b>9.4.4</b> 分页</a></li>
+<li class="chapter" data-level="9.4.5" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制文本输出的宽度"><i class="fa fa-check"></i><b>9.4.5</b> 控制文本输出的宽度</a></li>
+<li class="chapter" data-level="9.4.6" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#控制图片输出大小"><i class="fa fa-check"></i><b>9.4.6</b> 控制图片输出大小</a></li>
+<li class="chapter" data-level="9.4.7" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#图片对齐"><i class="fa fa-check"></i><b>9.4.7</b> 图片对齐</a></li>
+<li class="chapter" data-level="9.4.8" data-path="rmarkdown-base.html"><a href="rmarkdown-base.html#多列输出"><i class="fa fa-check"></i><b>9.4.8</b> 多列输出</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html"><i class="fa fa-check"></i><b>10</b> 其他方式的文档沟通</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#typora"><i class="fa fa-check"></i><b>10.1</b> Typora</a></li>
+<li class="chapter" data-level="10.2" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#xaringan-幻灯片"><i class="fa fa-check"></i><b>10.2</b> xaringan 幻灯片</a></li>
+<li class="chapter" data-level="10.3" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作幻灯片"><i class="fa fa-check"></i><b>10.3</b> 制作幻灯片</a></li>
+<li class="chapter" data-level="10.4" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#rbeamer"><i class="fa fa-check"></i><b>10.4</b> Rbeamer</a></li>
+<li class="chapter" data-level="10.5" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#dashboards"><i class="fa fa-check"></i><b>10.5</b> Dashboards</a></li>
+<li class="chapter" data-level="10.6" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#shiny"><i class="fa fa-check"></i><b>10.6</b> shiny</a></li>
+<li class="chapter" data-level="10.7" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#blogdown"><i class="fa fa-check"></i><b>10.7</b> blogdown</a></li>
+<li class="chapter" data-level="10.8" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#制作简历"><i class="fa fa-check"></i><b>10.8</b> 制作简历</a></li>
+<li class="chapter" data-level="10.9" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#bookdown"><i class="fa fa-check"></i><b>10.9</b> bookdown</a></li>
+<li class="chapter" data-level="10.10" data-path="rmarkdown-extended.html"><a href="rmarkdown-extended.html#小编有话说"><i class="fa fa-check"></i><b>10.10</b> 小编有话说</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>11</b> 附录</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装r和rstudio"><i class="fa fa-check"></i>安装R和Rstudio</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装-r"><i class="fa fa-check"></i>安装 R</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#安装rstudio"><i class="fa fa-check"></i>安装RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#可能的问题"><i class="fa fa-check"></i>可能的问题</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#如何获取帮助"><i class="fa fa-check"></i>如何获取帮助</a></li>
+<li class="chapter" data-level="" data-path="appendix.html"><a href="appendix.html#r-语言社区"><i class="fa fa-check"></i>R 语言社区</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>12</b> 参考书籍</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">庄闪闪的可视化手册</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rmarkdown-base" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> R Markdown 入门教程<a href="rmarkdown-base.html#rmarkdown-base" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rmarkdown-简介" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Rmarkdown 简介<a href="rmarkdown-base.html#rmarkdown-简介" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Rmarkdown 是 R 语言环境中提供的 markdown 编辑工具，运用 rmarkdown 撰写文章，既可以像一般的 markdown 编辑器一样编辑文本，也可以在 rmarkdown 中插入代码块，并将代码运行结果输出在 markdown 里。R Markdown 格式，简称为 Rmd 格式， 相应的源文件扩展名为 .Rmd。输出格式可以是 HTML、docx、pdf、beamer 等。</p>
+<blockquote>
+<p>介绍参考：李东风老师的<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html" title="《R 语言教程》">《R 语言教程》</a>。
+对于专注于用 R 语言写报告的数据分析师来说，rmarkdown 既提高了数据分析工作的便捷性，也提高了数据分析报告的复用性。 markdown 的教程以及对应的编辑器介绍可见：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491318&amp;idx=1&amp;sn=47128737582a34677926a9f64f03e4ed&amp;chksm=ea24e112dd53680478ac90151554ebdde72ab122fcc84bae4da6e87e9c97b020275ecabc846c&amp;scene=21#wechat_redirect">R沟通｜markdown编辑器—Typora</a>。</p>
+</blockquote>
+<div id="官网视频介绍" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> 官网视频介绍<a href="rmarkdown-base.html#官网视频介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>先通过<a href="https://rmarkdown.rstudio.com/lesson-1.html" title="官方视频">官方视频</a>来看看 Rmarkdown 的介绍。</p>
+<blockquote>
+<p><strong>注</strong>：该视频来自官网，一般不一定打得开，所以小编为大家着想就下载下来了，以便大家更好地学习，可见这篇<a href="https://mp.weixin.qq.com/s/aPqjLILQvnRaM6S7j7zsLQ">推送</a>。
+视频已经非常清楚的介绍了 Rmarkdown 如何使用，内部构造、不同的输出类型，以及其他拓展（发布，与 github 相连）等。我们先对此进行简单了解即可，之后几期我会详细介绍。当然，官网也有一套 Rmarkdown 的入门教程，欢迎大家前去学习，官网截图如下：</p>
+</blockquote>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172657080.png" /></p>
+<p>其他参考资料可见这一期推文：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247490959&amp;idx=1&amp;sn=2374d35aa12a64bd00caea0bf424bbd0&amp;chksm=ea24e26bdd536b7d2263b6e779a00f072f2e42f29346ab13a9ed4252144dc6d7e964c7ef7d52&amp;scene=21#wechat_redirect">R分享｜Rmarkdown参考资料分享和自制视频教程预告</a>。关于 RMarkdown 可参考专著(<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html#ref-Xie2019:rmarkdown" title="Xie, Allaire, and Grolemund">Xie, Allaire, and Grolemund 2019</a>)和(<a href="https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/rmarkdown.html#ref-Xie2020:rmd-cook" title="Xie, Dervieux, and Riederer">Xie, Dervieux, and Riederer 2020</a>)。 RStudio 网站提供了一个 R Markdown 使用小抄的下载链接：( rmarkdown-2.0.pdf )[rmarkdown-2.0.pdf]。 Pandoc 的文档见<a href="https://www.pandoc.org/" title="pandoc 网站">pandoc 网站</a>，knitr 的详细文档参见网站<a href="http://yihui.name/knitr/" title="knitr 文档">knitr 文档</a>。</p>
+</div>
+</div>
+<div id="rmarkdown-流程演示" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Rmarkdown 流程演示<a href="rmarkdown-base.html#rmarkdown-流程演示" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="安装" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> 安装<a href="rmarkdown-base.html#安装" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>假设你已经安装了 <a href="https://www.r-project.org" title="R">R</a>（R Core Team 2020）和 <a href="https://www.rstudio.com" title="RStudio IDE">RStudio IDE</a>。</p>
+<blockquote>
+<p>不需要 RStudio，但建议使用 RStudio，因为它可使普通用户更轻松地使用 R Markdown。如果未安装 RStudio IDE，则必须安装 <a href="http://pandoc.org">Pandoc</a>， 否则不需要单独安装 Pandoc，因为 RStudio 已将其捆绑在一起。
+接下来， Rstudio 中安装 rmarkdown 软件包，可以通过下面任意一种方式：</p>
+</blockquote>
+<div class="sourceCode" id="cb194"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb194-1"><a href="rmarkdown-base.html#cb194-1" aria-hidden="true" tabindex="-1"></a>#Install from CRAN  </span>
+<span id="cb194-2"><a href="rmarkdown-base.html#cb194-2" aria-hidden="true" tabindex="-1"></a>install.packages(&#39;rmarkdown&#39;)  </span>
+<span id="cb194-3"><a href="rmarkdown-base.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb194-4"><a href="rmarkdown-base.html#cb194-4" aria-hidden="true" tabindex="-1"></a><span class="fu"># Or if you want to test the development version,  </span></span>
+<span id="cb194-5"><a href="rmarkdown-base.html#cb194-5" aria-hidden="true" tabindex="-1"></a>#install from GitHub  </span>
+<span id="cb194-6"><a href="rmarkdown-base.html#cb194-6" aria-hidden="true" tabindex="-1"></a>if(!requireNamespace(&quot;devtools&quot;))  </span>
+<span id="cb194-7"><a href="rmarkdown-base.html#cb194-7" aria-hidden="true" tabindex="-1"></a>install.packages(&#39;devtools&#39;)  </span>
+<span id="cb194-8"><a href="rmarkdown-base.html#cb194-8" aria-hidden="true" tabindex="-1"></a>devtools::install_github(&#39;rstudio/rmarkdown&#39;)  </span></code></pre></div>
+<p>如果要生成 PDF 输出，则需要安装 LaTeX。对于从未安装过 LaTeX 的 R Markdown 用户，建议安装 <a href="https://yihui.name/tinytex/" title="TinyTeX">TinyTeX</a>：</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb195-1"><a href="rmarkdown-base.html#cb195-1" aria-hidden="true" tabindex="-1"></a>install.packages(&#39;tinytex&#39;)  </span>
+<span id="cb195-2"><a href="rmarkdown-base.html#cb195-2" aria-hidden="true" tabindex="-1"></a>tinytex::install_tinytex() # install TinyTeX  </span></code></pre></div>
+<p>TinyTeX 是一种轻便，可移植，跨平台，易于维护的 LaTeX 发行版。 R 配套软件包 tinytex 可以帮助你在将 LaTeX 或 R Markdown 文档编译为 PDF 时自动安装缺少的 LaTeX 软件包，并确保将 LaTeX 文档编译正确的次数以解决所有交叉引用。</p>
+<blockquote>
+<p><strong>注：</strong> 如果 TinyTex 通过上面代码无法正常安装，可以参考张敬信老师的知乎文章：<a href="https://zhuanlan.zhihu.com/p/328585804">搭建 Latex 环境：TinyTex+RStudio</a> 如果编译 .rmd 格式时出现缺失某些 Latex 包，可以参考<a href="https://bookdown.org/yihui/rmarkdown-cookbook/install-latex-pkgs.html">这节</a>内容。
+### 2.2. 新建Rmarkdown项目</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>点击 Rstudio 左上角的新建项目，选择 Rmarkdown 文件格式，即可建立一个 rmarkdown 编辑文件 。</li>
+</ol>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172842613.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>在弹出的选项框里，可以申明 rmarkdown 的 Title、 Author 以及默认的输出文件格式，一般可以选择 HTML、PDF、Word 格式，具体见下图。</li>
+</ol>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172859520.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>在新建的 markdown 文件里，主要包含三块内容：1. YAML、2. markdown 文本、3.代码块。</li>
+</ol>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172919598.png" /></p>
+<p><strong>1）YAML</strong>： Rmarkdown 的头部文件(上图1位置)， YAML 定义了 rmarkdwon 的性质，比如 title、author、date、 指定 output 文件类型等。</p>
+<p><strong>2）markdown文本</strong>： rmarkdown 里的主要内容(上图3位置)，由编辑人员按照 markdown 语法自行编写文本内容，</p>
+<p><strong>3）代码块</strong>： rmarkdown 的一个主要功能是可以执行文件内的代码块(上图2位置)，并将代码执行结果展示在 markdown 里。这对撰写数据分析报告带来了极大的便利。 Rmd 文件中除了 R 代码段以外， 还可以插入 Rcpp、Python、Julia、SQL 等许多编程语言的代码段， 常用编程语言还可以与R代码段进行信息交换。</p>
+<blockquote>
+<p>这三个部分会在以后做详细介绍。
+### 2.3. Rmarkdown的导出</p>
+</blockquote>
+<p>rmarkdown的导出方法有两种，一种是依靠 Rstudio 手动导出，另一种是基于命令行的导出方式。</p>
+<div id="手动导出" class="section level4 hasAnchor" number="9.2.1.1">
+<h4><span class="header-section-number">9.2.1.1</span> 手动导出<a href="rmarkdown-base.html#手动导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424172937025.png" /></p>
+<p>手动导出方法很简单，在完成 markdown 编辑后，手动点击上图红圈内 knit 按钮，选择导出格式类型即可， Rstudio 支持导出 PDF、html、word 三种类型。</p>
+</div>
+<div id="命令行导出" class="section level4 hasAnchor" number="9.2.1.2">
+<h4><span class="header-section-number">9.2.1.2</span> 命令行导出<a href="rmarkdown-base.html#命令行导出" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>命令行导出主要依靠 <code>rmarkdown::render</code> 实现， render 函数主要包含如下几个参数：</p>
+<ul>
+<li>**input*： 指定需要导出的rmarkdwon文件地址</li>
+<li><strong>output_format</strong>： 指定需要导出的文件类型，同样支持 pdf、word、html 等多种文件格式。若未指定 <code>output_format</code> 格式，则输出 rmarkdown 文件中 output 指定的格式类型。</li>
+</ul>
+<div class="sourceCode" id="cb196"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb196-1"><a href="rmarkdown-base.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r} </span></span>
+<span id="cb196-2"><a href="rmarkdown-base.html#cb196-2" aria-hidden="true" tabindex="-1"></a><span class="in">rmarkdown::render(&quot;test.Rmd&quot;)</span></span>
+<span id="cb196-3"><a href="rmarkdown-base.html#cb196-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424173011826.png" /></p>
+</div>
+</div>
+<div id="rstudio界面介绍" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Rstudio界面介绍<a href="rmarkdown-base.html#rstudio界面介绍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>若界面打开了 rmd 格式的文件时， RStudio 的界面发生了一些变化（多了一些按钮），如下图所示。</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210414130134283.png" /></p>
+<p>这里我们对界面做一些介绍，视频介绍在<a href="https://mp.weixin.qq.com/s/Dl1a36omEVI1QGP0HgbuyA">这</a>。</p>
+<blockquote>
+<p><strong>注</strong>：演示的 Rstudio 版本为1.4.1，老版本的界面可能有所不同。
+## 第三章：图、表和代码输出</p>
+</blockquote>
+</div>
+<div id="代码输出" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> 代码输出<a href="rmarkdown-base.html#代码输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="行内代码" class="section level4 hasAnchor" number="9.2.3.1">
+<h4><span class="header-section-number">9.2.3.1</span> 行内代码<a href="rmarkdown-base.html#行内代码" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb197"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb197-1"><a href="rmarkdown-base.html#cb197-1" aria-hidden="true" tabindex="-1"></a>1 </span></code></pre></div>
+<p>有趣的案例：</p>
+<p>1）自动更新日期</p>
+<div class="sourceCode" id="cb198"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb198-1"><a href="rmarkdown-base.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2022-07-02&quot;</span></span>
+<span id="cb198-2"><a href="rmarkdown-base.html#cb198-2" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;02 July, 2022&quot;</span></span>
+<span id="cb198-3"><a href="rmarkdown-base.html#cb198-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;Last compiled on 02 July, 2022&quot;</span></span>
+<span id="cb198-4"><a href="rmarkdown-base.html#cb198-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb198-5"><a href="rmarkdown-base.html#cb198-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-6"><a href="rmarkdown-base.html#cb198-6" aria-hidden="true" tabindex="-1"></a><span class="in">具体细节可参考：https://bookdown.org/yihui/rmarkdown-cookbook/update-date.html</span></span>
+<span id="cb198-7"><a href="rmarkdown-base.html#cb198-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-8"><a href="rmarkdown-base.html#cb198-8" aria-hidden="true" tabindex="-1"></a><span class="in">2）文本结合代码</span></span>
+<span id="cb198-9"><a href="rmarkdown-base.html#cb198-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-10"><a href="rmarkdown-base.html#cb198-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-11"><a href="rmarkdown-base.html#cb198-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-12"><a href="rmarkdown-base.html#cb198-12" aria-hidden="true" tabindex="-1"></a><span class="in">这里一共有15个人。</span></span>
+<span id="cb198-13"><a href="rmarkdown-base.html#cb198-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-14"><a href="rmarkdown-base.html#cb198-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-15"><a href="rmarkdown-base.html#cb198-15" aria-hidden="true" tabindex="-1"></a><span class="in">#### 代码块</span></span>
+<span id="cb198-16"><a href="rmarkdown-base.html#cb198-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb198-17"><a href="rmarkdown-base.html#cb198-17" aria-hidden="true" tabindex="-1"></a><span class="in">````markdown</span></span>
+<span id="cb198-18"><a href="rmarkdown-base.html#cb198-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE} </span></span>
+<span id="cb198-19"><a href="rmarkdown-base.html#cb198-19" aria-hidden="true" tabindex="-1"></a><span class="in">set.seed(1)</span></span>
+<span id="cb198-20"><a href="rmarkdown-base.html#cb198-20" aria-hidden="true" tabindex="-1"></a><span class="in">x &lt;- round(rnorm(10), 2)</span></span>
+<span id="cb198-21"><a href="rmarkdown-base.html#cb198-21" aria-hidden="true" tabindex="-1"></a><span class="in">print(x)</span></span>
+<span id="cb198-22"><a href="rmarkdown-base.html#cb198-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>R 代码块一般通过 <code>{R}</code> 来插入，插入代码段的<strong>快捷键</strong>：win[Ctrl+Alt+I] / mac[option + cmd + I]。</p>
+<p>默认情况下代码和结果会在输出文件中呈现。如果通过参数来控制代码块运行结果的输出情况可以在{r }中设置。一般包括代码及运行结果的输出、图片表格格式定义等。关于代码段选项，详见https://yihui.name/knitr/options。</p>
+<p>这里小编给出一些常用的选项，文字版本较难理解的话，请配合我的<a href="https://www.bilibili.com/video/BV1ib4y1X7r9/" title="b站视频教程">b站视频教程</a>。</p>
+<ol style="list-style-type: decimal">
+<li>eval和include选项</li>
+</ol>
+<p>加选项 <code>eval=FALSE</code> , 可以使得代码仅显示而不实际运行。 这样的代码段如果有标签， 可以在后续代码段中被引用。</p>
+<p>加选项 <code>include=FALSE</code> ， 则本代码段仅运行， 但是代码和结果都不写入到生成的文档中。</p>
+<ol start="2" style="list-style-type: decimal">
+<li>echo选项</li>
+</ol>
+<p>echo 参数控制了 markdown 是否显示代码块。若 echo=TRUE， 则表示代码块显示在 markdown 文档显示代码块；反之，代码块不出现在输出结果中。</p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb199-1"><a href="rmarkdown-base.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE} </span></span>
+<span id="cb199-2"><a href="rmarkdown-base.html#cb199-2" aria-hidden="true" tabindex="-1"></a><span class="in">print(1:5)</span></span>
+<span id="cb199-3"><a href="rmarkdown-base.html#cb199-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>结果为:</p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb200-1"><a href="rmarkdown-base.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## [1] 1 2 3 4 5</span></span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>collapse 选项
+一个代码块的代码、输出通常被分解为多个原样文本块中， 如果一个代码块希望所有的代码、输出都写到同一个原样文本块中， 加选项 <code>collapse=TRUE</code>。 例如：</li>
+</ol>
+<div class="sourceCode" id="cb201"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb201-1"><a href="rmarkdown-base.html#cb201-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE} </span></span>
+<span id="cb201-2"><a href="rmarkdown-base.html#cb201-2" aria-hidden="true" tabindex="-1"></a><span class="in">sin(pi/2)</span></span>
+<span id="cb201-3"><a href="rmarkdown-base.html#cb201-3" aria-hidden="true" tabindex="-1"></a><span class="in">cos(pi/2)</span></span>
+<span id="cb201-4"><a href="rmarkdown-base.html#cb201-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>结果为：</p>
+<div class="sourceCode" id="cb202"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb202-1"><a href="rmarkdown-base.html#cb202-1" aria-hidden="true" tabindex="-1"></a>sin(pi/2)</span>
+<span id="cb202-2"><a href="rmarkdown-base.html#cb202-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## [1] 1</span></span>
+<span id="cb202-3"><a href="rmarkdown-base.html#cb202-3" aria-hidden="true" tabindex="-1"></a>cos(pi/2)</span>
+<span id="cb202-4"><a href="rmarkdown-base.html#cb202-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## [1] 6.123032e-17</span></span></code></pre></div>
+<p>代码和结果都在一个原样文本块中。</p>
+<ol start="4" style="list-style-type: decimal">
+<li>prompt 和 comment 选项</li>
+</ol>
+<p><code>prompt=TRUE</code> 代码用 R 的大于号提示符开始。如果希望结果不用井号保护， 使用选项 <code>comment=''</code>。</p>
+<div class="sourceCode" id="cb203"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb203-1"><a href="rmarkdown-base.html#cb203-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r prompt=TRUE, comment=&#39;&#39;} </span></span>
+<span id="cb203-2"><a href="rmarkdown-base.html#cb203-2" aria-hidden="true" tabindex="-1"></a><span class="in">sum(1:5)</span></span>
+<span id="cb203-3"><a href="rmarkdown-base.html#cb203-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>结果为:</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb204-1"><a href="rmarkdown-base.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; sum(1:5)</span></span>
+<span id="cb204-2"><a href="rmarkdown-base.html#cb204-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span><span class="at"> 15</span></span></code></pre></div>
+<ol start="5" style="list-style-type: decimal">
+<li>results 选项</li>
+</ol>
+<p>用选项 <code>results=</code> 选择文本型结果的类型。 取值有：</p>
+<pre><code>- `markup`, 这是缺省选项， 会把文本型结果变成HTML的原样文本格式。
+- `hide`, 运行了代码后不显示运行结果。
+- `hold`, 一个代码块所有的代码都显示完， 才显示所有的结果。
+- `asis`, 文本型输出直接进入到 HTML 文件中， 这需要 R 代码直接生成HTML标签， knitr 包的 `kable()` 函数可以把数据框转换为 HTML 代码的表格。</code></pre>
+<p>例如， <code>results='hold'</code> 的示例:</p>
+<div class="sourceCode" id="cb206"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb206-1"><a href="rmarkdown-base.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r collapse=TRUE, results=&#39;hold&#39;} </span></span>
+<span id="cb206-2"><a href="rmarkdown-base.html#cb206-2" aria-hidden="true" tabindex="-1"></a><span class="in">sin(pi/2)</span></span>
+<span id="cb206-3"><a href="rmarkdown-base.html#cb206-3" aria-hidden="true" tabindex="-1"></a><span class="in">cos(pi/2)</span></span>
+<span id="cb206-4"><a href="rmarkdown-base.html#cb206-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>结果为:</p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb207-1"><a href="rmarkdown-base.html#cb207-1" aria-hidden="true" tabindex="-1"></a>sin(pi/2)</span>
+<span id="cb207-2"><a href="rmarkdown-base.html#cb207-2" aria-hidden="true" tabindex="-1"></a>cos(pi/2)</span>
+<span id="cb207-3"><a href="rmarkdown-base.html#cb207-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## [1] 1</span></span>
+<span id="cb207-4"><a href="rmarkdown-base.html#cb207-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## [1] 6.123032e-17</span></span></code></pre></div>
+<ol start="6" style="list-style-type: decimal">
+<li><p>错误信息选项</p>
+<ul>
+<li><p><code>warning=FALSE</code> 使得代码段的警告信息不进入编译结果， 而是在控制台( console )中显示。 有一些扩展包的载入警告可以用这种办法屏蔽。</p></li>
+<li><p><code>error=FALSE</code> 可以使得错误信息不进入编译结果， 而是出错停止并将错误信息在控制台中显示。</p></li>
+<li><p><code>message=FALSE</code> 可以使得 message 级别的信息不进入编译结果， 而是在控制台中显示。</p></li>
+</ul></li>
+</ol>
+<blockquote>
+<p>还有关于图片的设置，这个我们放到下面来说
+当然你也可以通过 Rstudio 界面进行部分参数的设置（更加便捷）：</p>
+</blockquote>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/WeChatd2107f6cf1d1088d22c97e4b3e09f344.png" /></p>
+<p>具体演示可见<a href="https://www.bilibili.com/video/BV1ib4y1X7r9">b站</a>视频。</p>
+<ol start="7" style="list-style-type: decimal">
+<li>全局设置</li>
+</ol>
+<p>若 markdown 内的代码块存在一样的参数设置，则可以提前设计好全局的代码块参数。全局代码块通过 <code>knitr::opts_chunk$set</code> 函数进行设置，一般设置在 YAML 文件下方。</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb208-1"><a href="rmarkdown-base.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo = FALSE} </span></span>
+<span id="cb208-2"><a href="rmarkdown-base.html#cb208-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::opts_chunk$set(echo = TRUE)</span></span>
+<span id="cb208-3"><a href="rmarkdown-base.html#cb208-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb208-4"><a href="rmarkdown-base.html#cb208-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb208-5"><a href="rmarkdown-base.html#cb208-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-6"><a href="rmarkdown-base.html#cb208-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-7"><a href="rmarkdown-base.html#cb208-7" aria-hidden="true" tabindex="-1"></a><span class="in">### 图片输出</span></span>
+<span id="cb208-8"><a href="rmarkdown-base.html#cb208-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-9"><a href="rmarkdown-base.html#cb208-9" aria-hidden="true" tabindex="-1"></a><span class="in">#### 插入 R 代码生成的图形</span></span>
+<span id="cb208-10"><a href="rmarkdown-base.html#cb208-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-11"><a href="rmarkdown-base.html#cb208-11" aria-hidden="true" tabindex="-1"></a><span class="in">````markdown</span></span>
+<span id="cb208-12"><a href="rmarkdown-base.html#cb208-12" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.height = 8,fig.with = 6}</span></span>
+<span id="cb208-13"><a href="rmarkdown-base.html#cb208-13" aria-hidden="true" tabindex="-1"></a><span class="in">plot(1:10)</span></span>
+<span id="cb208-14"><a href="rmarkdown-base.html#cb208-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb208-15"><a href="rmarkdown-base.html#cb208-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb208-16"><a href="rmarkdown-base.html#cb208-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-17"><a href="rmarkdown-base.html#cb208-17" aria-hidden="true" tabindex="-1"></a><span class="in">1. `fig.show`：设置了图片输出方式 </span></span>
+<span id="cb208-18"><a href="rmarkdown-base.html#cb208-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-19"><a href="rmarkdown-base.html#cb208-19" aria-hidden="true" tabindex="-1"></a><span class="in">   - `fig.show=‘asis’`：表示 plot 在产生他们的代码后面</span></span>
+<span id="cb208-20"><a href="rmarkdown-base.html#cb208-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-21"><a href="rmarkdown-base.html#cb208-21" aria-hidden="true" tabindex="-1"></a><span class="in">   - `fig.show=‘hold’`：所有代码产生的图片都放在一个完整的代码块之后</span></span>
+<span id="cb208-22"><a href="rmarkdown-base.html#cb208-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-23"><a href="rmarkdown-base.html#cb208-23" aria-hidden="true" tabindex="-1"></a><span class="in">   - `fig.show=‘animate’`：表示将所有生成的图片合成一个动画图片</span></span>
+<span id="cb208-24"><a href="rmarkdown-base.html#cb208-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-25"><a href="rmarkdown-base.html#cb208-25" aria-hidden="true" tabindex="-1"></a><span class="in">   - `fig.show=‘hide’`：表示产生所有图片,但是并不展示</span></span>
+<span id="cb208-26"><a href="rmarkdown-base.html#cb208-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb208-27"><a href="rmarkdown-base.html#cb208-27" aria-hidden="true" tabindex="-1"></a><span class="in">````markdown</span></span>
+<span id="cb208-28"><a href="rmarkdown-base.html#cb208-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.show=&#39;animate&#39;} </span></span>
+<span id="cb208-29"><a href="rmarkdown-base.html#cb208-29" aria-hidden="true" tabindex="-1"></a><span class="in">for (i in 1:2) {</span></span>
+<span id="cb208-30"><a href="rmarkdown-base.html#cb208-30" aria-hidden="true" tabindex="-1"></a><span class="in">  pie(c(i %% 2, 6), col = c(&#39;red&#39;, &#39;yellow&#39;), labels = NA)</span></span>
+<span id="cb208-31"><a href="rmarkdown-base.html#cb208-31" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb208-32"><a href="rmarkdown-base.html#cb208-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><code>fig.width</code>： 设置图片输出的宽度</li>
+<li><code>fig.height</code>： 设置图片输出的高度</li>
+<li><code>fig.align</code>： 设置图片位置排版格式，默认为 “left”, 可以为 “right” 或者 “center”。</li>
+<li><code>fig.cap</code>： 设置图片的标题</li>
+<li><code>fig.subcap</code>： 设置图片的副标题</li>
+<li><code>out.width</code> 和 <code>out.height</code> 选项指定在输出中实际显示的宽和高，如果使用如 “90%” 这样的百分数单位则可以自动适应输出的大小。</li>
+</ol>
+</div>
+<div id="插入外部图形文件" class="section level4 hasAnchor" number="9.2.3.2">
+<h4><span class="header-section-number">9.2.3.2</span> 插入外部图形文件<a href="rmarkdown-base.html#插入外部图形文件" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>如果一个图不是由一个 R 代码块生成的，你可以用两种方式包含它:</p>
+<ul>
+<li><strong>方法一</strong></li>
+</ul>
+<p>使用 Markdown 语法 <code>![caption](path/to/image)</code>， 你可以使用 <code>width</code> 和 <code>height</code> 属性来设置图像的大小，例如:</p>
+<pre><code>![图的标题](xxx.png){width=50%}</code></pre>
+<blockquote>
+<p>注意：图片文件放的位置（如果和 rmd 同一目录，则可以直接 xxx.png； 如果在其他位置记得加上相对路径）。</p>
+</blockquote>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211033682.png" /></p>
+<ul>
+<li><strong>方式二</strong></li>
+</ul>
+<p>在 source editor 情况下，直接外部拉入图形即可，会自动保存在相对文件夹的 images 中，或者点击图形按钮导入。</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211101185.png" /></p>
+<ul>
+<li><strong>方式三</strong></li>
+</ul>
+<p>在代码块中使用 knitr 函数 <code>knitr::include_graphics()</code>。 图片尺寸更改与<strong>插入R代码生成的图形</strong>的情况相同。</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb210-1"><a href="rmarkdown-base.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE , out.width=&quot;50%&quot;} </span></span>
+<span id="cb210-2"><a href="rmarkdown-base.html#cb210-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics(&quot;xxx.png&quot;)</span></span>
+<span id="cb210-3"><a href="rmarkdown-base.html#cb210-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+</div>
+</div>
+<div id="表格输出" class="section level3 hasAnchor" number="9.2.4">
+<h3><span class="header-section-number">9.2.4</span> 表格输出<a href="rmarkdown-base.html#表格输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="外部表格输入" class="section level4 hasAnchor" number="9.2.4.1">
+<h4><span class="header-section-number">9.2.4.1</span> 外部表格输入<a href="rmarkdown-base.html#外部表格输入" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>markdown格式</li>
+</ul>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403210427161.png" /></p>
+<ul>
+<li>Typora格式</li>
+</ul>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211149020.png" /></p>
+</div>
+<div id="内部代码输出的表格" class="section level4 hasAnchor" number="9.2.4.2">
+<h4><span class="header-section-number">9.2.4.2</span> 内部代码输出的表格<a href="rmarkdown-base.html#内部代码输出的表格" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>例子：计算线性回归后， <code>summary()</code> 函数的输出中有 coefficients 一项，是一个矩阵， 如果直接文本显示比较难看：</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb211-1"><a href="rmarkdown-base.html#cb211-1" aria-hidden="true" tabindex="-1"></a>x &lt;- 1:10; y &lt;- x^2; lmr &lt;- lm(y ~ x)</span>
+<span id="cb211-2"><a href="rmarkdown-base.html#cb211-2" aria-hidden="true" tabindex="-1"></a>co &lt;- summary(lmr)$coefficients</span>
+<span id="cb211-3"><a href="rmarkdown-base.html#cb211-3" aria-hidden="true" tabindex="-1"></a>print(co)</span></code></pre></div>
+<ul>
+<li><strong>knitr包的 <code>kable()</code></strong></li>
+</ul>
+<p>knitr包提供了一个 <code>kable()</code> 函数可以用来把数据框或矩阵转化成有格式的表格， 支持 HTML、docx、LaTeX 等格式。</p>
+<p>可以用 knitr 包的 <code>kable</code> 函数来显示:</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb212-1"><a href="rmarkdown-base.html#cb212-1" aria-hidden="true" tabindex="-1"></a>knitr::kable(co)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211210045.png" /></p>
+<p><code>kable()</code> 函数的 <code>digits=</code> 选项可以控制小数点后数字位数， <code>caption=</code> 选项可以指定表的标题内容。</p>
+<ul>
+<li><strong>pander包的pander函数</strong></li>
+</ul>
+<p>其 <code>pander()</code> 函数可以将多种R输出格式转换成 knitr 需要的表格形式。 如</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb213-1"><a href="rmarkdown-base.html#cb213-1" aria-hidden="true" tabindex="-1"></a>pander::pander(lmr)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211229254.png" /></p>
+<p>但是，经过试验发现， 表中中有中文时 pander 包会出错，这里参考公众号<a href="https://mp.weixin.qq.com/s/MKvRoyCyEHqHNzC9DRfVWQ">R 友舍</a>。</p>
+<ul>
+<li>其他包</li>
+</ul>
+<p><strong>tables</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-tables" title="Murdoch 2020">Murdoch 2020</a>), <strong>pander</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-pander" title="Daróczi and Tsegelskyi 2018">Daróczi and Tsegelskyi 2018</a>), <strong>tangram</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-tangram" title="Garbett 2020">Garbett 2020</a>), <strong>ztable</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-ztable" title="Moon 2020">Moon 2020</a>), 和 <strong>condformat</strong> (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-condformat" title="Oller Moreno 2020">Oller Moreno 2020</a>)等。</p>
+</div>
+</div>
+<div id="表格渲染" class="section level3 hasAnchor" number="9.2.5">
+<h3><span class="header-section-number">9.2.5</span> 表格渲染<a href="rmarkdown-base.html#表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>通过前面可以看到：用 <code>knitr::kable()</code> 输出表格结果其实不是非常美观，并且很多功能都不能实现。这时我们可以用 kableExtra(<a href="https://bookdown.org/yihui/rmarkdown-cookbook/kableextra.html#ref-R-kableExtra" title="Zhu 2020">Zhu 2020</a>)、huxtable (<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html#ref-R-huxtable" title="Hugh-Jones 2020">Hugh-Jones 2020</a>) 等扩展包来美化表格。</p>
+<blockquote>
+<p>其他拓展包可以参考：<a href="https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/table-other.html</a>
+- <strong>kableExtra包</strong></p>
+</blockquote>
+<p>本文以 kableExtra 包为例，介绍 rmarkdown 中渲染表格的相关函数。 它在 <a href="https://haozhu233.github.io/kableExtra/" class="uri">https://haozhu233.github.io/kableExtra/</a> 上有大量文档，其中提供了许多示例，说明如何针对 HTML 或 LaTeX 输出自定义 <code>kable()</code> 输出。 建议阅读其文档，本节中仅介绍一些示例介绍。</p>
+<p>kableExtra 包可以使用管道符号 <code>%&gt;%</code> 操作，例如</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb214-1"><a href="rmarkdown-base.html#cb214-1" aria-hidden="true" tabindex="-1"></a>library(knitr)</span>
+<span id="cb214-2"><a href="rmarkdown-base.html#cb214-2" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
+<span id="cb214-3"><a href="rmarkdown-base.html#cb214-3" aria-hidden="true" tabindex="-1"></a>kable(iris) %&gt;%</span>
+<span id="cb214-4"><a href="rmarkdown-base.html#cb214-4" aria-hidden="true" tabindex="-1"></a>  kable_styling(latex_options = &quot;striped&quot;)</span></code></pre></div>
+<div id="安装-1" class="section level4 hasAnchor" number="9.2.5.1">
+<h4><span class="header-section-number">9.2.5.1</span> 安装<a href="rmarkdown-base.html#安装-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb215"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb215-1"><a href="rmarkdown-base.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># install from CRAN</span></span>
+<span id="cb215-2"><a href="rmarkdown-base.html#cb215-2" aria-hidden="true" tabindex="-1"></a>install.packages(&quot;kableExtra&quot;)</span>
+<span id="cb215-3"><a href="rmarkdown-base.html#cb215-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># install the development version</span></span>
+<span id="cb215-4"><a href="rmarkdown-base.html#cb215-4" aria-hidden="true" tabindex="-1"></a>remotes::install_github(&quot;haozhu233/kableExtra&quot;)</span></code></pre></div>
+</div>
+<div id="表格外框设置" class="section level4 hasAnchor" number="9.2.5.2">
+<h4><span class="header-section-number">9.2.5.2</span> 表格外框设置<a href="rmarkdown-base.html#表格外框设置" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><code>bootstrap_options = "bordered"</code> 构建有边框的表格，其他可调节的名称可通过帮助文档获取。</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb216-1"><a href="rmarkdown-base.html#cb216-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb216-2"><a href="rmarkdown-base.html#cb216-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;bordered&quot;)</span></code></pre></div>
+</div>
+<div id="设置表格的宽度" class="section level4 hasAnchor" number="9.2.5.3">
+<h4><span class="header-section-number">9.2.5.3</span> 设置表格的宽度<a href="rmarkdown-base.html#设置表格的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>使用 <code>full_width = F</code> 使得表格横向不会填满整个页面，默认情况下 <code>full_width = T</code>。</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb217-1"><a href="rmarkdown-base.html#cb217-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb217-2"><a href="rmarkdown-base.html#cb217-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb217-3"><a href="rmarkdown-base.html#cb217-3" aria-hidden="true" tabindex="-1"></a>                          full_width = F)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211332249.png" /></p>
+<blockquote>
+<p>注意：上面例子 <code>knitr:: kable</code> 制定了 <code>kable</code> 函数来自 knitr 包，目的是方式和其他包内同名函数冲突。
+另一种写法，如果想使用管道函数，需要加载 kableExtra 。其他代码也类似，大家要学会举一反三噢！</p>
+</blockquote>
+<div class="sourceCode" id="cb218"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb218-1"><a href="rmarkdown-base.html#cb218-1" aria-hidden="true" tabindex="-1"></a>library(knitr)</span>
+<span id="cb218-2"><a href="rmarkdown-base.html#cb218-2" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
+<span id="cb218-3"><a href="rmarkdown-base.html#cb218-3" aria-hidden="true" tabindex="-1"></a>kable(head(rock), &quot;html&quot;) %&gt;% </span>
+<span id="cb218-4"><a href="rmarkdown-base.html#cb218-4" aria-hidden="true" tabindex="-1"></a>        kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb218-5"><a href="rmarkdown-base.html#cb218-5" aria-hidden="true" tabindex="-1"></a>                          full_width = F)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211413207.png" /></p>
+</div>
+<div id="设置表格的对齐方式" class="section level4 hasAnchor" number="9.2.5.4">
+<h4><span class="header-section-number">9.2.5.4</span> 设置表格的对齐方式<a href="rmarkdown-base.html#设置表格的对齐方式" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>使用 <code>position = "left"</code> 使得整个表格像左对齐，当然也可以中心对齐和右对齐，视情况而定。</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb219-1"><a href="rmarkdown-base.html#cb219-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb219-2"><a href="rmarkdown-base.html#cb219-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb219-3"><a href="rmarkdown-base.html#cb219-3" aria-hidden="true" tabindex="-1"></a>                          full_width = F,</span>
+<span id="cb219-4"><a href="rmarkdown-base.html#cb219-4" aria-hidden="true" tabindex="-1"></a>                          position = &quot;left&quot;)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210424173324184.png" /></p>
+</div>
+<div id="设置表格的字体大小" class="section level4 hasAnchor" number="9.2.5.5">
+<h4><span class="header-section-number">9.2.5.5</span> 设置表格的字体大小<a href="rmarkdown-base.html#设置表格的字体大小" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>使用 <code>font_size = 20</code> 可以将字体大小改为20。</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb220-1"><a href="rmarkdown-base.html#cb220-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb220-2"><a href="rmarkdown-base.html#cb220-2" aria-hidden="true" tabindex="-1"></a>kableExtra::kable_styling(x_html,bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb220-3"><a href="rmarkdown-base.html#cb220-3" aria-hidden="true" tabindex="-1"></a>                          full_width = T,</span>
+<span id="cb220-4"><a href="rmarkdown-base.html#cb220-4" aria-hidden="true" tabindex="-1"></a>                          font_size = 20</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211439668.png" /></p>
+</div>
+<div id="设置表格的行与列" class="section level4 hasAnchor" number="9.2.5.6">
+<h4><span class="header-section-number">9.2.5.6</span> 设置表格的行与列<a href="rmarkdown-base.html#设置表格的行与列" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>这里使用的函数是 <code>column_spec()</code>， 其中以下代码含义为：制定前两列数据，字体加粗、颜色为白色，表格填充为 <code>"#D7261E"</code>。 而行的设置与列类似，使用函数名为 <code>row_spec()</code>。</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb221-1"><a href="rmarkdown-base.html#cb221-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb221-2"><a href="rmarkdown-base.html#cb221-2" aria-hidden="true" tabindex="-1"></a>x_html &lt;- kableExtra::kable_styling(x_html,</span>
+<span id="cb221-3"><a href="rmarkdown-base.html#cb221-3" aria-hidden="true" tabindex="-1"></a>                                    bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb221-4"><a href="rmarkdown-base.html#cb221-4" aria-hidden="true" tabindex="-1"></a>                                    full_width = T)</span>
+<span id="cb221-5"><a href="rmarkdown-base.html#cb221-5" aria-hidden="true" tabindex="-1"></a>kableExtra::column_spec(x_html,1:2,</span>
+<span id="cb221-6"><a href="rmarkdown-base.html#cb221-6" aria-hidden="true" tabindex="-1"></a>                        bold = T,</span>
+<span id="cb221-7"><a href="rmarkdown-base.html#cb221-7" aria-hidden="true" tabindex="-1"></a>                        color = &quot;white&quot;,</span>
+<span id="cb221-8"><a href="rmarkdown-base.html#cb221-8" aria-hidden="true" tabindex="-1"></a>                        background = &quot;#D7261E&quot;)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211506891.png" /></p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb222-1"><a href="rmarkdown-base.html#cb222-1" aria-hidden="true" tabindex="-1"></a>x_html &lt;- knitr:: kable(head(rock), &quot;html&quot;)</span>
+<span id="cb222-2"><a href="rmarkdown-base.html#cb222-2" aria-hidden="true" tabindex="-1"></a>x_html &lt;- kableExtra::kable_styling(x_html,</span>
+<span id="cb222-3"><a href="rmarkdown-base.html#cb222-3" aria-hidden="true" tabindex="-1"></a>                                    bootstrap_options = &quot;striped&quot;,</span>
+<span id="cb222-4"><a href="rmarkdown-base.html#cb222-4" aria-hidden="true" tabindex="-1"></a>                                    full_width = T)</span>
+<span id="cb222-5"><a href="rmarkdown-base.html#cb222-5" aria-hidden="true" tabindex="-1"></a>kableExtra::row_spec(x_html,1:2,</span>
+<span id="cb222-6"><a href="rmarkdown-base.html#cb222-6" aria-hidden="true" tabindex="-1"></a>                        bold = T,</span>
+<span id="cb222-7"><a href="rmarkdown-base.html#cb222-7" aria-hidden="true" tabindex="-1"></a>                        color = &quot;white&quot;,</span>
+<span id="cb222-8"><a href="rmarkdown-base.html#cb222-8" aria-hidden="true" tabindex="-1"></a>                        background = &quot;#D7261E&quot;)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211527153.png" /></p>
+</div>
+<div id="其它表格渲染" class="section level4 hasAnchor" number="9.2.5.7">
+<h4><span class="header-section-number">9.2.5.7</span> 其它表格渲染<a href="rmarkdown-base.html#其它表格渲染" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>这里给出一个有趣的例子，具体内部不做过多解释， b 站视频给出解释。文字真的很难说明。</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb223-1"><a href="rmarkdown-base.html#cb223-1" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
+<span id="cb223-2"><a href="rmarkdown-base.html#cb223-2" aria-hidden="true" tabindex="-1"></a>data =  plyr::mutate(rock<span class="co">[</span><span class="ot">1:10, </span><span class="co">]</span>,</span>
+<span id="cb223-3"><a href="rmarkdown-base.html#cb223-3" aria-hidden="true" tabindex="-1"></a>                   perm = cell_spec(perm,&quot;html&quot;,</span>
+<span id="cb223-4"><a href="rmarkdown-base.html#cb223-4" aria-hidden="true" tabindex="-1"></a>                   color = &quot;white&quot;,</span>
+<span id="cb223-5"><a href="rmarkdown-base.html#cb223-5" aria-hidden="true" tabindex="-1"></a>                   bold = T,</span>
+<span id="cb223-6"><a href="rmarkdown-base.html#cb223-6" aria-hidden="true" tabindex="-1"></a>                   background = spec_color(1:10,</span>
+<span id="cb223-7"><a href="rmarkdown-base.html#cb223-7" aria-hidden="true" tabindex="-1"></a>                   end = 0.9,</span>
+<span id="cb223-8"><a href="rmarkdown-base.html#cb223-8" aria-hidden="true" tabindex="-1"></a>                   option = &quot;A&quot;,</span>
+<span id="cb223-9"><a href="rmarkdown-base.html#cb223-9" aria-hidden="true" tabindex="-1"></a>                   direction = -1)),</span>
+<span id="cb223-10"><a href="rmarkdown-base.html#cb223-10" aria-hidden="true" tabindex="-1"></a>  shape = ifelse(shape &gt; 0.15,</span>
+<span id="cb223-11"><a href="rmarkdown-base.html#cb223-11" aria-hidden="true" tabindex="-1"></a>                 cell_spec(shape,</span>
+<span id="cb223-12"><a href="rmarkdown-base.html#cb223-12" aria-hidden="true" tabindex="-1"></a>                           &quot;html&quot;,</span>
+<span id="cb223-13"><a href="rmarkdown-base.html#cb223-13" aria-hidden="true" tabindex="-1"></a>                           color = &quot;white&quot;,</span>
+<span id="cb223-14"><a href="rmarkdown-base.html#cb223-14" aria-hidden="true" tabindex="-1"></a>                           background = &quot;#D7261E&quot;,</span>
+<span id="cb223-15"><a href="rmarkdown-base.html#cb223-15" aria-hidden="true" tabindex="-1"></a>                           bold = T),</span>
+<span id="cb223-16"><a href="rmarkdown-base.html#cb223-16" aria-hidden="true" tabindex="-1"></a>                 cell_spec(shape, &quot;html&quot;,</span>
+<span id="cb223-17"><a href="rmarkdown-base.html#cb223-17" aria-hidden="true" tabindex="-1"></a>                          color = &quot;green&quot;,</span>
+<span id="cb223-18"><a href="rmarkdown-base.html#cb223-18" aria-hidden="true" tabindex="-1"></a>                           bold = T)))</span>
+<span id="cb223-19"><a href="rmarkdown-base.html#cb223-19" aria-hidden="true" tabindex="-1"></a>x_html &lt;-knitr::kable(data,&quot;html&quot;, escape = F, align = &quot;c&quot;)</span>
+<span id="cb223-20"><a href="rmarkdown-base.html#cb223-20" aria-hidden="true" tabindex="-1"></a>x_html &lt;-row_spec(x_html,0, color = &quot;white&quot;, background = &quot;#696969&quot; )</span>
+<span id="cb223-21"><a href="rmarkdown-base.html#cb223-21" aria-hidden="true" tabindex="-1"></a>kable_styling(x_html,&quot;striped&quot;)</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210403211552162.png" /></p>
+</div>
+</div>
+</div>
+<div id="rmarkdown-的主题格式" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Rmarkdown 的主题格式<a href="rmarkdown-base.html#rmarkdown-的主题格式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Rmarkdowm 作为可复用报告的优秀工具，除了提供文档编辑、图表输出外，还有许多主题格式供使用者选择。除了默认的主题外，还可以通过加载 rticles、prettydoc、rmdformats、tufte 等包获取更多主题格式。下面我们看看几类扩展包里的主题样式。</p>
+<blockquote>
+<p><strong>注：</strong> 接下来的教程我是已经安装这些包了，没安装的记得提前安装好！不然运行会出错。
+### 4.1. rticles 包</p>
+</blockquote>
+<p>官网：<a href="https://github.com/rstudio/rticles" class="uri">https://github.com/rstudio/rticles</a>；</p>
+<p>具体教程：<a href="https://bookdown.org/yihui/rmarkdown/rticles-templates.html" class="uri">https://bookdown.org/yihui/rmarkdown/rticles-templates.html</a></p>
+<p>rticles 软件包提供了各种期刊和出版商的模板：</p>
+<ul>
+<li>JSS articles (Journal of Statistical Software)</li>
+<li>R Journal articles</li>
+<li>CTeX documents(<strong>中文 pdf， 强烈推荐！</strong>)</li>
+<li>ACM articles (Association of Computing Machinery)</li>
+<li>ACS articles (American Chemical Society)</li>
+<li>AMS articles (American Meteorological Society)</li>
+<li>PeerJ articles</li>
+<li>Elsevier journal submissions</li>
+<li>AEA journal submissions (American Meteorological Society)</li>
+<li>IEEE Transaction journal submissions</li>
+<li>Statistics in Medicine journal submissions</li>
+<li>Royal Society Open Science journal submissions</li>
+<li>Bulletin de l’AMQ journal submissions</li>
+<li>MDPI journal submissions</li>
+<li>Springer journal submissions</li>
+</ul>
+<blockquote>
+<p>在此只对下面一个模板进行演示，其他模板操作类似，但是一般模板是不能包含中文字体的哦！
+- CTeX Documents（中文版本）</p>
+</blockquote>
+<p>下载完对应的包之后，找到对应模板打开即可。输出 pdf 是需要配置 tex 环境的哦！建议安装 Tinytex， 具体安装教程见前面。</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195440875.png" /></p>
+<p>编译后得到的结果，这是他模板原始的样子，如果想调整页面行间距，字体颜色等，请见下面一章。</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195456780.png" /></p>
+<div id="rmdformats-包" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> rmdformats 包<a href="rmarkdown-base.html#rmdformats-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>之后的这几个包，内部都包含了挺多模板的，下面 yaml 文件只是其中一个，如果想尝试该包内部其他模板，请根据上述操作进行，选择好模板，编译之后看看是不是你想要的模板。</p>
+<blockquote>
+<p>接下来我对部分相对不错的模板进行展示，你可以直接复制我的头部文件到 .rmd 格式中，或者打开模板窗口进行选择（操作在下面）。
+- <strong>方法一</strong></p>
+</blockquote>
+<div class="sourceCode" id="cb224"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb224-1"><a href="rmarkdown-base.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb224-2"><a href="rmarkdown-base.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
+<span id="cb224-3"><a href="rmarkdown-base.html#cb224-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
+<span id="cb224-4"><a href="rmarkdown-base.html#cb224-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2/18/2021&quot;</span></span>
+<span id="cb224-5"><a href="rmarkdown-base.html#cb224-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb224-6"><a href="rmarkdown-base.html#cb224-6" aria-hidden="true" tabindex="-1"></a><span class="co">  rmdformats::readthedown:</span></span>
+<span id="cb224-7"><a href="rmarkdown-base.html#cb224-7" aria-hidden="true" tabindex="-1"></a><span class="co">    self_contained: true</span></span>
+<span id="cb224-8"><a href="rmarkdown-base.html#cb224-8" aria-hidden="true" tabindex="-1"></a><span class="co">    thumbnails: true</span></span>
+<span id="cb224-9"><a href="rmarkdown-base.html#cb224-9" aria-hidden="true" tabindex="-1"></a><span class="co">    lightbox: true</span></span>
+<span id="cb224-10"><a href="rmarkdown-base.html#cb224-10" aria-hidden="true" tabindex="-1"></a><span class="co">    gallery: false</span></span>
+<span id="cb224-11"><a href="rmarkdown-base.html#cb224-11" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight: tango</span></span>
+<span id="cb224-12"><a href="rmarkdown-base.html#cb224-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195508990.png" /></p>
+<p><strong>方法二：</strong></p>
+<p>在你安装完该包之后你可以使用通过按钮新建该模版（其实他有很多类似的模板，我这里只展现了一种）：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195516091.png" /></p>
+<blockquote>
+<p>以下模板也可以通过这种方式构建，前提是你安装了这个包，这样你就可以在 From Template 中找到该包对应的模板了。
+### 4.3. prettydoc 包</p>
+</blockquote>
+<div class="sourceCode" id="cb225"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb225-1"><a href="rmarkdown-base.html#cb225-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb225-2"><a href="rmarkdown-base.html#cb225-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
+<span id="cb225-3"><a href="rmarkdown-base.html#cb225-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
+<span id="cb225-4"><a href="rmarkdown-base.html#cb225-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2/18/2021&quot;</span></span>
+<span id="cb225-5"><a href="rmarkdown-base.html#cb225-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb225-6"><a href="rmarkdown-base.html#cb225-6" aria-hidden="true" tabindex="-1"></a><span class="co">  prettydoc::html_pretty:</span></span>
+<span id="cb225-7"><a href="rmarkdown-base.html#cb225-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cayman</span></span>
+<span id="cb225-8"><a href="rmarkdown-base.html#cb225-8" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight: github</span></span>
+<span id="cb225-9"><a href="rmarkdown-base.html#cb225-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195521796.png" /></p>
+</div>
+<div id="tufte-包" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> tufte 包<a href="rmarkdown-base.html#tufte-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb226"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb226-1"><a href="rmarkdown-base.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb226-2"><a href="rmarkdown-base.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
+<span id="cb226-3"><a href="rmarkdown-base.html#cb226-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
+<span id="cb226-4"><a href="rmarkdown-base.html#cb226-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2/18/2021&quot;</span></span>
+<span id="cb226-5"><a href="rmarkdown-base.html#cb226-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb226-6"><a href="rmarkdown-base.html#cb226-6" aria-hidden="true" tabindex="-1"></a><span class="co">  tufte::tufte_html: default</span></span>
+<span id="cb226-7"><a href="rmarkdown-base.html#cb226-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195528253.png" /></p>
+</div>
+<div id="cerulean-包" class="section level3 hasAnchor" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> cerulean 包<a href="rmarkdown-base.html#cerulean-包" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb227"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb227-1"><a href="rmarkdown-base.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb227-2"><a href="rmarkdown-base.html#cb227-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Rmarkdown入门教程&quot;</span></span>
+<span id="cb227-3"><a href="rmarkdown-base.html#cb227-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;庄闪闪的R语言手册&quot;</span></span>
+<span id="cb227-4"><a href="rmarkdown-base.html#cb227-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> &quot;2/18/2021&quot;</span></span>
+<span id="cb227-5"><a href="rmarkdown-base.html#cb227-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb227-6"><a href="rmarkdown-base.html#cb227-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html_document:</span></span>
+<span id="cb227-7"><a href="rmarkdown-base.html#cb227-7" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cerulean</span></span>
+<span id="cb227-8"><a href="rmarkdown-base.html#cb227-8" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight: tango</span></span>
+<span id="cb227-9"><a href="rmarkdown-base.html#cb227-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210315195535713.png" /></p>
+</div>
+</div>
+<div id="总结一些常用技巧" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> 总结一些常用技巧<a href="rmarkdown-base.html#总结一些常用技巧" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>关于 RMarkdown 使用时，小编日常会使用的一些有用技巧，当然我也是通过学习谢大大的<a href="https://bookdown.org/yihui/rmarkdown-cookbook/" title="Rmarkdown-cookbook">Rmarkdown-cookbook</a>以及日常使用需求上网搜的解决方案，在此分享给大家。如果大家还有其他什么需求，可以在留言板留言。或者有其他实用技巧也欢迎分享！</p>
+<div id="修改某些字体颜色" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> 修改某些字体颜色<a href="rmarkdown-base.html#修改某些字体颜色" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Markdown 语法没有用于更改文本颜色的内置方法。我们可以使用 HTML 和 LaTeX 语法来更改单词的格式</p>
+<ul>
+<li>对于 HTML， 我们可以将文本包装在 <span> 标记中，并使用 CSS 设置颜色，例如<code>&lt;span style =“ color：red;”&gt; text &lt;/ span&gt;</code>。</li>
+<li>对于 PDF， 我们可以使用 LaTeX 命令 <code>\textcolor{}{}</code> 。 这需要使用 LaTeX 软件包 xcolor， 该软件包已包含在 Pandoc 的默认 LaTeX 模板中。</li>
+</ul>
+<p><strong>作为更改 PDF 文本颜色的示例：</strong></p>
+<div class="sourceCode" id="cb228"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb228-1"><a href="rmarkdown-base.html#cb228-1" aria-hidden="true" tabindex="-1"></a>我是\textcolor{blue}{庄闪闪}呀！欢迎关注我的\textcolor{red}{公众号}：\textcolor{blue}{庄闪闪的R语言手册}。</span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318124743606.png" /></p>
+<p>在上面的示例中，第一组花括号包含所需的文本颜色，第二组花括号包含应将此颜色应用到的文本。</p>
+</div>
+<div id="更改全文页边距等" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> 更改全文页边距等<a href="rmarkdown-base.html#更改全文页边距等" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在 top-level 中加入<code>geometry</code>命令，例如</p>
+<div class="sourceCode" id="cb229"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb229-1"><a href="rmarkdown-base.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb229-2"><a href="rmarkdown-base.html#cb229-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;RMarkdown常用技巧&quot;</span></span>
+<span id="cb229-3"><a href="rmarkdown-base.html#cb229-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb229-4"><a href="rmarkdown-base.html#cb229-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - 庄闪闪</span></span>
+<span id="cb229-5"><a href="rmarkdown-base.html#cb229-5" aria-hidden="true" tabindex="-1"></a><span class="an">documentclass:</span><span class="co"> ctexart</span></span>
+<span id="cb229-6"><a href="rmarkdown-base.html#cb229-6" aria-hidden="true" tabindex="-1"></a><span class="an">geometry:</span><span class="co"> &quot;left=2cm,right=2cm,top=2cm,bottom=2cm&quot;</span></span>
+<span id="cb229-7"><a href="rmarkdown-base.html#cb229-7" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb229-8"><a href="rmarkdown-base.html#cb229-8" aria-hidden="true" tabindex="-1"></a><span class="co">  rticles::ctex:</span></span>
+<span id="cb229-9"><a href="rmarkdown-base.html#cb229-9" aria-hidden="true" tabindex="-1"></a><span class="co">    keep_tex: true</span></span>
+<span id="cb229-10"><a href="rmarkdown-base.html#cb229-10" aria-hidden="true" tabindex="-1"></a><span class="co">    includes:</span></span>
+<span id="cb229-11"><a href="rmarkdown-base.html#cb229-11" aria-hidden="true" tabindex="-1"></a><span class="co">      in_header: columns.tex</span></span>
+<span id="cb229-12"><a href="rmarkdown-base.html#cb229-12" aria-hidden="true" tabindex="-1"></a><span class="co">    fig_caption: yes</span></span>
+<span id="cb229-13"><a href="rmarkdown-base.html#cb229-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number_sections: yes</span></span>
+<span id="cb229-14"><a href="rmarkdown-base.html#cb229-14" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: yes</span></span>
+<span id="cb229-15"><a href="rmarkdown-base.html#cb229-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p>这时的页边距就变成下面这样了：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318132951265.png" /></p>
+<p>当然全文字体大小等操作也是这样操作的，在 geometry 操作即可：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318123645722.png" /></p>
+</div>
+<div id="缩进文本" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> 缩进文本<a href="rmarkdown-base.html#缩进文本" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>默认情况下， Markdown 还将忽略用于缩进的空格。 但是在某些情况下，例如在经文和地址中，我们可能希望保留缩进。 在这些情况下，我们可以通过以竖线 （|） 开头的线来使用线块。 换行符和所有前导空格将保留在输出中。 例如：</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb230-1"><a href="rmarkdown-base.html#cb230-1" aria-hidden="true" tabindex="-1"></a>| When dollars appear it&#39;s a sign</span>
+<span id="cb230-2"><a href="rmarkdown-base.html#cb230-2" aria-hidden="true" tabindex="-1"></a>|   that your code does not quite align  </span>
+<span id="cb230-3"><a href="rmarkdown-base.html#cb230-3" aria-hidden="true" tabindex="-1"></a>| Ensure that your math  </span>
+<span id="cb230-4"><a href="rmarkdown-base.html#cb230-4" aria-hidden="true" tabindex="-1"></a>|   in xaringan hath  </span>
+<span id="cb230-5"><a href="rmarkdown-base.html#cb230-5" aria-hidden="true" tabindex="-1"></a>|   been placed on a single long line</span></code></pre></div>
+<p>输出为：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318125239921.png" /></p>
+</div>
+<div id="分页" class="section level3 hasAnchor" number="9.4.4">
+<h3><span class="header-section-number">9.4.4</span> 分页<a href="rmarkdown-base.html#分页" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>如果想要分页，可以使用 <code>\newpage</code>。 例如：如果想把目录和正文内容分开，可以在在正文前面加入这个代码</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319193017798.png" /></p>
+<p>这时输出的结果，目录一个界面，正文另起一页。</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319193045376.png" /></p>
+</div>
+<div id="控制文本输出的宽度" class="section level3 hasAnchor" number="9.4.5">
+<h3><span class="header-section-number">9.4.5</span> 控制文本输出的宽度<a href="rmarkdown-base.html#控制文本输出的宽度" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>有时从R代码输出的文本可能太宽。如果输出文档具有固定的页面宽度(例如， PDF 文档)，则文本输出可能会超过页面的页边距。</p>
+<p>R 全局选项宽度可用于控制R函数输出的文本宽度，如果默认值太大，则可以尝试使用较小的值。此选项通常表示每行字符的粗略数目。例如：</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb231-1"><a href="rmarkdown-base.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r} </span></span>
+<span id="cb231-2"><a href="rmarkdown-base.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="in">options(width = 300)</span></span>
+<span id="cb231-3"><a href="rmarkdown-base.html#cb231-3" aria-hidden="true" tabindex="-1"></a><span class="in">matrix(runif(100), ncol = 20)</span></span>
+<span id="cb231-4"><a href="rmarkdown-base.html#cb231-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318125512209.png" /></p>
+<div class="sourceCode" id="cb232"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb232-1"><a href="rmarkdown-base.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb232-2"><a href="rmarkdown-base.html#cb232-2" aria-hidden="true" tabindex="-1"></a><span class="in">options(width = 60)</span></span>
+<span id="cb232-3"><a href="rmarkdown-base.html#cb232-3" aria-hidden="true" tabindex="-1"></a><span class="in">matrix(runif(100), ncol = 20)</span></span>
+<span id="cb232-4"><a href="rmarkdown-base.html#cb232-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318125542194.png" /></p>
+<p>但是这种方式不一定对所有函数都适用，这是你可以使用其他方式，对于 Html （这里不做解释，主要将 pdf）， 可以参见<a href="https://bookdown.org/yihui/rmarkdown-cookbook/text-width.html" title="教程">教程</a>。</p>
+<p>对于 PDF 输出，换行比较困难。 一种解决方案是使用 LaTeX 软件包清单，可以通过 Pandoc 参数 –listings 启用它。 然后，您必须为此软件包设置一个选项，并且可以从外部 LaTeX 文件中包含设置代码（有关详细信息，请参见第<a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html#latex-preamble" title="6.1">6.1</a>节），例如，</p>
+<div class="sourceCode" id="cb233"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb233-1"><a href="rmarkdown-base.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb233-2"><a href="rmarkdown-base.html#cb233-2" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span></span>
+<span id="cb233-3"><a href="rmarkdown-base.html#cb233-3" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf_document:</span></span>
+<span id="cb233-4"><a href="rmarkdown-base.html#cb233-4" aria-hidden="true" tabindex="-1"></a><span class="co">    pandoc_args: --listings</span></span>
+<span id="cb233-5"><a href="rmarkdown-base.html#cb233-5" aria-hidden="true" tabindex="-1"></a><span class="co">    includes:</span></span>
+<span id="cb233-6"><a href="rmarkdown-base.html#cb233-6" aria-hidden="true" tabindex="-1"></a><span class="co">      in_header: preamble.tex</span></span>
+<span id="cb233-7"><a href="rmarkdown-base.html#cb233-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<p>在 preamble.tex 中（建议放到和rmd同一个文件夹），我们设置了 Listings 包的一个选项：</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb234-1"><a href="rmarkdown-base.html#cb234-1" aria-hidden="true" tabindex="-1"></a>\lstset{</span>
+<span id="cb234-2"><a href="rmarkdown-base.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  breaklines=true</span>
+<span id="cb234-3"><a href="rmarkdown-base.html#cb234-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>这是输出的结果，但是其实不是很美观</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318130218480.png" /></p>
+</div>
+<div id="控制图片输出大小" class="section level3 hasAnchor" number="9.4.6">
+<h3><span class="header-section-number">9.4.6</span> 控制图片输出大小<a href="rmarkdown-base.html#控制图片输出大小" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>这个我在文稿和教程中说的挺清楚了。一共有两种方式：</p>
+<p><strong>方法一：</strong></p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb235-1"><a href="rmarkdown-base.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, echo=FALSE, out.width=&quot;50%&quot;, fig.cap=&quot;A nice image.&quot;}</span></span>
+<span id="cb235-2"><a href="rmarkdown-base.html#cb235-2" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics(&quot;foo/bar.png&quot;)</span></span>
+<span id="cb235-3"><a href="rmarkdown-base.html#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p><strong>方法二：</strong></p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb236-1"><a href="rmarkdown-base.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="al">![A nice image.](foo/bar.png)</span>{width=50%}</span></code></pre></div>
+</div>
+<div id="图片对齐" class="section level3 hasAnchor" number="9.4.7">
+<h3><span class="header-section-number">9.4.7</span> 图片对齐<a href="rmarkdown-base.html#图片对齐" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>这个我也说过啦！可见：<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491844&amp;idx=1&amp;sn=36decacb06ca6ce1fc689141174bb98f&amp;chksm=ea271ee0dd5097f615b87c27151200635a9e5ff3c3072864bcf8fe6e8fbc41c0cffc6c95148f&amp;scene=21#wechat_redirect">R沟通｜Rmarkdown教程（3）</a>，<a href="http://mp.weixin.qq.com/s?__biz=MzI1NjUwMjQxMQ==&amp;mid=2247491546&amp;idx=1&amp;sn=00f8dea8903dbf4ec6e683ab5061a7a5&amp;chksm=ea24e03edd536928ff6c5a3600c8fbbd87cafbf9286ad47bfe4c084032cada9bf6ee7dfddcd9&amp;scene=21#wechat_redirect">R沟通｜Rmarkdown教程（2）</a>。如果使用R代码导入图片的话，使用 <code>knitr::include_graphics()</code> 并结合 R chunk 中 <code>fig.align = 'center'</code> 参数进行居中。如果结果不想显示代码块，可在chunck中加入： <code>echo=FALSE</code>。</p>
+<blockquote>
+<p>任何输出形式都适用，推荐使用</p>
+</blockquote>
+<div class="sourceCode" id="cb237"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb237-1"><a href="rmarkdown-base.html#cb237-1" aria-hidden="true" tabindex="-1"></a>knitr::include_graphics()</span></code></pre></div>
+<p>当然还有另一种方法，不使用代码形式。对于输出为 html， 你可以使用 html 语法（不适用于 pdf/word）</p>
+<div class="sourceCode" id="cb238"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb238-1"><a href="rmarkdown-base.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;center&gt;</span> <span class="al">![](image.png)</span> <span class="kw">&lt;/center&gt;</span></span></code></pre></div>
+<p>对于输出 pdf/word 可以使用以下方式</p>
+<div class="sourceCode" id="cb239"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb239-1"><a href="rmarkdown-base.html#cb239-1" aria-hidden="true" tabindex="-1"></a>\center</span>
+<span id="cb239-2"><a href="rmarkdown-base.html#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="al">![](image.png)</span></span>
+<span id="cb239-3"><a href="rmarkdown-base.html#cb239-3" aria-hidden="true" tabindex="-1"></a>\center</span></code></pre></div>
+<blockquote>
+<p>当然想要文字居中的话，也是这样使用。
+### 5.8.代码块的行号</p>
+</blockquote>
+<p>通过块选项 <code>attr.source =“ .numberLines”</code> 将行号添加到源代码块中，或者通过 <code>attr.output =“ .numberLines”</code> 将文本输出块添加到文本中，例如，</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb240-1"><a href="rmarkdown-base.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, attr.source=&#39;.numberLines&#39;} </span></span>
+<span id="cb240-2"><a href="rmarkdown-base.html#cb240-2" aria-hidden="true" tabindex="-1"></a><span class="in">if (TRUE) {</span></span>
+<span id="cb240-3"><a href="rmarkdown-base.html#cb240-3" aria-hidden="true" tabindex="-1"></a><span class="in">  x = 1:10</span></span>
+<span id="cb240-4"><a href="rmarkdown-base.html#cb240-4" aria-hidden="true" tabindex="-1"></a><span class="in">  x + 1</span></span>
+<span id="cb240-5"><a href="rmarkdown-base.html#cb240-5" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb240-6"><a href="rmarkdown-base.html#cb240-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div>
+<p>输出结果为：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210318131400399.png" /></p>
+</div>
+<div id="多列输出" class="section level3 hasAnchor" number="9.4.8">
+<h3><span class="header-section-number">9.4.8</span> 多列输出<a href="rmarkdown-base.html#多列输出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>这个特别好用！虽然学起来有那么一点困难，具体我再出一期推文，把这个讲清楚。具体可以见这里的<a href="https://bookdown.org/yihui/rmarkdown-cookbook/multi-column.html" title="教程">教程</a>。类似于排版成这种形式：</p>
+<p><img src="https://gitee.com/zhuang_liang_liang0825/other/raw/master/image-20210319195033178.png" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="some-tips-alls.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rmarkdown-extended.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["CBook.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

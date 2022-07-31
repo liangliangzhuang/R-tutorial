@@ -1,5 +1,5 @@
-# plot-tutorial-bookdown
-[庄闪闪的可视化笔记](https://liangliangzhuang.github.io/plot-tutorial-bookdown/index.html)（更新中）
+# [庄闪闪的可视化笔记](https://liangliangzhuang.github.io/plot-tutorial-bookdown/index.html)（更新中）
+
 
 ## 目录
 

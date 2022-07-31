@@ -11,7 +11,7 @@
 
 ### 第二部分 R 语言可视化
 
-#### 3 使用基础包绘图
+#### 3 [使用基础包绘图](https://liangliangzhuang.github.io/plot-tutorial-bookdown/causal.html)
 
 3.1 绘制基本图形
 
@@ -21,7 +21,7 @@
 
 3.4 保存图形
 
-#### 4 使用 ggplot2 包绘图
+#### 4 [使用 ggplot2 包绘图](https://liangliangzhuang.github.io/plot-tutorial-bookdown/ggplot2-plot.html)
 
 4.1 简介
 
@@ -45,7 +45,7 @@
 
 4.11 例子
 
-#### 5 常用图形
+#### 5 [常用图形](https://liangliangzhuang.github.io/plot-tutorial-bookdown/main-diagram-types.html)
 
 5.1 散点图
 
@@ -84,7 +84,7 @@
 5.18 雷达图/星图/蜘蛛图
 
 
-#### 6 其他相关拓展包
+#### 6 [其他相关拓展包](https://liangliangzhuang.github.io/plot-tutorial-bookdown/other-packages.html)
 
 6.1 ggplot2 官网 109 种拓展包
 
@@ -93,7 +93,7 @@
 
 ### 第三部分 R 语言文档沟通
 
-#### 7 认识交互式绘图工具
+#### 7 [认识交互式绘图工具](https://liangliangzhuang.github.io/plot-tutorial-bookdown/interactive-ploting.html)
 
 7.1 leaflet 包
 
@@ -107,7 +107,7 @@
 
 7.6 利用 Shiny 包实现可交互的 Web
 
-#### 8 常用案例
+#### 8 [常用案例](https://liangliangzhuang.github.io/plot-tutorial-bookdown/some-tips-alls.html)
 
 8.1绘制不同分布的 QQ 图
 
@@ -123,7 +123,7 @@
 
 8.7 绘制贝叶斯分析相关图形
 
-#### 9 R Markdown 入门教程
+#### 9 [R Markdown 入门教程](https://liangliangzhuang.github.io/plot-tutorial-bookdown/rmarkdown-base.html)
 
 9.1 Rmarkdown 简介
 
@@ -133,7 +133,7 @@
 
 9.4 总结一些常用技巧
 
-#### 10 其他方式的文档沟通
+#### 10 [其他方式的文档沟通](https://liangliangzhuang.github.io/plot-tutorial-bookdown/rmarkdown-extended.html)
 
 10.1 Typora
 
@@ -155,7 +155,7 @@
 
 10.10 小编有话说
 
-#### 11 附录
+#### 11 [附录](https://liangliangzhuang.github.io/plot-tutorial-bookdown/appendix.html)
 
 安装 R 和 Rstudio
 
